@@ -1,0 +1,65 @@
+// _utils.scss
+// files containing variables and mixins for the project
+
+// ----- FONTS -----
+$font-heading: 'Sora', sans-serif;;
+$font-body: 'Inter', sans-serif;
+
+// ----- COLORS -----
+// Brand colors
+$color-brand-01: #010a4f;
+$color-brand-02: #674fff;
+$color-brand-03: #904cd0;
+$color-brand-04: #ffa235;
+
+// greyscales
+$color-gs-black: #000000;
+$color-gs-white: #ffffff;
+$color-gs-01: #333333;
+$color-gs-02: #888888;
+$color-gs-03: #cccccc;
+$color-gs-04: #dddddd;
+$color-gs-05: #eeeeee;
+$color-gs-06: #f6f6f6;
+
+// status colors
+$color-status-success: #27DC70;
+$color-status-alert: #FF3434;
+$color-status-caution: #FF7D34;
+
+$site-max-width: 1440px;
+
+// Z index levels
+$level-base: 0;
+$level-middle: 100;
+$level-top: 200;
+$level-cover: 500;
+
+// helper for easings
+$easeOutCirc: cubic-bezier(0, 0.55, 0.45, 1);
+$easeInQuart: cubic-bezier(0.5, 0, 0.75, 0);
+$easeInCirc: cubic-bezier(0.55, 0, 1, 0.45);
+$easeInExpo: cubic-bezier(0.7, 0, 0.84, 0);
+
+
+// ----- BREAKPOINTS -----
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1200px;
+
+
+// ----- MIXINS -----
+// mixin for breakpoint up
+@mixin bp-up($bp) {
+  @media screen and (min-width: $bp) {
+    @content;
+  }
+}
+
+// mixin for breakpoint down
+@mixin bp-down($bp){
+  @media screen and (max-width: $bp - 1) {
+    @content;
+  }
+}
