@@ -1,0 +1,33 @@
+@import '../../../styles/_utils';
+
+.banner {
+    display: flex;
+    justify-content: center;
+
+    background-color: $color-brand-01;
+
+    .text {
+        color: $color-gs-white;
+        font-family: $font-body;
+        font-size: 12px;
+        font-weight: 600;
+
+        margin: 5px 0;
+    }
+}
+
+.header {
+    background-color: $color-gs-white;
+    height: 83px;
+
+    .container {
+    }
+
+    .logo {
+    }
+
+    .navigation {
+        .links {
+        }
+    }
+}
