@@ -1,4 +1,5 @@
-@import '../../../styles/_utils';
+@import '../../../styles/utils';
+@import '../../../styles/base';
 
 .banner {
     display: flex;
@@ -21,13 +22,39 @@
     height: 83px;
 
     .container {
+        display: flex;
+        justify-content: space-between;
+
+        height: 100%;
+
+        align-items: center;
     }
 
     .logo {
+        display: flex;
+        align-items: center;
+
+        .text {
+            max-width: 134px;
+            height: fit-content;
+
+            margin: 0;
+            margin-left: 15px;
+
+            font-family: $font-heading;
+            font-size: 19px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+        }
     }
 
     .navigation {
+        display: flex;
+
+        column-gap: 32px;
         .links {
+            font-weight: 700;
         }
     }
 }
