@@ -81,13 +81,12 @@
     }
   }
 
-  @include bp-down($bp-md) {
+  &--sm {
     font-size: 1.4rem;
+    padding: 0.64em 1.14em;
   }
 
-  @include bp-up($bp-md) {
-    &--lg {
-      padding: 1.37em 1.75em;
-    }
+  &--lg {
+    padding: 1.37em 1.75em;
   }
 }

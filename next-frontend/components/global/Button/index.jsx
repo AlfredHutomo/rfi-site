@@ -1,53 +1,76 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import Link from 'next/link';
+
 import styles from './button.module.scss';
 
+
+/**
+ * Button component
+ */
 const Button = (props) => {
-  const { to, className, onClick, variant, size} = props;
-
-  let variantClass = '';
-
-  switch (variant) {
-    case '1':
-      variantClass = 'button--alt-01';
-      break;
-    case '2':
-      variantClass = 'button--alt-02';
-      break;
-    case '3':
-      variantClass = 'button--alt-03';
-      break;
-    case '4':
-      variantClass = 'button--alt-04';
-      break;
-    case '5':
-      variantClass = 'button--alt-05';
-      break;
-    default:
-      break;
-  }
+    const {
+        to,
+        className,
+        onClick,
+        variant,
+        size,
+        isExternalLink,
+        ...others
+    } = props;
+  const Wrapper = to == null ? 'button' : 'a';
 
   const attributes = {
-    href: to ? to : null,
-    className : `${styles['button']} ${styles[variantClass]} ${className ? $className : ''} ${size =='large' ? styles['button--lg'] : ''}`,
-    onClick: onClick ? (e) => { onClick(e) }: null
+      className: clsx(
+          styles['button'],
+          [
+              size ==='large' && styles['button--lg'],
+              size ==='small' && styles['button--sm']
+          ],
+          [
+              variant == '1' && styles['button--alt-01'],
+              variant == '2' && styles['button--alt-02'],
+              variant == '3' && styles['button--alt-03'],
+              variant == '4' && styles['button--alt-04'],
+              variant == '5' && styles['button--alt-05']
+          ],
+          className
+        ),
+      onClick: onClick ? (e) => { onClick(e) }: null,
+      ...others
   }
 
-  if (props.to) {
-    return (
-      <a {...attributes} >
-        {props.children}
-      </a>
-    );
+  if (!props.isExternalLink && to && to[0]!== '#') {
+      return (
+        <Link href={to}>
+            <Wrapper {...attributes}/>
+        </Link>
+      );
   } else {
-    return (
-      <button {...attributes}>
-        {props.children}
-      </button>
-    );
+      return <Wrapper href={to} {...attributes} />;
   }
 }
 
-Button.propTypes = {}
+/* default properties */
+Button.defaultProps ={
+  isExternalLink: false
+}
+
+/* Button proptypes */
+Button.propTypes = {
+    // href to be passed if the button is a link
+    to: PropTypes.string,
+    // classes for the component
+    className: PropTypes.string,
+    // on click handler if there's any
+    onClick: PropTypes.func,
+    // styling variant for the button
+    variant: PropTypes.string,
+    // button size style
+    size: PropTypes.string,
+    // flag if button have a link to external site
+    isExternalLink: PropTypes.bool
+}
 
 export default Button;
