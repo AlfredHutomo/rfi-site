@@ -10,7 +10,7 @@
     .text {
         color: $color-gs-white;
         font-family: $font-body;
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: 600;
 
         margin: 5px 0;
@@ -39,10 +39,10 @@
             height: fit-content;
 
             margin: 0;
-            margin-left: 15px;
+            margin-left: 1.5rem;
 
             font-family: $font-heading;
-            font-size: 19px;
+            font-size: 1.9rem;
             font-weight: bold;
 
             text-transform: uppercase;
@@ -52,7 +52,7 @@
     .navigation {
         display: flex;
 
-        column-gap: 32px;
+        column-gap: 3.2rem;
         .links {
             font-weight: 700;
         }
@@ -60,7 +60,7 @@
 
     .buttons {
         :first-child {
-            margin-right: 16px;
+            margin-right: 1.6rem;
         }
     }
 

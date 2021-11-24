@@ -3,6 +3,7 @@ import styles from './footer.module.scss';
 import LogoText from '../../../public/Logo_With_Text.svg';
 
 import Button from '../Button';
+import Subscription from './Subscription';
 
 const Footer = () => {
     const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
@@ -13,7 +14,11 @@ const Footer = () => {
         backgroundColor: 'grey',
     };
 
-    return <footer></footer>;
+    return (
+        <footer>
+            <Subscription />
+        </footer>
+    );
 };
 
 export default Footer;

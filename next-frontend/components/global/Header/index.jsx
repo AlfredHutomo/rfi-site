@@ -2,15 +2,23 @@ import Image from 'next/dist/client/image';
 import styles from './header.module.scss';
 import LogoText from '../../../public/Logo_With_Text.svg';
 
+import { MdMenu } from 'react-icons/md';
+
 import Button from '../Button';
+import { useState } from 'react';
 
 const Header = () => {
     const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
+    const [mobileMenu, setMobileMenu] = useState(false);
 
     const logo_placeholder = {
         width: '54px',
         height: '54px',
         backgroundColor: 'grey',
+    };
+
+    const toggleMobileMenu = () => {
+        setMobileMenu((state) => !state);
     };
 
     return (
@@ -22,6 +30,11 @@ const Header = () => {
                 <div className={styles.container}>
                     <div className={styles.logo}>
                         <Image src={LogoText} height={54} width={202} />
+                        {mobileMenu ? (
+                            <></>
+                        ) : (
+                            <MdMenu onClick={toggleMobileMenu} />
+                        )}
                     </div>
                     <nav className={styles.navigation}>
                         {links.map((link, i) => (
