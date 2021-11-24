@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
 
-  > img {
+  > img:not([class]) {
     display: block;
     max-width: 100%;
     width: 100%;
@@ -18,7 +18,7 @@
   }
 
   &--contain {
-    > img {
+    > img:not([class]) {
       object-fit: contain;
     }
   }

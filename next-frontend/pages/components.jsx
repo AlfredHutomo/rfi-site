@@ -1,4 +1,11 @@
-import { Button, Header, Card, CardContent, CardMedia } from '../components/global';
+import {
+    Button,
+    Header,
+    Card,
+    CardContent,
+    CardMedia,
+    RegisterInterestCard,
+} from '../components/global';
 
 import style from '../styles/pages/components.module.scss';
 
@@ -10,7 +17,7 @@ export default function Components() {
     return (
         <div class={style['page-wrapper']}>
             <h1 className="h1">Components</h1>
-            <div>
+            <div className={style['page-nav']}>
               <a href="#buttons">Buttons</a>
               <a href="#buttons-link">Buttons as link</a>
               <a href="#cards">Cards</a>
@@ -164,6 +171,12 @@ export default function Components() {
                         </CardContent>
                     </Card>
                 </div>
+            </div>
+            <div>
+              <h2 className="h2">Specialised Cards</h2>
+              <div className={style['container']}>
+                  <RegisterInterestCard />
+              </div>
             </div>
 
             <div>
