@@ -57,4 +57,20 @@
             font-weight: 700;
         }
     }
+
+    .buttons {
+        :first-child {
+            margin-right: 16px;
+        }
+    }
+
+    @include bp-down($bp-md) {
+        .navigation {
+            display: none;
+        }
+
+        .buttons {
+            display: none;
+        }
+    }
 }

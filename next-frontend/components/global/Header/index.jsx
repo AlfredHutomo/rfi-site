@@ -31,8 +31,8 @@ const Header = () => {
                         ))}
                     </nav>
                     <div className={styles.buttons}>
-                        <Button>Member portal</Button>
-                        <Button>Register</Button>
+                        <Button variant={'3'}>Member portal</Button>
+                        <Button variant={'1'}>Register</Button>
                     </div>
                 </div>
             </header>
