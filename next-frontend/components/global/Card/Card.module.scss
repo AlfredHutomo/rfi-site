@@ -1,0 +1,27 @@
+@import "../../../styles/_utils";
+
+.card {
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 0.4rem;
+  background: $color-gs-white;
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+
+  @include bp-up($bp-md) {
+    &--horizontal {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: stretch;
+      align-items: stretch;
+    }
+
+    &--horizontal-reverse {
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      justify-content: stretch;
+      align-items: stretch;
+    }
+  }
+}
+

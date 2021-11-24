@@ -1,0 +1,62 @@
+@import "../_utils";
+
+.page-wrapper {
+  padding: 2rem 6.5%;
+  font-size: 1.4rem;
+}
+
+.page-nav {
+  a {
+    color: $color-brand-02;
+    display: inline-block;
+    margin: 0.4rem 0.8rem;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-brand-04;
+    }
+  }
+}
+
+.container {
+  $base: &;
+  padding: 1.5rem;
+  background: #efefef;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+
+  &--space-item {
+    > *:not(.container__row) {
+      margin: 1rem;
+    }
+
+    #{$base}__row {
+      > * { margin: 1rem; }
+    }
+  }
+
+  @include bp-down($bp-md) {
+    &--grid {
+      > * {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  @include bp-up($bp-md) {
+    &--grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1.4rem;
+      justify-items: center;
+      align-items: start;
+    }
+  }
+
+  @include bp-up($bp-lg) {
+    &--grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
