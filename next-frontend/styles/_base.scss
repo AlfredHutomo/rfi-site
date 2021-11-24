@@ -3,7 +3,7 @@
 // files containing basic and common stylings
 
 // headings
-.h1, .h2 .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $font-heading;
   font-weight: 700;
   font-style: normal;
@@ -48,3 +48,4 @@
   .h5 { font-size: 1.6rem; }
   .h6 { font-size: 1.4rem; }
 }
+
