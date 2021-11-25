@@ -1,0 +1,57 @@
+@import '../../../styles/utils';
+@import '../../../styles/base';
+
+.footer {
+    background-color: $color-brand-01;
+}
+
+.subscription {
+    color: $color-gs-white;
+
+    width: 400px;
+
+    .input {
+        width: 100%;
+        padding: 1.3rem 1.6rem;
+
+        border-radius: 4px;
+    }
+
+    .button {
+        border-radius: 4px;
+        margin-top: 1.9rem;
+        width: 100%;
+        padding: 0.9rem;
+
+        background-color: transparent;
+        border: 2px solid $color-gs-white;
+        color: $color-gs-white;
+
+        font-weight: 700;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-gs-white;
+            color: $color-brand-01;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+.footer--end {
+    background: #1f265e;
+    color: $color-gs-02;
+
+    height: 65px;
+
+    .footer--end--inner {
+        height: 100%;
+
+        max-width: $site-max-width;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+    }
+}
