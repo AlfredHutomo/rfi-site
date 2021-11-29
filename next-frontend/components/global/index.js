@@ -4,6 +4,8 @@ import Card from './Card/';
 import CardContent from './CardContent/';
 import CardMedia from './CardMedia/';
 import RegisterInterestCard from './RegisterInterestCard/';
+import ProfileCard from './ProfileCard/';
+import PageHeader from './PageHeader/'
 
 export {
   Header,
@@ -12,4 +14,6 @@ export {
   CardContent,
   CardMedia,
   RegisterInterestCard,
+  ProfileCard,
+  PageHeader,
 };

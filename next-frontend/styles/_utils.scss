@@ -61,3 +61,11 @@ $bp-xl: 1200px;
         @content;
     }
 }
+
+// to expose values to js
+:export {
+    bpSm: $bp-sm;
+    bpMd: $bp-md;
+    bpLg: $bp-lg;
+    bpXl: $bp-xl;
+}

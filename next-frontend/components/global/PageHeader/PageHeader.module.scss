@@ -1,0 +1,24 @@
+@import '_utils';
+
+.page-header {
+  display: block;
+  padding: 4.7rem 6.5%;
+  background-image: url('../../../public/page-banner--m.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  &__title {
+    color: $color-gs-white;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  @include bp-up($bp-md) {
+    padding-top: 14rem;
+    padding-bottom: 14rem;
+    background-image: url('../../../public/page-banner--d.jpg');
+  }
+}

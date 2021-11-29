@@ -5,6 +5,8 @@ import {
     CardContent,
     CardMedia,
     RegisterInterestCard,
+    ProfileCard,
+    PageHeader,
 } from '../components/global';
 import Footer from '../components/global/Footer';
 
@@ -28,6 +30,7 @@ export default function Components() {
                 <a href='#buttons-link'>Buttons as link</a>
                 <a href='#cards'>Cards</a>
                 <a href='#page-header'>Header</a>
+                <a href='#page-header-banner'>Page Header</a>
             </div>
             <div>
                 <h2 className='h2' id='buttons'>
@@ -269,11 +272,67 @@ export default function Components() {
                     </Card>
                 </div>
             </div>
+
             <div>
                 <h2 className='h2'>Specialised Cards</h2>
-                <div className={style['container']}>
-                    <RegisterInterestCard />
+                <div className={spacedContainerClass}>
+                    <div className={style['container__row']}>
+                        <RegisterInterestCard />
+                    </div>
+                    <div
+                        className={style['container__row']}
+                        style={{
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr',
+                            justifyContent: 'center',
+                            alignItems: 'start'
+                        }}>
+                        <ProfileCard
+                            style={{maxWidth: '40rem'}}
+                            data={{
+                                image: 'https://via.placeholder.com/350x300?text=PLACEHOLDER',
+                                name: 'John Doe',
+                                title: 'Title or Position',
+                                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sapien.'
+                            }}
+                        />
+
+                        <ProfileCard
+                            style={{maxWidth: '40rem'}}
+                            data={{
+                                image: 'https://via.placeholder.com/350x300?text=PLACEHOLDER',
+                                name: 'John Doe',
+                                title: 'Title or Position',
+                            }}
+                        />
+
+                        <ProfileCard
+                            style={{maxWidth: '40rem'}}
+                            data={{
+                                image: 'https://via.placeholder.com/350x300?text=PLACEHOLDER',
+                                name: 'John Doe',
+                                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sapien.'
+                            }}
+                        />
+
+                    </div>
+
                 </div>
+            </div>
+
+            <div>
+                <h2 className='h2' id='page-header-banner'>
+                    Page Header/Banner
+                </h2>
+                <div className={spacedContainerClass}>
+                    <div className={style['container__row']}>
+                        <PageHeader title="Components Page" />
+                    </div>
+                    <div className={style['container__row']}>
+                        <PageHeader title="Components Page" bgMobile="../public/logo-text-light.png" id="page-header-change-bg"/>
+                    </div>
+                </div>
+
             </div>
 
             <div>
