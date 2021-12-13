@@ -12,12 +12,6 @@ const Header = () => {
     const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
     const [mobileMenu, setMobileMenu] = useState(false);
 
-    const logo_placeholder = {
-        width: '54px',
-        height: '54px',
-        backgroundColor: 'grey',
-    };
-
     const toggleMobileMenu = () => {
         setMobileMenu((state) => !state);
     };
@@ -27,7 +21,7 @@ const Header = () => {
             <div className={styles.banner}>
                 <p className={styles.text}>Celebrating 10 years in the game!</p>
             </div>
-            <SectionWrapper padding={false}>
+            <SectionWrapper padding={false} bgcolor='white'>
                 <header className={styles.header}>
                     <div className={styles.container}>
                         <div className={styles.logo}>

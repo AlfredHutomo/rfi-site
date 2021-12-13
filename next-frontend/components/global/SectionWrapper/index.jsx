@@ -7,7 +7,7 @@ const SectionWrapper = (props) => {
     return (
         <div
             className={padding ? styles['section-wrapper'] : ''}
-            style={{ backgroundColor: props.bgcolor }}
+            style={{ backgroundColor: bgcolor }}
         >
             <div className={styles['section-content']}>{props.children}</div>
         </div>
@@ -20,6 +20,7 @@ SectionWrapper.propTypes = {
 };
 
 SectionWrapper.defaultProps = {
+    bgcolor: '#E5E5E5',
     padding: true,
 };
 
