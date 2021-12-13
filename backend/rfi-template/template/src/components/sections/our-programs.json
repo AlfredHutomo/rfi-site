@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_our_programs",
+  "info": {
+    "displayName": "Our Programs",
+    "icon": "school"
+  },
+  "options": {},
+  "attributes": {
+    "programs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program.program"
+    }
+  }
+}
