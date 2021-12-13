@@ -18,16 +18,17 @@ $color-gs-white: #ffffff;
 $color-gs-01: #333333;
 $color-gs-02: #888888;
 $color-gs-03: #cccccc;
-$color-gs-04: #dddddd;
+$color-gs-04: #dddddd; // use this for shadow
 $color-gs-05: #eeeeee;
 $color-gs-06: #f6f6f6;
+$color-bg:    #f6f6f6;
 
 // status colors
 $color-status-success: #27dc70;
 $color-status-alert: #ff3434;
 $color-status-caution: #ff7d34;
 
-$site-max-width: 1440px;
+$site-max-width: 1110px;
 
 // Z index levels
 $level-base: 0;

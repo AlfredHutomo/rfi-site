@@ -10,6 +10,7 @@ import CardMedia from "../CardMedia/";
 
 import styles from "./RegisterInterestCard.module.scss";
 import LogoText from '../../../public/logo-text-light.png';
+import DefaultCardImg from './default-reg-card-img.jpg';
 
 /**
  * RegisterInterestCard
@@ -20,7 +21,7 @@ const RegisterInterestCard = (props) => {
   return (
     <Card horizontal>
         <CardMedia className={styles['rinterest-card__img-wrapper']}>
-            <img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460" draggable="false" />
+            <Image src={DefaultCardImg} />
             <span className={styles['rinterest-card__logo']}>
               <Image src={LogoText} width={260} height={70} />
             </span>

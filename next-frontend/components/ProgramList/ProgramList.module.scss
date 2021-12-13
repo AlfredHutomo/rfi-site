@@ -1,0 +1,22 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.program-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 15px;
+
+    &-wrapper {
+        width: 100%;
+    }
+
+    &-cta {
+        margin-top: 5rem;
+        text-align: center;
+    }
+}
+

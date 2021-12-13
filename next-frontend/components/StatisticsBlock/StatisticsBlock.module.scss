@@ -1,0 +1,34 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.statistics-block {
+
+    &-wrapper {
+        text-align: center;
+    }
+
+    &-data {
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: left;
+        justify-content: space-between;
+    }
+    &-data-detail {
+        min-width: 26rem;
+        font-family: $font-heading;
+        font-weight: 400;
+        font-size: 10rem;
+        color: $color-brand-02;
+        border: 1px solid #f30;
+
+        span {
+            display: block;
+            max-width: 16rem;
+            font-weight: 700;
+            font-size: 2rem;
+            color: $color-brand-01;
+        }
+    }
+}
+

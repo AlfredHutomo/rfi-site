@@ -1,0 +1,27 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.usp-block {
+
+    &-wrapper {
+        padding: 2rem 1rem;
+        max-width: 35rem;
+        min-width: 28rem;
+        text-align: center;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    &-icon {
+        color: $color-brand-03;
+    }
+
+    &-content {
+        font-family: $font-heading;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $color-brand-01;
+    }
+}
+

@@ -12,6 +12,18 @@ import Footer from '../components/global/Footer';
 
 import style from '../styles/pages/components.module.scss';
 
+import ProgramCard from '../components/ProgramCard/';
+import { InfoGrid } from '../components/InfoGrid/';
+import BlogPostCard from '../components/BlogPostCard/';
+import FAQAccordion from '../components/FAQAccordion/';
+import TextImageCard from '../components/TextImageCard/';
+import TimelineCard from '../components/TimelineCard/';
+import USPBanner from '../components/USPBanner/';
+import HomeHero from '../components/HomeHero/';
+import QuoteBlock from '../components/QuoteBlock/';
+import SponsorBlock from '../components/SponsorBlock/';
+import StatisticsBlock from '../components/StatisticsBlock/';
+
 export default function Components() {
     const spacedContainerClass = [
         style['container'],
@@ -290,7 +302,7 @@ export default function Components() {
                         <ProfileCard
                             style={{maxWidth: '40rem'}}
                             data={{
-                                image: 'https://via.placeholder.com/350x300?text=PLACEHOLDER',
+                            //image: 'https://source.unsplash.com/random/500×500',
                                 name: 'John Doe',
                                 title: 'Title or Position',
                                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sapien.'
@@ -300,7 +312,7 @@ export default function Components() {
                         <ProfileCard
                             style={{maxWidth: '40rem'}}
                             data={{
-                                image: 'https://via.placeholder.com/350x300?text=PLACEHOLDER',
+                            //image: 'https://source.unsplash.com/random/500×500',
                                 name: 'John Doe',
                                 title: 'Title or Position',
                             }}
@@ -309,7 +321,7 @@ export default function Components() {
                         <ProfileCard
                             style={{maxWidth: '40rem'}}
                             data={{
-                                image: 'https://via.placeholder.com/350x300?text=PLACEHOLDER',
+                            //image: 'https://source.unsplash.com/random/500×500',
                                 name: 'John Doe',
                                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sapien.'
                             }}
@@ -351,6 +363,217 @@ export default function Components() {
                     <Footer />
                 </div>
             </div>
+
+
+            <div>
+                <h2>Program Card</h2>
+                <div className={style['container']}>
+                    <ProgramCard
+                        //image={Image}
+                        name="RFI Initiation Program"
+                        tags={['ages: 10 - 17', 'beginner']}
+                        description="For players born 2011 and after, who wish to get started in football and advance quickly."
+                        cta="Learn More"
+                        link="#"
+                    ></ProgramCard>
+                </div>
+            </div>
+            <div>
+                <h2>Info Grid</h2>
+                <div className={style['container']}>
+                    <InfoGrid></InfoGrid>
+                </div>
+            </div>
+
+            <div>
+                <h2>FAQ Accordion</h2>
+                <div className={style['container']}>
+                    <FAQAccordion
+                        faqlists={
+                            [
+                                {
+                                    question: 'How is the RFI Development Program structured?',
+                                    answer: 'this is test 1'
+                                },
+                                {
+                                    question: 'What is RFI’s approach?',
+                                    answer: 'Our approach is to focus on the individual, within the natural team setting and game environment. Our mentality is to focus on the individual, within the natural team setting and game environment.'
+                                }
+                            ]
+                        }
+                    >
+                    </FAQAccordion>
+                </div>
+            </div>
+
+            <div>
+                <h2>Sponsor Block</h2>
+                <div className={style['container']}>
+                    <SponsorBlock
+                        heading="Proudly supported by"
+                        sponsorGold={
+                            [
+                                {
+                                    name: 'Relab',
+                                    image: ''
+                                },
+                                {
+                                    name: 'Sponsor 1',
+                                    image: ''
+                                }
+                            ]
+                        }
+                        sponsorSilver={
+                            [
+                                {
+                                    name: 'Test1',
+                                    image: ''
+                                },
+                                {
+                                    name: 'Test2',
+                                    image: ''
+                                }
+                            ]
+                        }
+                        button1Text="Become a sponsor"
+                        button1Link="#"
+                        button2Text="More about our sponsor"
+                        button2Link="#"
+                    >
+                        This is description
+                    </SponsorBlock>
+                </div>
+            </div>
+
+            <div>
+                <h2>Text Image Card - Story</h2>
+                <div className={style['container']}>
+                    <TextImageCard
+                        //image="https://source.unsplash.com/random/300×300"
+                        heading="Becoming Melbourne City's second youngest debutant"
+                        buttonLink="http://www.google.com.au"
+                        buttonText="Test"
+                    >
+                        <p>
+                            Max spent his key development years at RFI, where he established himself as a leading talent in Melbourne. Together with his teammates from childhood at RFI, he bossed the NPL system until he was recruited by Melbourne City. For us it's not surprising that at the tender age of 15 he’s already an outstanding talent, we know he will soon represent Australia and serves as an inspiration to the current RFI players.
+                        </p>
+                        <p>this is a test</p>
+                    </TextImageCard>
+
+                    <TextImageCard
+                        isImageOnRight
+                        isVerticalCentreAlign
+                        preHeading="Development"
+                        heading="Becoming Melbourne City's second youngest debutant"
+                        buttonLink="http://www.google.com.au"
+                        buttonText="Test"
+                    >
+                        <p>
+                            Max spent his key development years at RFI, where he established himself as a leading talent in Melbourne. Together with his teammates from childhood at RFI, he bossed the NPL system until he was recruited by Melbourne City. For us it's not surprising that at the tender age of 15 he’s already an outstanding talent, we know he will soon represent Australia and serves as an inspiration to the current RFI players.
+                        </p>
+                        <p>this is a test</p>
+                    </TextImageCard>
+                </div>
+            </div>
+
+
+            <div>
+                <h2>Timeline Card</h2>
+                <div className={style['container']}>
+                    <TimelineCard
+                        date="2021"
+                        heading="test heading"
+                    >
+                        <p>
+                            Our young players have progressed into elite pathways and have been dominating the competitions every year, making RFI the most prolific player development program in Melbourne.
+                        </p>
+                        <p>this is a test</p>
+                    </TimelineCard>
+
+                </div>
+            </div>
+
+
+
+
+            <div>
+                <h2>USP Banner</h2>
+                <div className={style['container']}>
+                    <USPBanner
+                        data={
+                            [
+                                {
+                                    icon: 'icon1',
+                                    description: 'Who could you become? With a number of different programs in RFI, the opportunities to train like a pro player continue to grow and evolve.'
+                                },
+                                {
+                                    icon: 'icon2',
+                                    description: 'adfasdfasdf'
+                                }
+                            ]
+                        }
+                    />
+                </div>
+            </div>
+
+
+            <div>
+                <h2>Home Hero</h2>
+                <div className={style['container']}>
+                    <HomeHero
+                        //image="https://source.unsplash.com/random/300×300"
+                        button1Text="Learn more"
+                        button1Link="#"
+                        button2Text="Register Interest"
+                        button2Link="#"
+                    >
+                        The Future of Youth Football Development
+                    </HomeHero>
+                </div>
+            </div>
+
+
+            <div>
+                <h2>Quote Block</h2>
+                <div className={style['container']}>
+                    <QuoteBlock
+                        avatar="https://source.unsplash.com/random/300×300"
+                        author="Santiago Ortiz"
+                        role="Coach, RFI"
+                    >
+                        A LOT OF MEMORIES COME TO MY MIND AS A PLAYER, COACH, OR FAN. THE BEST ONES ARE THOSE WHICH I LIVED AND SHARED WITH PEOPLE.
+                    </QuoteBlock>
+                </div>
+            </div>
+
+            <div>
+                <h2>Statistics Block</h2>
+                <div className={style['container']}>
+                    <StatisticsBlock
+                        heading="Real Success"
+                        statsData={
+                            [
+                                {
+                                    number: '300+',
+                                    content: 'RFI Player'
+                                },
+                                {
+                                    number: '120',
+                                    content: 'Players at A-League Academies'
+                                },
+                                {
+                                    number: '7',
+                                    content: 'Players ademies'
+                                }
+                            ]
+                        }
+                    >
+                        Our programs have been helping players with some amazing success stories.
+                    </StatisticsBlock>
+                </div>
+            </div>
+
+
         </div>
     );
 }

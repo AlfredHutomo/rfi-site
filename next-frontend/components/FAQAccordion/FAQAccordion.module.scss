@@ -1,0 +1,48 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.faq-accordion {
+    &-wrapper {
+        width: 100%;
+        display: flex;
+        //background-color: #1F265D;
+    }
+    &-side {
+        h2 {
+            margin-bottom: 3rem;
+            color: $color-gs-white;
+        }
+    }
+    &-list {
+        margin: 0;
+        padding: 2rem;
+        list-style: none;
+
+    }
+    &-list-item {
+        margin: 0 0 20px 0;
+        border-radius: 6px;
+        border: 1px solid #dedede;
+        background-color: $color-gs-white;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+    &-list-item-heading {
+        padding: 2rem;
+        cursor: pointer;
+
+        h5 {
+            margin: 0;
+            color: $color-brand-01;
+            font-size: 1.6rem;
+        }
+    }
+    &-list-item-content {
+        padding: 0 2rem 2rem 2rem;
+        line-height: 2.4rem;
+        font-size: 1.6rem;
+    }
+}
+

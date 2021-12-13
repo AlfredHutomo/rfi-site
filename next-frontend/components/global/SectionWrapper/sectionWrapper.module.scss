@@ -1,0 +1,17 @@
+@import "../styles/_base";
+@import "../styles/_utils";
+
+.section {
+    &-wrapper {
+        padding: 4rem 2rem;
+        border: 1px solid $color-brand-02;
+    }
+
+    &-content {
+        margin: 0 auto;
+        width: 100%;
+        max-width: $site-max-width;
+        border: 1px solid $color-brand-03;
+    }
+}
+

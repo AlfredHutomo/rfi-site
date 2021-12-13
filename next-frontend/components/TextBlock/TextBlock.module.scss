@@ -1,0 +1,24 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.text-block {
+
+    &-wrapper {
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid #f30;
+    }
+
+    &-icon {
+        color: $color-brand-03;
+    }
+
+    &-content {
+        font-family: $font-body;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $color-gs-01;
+    }
+}
+

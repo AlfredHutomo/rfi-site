@@ -1,0 +1,48 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.hero-banner {
+    margin: 0 auto;
+    max-width: $site-max-width;
+    position: relative;
+    z-index: $level-base;
+
+    &-wrapper {
+        position: relative;
+        z-index: $level-base;
+    }
+
+    &-content {
+        width: 100%;
+        max-width: 68rem;
+        position: absolute;
+        left: 0;
+        bottom: 20rem;
+        z-index: $level-base + 1;
+    }
+    &-button {
+        width: 100%;
+        margin: 0.5rem 0;
+
+        @include bp-up($bp-sm) {
+            width: auto;
+            margin: 1rem 2rem 1rem 0;
+        }
+    }
+
+    &-heading {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: $font-heading;
+        font-size: 3.4rem;
+        color: $color-gs-white;
+        letter-spacing: -1.5px;
+        line-height: 1.1em;
+
+        @include bp-up($bp-md) {
+            font-size: 7.2rem;
+        }
+    }
+}
+
+

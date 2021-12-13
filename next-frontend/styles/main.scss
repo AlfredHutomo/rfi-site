@@ -10,7 +10,9 @@ body {
   font-family: $font-body;
   font-size: 62.5%;
 }
-
+body {
+    background-color: $color-bg;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -18,5 +20,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.page-wrapper {
 }
 
