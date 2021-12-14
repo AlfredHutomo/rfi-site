@@ -9,9 +9,6 @@
   "attributes": {
     "text": {
       "type": "string"
-    },
-    "target": {
-      "type": "string"
     }
   }
 }
