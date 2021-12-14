@@ -18,7 +18,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::program.program",
-      "inversedBy": "program_tags"
+      "inversedBy": "tags"
     }
   }
 }

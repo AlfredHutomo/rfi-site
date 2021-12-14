@@ -32,7 +32,7 @@
       "type": "text",
       "required": true
     },
-    "program_tags": {
+    "tags": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::program-tag.program-tag",

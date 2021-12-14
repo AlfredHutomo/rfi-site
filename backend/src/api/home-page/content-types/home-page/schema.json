@@ -12,10 +12,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Hero": {
+    "hero": {
       "type": "component",
       "repeatable": false,
       "component": "sections.hero"
+    },
+    "block_tiles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.block-content"
+    },
+    "programs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program.program"
     }
   }
 }
