@@ -36,7 +36,7 @@ const TextImageCard = (props) => {
             <div className={styles['text-image-card-col-txt']}>
                 {
                     (props.preHeading != null) ?
-                        <h4 className={styles['text-image-card-col-txt-preheading']}>
+                        <h4 className={'h4 ' + styles['text-image-card-col-txt-preheading']}>
                             {props.preHeading}
                         </h4>
                     : ''
@@ -44,16 +44,14 @@ const TextImageCard = (props) => {
 
                 {
                     (props.heading != null) ?
-                        <h2 className={styles['text-image-card-col-txt-heading']}>
+                        <h2 className={'h2 ' + styles['text-image-card-col-txt-heading']}>
                             {props.heading}
                         </h2>
                     : ''
                 }
-                <div>
-                    {
-                        (props.children != null) ? props.children : ''
-                    }
-                </div>
+                {
+                    (props.children != null) ? <div>{props.children}</div> : ''
+                }
                 {
                     (props.buttonText != null) ? <Button to={props.buttonLink}>{props.buttonText}</Button> : ''
                 }

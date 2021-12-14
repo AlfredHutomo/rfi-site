@@ -20,7 +20,7 @@ const SponsorBlock = (props) => {
 
     return (
         <div className={styles['sponsor-block-wrapper']}>
-            <h1 className={styles['sponsor-block-heading']}>{props.heading}</h1>
+            <h2 className={'h2 ' + styles['sponsor-block-heading']}>{props.heading}</h2>
             <div className={styles['sponsor-block-description']}>
                 {
                     (props.children != null) ? props.children : ''

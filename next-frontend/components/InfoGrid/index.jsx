@@ -19,7 +19,7 @@ const InfoGrid = (props) => {
                     isDoubleSize
                     isLightText
                     bgcolor="#010A4F"
-                    heading="RFI is real experience"
+                    heading="RFI is real experience more content will be displayed here"
                     buttonText="Learn about us"
                     buttonLink="#"
                 >
@@ -98,14 +98,18 @@ const InfoGridItemContentType1 = (props) => {
 
             {
                 (props.heading != null) ?
-                    <h1 className={styles['info-grid-item-heading']}>
+                    <h1 className={'h1 ' + styles['info-grid-item-heading']}>
                         {props.heading}
                     </h1>
                 : ''
             }
 
             {
-                (props.children != null) ? props.children : ''
+                (props.children != null) ? 
+                    <div className={styles['info-grid-item-content']}>
+                        {props.children}
+                    </div>
+                : ''
             }
 
             {

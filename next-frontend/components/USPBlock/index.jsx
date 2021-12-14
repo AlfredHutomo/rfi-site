@@ -24,7 +24,7 @@ const USPBlock = (props) => {
             }
             {
                 (props.children != null) ?
-                <h5 className={styles['usp-block-content']}>
+                <h5 className={'h5 ' + styles['usp-block-content']}>
                     {props.children}
                 </h5> : ''
             }

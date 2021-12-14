@@ -14,7 +14,7 @@ const FAQAccordion = (props) => {
     return (
         <div className={styles['faq-accordion-wrapper']}>
             <div className={styles['faq-accordion-side']}>
-                <h2>Frequently asked questions</h2>
+                <h2 className="h2">Frequently asked questions</h2>
 
                 <svg width="267" height="293" viewBox="0 0 267 293" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M169.077 73.2113C171.639 62.1085 173.939 50.9694 177.743 40.2113C181.88 28.5131 184.568 12.0062 192.41 2.10018C193.319 0.951891 198.107 19.7281 198.632 21.7668C202.634 37.2929 206.245 52.9244 210.299 68.4335C211.289 72.2208 212.065 79.4065 214.854 82.5446C217.571 85.6005 212.859 74.5782 211.243 70.8224C203.396 52.5825 192.933 35.5439 185.077 17.2113" stroke="white" stroke-width="3" stroke-linecap="round"/>
