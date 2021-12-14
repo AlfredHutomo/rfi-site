@@ -8,9 +8,7 @@ import DefaultImg from './default-grid-img.jpg';
 import Button from '../global/Button';
 
 const InfoGrid = (props) => {
-
-    const { } = props;
-
+    const {} = props;
 
     return (
         <div className={styles['info-grid-wrapper']}>
@@ -24,13 +22,14 @@ const InfoGrid = (props) => {
                     buttonLink="#"
                 >
                     <p>
-                        RFI takes pride in bringing to Australia the finest in international youth football development. RFI takes pride in bringing to Australia the finest in international youth football development. 
+                        RFI takes pride in bringing to Australia the finest in
+                        international youth football development. RFI takes
+                        pride in bringing to Australia the finest in
+                        international youth football development.
                     </p>
                 </InfoGridItemContentType1>
-                <InfoGridItemImage 
-                    image="https://source.unsplash.com/random/300x100"
-                />
-                <InfoGridItemContentType1 bgcolor="#f30" />
+                <InfoGridItemImage image='https://source.unsplash.com/random/300x100' />
+                <InfoGridItemContentType1 bgcolor='#f30' />
                 <InfoGridItemImage />
                 <div className={styles['info-grid-item']}>
                     <ul>
@@ -42,39 +41,34 @@ const InfoGrid = (props) => {
             </div>
         </div>
     );
-}
-
+};
 
 /**
  * Info grid item - Image
  */
 const InfoGridItemImage = (props) => {
-    const {
-        isDoubleSize,
-        image
-    } = props;
+    const { isDoubleSize, image } = props;
 
-    const double = (isDoubleSize) ? styles['info-grid-item-double'] : ''
+    const double = isDoubleSize ? styles['info-grid-item-double'] : '';
 
     return (
         <div className={styles['info-grid-item'] + ' ' + double}>
-            {
-                (props.image != null) ?
-                <Image src={props.image} layout="fill" objectFit="cover" /> :
-                <Image src={DefaultImg} layout="fill" objectFit="cover" />
-            }
+            {props.image != null ? (
+                <Image src={props.image} layout='fill' objectFit='cover' />
+            ) : (
+                <Image src={DefaultImg} layout='fill' objectFit='cover' />
+            )}
         </div>
     );
-}
+};
 
 InfoGridItemImage.defaultProps = {
-    isDoubleSize: false
-}
+    isDoubleSize: false,
+};
 
 InfoGridItemImage.propTypes = {
-    isDoubleSize: PropTypes.bool
-}
-
+    isDoubleSize: PropTypes.bool,
+};
 
 /**
  * Info grid item - Content Type 1
@@ -87,11 +81,11 @@ const InfoGridItemContentType1 = (props) => {
         heading,
         content,
         buttonText,
-        buttonLink
+        buttonLink,
     } = props;
 
-    const double = (isDoubleSize) ? styles['info-grid-item-double'] : ''
-    const light = (isLightText) ? styles['info-grid-item-lightext'] : ''
+    const double = isDoubleSize ? styles['info-grid-item-double'] : '';
+    const light = isLightText ? styles['info-grid-item-lightext'] : '';
 
     return (
         <div className={styles['info-grid-item'] + ' ' + double + ' ' + light} style={{backgroundColor: props.bgcolor}}>
@@ -117,50 +111,38 @@ const InfoGridItemContentType1 = (props) => {
             }
         </div>
     );
-}
+};
 
 InfoGridItemContentType1.defaultProps = {
     isDoubleSize: false,
-    isLightText: false
-}
+    isLightText: false,
+};
 
 InfoGridItemContentType1.propTypes = {
     isDoubleSize: PropTypes.bool,
-    isLightText: PropTypes.bool
-}
-
+    isLightText: PropTypes.bool,
+};
 
 const InfoGridItemContentType2 = (props) => {
-    const {
-        image
-    } = props;
+    const { image } = props;
 
-    return (
-        <div className={styles['info-grid-item']}>
-        </div>
-    );
-}
+    return <div className={styles['info-grid-item']}></div>;
+};
 
 const InfoGridItemContentType3 = (props) => {
-    const {
-        image
-    } = props;
+    const { image } = props;
 
-    return (
-        <div className={styles['info-grid-item']}>
-        </div>
-    );
-}
+    return <div className={styles['info-grid-item']}></div>;
+};
 
-InfoGrid.propTypes = {}
+InfoGrid.propTypes = {};
 
-InfoGridItemImage.propTypes = {
-}
+InfoGridItemImage.propTypes = {};
 
 export {
     InfoGrid,
     InfoGridItemImage,
     InfoGridItemContentType1,
     InfoGridItemContentType2,
-    InfoGridItemContentType3
+    InfoGridItemContentType3,
 };
