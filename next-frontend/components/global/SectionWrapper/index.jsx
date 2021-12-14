@@ -2,11 +2,11 @@ import styles from './sectionWrapper.module.scss';
 import PropTypes from 'prop-types';
 
 const SectionWrapper = (props) => {
-    const { bgcolor, padding } = props;
+    const { bgcolor, noPadding } = props;
 
     return (
         <div
-            className={padding ? styles['section-wrapper'] : ''}
+            className={noPadding ? '' : styles['section-wrapper']}
             style={{ backgroundColor: bgcolor }}
         >
             <div className={styles['section-content']}>{props.children}</div>
@@ -16,12 +16,12 @@ const SectionWrapper = (props) => {
 
 SectionWrapper.propTypes = {
     bgcolor: PropTypes.string,
-    padding: PropTypes.bool,
+    noPadding: PropTypes.bool,
 };
 
 SectionWrapper.defaultProps = {
     bgcolor: '#E5E5E5',
-    padding: true,
+    noPadding: false,
 };
 
 export default SectionWrapper;

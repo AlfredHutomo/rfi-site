@@ -21,7 +21,7 @@ const Header = () => {
             <div className={styles.banner}>
                 <p className={styles.text}>Celebrating 10 years in the game!</p>
             </div>
-            <SectionWrapper padding={false} bgcolor='white'>
+            <SectionWrapper noPadding bgcolor='white'>
                 <header className={styles.header}>
                     <div className={styles.container}>
                         <div className={styles.logo}>

@@ -20,15 +20,8 @@ import FAQAccordion from '../components/FAQAccordion/';
 import axios from 'axios';
 import { useEffect } from 'react';
 
-export default function Home() {
-    useEffect(() => {
-        axios
-            .get(
-                'http://localhost:1337/api/home-page?populate[Hero][populate]=*'
-            )
-            .then((res) => console.log(res.data.data.attributes));
-    }, []);
-
+export default function Home(props) {
+    console.log(props);
     return (
         <PageWrapper>
             <Header />
@@ -185,4 +178,18 @@ export default function Home() {
             {/* <Footer /> */}
         </PageWrapper>
     );
+}
+
+export async function getStaticProps(context) {
+    const { data } = await axios.get(
+        'http://localhost:1337/api/home-page?populate[Hero][populate]=*'
+    );
+
+    console.log(data);
+
+    const pageData = data.attributes;
+
+    return {
+        props: { data: pageData }, // will be passed to the page component as props
+    };
 }
