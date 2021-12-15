@@ -21,6 +21,8 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 export default function Home(props) {
+    const { hero } = props.data?.attributes;
+
     return (
         <PageWrapper>
             <Header />
@@ -32,7 +34,7 @@ export default function Home(props) {
                 button2Text='Register Interest'
                 button2Link='#'
             >
-                Hero Heading
+                {hero.heading}
             </HomeHero>
 
             <SectionWrapper>
@@ -184,12 +186,21 @@ export async function getStaticProps(context) {
 
         return {
             props: {
-                data: content,
+                data: content.data,
             },
         };
     } catch (error) {
         return {
-            props: {},
+            props: {
+                // default data goes here
+                data: {
+                    attributes: {
+                        hero: {
+                            heading: 'DEFAULT HEADING',
+                        },
+                    },
+                },
+            },
         };
     }
 }
