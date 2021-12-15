@@ -34,13 +34,13 @@ const FAQAccordion = (props) => {
                         d='M36.0769 220.211C38.7792 223.851 51.5157 244.992 53.0769 244.211'
                         stroke='white'
                         strokeWidth='3'
-                        strokeLineCap='round'
+                        strokeLinecap='round'
                     />
                     <path
                         d='M58.0762 218.211C47.3644 229.22 35.5762 240.461 27.0762 253.211'
                         stroke='white'
                         strokeWidth='3'
-                        strokeLineCap='round'
+                        strokeLinecap='round'
                     />
                 </svg>
             </div>
