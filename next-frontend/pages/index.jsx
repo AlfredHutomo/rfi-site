@@ -21,7 +21,8 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 export default function Home(props) {
-    console.log(props);
+    const { hero } = props.data;
+    console.log(hero);
     return (
         <PageWrapper>
             <Header />
@@ -33,7 +34,7 @@ export default function Home(props) {
                 button2Text='Register Interest'
                 button2Link='#'
             >
-                The Future of Youth Football Development
+                {hero.heading}
             </HomeHero>
 
             <SectionWrapper>
@@ -181,9 +182,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(context) {
-    const { data } = await axios.get(
-        'http://localhost:1337/api/home-page?populate[Hero][populate]=*'
-    );
+    const { data } = await axios.get('http://localhost:1337/api/home-page');
 
     console.log(data);
 
