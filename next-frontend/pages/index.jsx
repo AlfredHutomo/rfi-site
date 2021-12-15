@@ -34,7 +34,7 @@ export default function Home(props) {
                 button2Text='Register Interest'
                 button2Link='#'
             >
-                {hero.heading}
+                Hero Heading
             </HomeHero>
 
             <SectionWrapper>
@@ -180,15 +180,16 @@ export default function Home(props) {
         </PageWrapper>
     );
 }
-
 export async function getStaticProps(context) {
-    const { data } = await axios.get('http://localhost:1337/api/home-page');
+    try {
+        const articles = await axios.get('http://localhost:1337/api/home-page');
 
-    console.log(data);
-
-    const pageData = data.attributes;
-
-    return {
-        props: { data: pageData }, // will be passed to the page component as props
-    };
+        return {
+            props: {
+                data: pageData
+            },
+        };
+     } catch (error) {
+       return { error };
+     }
 }

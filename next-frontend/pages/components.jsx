@@ -35,7 +35,7 @@ export default function Components() {
     ].join(' ');
 
     return (
-        <div class={style['page-wrapper']}>
+        <div className={style['page-wrapper']}>
             <h1 className='h1'>Components</h1>
             <div className={style['page-nav']}>
                 <a href='#buttons'>Buttons</a>
@@ -184,7 +184,7 @@ export default function Components() {
                                 Card with media
                             </h3>
                             <p>
-                                The media wrapper image by default have 'cover'
+                                The media wrapper image by default have cover
                                 behavior
                             </p>
                             <Button variant='1' size='small'>
@@ -192,7 +192,6 @@ export default function Components() {
                             </Button>
                         </CardContent>
                     </Card>
-
                     <Card style={{ maxWidth: '40rem' }}>
                         <CardContent compact>
                             <h3 className='h4' style={{ marginTop: 0 }}>
@@ -469,7 +468,7 @@ export default function Components() {
                         buttonText="Test"
                     >
                         <p>
-                            Max spent his key development years at RFI, where he established himself as a leading talent in Melbourne. Together with his teammates from childhood at RFI, he bossed the NPL system until he was recruited by Melbourne City. For us it's not surprising that at the tender age of 15 he’s already an outstanding talent, we know he will soon represent Australia and serves as an inspiration to the current RFI players.
+                            Max spent his key development years at RFI, where he established himself as a leading talent in Melbourne. Together with his teammates from childhood at RFI, he bossed the NPL system until he was recruited by Melbourne City. For us its not surprising that at the tender age of 15 hes already an outstanding talent, we know he will soon represent Australia and serves as an inspiration to the current RFI players.
                         </p>
                         <p>this is a test</p>
                     </TextImageCard>

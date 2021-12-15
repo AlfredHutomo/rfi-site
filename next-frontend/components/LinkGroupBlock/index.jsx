@@ -16,12 +16,6 @@ const LinkGroupBlock = (props) => {
 
     return (
         <div className={styles['usp-banner-wrapper']}>
-        {
-            (props.data.length !=0 && props.data != null) ? (
-                props.data.map((usp, i) => (
-                ))
-            ): ''
-        }
         </div>
     );
 }
