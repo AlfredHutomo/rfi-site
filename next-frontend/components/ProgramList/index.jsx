@@ -8,19 +8,14 @@ import ProgramCard from '../ProgramCard';
 import Button from '../global/Button';
 
 const ProgramList = (props) => {
-
-    const {
-        programData
-    } = props;
+    const { programData } = props;
 
     return (
         <div className={styles['program-list-wrapper']}>
-            {
-                (props.programData.length !=0 || props.programData != null) ? (
+            {props.programData.length != 0 || props.programData != null ? (
                 <ul className={styles['program-list']}>
-                {
-                    props.programData.map((program, i) => (
-                        <li>
+                    {props.programData.map((program, i) => (
+                        <li key={i}>
                             <ProgramCard
                                 //image={Image}
                                 name={program.name}
@@ -31,26 +26,20 @@ const ProgramList = (props) => {
                                 {program.description}
                             </ProgramCard>
                         </li>
-                    ))
-                }
+                    ))}
                 </ul>
-                ) : ''
-
-            }
+            ) : (
+                ''
+            )}
             <div className={styles['program-list-cta']}>
-                <Button
-                    variant="2"
-                    to="#"
-                >
+                <Button variant='2' to='#'>
                     See all programs
                 </Button>
             </div>
         </div>
     );
-}
+};
 
-
-ProgramList.propTypes = {}
+ProgramList.propTypes = {};
 
 export default ProgramList;
-

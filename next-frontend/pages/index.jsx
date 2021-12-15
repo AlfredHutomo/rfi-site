@@ -21,8 +21,6 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 export default function Home(props) {
-    const { hero } = props.data;
-    console.log(hero);
     return (
         <PageWrapper>
             <Header />
@@ -182,14 +180,16 @@ export default function Home(props) {
 }
 export async function getStaticProps(context) {
     try {
-        const articles = await axios.get('http://localhost:1337/api/home-page');
+        const content = await axios.get('http://localhost:1337/api/home-page');
 
         return {
             props: {
-                data: pageData
+                data: content,
             },
         };
-     } catch (error) {
-       return { error };
-     }
+    } catch (error) {
+        return {
+            props: {},
+        };
+    }
 }

@@ -25,7 +25,12 @@ const Header = () => {
                 <header className={styles.header}>
                     <div className={styles.container}>
                         <div className={styles.logo}>
-                            <Image src={LogoText} height={54} width={202} />
+                            <Image
+                                src={LogoText}
+                                height={54}
+                                width={202}
+                                alt={''}
+                            />
                             {mobileMenu ? (
                                 <></>
                             ) : (

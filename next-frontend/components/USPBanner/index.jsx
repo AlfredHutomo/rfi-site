@@ -9,34 +9,27 @@ import Button from '../global/Button';
 import USPBlock from '../USPBlock';
 
 const USPBanner = (props) => {
-
-    const {
-        data,
-    } = props;
-
+    const { data } = props;
 
     return (
         <div className={styles['usp-banner-wrapper']}>
-        {
-            (props.data != null && props.data.length !=0) ? (
-                props.data.map((usp, i) => (
-                    <USPBlock icon={usp['icon']}>
-                        {usp['description']}
-                    </USPBlock>
-                ))
-            ): ''
-        }
+            {props.data != null && props.data.length != 0
+                ? props.data.map((usp, i) => (
+                      <USPBlock key={i} icon={usp['icon']}>
+                          {usp['description']}
+                      </USPBlock>
+                  ))
+                : ''}
         </div>
     );
-}
+};
 
 USPBanner.defaultProps = {
-    data: null
-}
+    data: null,
+};
 
 USPBanner.propTypes = {
     //data: PropTypes.object,
-}
+};
 
 export default USPBanner;
-

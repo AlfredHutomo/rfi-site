@@ -16,10 +16,10 @@ const InfoGrid = (props) => {
                 <InfoGridItemContentType1
                     isDoubleSize
                     isLightText
-                    bgcolor="#010A4F"
-                    heading="RFI is real experience more content will be displayed here"
-                    buttonText="Learn about us"
-                    buttonLink="#"
+                    bgcolor='#010A4F'
+                    heading='RFI is real experience more content will be displayed here'
+                    buttonText='Learn about us'
+                    buttonLink='#'
                 >
                     <p>
                         RFI takes pride in bringing to Australia the finest in
@@ -54,9 +54,19 @@ const InfoGridItemImage = (props) => {
     return (
         <div className={styles['info-grid-item'] + ' ' + double}>
             {props.image != null ? (
-                <Image src={props.image} layout='fill' objectFit='cover' />
+                <Image
+                    src={props.image}
+                    layout='fill'
+                    objectFit='cover'
+                    alt={''}
+                />
             ) : (
-                <Image src={DefaultImg} layout='fill' objectFit='cover' />
+                <Image
+                    src={DefaultImg}
+                    layout='fill'
+                    objectFit='cover'
+                    alt={''}
+                />
             )}
         </div>
     );
@@ -88,27 +98,31 @@ const InfoGridItemContentType1 = (props) => {
     const light = isLightText ? styles['info-grid-item-lightext'] : '';
 
     return (
-        <div className={styles['info-grid-item'] + ' ' + double + ' ' + light} style={{backgroundColor: props.bgcolor}}>
+        <div
+            className={styles['info-grid-item'] + ' ' + double + ' ' + light}
+            style={{ backgroundColor: props.bgcolor }}
+        >
+            {props.heading != null ? (
+                <h1 className={'h1 ' + styles['info-grid-item-heading']}>
+                    {props.heading}
+                </h1>
+            ) : (
+                ''
+            )}
 
-            {
-                (props.heading != null) ?
-                    <h1 className={'h1 ' + styles['info-grid-item-heading']}>
-                        {props.heading}
-                    </h1>
-                : ''
-            }
+            {props.children != null ? (
+                <div className={styles['info-grid-item-content']}>
+                    {props.children}
+                </div>
+            ) : (
+                ''
+            )}
 
-            {
-                (props.children != null) ? 
-                    <div className={styles['info-grid-item-content']}>
-                        {props.children}
-                    </div>
-                : ''
-            }
-
-            {
-                (props.buttonText != null) ? <Button to={props.buttonLink}>{props.buttonText}</Button> : ''
-            }
+            {props.buttonText != null ? (
+                <Button to={props.buttonLink}>{props.buttonText}</Button>
+            ) : (
+                ''
+            )}
         </div>
     );
 };

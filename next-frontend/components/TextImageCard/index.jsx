@@ -10,7 +10,6 @@ import DefaultCardImg from './default-card-img.jpg';
 import Button from '../global/Button';
 
 const TextImageCard = (props) => {
-
     const {
         isImageOnRight,
         isVerticalCentreAlign,
@@ -18,57 +17,76 @@ const TextImageCard = (props) => {
         preHeading,
         heading,
         buttonLink,
-        buttonText
+        buttonText,
     } = props;
 
-    const reverse = (props.isImageOnRight) ? styles['text-image-card--reverse'] : '';
-    const vcentre = (props.isVerticalCentreAlign) ? styles['text-image-card--vcentre'] : '';
+    const reverse = props.isImageOnRight
+        ? styles['text-image-card--reverse']
+        : '';
+    const vcentre = props.isVerticalCentreAlign
+        ? styles['text-image-card--vcentre']
+        : '';
 
     return (
-        <div className={styles['text-image-card-wrapper'] + ' ' + reverse + ' ' + vcentre}>
+        <div
+            className={
+                styles['text-image-card-wrapper'] +
+                ' ' +
+                reverse +
+                ' ' +
+                vcentre
+            }
+        >
             <div className={styles['text-image-card-col-img']}>
-                {
-                    (props.image != null) ? 
-                    <Image src={props.image} /> :
-                    <Image src={DefaultCardImg} />
-                }
+                {props.image != null ? (
+                    <Image src={props.image} alt={''} />
+                ) : (
+                    <Image src={DefaultCardImg} alt={''} />
+                )}
             </div>
             <div className={styles['text-image-card-col-txt']}>
-                {
-                    (props.preHeading != null) ?
-                        <h4 className={'h4 ' + styles['text-image-card-col-txt-preheading']}>
-                            {props.preHeading}
-                        </h4>
-                    : ''
-                }
+                {props.preHeading != null ? (
+                    <h4
+                        className={
+                            'h4 ' + styles['text-image-card-col-txt-preheading']
+                        }
+                    >
+                        {props.preHeading}
+                    </h4>
+                ) : (
+                    ''
+                )}
 
-                {
-                    (props.heading != null) ?
-                        <h2 className={'h2 ' + styles['text-image-card-col-txt-heading']}>
-                            {props.heading}
-                        </h2>
-                    : ''
-                }
-                {
-                    (props.children != null) ? <div>{props.children}</div> : ''
-                }
-                {
-                    (props.buttonText != null) ? <Button to={props.buttonLink}>{props.buttonText}</Button> : ''
-                }
+                {props.heading != null ? (
+                    <h2
+                        className={
+                            'h2 ' + styles['text-image-card-col-txt-heading']
+                        }
+                    >
+                        {props.heading}
+                    </h2>
+                ) : (
+                    ''
+                )}
+                {props.children != null ? <div>{props.children}</div> : ''}
+                {props.buttonText != null ? (
+                    <Button to={props.buttonLink}>{props.buttonText}</Button>
+                ) : (
+                    ''
+                )}
             </div>
         </div>
     );
-}
+};
 
 TextImageCard.defaultProps = {
     isImageOnRight: false,
-    isVerticalCentreAlign: false
-}
+    isVerticalCentreAlign: false,
+};
 
 TextImageCard.propTypes = {
     isImageOnRight: PropTypes.bool,
-    isVerticalCentreAlign: PropTypes.bool
-}
+    isVerticalCentreAlign: PropTypes.bool,
+};
 
 export default TextImageCard;
-

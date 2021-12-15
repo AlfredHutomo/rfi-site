@@ -12,19 +12,19 @@ import Footer from '../components/global/Footer';
 
 import style from '../styles/pages/components.module.scss';
 
-import ProgramCard from '../components/ProgramCard/';
-import { InfoGrid } from '../components/InfoGrid/';
-import BlogPostCard from '../components/BlogPostCard/';
-import FAQAccordion from '../components/FAQAccordion/';
-import TextImageCard from '../components/TextImageCard/';
-import TimelineCard from '../components/TimelineCard/';
-import USPBanner from '../components/USPBanner/';
-import HomeHero from '../components/HomeHero/';
-import QuoteBlock from '../components/QuoteBlock/';
-import SponsorBlock from '../components/SponsorBlock/';
-import StatisticsBlock from '../components/StatisticsBlock/';
+import ProgramCard from '../components/ProgramCard';
+import { InfoGrid } from '../components/InfoGrid';
+import BlogPostCard from '../components/BlogPostCard';
+import FAQAccordion from '../components/FAQAccordion';
+import TextImageCard from '../components/TextImageCard';
+import TimelineCard from '../components/TimeLineCard';
+import USPBanner from '../components/USPBanner';
+import HomeHero from '../components/HomeHero';
+import QuoteBlock from '../components/QuoteBlock';
+import SponsorBlock from '../components/SponsorBlock';
+import StatisticsBlock from '../components/StatisticsBlock';
 
-export default function Components() {
+export default function Models(props) {
     const spacedContainerClass = [
         style['container'],
         style['container--space-item'],
@@ -177,7 +177,10 @@ export default function Components() {
 
                     <Card style={{ maxWidth: '40rem' }}>
                         <CardMedia>
-                            <img src='https://images.unsplash.com/photo-1518604666860-9ed391f76460' />
+                            <img
+                                src='https://images.unsplash.com/photo-1518604666860-9ed391f76460'
+                                alt={''}
+                            />
                         </CardMedia>
                         <CardContent compact>
                             <h3 className='h4' style={{ marginTop: 0 }}>
@@ -200,13 +203,19 @@ export default function Components() {
                             <p>The media wrapper can come after the content</p>
                         </CardContent>
                         <CardMedia>
-                            <img src='https://images.unsplash.com/photo-1518604666860-9ed391f76460' />
+                            <img
+                                src='https://images.unsplash.com/photo-1518604666860-9ed391f76460'
+                                alt={''}
+                            />
                         </CardMedia>
                     </Card>
 
                     <Card style={{ maxWidth: '40rem' }}>
                         <CardMedia spaced>
-                            <img src='https://images.unsplash.com/photo-1518604666860-9ed391f76460' />
+                            <img
+                                src='https://images.unsplash.com/photo-1518604666860-9ed391f76460'
+                                alt={''}
+                            />
                         </CardMedia>
                         <CardContent compact>
                             <h3 className='h4' style={{ marginTop: 0 }}>
@@ -221,7 +230,10 @@ export default function Components() {
 
                     <Card style={{ maxWidth: '40rem' }} horizontal>
                         <CardMedia>
-                            <img src='https://images.unsplash.com/photo-1518604666860-9ed391f76460' />
+                            <img
+                                src='https://images.unsplash.com/photo-1518604666860-9ed391f76460'
+                                alt={''}
+                            />
                         </CardMedia>
                         <CardContent compact>
                             <h3 className='h4' style={{ marginTop: 0 }}>
@@ -236,7 +248,10 @@ export default function Components() {
 
                     <Card style={{ maxWidth: '40rem' }} horizontal>
                         <CardMedia spaced>
-                            <img src='https://images.unsplash.com/photo-1518604666860-9ed391f76460' />
+                            <img
+                                src='https://images.unsplash.com/photo-1518604666860-9ed391f76460'
+                                alt={''}
+                            />
                         </CardMedia>
                         <CardContent compact>
                             <h3 className='h4' style={{ marginTop: 0 }}>
@@ -260,13 +275,19 @@ export default function Components() {
                             </Button>
                         </CardContent>
                         <CardMedia>
-                            <img src='https://images.unsplash.com/photo-1518604666860-9ed391f76460' />
+                            <img
+                                src='https://images.unsplash.com/photo-1518604666860-9ed391f76460'
+                                alt={''}
+                            />
                         </CardMedia>
                     </Card>
 
                     <Card style={{ maxWidth: '40rem' }} horizontalReverse>
                         <CardMedia>
-                            <img src='https://images.unsplash.com/photo-1518604666860-9ed391f76460' />
+                            <img
+                                src='https://images.unsplash.com/photo-1518604666860-9ed391f76460'
+                                alt={''}
+                            />
                         </CardMedia>
                         <CardContent compact>
                             <h3 className='h4' style={{ marginTop: 0 }}>
@@ -296,38 +317,39 @@ export default function Components() {
                             display: 'grid',
                             gridTemplateColumns: '1fr 1fr',
                             justifyContent: 'center',
-                            alignItems: 'start'
-                        }}>
+                            alignItems: 'start',
+                        }}
+                    >
                         <ProfileCard
-                            style={{maxWidth: '40rem'}}
+                            style={{ maxWidth: '40rem' }}
                             data={{
-                            //image: 'https://source.unsplash.com/random/500×500',
+                                //image: 'https://source.unsplash.com/random/500×500',
                                 name: 'John Doe',
                                 title: 'Title or Position',
-                                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sapien.'
+                                description:
+                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sapien.',
                             }}
                         />
 
                         <ProfileCard
-                            style={{maxWidth: '40rem'}}
+                            style={{ maxWidth: '40rem' }}
                             data={{
-                            //image: 'https://source.unsplash.com/random/500×500',
+                                //image: 'https://source.unsplash.com/random/500×500',
                                 name: 'John Doe',
                                 title: 'Title or Position',
                             }}
                         />
 
                         <ProfileCard
-                            style={{maxWidth: '40rem'}}
+                            style={{ maxWidth: '40rem' }}
                             data={{
-                            //image: 'https://source.unsplash.com/random/500×500',
+                                //image: 'https://source.unsplash.com/random/500×500',
                                 name: 'John Doe',
-                                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sapien.'
+                                description:
+                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In bibendum sapien.',
                             }}
                         />
-
                     </div>
-
                 </div>
             </div>
 
@@ -337,13 +359,16 @@ export default function Components() {
                 </h2>
                 <div className={spacedContainerClass}>
                     <div className={style['container__row']}>
-                        <PageHeader title="Components Page" />
+                        <PageHeader title='Components Page' />
                     </div>
                     <div className={style['container__row']}>
-                        <PageHeader title="Components Page" bgMobile="../public/logo-text-light.png" id="page-header-change-bg"/>
+                        <PageHeader
+                            title='Components Page'
+                            bgMobile='../public/logo-text-light.png'
+                            id='page-header-change-bg'
+                        />
                     </div>
                 </div>
-
             </div>
 
             <div>
@@ -363,17 +388,16 @@ export default function Components() {
                 </div>
             </div>
 
-
             <div>
                 <h2>Program Card</h2>
                 <div className={style['container']}>
                     <ProgramCard
                         //image={Image}
-                        name="RFI Initiation Program"
+                        name='RFI Initiation Program'
                         tags={['ages: 10 - 17', 'beginner']}
-                        description="For players born 2011 and after, who wish to get started in football and advance quickly."
-                        cta="Learn More"
-                        link="#"
+                        description='For players born 2011 and after, who wish to get started in football and advance quickly.'
+                        cta='Learn More'
+                        link='#'
                     ></ProgramCard>
                 </div>
             </div>
@@ -388,20 +412,18 @@ export default function Components() {
                 <h2>FAQ Accordion</h2>
                 <div className={style['container']}>
                     <FAQAccordion
-                        faqlists={
-                            [
-                                {
-                                    question: 'How is the RFI Development Program structured?',
-                                    answer: 'this is test 1'
-                                },
-                                {
-                                    question: 'What is RFI’s approach?',
-                                    answer: 'Our approach is to focus on the individual, within the natural team setting and game environment. Our mentality is to focus on the individual, within the natural team setting and game environment.'
-                                }
-                            ]
-                        }
-                    >
-                    </FAQAccordion>
+                        faqlists={[
+                            {
+                                question:
+                                    'How is the RFI Development Program structured?',
+                                answer: 'this is test 1',
+                            },
+                            {
+                                question: 'What is RFI’s approach?',
+                                answer: 'Our approach is to focus on the individual, within the natural team setting and game environment. Our mentality is to focus on the individual, within the natural team setting and game environment.',
+                            },
+                        ]}
+                    ></FAQAccordion>
                 </div>
             </div>
 
@@ -409,35 +431,31 @@ export default function Components() {
                 <h2>Sponsor Block</h2>
                 <div className={style['container']}>
                     <SponsorBlock
-                        heading="Proudly supported by"
-                        sponsorGold={
-                            [
-                                {
-                                    name: 'Relab',
-                                    image: ''
-                                },
-                                {
-                                    name: 'Sponsor 1',
-                                    image: ''
-                                }
-                            ]
-                        }
-                        sponsorSilver={
-                            [
-                                {
-                                    name: 'Test1',
-                                    image: ''
-                                },
-                                {
-                                    name: 'Test2',
-                                    image: ''
-                                }
-                            ]
-                        }
-                        button1Text="Become a sponsor"
-                        button1Link="#"
-                        button2Text="More about our sponsor"
-                        button2Link="#"
+                        heading='Proudly supported by'
+                        sponsorGold={[
+                            {
+                                name: 'Relab',
+                                image: '',
+                            },
+                            {
+                                name: 'Sponsor 1',
+                                image: '',
+                            },
+                        ]}
+                        sponsorSilver={[
+                            {
+                                name: 'Test1',
+                                image: '',
+                            },
+                            {
+                                name: 'Test2',
+                                image: '',
+                            },
+                        ]}
+                        button1Text='Become a sponsor'
+                        button1Link='#'
+                        button2Text='More about our sponsor'
+                        button2Link='#'
                     >
                         This is description
                     </SponsorBlock>
@@ -450,11 +468,19 @@ export default function Components() {
                     <TextImageCard
                         //image="https://source.unsplash.com/random/300×300"
                         heading="Becoming Melbourne City's second youngest debutant"
-                        buttonLink="http://www.google.com.au"
-                        buttonText="Test"
+                        buttonLink='http://www.google.com.au'
+                        buttonText='Test'
                     >
                         <p>
-                            Max spent his key development years at RFI, where he established himself as a leading talent in Melbourne. Together with his teammates from childhood at RFI, he bossed the NPL system until he was recruited by Melbourne City. For us it's not surprising that at the tender age of 15 he’s already an outstanding talent, we know he will soon represent Australia and serves as an inspiration to the current RFI players.
+                            Max spent his key development years at RFI, where he
+                            established himself as a leading talent in
+                            Melbourne. Together with his teammates from
+                            childhood at RFI, he bossed the NPL system until he
+                            was recruited by Melbourne City. For us it’s not
+                            surprising that at the tender age of 15 he’s already
+                            an outstanding talent, we know he will soon
+                            represent Australia and serves as an inspiration to
+                            the current RFI players.
                         </p>
                         <p>this is a test</p>
                     </TextImageCard>
@@ -462,85 +488,87 @@ export default function Components() {
                     <TextImageCard
                         isImageOnRight
                         isVerticalCentreAlign
-                        preHeading="Development"
+                        preHeading='Development'
                         heading="Becoming Melbourne City's second youngest debutant"
-                        buttonLink="http://www.google.com.au"
-                        buttonText="Test"
+                        buttonLink='http://www.google.com.au'
+                        buttonText='Test'
                     >
                         <p>
-                            Max spent his key development years at RFI, where he established himself as a leading talent in Melbourne. Together with his teammates from childhood at RFI, he bossed the NPL system until he was recruited by Melbourne City. For us its not surprising that at the tender age of 15 hes already an outstanding talent, we know he will soon represent Australia and serves as an inspiration to the current RFI players.
+                            Max spent his key development years at RFI, where he
+                            established himself as a leading talent in
+                            Melbourne. Together with his teammates from
+                            childhood at RFI, he bossed the NPL system until he
+                            was recruited by Melbourne City. For us its not
+                            surprising that at the tender age of 15 hes already
+                            an outstanding talent, we know he will soon
+                            represent Australia and serves as an inspiration to
+                            the current RFI players.
                         </p>
                         <p>this is a test</p>
                     </TextImageCard>
                 </div>
             </div>
 
-
             <div>
                 <h2>Timeline Card</h2>
                 <div className={style['container']}>
-                    <TimelineCard
-                        date="2021"
-                        heading="test heading"
-                    >
+                    <TimelineCard date='2021' heading='test heading'>
                         <p>
-                            Our young players have progressed into elite pathways and have been dominating the competitions every year, making RFI the most prolific player development program in Melbourne.
+                            Our young players have progressed into elite
+                            pathways and have been dominating the competitions
+                            every year, making RFI the most prolific player
+                            development program in Melbourne.
                         </p>
                         <p>this is a test</p>
                     </TimelineCard>
-
                 </div>
             </div>
-
-
-
 
             <div>
                 <h2>USP Banner</h2>
                 <div className={style['container']}>
                     <USPBanner
-                        data={
-                            [
-                                {
-                                    icon: 'icon1',
-                                    description: 'Who could you become? With a number of different programs in RFI, the opportunities to train like a pro player continue to grow and evolve.'
-                                },
-                                {
-                                    icon: 'icon2',
-                                    description: 'adfasdfasdf'
-                                }
-                            ]
-                        }
+                        data={[
+                            {
+                                icon: 'icon1',
+                                description:
+                                    'Who could you become? With a number of different programs in RFI, the opportunities to train like a pro player continue to grow and evolve.',
+                            },
+                            {
+                                icon: 'icon2',
+                                description: 'adfasdfasdf',
+                            },
+                        ]}
                     />
                 </div>
             </div>
-
 
             <div>
                 <h2>Home Hero</h2>
                 <div className={style['container']}>
                     <HomeHero
                         //image="https://source.unsplash.com/random/300×300"
-                        button1Text="Learn more"
-                        button1Link="#"
-                        button2Text="Register Interest"
-                        button2Link="#"
+                        button1Text='Learn more'
+                        button1Link='#'
+                        button2Text='Register Interest'
+                        button2Link='#'
                     >
                         The Future of Youth Football Development
                     </HomeHero>
                 </div>
             </div>
 
-
             <div>
                 <h2>Quote Block</h2>
                 <div className={style['container']}>
                     <QuoteBlock
-                        avatar="https://source.unsplash.com/random/300×300"
-                        author="Santiago Ortiz"
-                        role="Coach, RFI"
+                        avatar='https://source.unsplash.com/random/300×300'
+                        author='Santiago Ortiz'
+                        role='Coach, RFI'
                     >
-                        A LOT OF MEMORIES COME TO MY MIND AS A PLAYER, COACH, OR FAN. THE BEST ONES ARE THOSE WHICH I LIVED AND SHARED WITH PEOPLE.
+                        A LOT OF MEMORIES COME TO MY MIND AS A PLAYER, COACH, OR
+                        FAN. THE BEST ONES ARE THOSE WHICH I LIVED AND SHARED
+                        WITH PEOPLE.
                     </QuoteBlock>
                 </div>
             </div>
@@ -549,30 +577,27 @@ export default function Components() {
                 <h2>Statistics Block</h2>
                 <div className={style['container']}>
                     <StatisticsBlock
-                        heading="Real Success"
-                        statsData={
-                            [
-                                {
-                                    number: '300+',
-                                    content: 'RFI Player'
-                                },
-                                {
-                                    number: '120',
-                                    content: 'Players at A-League Academies'
-                                },
-                                {
-                                    number: '7',
-                                    content: 'Players ademies'
-                                }
-                            ]
-                        }
+                        heading='Real Success'
+                        statsData={[
+                            {
+                                number: '300+',
+                                content: 'RFI Player',
+                            },
+                            {
+                                number: '120',
+                                content: 'Players at A-League Academies',
+                            },
+                            {
+                                number: '7',
+                                content: 'Players ademies',
+                            },
+                        ]}
                     >
-                        Our programs have been helping players with some amazing success stories.
+                        Our programs have been helping players with some amazing
+                        success stories.
                     </StatisticsBlock>
                 </div>
             </div>
-
-
         </div>
     );
 }
