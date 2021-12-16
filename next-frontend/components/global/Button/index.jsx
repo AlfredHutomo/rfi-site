@@ -39,7 +39,7 @@ const Button = (props) => {
 
     if (!props.isExternalLink && to && to[0] !== '#') {
         return (
-            <Link href={to} passHref={to}>
+            <Link href={to} passHref={true}>
                 <Wrapper {...attributes} />
             </Link>
         );
