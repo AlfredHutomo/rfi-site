@@ -22,10 +22,21 @@
       "repeatable": false,
       "component": "sections.block-content"
     },
-    "programs": {
+    "testimonial": {
+      "displayName": "Testimonials",
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.testimonials"
+    },
+    "sponsors": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::program.program"
+      "target": "api::sponsor.sponsor"
+    },
+    "programs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.our-programs"
     }
   }
 }

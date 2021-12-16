@@ -2,7 +2,8 @@
   "collectionName": "components_sections_our_programs",
   "info": {
     "displayName": "Our Programs",
-    "icon": "school"
+    "icon": "school",
+    "description": ""
   },
   "options": {},
   "attributes": {

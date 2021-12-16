@@ -13,7 +13,7 @@ module.exports = createCoreController(
       // make an array of parts that needed to be populated
       const populateList = [
         "hero.hero_card",
-        "programs.tags",
+        "programs.program.tags",
         "block_tiles.content",
       ];
 
