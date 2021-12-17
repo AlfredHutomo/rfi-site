@@ -21,7 +21,8 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 export default function Home(props) {
-    const { hero } = props.data?.attributes;
+    const [hero, programs] = props.data.attributes.content;
+    console.log(programs);
 
     return (
         <PageWrapper>
@@ -184,11 +185,25 @@ export default function Home(props) {
 
 export async function getStaticProps(context) {
     try {
-        const content = await axios.get('http://localhost:1337/api/home-page');
+        const qs = require('qs');
+        const query = qs.stringify(
+            {
+                populate: ['seo', 'content.programs.tags'],
+            },
+            {
+                encodeValuesOnly: true,
+            }
+        );
+
+        console.log(query);
+        const content = await axios.get(
+            `http://localhost:1337/api/pages/1?${query}`
+        );
+        console.log(content.data);
 
         return {
             props: {
-                data: content.data,
+                data: content.data.data,
             },
         };
     } catch (error) {
