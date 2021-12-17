@@ -4,7 +4,8 @@
   "info": {
     "singularName": "header",
     "pluralName": "headers",
-    "displayName": "Header"
+    "displayName": "Header",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,13 +13,22 @@
   "pluginOptions": {},
   "attributes": {
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Navigation": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.link-dropdown",
+        "elements.button-link",
+        "elements.link"
+      ]
     }
   }
 }
