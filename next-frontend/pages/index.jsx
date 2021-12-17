@@ -37,8 +37,9 @@ export default function Home(props) {
                 {hero.heading}
             </HomeHero>
 
-            <SectionWrapper>
+            <SectionWrapper spaceTop="0" spaceBtm="0">
                 <USPBanner
+                    offsetPos
                     data={[
                         {
                             icon: 'icon1',
@@ -64,10 +65,6 @@ export default function Home(props) {
                     RFI, the opportunities to train like a pro player continue
                     to grow and evolve.
                 </TextBlock>
-            </SectionWrapper>
-
-            <SectionWrapper>
-                <InfoGrid />
             </SectionWrapper>
 
             <SectionWrapper>
@@ -102,6 +99,10 @@ export default function Home(props) {
                         },
                     ]}
                 />
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <InfoGrid />
             </SectionWrapper>
 
             <SectionWrapper bgcolor='#eee'>
@@ -176,10 +177,11 @@ export default function Home(props) {
                     ]}
                 ></FAQAccordion>
             </SectionWrapper>
-            {/* <Footer /> */}
+            <Footer />
         </PageWrapper>
     );
 }
+
 export async function getStaticProps(context) {
     try {
         const content = await axios.get('http://localhost:1337/api/home-page');
@@ -196,7 +198,7 @@ export async function getStaticProps(context) {
                 data: {
                     attributes: {
                         hero: {
-                            heading: 'DEFAULT HEADING',
+                            heading: 'THE FUTURE OF YOUTH FOOTBALL DEVELOPMENT',
                         },
                     },
                 },

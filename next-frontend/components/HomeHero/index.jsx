@@ -20,16 +20,6 @@ const HomeHero = (props) => {
 
     return (
         <div className={styles['hero-banner-wrapper']}>
-            {props.image != null ? (
-                <Image
-                    src={props.image}
-                    layout='fill'
-                    objectFit='cover'
-                    alt={''}
-                />
-            ) : (
-                <Image src={DefaultImg} alt={''} />
-            )}
             <div className={styles['hero-banner']}>
                 <div className={styles['hero-banner-content']}>
                     {props.children != null ? (
@@ -64,6 +54,19 @@ const HomeHero = (props) => {
                         ''
                     )}
                 </div>
+            </div>
+
+            <div className={styles['hero-banner-img']}>
+                {props.image != null ? (
+                    <Image
+                        src={props.image}
+                        layout='fill'
+                        objectFit='cover'
+                        alt={''}
+                    />
+                ) : (
+                    <Image src={DefaultImg} alt={''} />
+                )}
             </div>
         </div>
     );

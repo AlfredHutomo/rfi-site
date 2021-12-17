@@ -23,6 +23,7 @@ import HomeHero from '../components/HomeHero';
 import QuoteBlock from '../components/QuoteBlock';
 import SponsorBlock from '../components/SponsorBlock';
 import StatisticsBlock from '../components/StatisticsBlock';
+import LinkGroupBlock from '../components/LinkGroupBlock';
 
 export default function Models(props) {
     const spacedContainerClass = [
