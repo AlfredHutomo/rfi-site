@@ -1,9 +1,9 @@
 @import "../../styles/_base";
 @import "../../styles/_utils";
 
-.usp-banner {
+.link-group-blocks {
     &-wrapper {
-        padding: 0;
+        padding: 1rem 0;
         margin: 0 auto;
         width: 100%;
         max-width: $site-max-width;
@@ -15,9 +15,5 @@
         box-shadow: 0px 4px 16px 0px $color-gs-04;
     }
 
-    &-offset {
-        position: relative;
-        top: -5rem;
-    }
 }
 

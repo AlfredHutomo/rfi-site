@@ -1,18 +1,38 @@
 @import "../../styles/_base";
 @import "../../styles/_utils";
 
-.usp-banner {
+.link-group-block-item {
     &-wrapper {
-        padding: 1rem 0;
-        margin: 0 auto;
-        width: 100%;
-        max-width: $site-max-width;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        border-radius: 4px;
-        background-color: $color-gs-white;
-        box-shadow: 0px 4px 16px 0px $color-gs-04;
+        padding: 2rem;
+    }
+
+    &-icon {
+        font-size: 1.6rem;
+    }
+
+    &-heading {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        color: $color-brand-01;
+        font-family: $font-heading;
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+
+    &-content {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        color: $color-brand-01;
+    }
+
+    &-link {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        color: $color-brand-02;
+        text-decoration: underline;
+        font-family: $font-body;
+        font-size: 1.6rem;
+        font-weight: 600;
     }
 }
 

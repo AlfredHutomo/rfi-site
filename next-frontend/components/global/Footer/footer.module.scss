@@ -1,9 +1,51 @@
 @import '../../../styles/utils';
 @import '../../../styles/base';
 
-.footer {
-    background-color: $color-brand-01;
+.page-footer {
+    margin: 0 auto;
+    width: 100%;
+    max-width: $site-max-width;
+    display: flex;
+    justify-content: space-between;
+
+    &-wrapper {
+        font-family: $font-body;
+        background-color: $color-brand-01;
+    }
+
+    &-top {
+        padding: 2rem $site-mobile-padding;
+    }
+
+    &-logo-text {
+        margin-top: 1.5rem;
+        font-family: $font-heading;
+        font-weight: 700;
+        font-size: 2rem;
+        color: $color-gs-white;
+
+        span {
+            display: block;
+            font-weight: 500;
+            font-size: 1.6rem;
+            letter-spacing: -2.2%;
+            color: $color-gs-white;
+        }
+    }
+
+    &-btm {
+        padding: 2rem $site-mobile-padding;
+        font-size: 1.2rem;
+        color: $color-gs-04;
+        background-color: $color-brand-05;;
+
+        a {
+            text-decoration: underline;
+        }
+    }
 }
+
+
 
 .subscription {
     color: $color-gs-white;

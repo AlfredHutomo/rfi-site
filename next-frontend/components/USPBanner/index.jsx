@@ -9,10 +9,12 @@ import Button from '../global/Button';
 import USPBlock from '../USPBlock';
 
 const USPBanner = (props) => {
-    const { data } = props;
+    const { data, offsetPos } = props;
+
+    const offset = (props.offsetPos) ? ' ' + styles['usp-banner-offset'] : '';
 
     return (
-        <div className={styles['usp-banner-wrapper']}>
+        <div className={styles['usp-banner-wrapper'] + offset}>
             {props.data != null && props.data.length != 0
                 ? props.data.map((usp, i) => (
                       <USPBlock key={i} icon={usp['icon']}>

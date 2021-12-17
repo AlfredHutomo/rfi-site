@@ -3,9 +3,13 @@
 
 .hero-banner {
     margin: 0 auto;
+    width: 100%;
     max-width: $site-max-width;
-    position: relative;
-    z-index: $level-base;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $level-base + 10;
 
     &-wrapper {
         position: relative;
@@ -14,11 +18,7 @@
 
     &-content {
         width: 100%;
-        max-width: 68rem;
-        position: absolute;
-        left: 0;
-        bottom: 20rem;
-        z-index: $level-base + 1;
+        max-width: 70rem;
     }
     &-button {
         width: 100%;
