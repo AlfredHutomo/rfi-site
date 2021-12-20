@@ -40,6 +40,10 @@
             position: relative;
             z-index: $level-middle + 1;
         }
+
+        > span {
+            cursor: pointer;
+        }
     }
 
     &-main {
@@ -196,4 +200,3 @@
         }
     }
 }
-

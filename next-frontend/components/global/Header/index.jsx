@@ -28,16 +28,25 @@ const Header = () => {
             <header className={styles['page-header-main']}>
                 <div className={styles['page-header']}>
                     <div className={styles['page-header-logo']}>
-                        <Image
-                            src={LogoImg}
-                            height={54}
-                            width={202}
-                            alt={''}
-                        />
+                        <Link href={'/'}>
+                            <Image
+                                src={LogoImg}
+                                height={54}
+                                width={202}
+                                alt={''}
+                            />
+                        </Link>
                     </div>
 
-                    <nav className={`${styles['page-navigation-wrapper']} ${mobileMenuActive ? styles['active'] : ''}`}>
-                        <div className={styles['page-navigation-close']} onClick={toggleMobileMenu}>
+                    <nav
+                        className={`${styles['page-navigation-wrapper']} ${
+                            mobileMenuActive ? styles['active'] : ''
+                        }`}
+                    >
+                        <div
+                            className={styles['page-navigation-close']}
+                            onClick={toggleMobileMenu}
+                        >
                             Close
                         </div>
                         <ul className={styles['page-navigation']}>
@@ -47,18 +56,40 @@ const Header = () => {
                                         <a>{link}</a>
                                     </Link>
 
-                                    <ul className={styles['page-navigation-subnav']}>
-                                        <li className={styles['page-navigation-subnav-item']}>
+                                    <ul
+                                        className={
+                                            styles['page-navigation-subnav']
+                                        }
+                                    >
+                                        <li
+                                            className={
+                                                styles[
+                                                    'page-navigation-subnav-item'
+                                                ]
+                                            }
+                                        >
                                             <Link href={'#'}>
                                                 <a>Test 1</a>
                                             </Link>
                                         </li>
-                                        <li className={styles['page-navigation-subnav-item']}>
+                                        <li
+                                            className={
+                                                styles[
+                                                    'page-navigation-subnav-item'
+                                                ]
+                                            }
+                                        >
                                             <Link href={'#'}>
                                                 <a>Test 1</a>
                                             </Link>
                                         </li>
-                                        <li className={styles['page-navigation-subnav-item']}>
+                                        <li
+                                            className={
+                                                styles[
+                                                    'page-navigation-subnav-item'
+                                                ]
+                                            }
+                                        >
                                             <Link href={'#'}>
                                                 <a>Test 1</a>
                                             </Link>
@@ -69,8 +100,12 @@ const Header = () => {
                         </ul>
 
                         <div className={styles['page-navigation-buttons']}>
-                            <Button size='small' variant={'3'}>Member portal</Button>
-                            <Button size='small' variant={'1'}>Register</Button>
+                            <Button size='small' variant={'3'}>
+                                Member portal
+                            </Button>
+                            <Button size='small' variant={'1'}>
+                                Register
+                            </Button>
                         </div>
                     </nav>
 
@@ -79,12 +114,11 @@ const Header = () => {
                             <></>
                         ) : (
                             <>
-                            <MdMenu onClick={toggleMobileMenu} />
-                            Menu
+                                <MdMenu onClick={toggleMobileMenu} />
+                                Menu
                             </>
                         )}
                     </div>
-
                 </div>
             </header>
         </div>
@@ -92,4 +126,3 @@ const Header = () => {
 };
 
 export default Header;
-

@@ -29,6 +29,11 @@
         "elements.button-link",
         "elements.link"
       ]
+    },
+    "Buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.button-link"
     }
   }
 }
