@@ -13,7 +13,7 @@ const FAQAccordion = (props) => {
 
     const toggleAccordion = (index) => {
         //setAccordionState((state) => !state);
-        console.log(index);
+        // console.log(index);
     };
 
     return (
@@ -67,10 +67,14 @@ const FAQAccordion = (props) => {
                                 onClick={toggleAccordion(i)}
                             >
                                 <h5>{faq.question}</h5>
-                                <div><ExpandMoreIcon sx={{ fontSize: 20 }} /></div>
+                                <div>
+                                    <ExpandMoreIcon sx={{ fontSize: 20 }} />
+                                </div>
                             </div>
                             <div
-                                className={`${styles['faq-accordion-list-item-content']} ${accordionExpand ? styles['active'] : ''}`}
+                                className={`${
+                                    styles['faq-accordion-list-item-content']
+                                } ${accordionExpand ? styles['active'] : ''}`}
                             >
                                 {faq.answer}
                             </div>

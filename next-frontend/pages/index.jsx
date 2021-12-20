@@ -18,11 +18,11 @@ import { InfoGrid } from '../components/InfoGrid/';
 import FAQAccordion from '../components/FAQAccordion/';
 
 import axios from 'axios';
-import { useEffect } from 'react';
+import { fetchAPI } from '../utils/api';
+import { homeDefaultData } from '../utils/default';
 
-export default function Home(props) {
-    const [hero, ourPrograms] = props.data.attributes.content;
-    console.log(ourPrograms.programs);
+const Home = (props) => {
+    const [hero, ourPrograms] = props.pageData.attributes.content;
 
     return (
         <PageWrapper>
@@ -35,8 +35,7 @@ export default function Home(props) {
                 button2Text='Register Interest'
                 button2Link='#'
             >
-                {//hero.heading}
-                'Default heading'}
+                {hero.heading}
             </HomeHero>
 
             <SectionWrapper spaceTop='0' spaceBtm='0'>
@@ -182,45 +181,27 @@ export default function Home(props) {
             <Footer />
         </PageWrapper>
     );
-}
+};
 
-export async function getStaticProps(context) {
+export const getStaticProps = async (context) => {
     try {
-        const qs = require('qs');
-        const query = qs.stringify(
-            {
-                populate: ['seo', 'content.programs.tags'],
-            },
-            {
-                encodeValuesOnly: true,
-            }
-        );
-
-        const content = await axios.get(
-            `http://localhost:1337/api/pages/1?${query}`
-        );
+        const respond = await fetchAPI('/pages/1', {
+            populate: ['content.programs.tags'],
+        });
 
         return {
             props: {
-                data: content.data.data,
+                pageData: respond.data,
             },
         };
     } catch (error) {
         return {
             props: {
                 // default data goes here
-                data: {
-                    attributes: {
-                        content: [
-                            {
-                                heading:
-                                    'THE FUTURE OF YOUTH FOOTBALL DEVELOPMENT',
-                            },
-                            {},
-                        ],
-                    },
-                },
+                pageData: homeDefaultData,
             },
         };
     }
-}
+};
+
+export default Home;

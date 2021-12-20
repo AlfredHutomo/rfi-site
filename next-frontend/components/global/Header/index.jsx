@@ -40,14 +40,24 @@ const Header = () => {
                         </Link>
                     </div>
 
-                    <nav className={`${styles['page-navigation-wrapper']} ${mobileMenuActive ? styles['active'] : ''}`}>
-                        <div className={styles['page-navigation-close']} onClick={toggleMobileMenu}>
+                    <nav
+                        className={`${styles['page-navigation-wrapper']} ${
+                            mobileMenuActive ? styles['active'] : ''
+                        }`}
+                    >
+                        <div
+                            className={styles['page-navigation-close']}
+                            onClick={toggleMobileMenu}
+                        >
                             <CloseIcon sx={{ fontSize: 40 }} />
                         </div>
                         <ul className={styles['page-navigation']}>
                             {links.map((link, i) => (
-                                <li className={styles['page-navigation-item']}>
-                                    <Link href={'#'} key={i} passHref={true}>
+                                <li
+                                    key={i}
+                                    className={styles['page-navigation-item']}
+                                >
+                                    <Link href={'#'} passHref>
                                         <a>{link}</a>
                                     </Link>
 
@@ -108,7 +118,10 @@ const Header = () => {
                         {mobileMenuActive ? (
                             <></>
                         ) : (
-                            <MenuIcon sx={{ fontSize: 40 }} onClick={toggleMobileMenu} />
+                            <MenuIcon
+                                sx={{ fontSize: 40 }}
+                                onClick={toggleMobileMenu}
+                            />
                         )}
                     </div>
                 </div>

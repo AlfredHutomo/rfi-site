@@ -2,7 +2,8 @@
   "collectionName": "components_elements_links",
   "info": {
     "displayName": "Link",
-    "icon": "link"
+    "icon": "link",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,6 +12,16 @@
     },
     "url": {
       "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "isExternalLink": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

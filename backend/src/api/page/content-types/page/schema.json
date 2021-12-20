@@ -27,12 +27,12 @@
         "sections.block-content"
       ]
     },
-    "pageName": {
+    "shortName": {
       "type": "string"
     },
-    "identifier": {
+    "slug": {
       "type": "uid",
-      "targetField": "pageName"
+      "targetField": "shortName"
     }
   }
 }

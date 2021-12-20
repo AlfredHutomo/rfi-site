@@ -14,6 +14,13 @@
   "attributes": {
     "message": {
       "type": "string"
+    },
+    "footer_Menu": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.link-dropdown",
+        "elements.link"
+      ]
     }
   }
 }
