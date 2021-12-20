@@ -6,6 +6,8 @@
     width: 100%;
     max-width: $site-max-width;
     display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
     justify-content: space-between;
 
     &-wrapper {
@@ -13,12 +15,18 @@
         background-color: $color-brand-01;
     }
 
+    &-col {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
     &-top {
-        padding: 2rem $site-mobile-padding;
+        padding: 5rem $site-mobile-padding;
     }
 
     &-logo-text {
         margin-top: 1.5rem;
+        margin-bottom: 0;
         font-family: $font-heading;
         font-weight: 700;
         font-size: 2rem;
@@ -33,6 +41,28 @@
         }
     }
 
+    &-misc {
+        margin-top: 2rem;
+        color: $color-gs-03;
+        font-family: $font-body;
+        font-size: 1.6rem;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            font-family: inherit;
+            font-size: inherit;
+        }
+    }
+
+    &-social-media {
+        margin-top: 2rem;
+        color: $color-gs-white;
+    }
+    &-cta {
+        margin-top: 2rem;
+    }
+
     &-btm {
         padding: 2rem $site-mobile-padding;
         font-size: 1.2rem;
@@ -43,57 +73,127 @@
             text-decoration: underline;
         }
     }
-}
 
-
-
-.subscription {
-    color: $color-gs-white;
-
-    width: 400px;
-
-    .input {
-        width: 100%;
-        padding: 1.3rem 1.6rem;
-
-        border-radius: 4px;
-    }
-
-    .button {
-        border-radius: 4px;
-        margin-top: 1.9rem;
-        width: 100%;
-        padding: 0.9rem;
-
-        background-color: transparent;
-        border: 2px solid $color-gs-white;
+    &-nav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 1.6rem;
         color: $color-gs-white;
+        column-count: 2;
+        column-gap: 2rem;
 
-        font-weight: 700;
+        &-item {
+            display: block;
+            margin: 0;
+            font-size: inherit;
+            page-break-inside: avoid;
+            break-inside: avoid;
 
-        cursor: pointer;
+            &:last-child {
+                padding: 0;
+            }
 
-        &:hover {
-            background-color: $color-gs-white;
-            color: $color-brand-01;
-            transition: all 0.3s ease-in-out;
+            > a {
+                display: block;
+                padding: 2rem 1rem;
+                font-family: $font-heading;
+                font-weight: bold;
+                font-size: 1.6rem;
+            }
         }
     }
-}
 
-.footer--end {
-    background: #1f265e;
-    color: $color-gs-02;
+    &-subnav {
+        margin: 0;
+        padding: 0 0 2rem 0;
+        list-style: none;
 
-    height: 65px;
+        &-item {
+            margin: 0;
 
-    .footer--end--inner {
-        height: 100%;
+            > a {
+                display: block;
+                padding: 0.7rem 1rem;
+                font-family: $font-body;
+                font-size: 1.6rem;
+                color: $color-gs-04;
+            }
+        }
+    }
 
-        max-width: $site-max-width;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: auto;
+    &-subscription {
+        min-width: 25rem;
+        padding: 1.7rem 0 0 0;
+        color: $color-gs-05;
+
+        &-heading {
+            margin: 0;
+            color: $color-gs-white;
+            font-size: 1.6rem;
+        }
+
+        &-content {
+            margin-top: 2rem;
+            color: inherit;
+            font-size: 1.6rem;
+            font-family: $font-body;
+        }
+
+        &-form {
+            margin-top: 3rem;
+
+            input {
+                width: 100%;
+                padding: 1.3rem 1.6rem;
+                font-size: 1.6rem;
+                border: 1px solid $color-gs-02;
+                border-radius: 4px;
+            }
+
+            &-btn {
+                width: 100%;
+                margin-top: 2rem;
+            }
+        }
+
+
+        .button {
+            border-radius: 4px;
+            margin-top: 1.9rem;
+            width: 100%;
+            padding: 0.9rem;
+
+            background-color: transparent;
+            border: 2px solid $color-gs-white;
+            color: $color-gs-white;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-gs-white;
+                color: $color-brand-01;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+
+    .footer--end {
+        background: #1f265e;
+        color: $color-gs-02;
+
+        height: 65px;
+
+        .footer--end--inner {
+            height: 100%;
+
+            max-width: $site-max-width;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+        }
     }
 }

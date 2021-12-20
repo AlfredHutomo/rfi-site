@@ -9,7 +9,7 @@
     max-width: $site-max-width;
 
     @include bp-down($bp-md) {
-        display: block;
+        justify-content: space-between;
     }
 
     &-wrapper {
@@ -32,6 +32,7 @@
     }
 
     &-logo {
+        display: block;
         padding-right: 2rem;
         min-width: 222px;
         flex-grow: 1;
@@ -39,6 +40,7 @@
         @include bp-down($bp-md) {
             position: relative;
             z-index: $level-middle + 1;
+            flex-grow: 0;
         }
     }
 
@@ -86,9 +88,10 @@
         display: none;
         position: fixed;
         font-size: 1.6rem;
-        top: 3rem;
-        right: 3rem;
+        top: 5rem;
+        right: 2rem;
         cursor: pointer;
+        z-index: $level-middle + 2;
 
         @include bp-down($bp-md) {
             display: block;
@@ -192,7 +195,7 @@
 
         @include bp-down($bp-md) {
             display: block;
-            font-size: 50px;
+            cursor: pointer;
         }
     }
 }

@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
+import { useState } from 'react';
 
 import styles from './FAQAccordion.module.scss';
 
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 const FAQAccordion = (props) => {
     const { faqlists } = props;
+    const [accordionExpand, setAccordionState] = useState(false);
+
+    const toggleAccordion = (index) => {
+        //setAccordionState((state) => !state);
+        console.log(index);
+    };
 
     return (
         <div className={styles['faq-accordion-wrapper']}>
@@ -55,13 +64,13 @@ const FAQAccordion = (props) => {
                                 className={
                                     styles['faq-accordion-list-item-heading']
                                 }
+                                onClick={toggleAccordion(i)}
                             >
                                 <h5>{faq.question}</h5>
+                                <div><ExpandMoreIcon sx={{ fontSize: 20 }} /></div>
                             </div>
                             <div
-                                className={
-                                    styles['faq-accordion-list-item-content']
-                                }
+                                className={`${styles['faq-accordion-list-item-content']} ${accordionExpand ? styles['active'] : ''}`}
                             >
                                 {faq.answer}
                             </div>

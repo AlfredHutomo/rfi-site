@@ -13,6 +13,7 @@
         }
     }
     &-list {
+        width: 100%;
         margin: 0;
         padding: 2rem;
         list-style: none;
@@ -29,7 +30,9 @@
         }
     }
     &-list-item-heading {
+        display: flex;
         padding: 2rem;
+        justify-content: space-between;
         cursor: pointer;
 
         h5 {
@@ -39,9 +42,14 @@
         }
     }
     &-list-item-content {
+        display: none;
         padding: 0 2rem 2rem 2rem;
         line-height: 2.4rem;
         font-size: 1.6rem;
+
+        &.active {
+            display: block;
+        }
     }
 }
 

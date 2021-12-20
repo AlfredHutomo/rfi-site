@@ -15,29 +15,35 @@ const Subscription = () => {
     };
 
     return (
-        <div className={styles.subscription}>
-            <h5 className={styles.h5}>Stay up to date</h5>
-            <p>Sign up for our newsletter to stay informed on RFI updates.</p>
-            {submitted ? (
-                <h1>Sumbmitted</h1>
-            ) : (
-                <>
-                    <div>
-                        <input
-                            className={styles.input}
-                            type='text'
-                            value={email}
-                            onChange={({ target }) => {
-                                setEmail(target.value);
-                            }}
-                            placeholder='Your email address'
-                        />
-                    </div>
-                    <button className={styles.button} onClick={handleSubmit}>
-                        Subscribe
-                    </button>
-                </>
-            )}
+        <div className={styles['page-footer-subscription']}>
+            <h5 className={'h5 ' + styles['page-footer-subscription-heading']}>Stay up to date</h5>
+
+            <div className={styles['page-footer-subscription-content']}>
+                Sign up for our newsletter to stay informed on RFI updates.
+            </div>
+
+            <div className={styles['page-footer-subscription-form']}>
+                {submitted ? (
+                    <h1>Sumbmitted</h1>
+                ) : (
+                    <>
+                        <div>
+                            <input
+                                //className={styles.input}
+                                type='text'
+                                value={email}
+                                onChange={({ target }) => {
+                                    setEmail(target.value);
+                                }}
+                                placeholder='Your email address'
+                            />
+                        </div>
+                        <Button variant="5" className={styles['page-footer-subscription-form-btn']} onClick={handleSubmit}>
+                            Subscribe
+                        </Button>
+                    </>
+                )}
+            </div>
         </div>
     );
 };

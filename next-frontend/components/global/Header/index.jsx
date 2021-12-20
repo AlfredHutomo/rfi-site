@@ -3,11 +3,13 @@ import styles from './header.module.scss';
 import LogoImg from '../../../public/logo-with-text.svg';
 
 import Link from 'next/link';
-import { MdMenu } from 'react-icons/md';
 
 import SectionWrapper from '../SectionWrapper';
 import Button from '../Button';
 import { useState } from 'react';
+
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Header = () => {
     const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
@@ -38,7 +40,7 @@ const Header = () => {
 
                     <nav className={`${styles['page-navigation-wrapper']} ${mobileMenuActive ? styles['active'] : ''}`}>
                         <div className={styles['page-navigation-close']} onClick={toggleMobileMenu}>
-                            Close
+                            <CloseIcon sx={{ fontSize: 40 }} />
                         </div>
                         <ul className={styles['page-navigation']}>
                             {links.map((link, i) => (
@@ -78,10 +80,7 @@ const Header = () => {
                         {mobileMenuActive ? (
                             <></>
                         ) : (
-                            <>
-                            <MdMenu onClick={toggleMobileMenu} />
-                            Menu
-                            </>
+                            <MenuIcon sx={{ fontSize: 40 }} onClick={toggleMobileMenu} />
                         )}
                     </div>
 
