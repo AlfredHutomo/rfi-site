@@ -21,8 +21,8 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 export default function Home(props) {
-    const [hero, programs] = props.data.attributes.content;
-    console.log(programs);
+    const [hero, ourPrograms] = props.data.attributes.content;
+    console.log(ourPrograms.programs);
 
     return (
         <PageWrapper>
@@ -35,10 +35,11 @@ export default function Home(props) {
                 button2Text='Register Interest'
                 button2Link='#'
             >
-                {hero.heading}
+                {//hero.heading}
+                'Default heading'}
             </HomeHero>
 
-            <SectionWrapper spaceTop="0" spaceBtm="0">
+            <SectionWrapper spaceTop='0' spaceBtm='0'>
                 <USPBanner
                     offsetPos
                     data={[
@@ -195,11 +196,9 @@ export async function getStaticProps(context) {
             }
         );
 
-        console.log(query);
         const content = await axios.get(
             `http://localhost:1337/api/pages/1?${query}`
         );
-        console.log(content.data);
 
         return {
             props: {
@@ -212,9 +211,13 @@ export async function getStaticProps(context) {
                 // default data goes here
                 data: {
                     attributes: {
-                        hero: {
-                            heading: 'THE FUTURE OF YOUTH FOOTBALL DEVELOPMENT',
-                        },
+                        content: [
+                            {
+                                heading:
+                                    'THE FUTURE OF YOUTH FOOTBALL DEVELOPMENT',
+                            },
+                            {},
+                        ],
                     },
                 },
             },

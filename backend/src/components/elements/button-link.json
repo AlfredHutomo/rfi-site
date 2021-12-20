@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_button_links",
+  "info": {
+    "displayName": "Button Link",
+    "icon": "external-link-square-alt"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "primary_outline",
+        "secondary_outline"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

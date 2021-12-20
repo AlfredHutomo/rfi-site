@@ -42,6 +42,10 @@
             z-index: $level-middle + 1;
             flex-grow: 0;
         }
+
+        > span {
+            cursor: pointer;
+        }
     }
 
     &-main {
@@ -199,4 +203,3 @@
         }
     }
 }
-
