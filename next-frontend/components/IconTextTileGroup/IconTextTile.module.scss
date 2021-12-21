@@ -1,0 +1,49 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.icon-text-tile-group {
+    &-wrapper {
+        margin: 0 auto;
+        width: 100%;
+        max-width: $site-max-width;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+}
+
+.icon-text-tile {
+    &-wrapper {
+        min-width: 22rem;
+        padding: 2rem;
+        flex-basis: 0;
+        flex-grow: 1;
+        background-color: $color-gs-white;
+        border-radius: 4px;
+        box-shadow: 0px 4px 16px 0px $color-gs-04;
+    }
+
+    &-icon {
+        font-size: 1.6rem;
+        color: $color-brand-02;
+    }
+
+    &-heading {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        color: $color-brand-01;
+        line-height: 1.2em;
+        color: $color-brand-02;
+    }
+
+    &-content {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        color: $color-brand-01;
+        font-size: 1.6rem;
+        font-family: $font-body;
+        line-height: 1.5em;
+    }
+}
+

@@ -21,6 +21,10 @@ import axios from 'axios';
 import { fetchAPI } from '../utils/api';
 import { homeDefaultData } from '../utils/default';
 
+//import Icon from '@material-ui/core/Icon';
+
+
+
 const Home = (props) => {
     const [hero, ourPrograms] = props.pageData.attributes.content;
 
@@ -43,7 +47,7 @@ const Home = (props) => {
                     offsetPos
                     data={[
                         {
-                            icon: 'icon1',
+                            icon: 'TrackChanges',
                             description:
                                 'Who could you become? With a number of different programs in RFI, the opportunities to train like a pro player continue to grow and evolve.',
                         },
@@ -118,9 +122,19 @@ const Home = (props) => {
                 </QuoteBlock>
             </SectionWrapper>
 
+
+            <SectionWrapper
+                spaceBtm="0"
+            >
+                <TextBlock
+                    h2="Proudly supported by"
+                >
+                    Their generosity and support of our football development program is acknowledged and very much appreciated.
+                </TextBlock>
+            </SectionWrapper>
+
             <SectionWrapper>
                 <SponsorBlock
-                    heading='Proudly supported by'
                     sponsorGold={[
                         {
                             name: 'Relab',
@@ -154,9 +168,7 @@ const Home = (props) => {
                     button1Link='#'
                     button2Text='More about our sponsor'
                     button2Link='#'
-                >
-                    This is description
-                </SponsorBlock>
+                />
             </SectionWrapper>
 
             <SectionWrapper>

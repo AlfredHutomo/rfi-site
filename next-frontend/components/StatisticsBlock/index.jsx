@@ -10,7 +10,7 @@ const StatisticsBlock = (props) => {
 
     return (
         <div className={styles['statistics-block-wrapper']}>
-            <h2 className='h2'>{props.heading}</h2>
+            <h2 className={'h2 ' + styles['statistics-block-heading']}>{props.heading}</h2>
             <div className={styles['statistics-block-description']}>
                 {props.children != null ? props.children : ''}
             </div>

@@ -7,20 +7,34 @@
         text-align: center;
     }
 
+    &-heading {
+        margin: 0;
+    }
+
+    &-description {
+        margin: 3rem auto 0 auto;
+        max-width: 70rem;
+        font-size: 1.6rem;
+        font-family: $font-body;
+    }
+
     &-data {
         margin-top: 5rem;
         display: flex;
         flex-wrap: wrap;
+        gap: 2rem;
         text-align: left;
         justify-content: space-between;
     }
+
     &-data-detail {
         min-width: 26rem;
         font-family: $font-heading;
         font-weight: 400;
-        font-size: 10rem;
+        font-size: 9.8rem;
+        flex-basis: 1;
+        flex-grow: 1;
         color: $color-brand-02;
-        border: 1px solid #f30;
 
         span {
             display: block;

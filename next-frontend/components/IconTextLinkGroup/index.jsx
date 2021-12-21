@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './LinkGroupBlockRow.module.scss';
+import styles from './IconTextLinkGroup.module.scss';
 
-import LinkGroupBlock from '../LinkGroupBlock';
+import IconTextLink from './IconTextLink';
 
-const LinkGroupBlockRow = (props) => {
+const IconTextLinkGroup = (props) => {
 
     const {
         data,
@@ -17,27 +17,28 @@ const LinkGroupBlockRow = (props) => {
             {
                 (props.data != null && props.data.length != 0) ?
                     props.data.map((item, i) => (
-                        <LinkGroupBlock
+                        <IconTextLink
                             key={i}
                             icon={item['icon']}
                             heading={item['heading']}
                             linkText={item['linkText']}
                             linkUrl={item['linkUrl']}
                         >
-                        </LinkGroupBlock>
+                            {item['content']}
+                        </IconTextLink>
                     )) : ''
             }
         </div>
     );
 }
 
-LinkGroupBlockRow.propTypes = {
+IconTextLinkGroup.propTypes = {
 
 }
 
-LinkGroupBlockRow.defaultProps = {
+IconTextLinkGroup.defaultProps = {
     data: null,
 }
 
-export default LinkGroupBlockRow;
+export default IconTextLinkGroup;
 

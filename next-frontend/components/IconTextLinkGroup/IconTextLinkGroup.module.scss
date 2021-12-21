@@ -1,9 +1,22 @@
 @import "../../styles/_base";
 @import "../../styles/_utils";
 
+.link-group-blocks {
+    &-wrapper {
+        margin: 0 auto;
+        width: 100%;
+        max-width: $site-max-width;
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+}
+
 .link-group-block-item {
     &-wrapper {
-        padding: 2rem;
+        flex-basis: 0;
+        flex-grow: 1;
     }
 
     &-icon {
@@ -15,19 +28,25 @@
         margin-bottom: 0;
         color: $color-brand-01;
         font-family: $font-heading;
+        line-height: 1.2em;
         font-size: 2.4rem;
         font-weight: 700;
     }
 
     &-content {
+        max-width: 22rem;
         margin-top: 2rem;
         margin-bottom: 0;
         color: $color-brand-01;
+        font-size: 1.6rem;
+        font-family: $font-body;
+        line-height: 1.5em;
     }
 
     &-link {
-        margin-top: 2rem;
+        margin-top: 1rem;
         margin-bottom: 0;
+        display: inline-block;
         color: $color-brand-02;
         text-decoration: underline;
         font-family: $font-body;

@@ -8,7 +8,6 @@ import Button from '../global/Button';
 
 const SponsorBlock = (props) => {
     const {
-        heading,
         sponsorGold,
         sponsorSilver,
         button1Text,
@@ -19,12 +18,6 @@ const SponsorBlock = (props) => {
 
     return (
         <div className={styles['sponsor-block-wrapper']}>
-            <h2 className={'h2 ' + styles['sponsor-block-heading']}>
-                {props.heading}
-            </h2>
-            <div className={styles['sponsor-block-description']}>
-                {props.children != null ? props.children : ''}
-            </div>
             <div className={styles['sponsor-block-tier']}>
                 {props.sponsorGold.length != 0 || props.sponsorGold != null
                     ? props.sponsorGold.map((sponsor, i) =>

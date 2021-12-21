@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './LinkGroupBlock.module.scss';
+import styles from './IconTextLinkGroup.module.scss';
 
-const LinkGroupBlock = (props) => {
+const IconTextLink = (props) => {
 
     const {
         icon,
@@ -43,8 +43,8 @@ const LinkGroupBlock = (props) => {
     );
 }
 
-LinkGroupBlock.propTypes = {
+IconTextLink.propTypes = {
 }
 
-export default LinkGroupBlock;
+export default IconTextLink;
 

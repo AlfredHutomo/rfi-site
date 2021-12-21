@@ -21,3 +21,29 @@
     }
 }
 
+.usp-block {
+    &-wrapper {
+        padding: 2rem;
+        max-width: 25rem;
+        min-width: 20rem;
+        text-align: center;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    &-icon {
+        color: $color-brand-02;
+        font-size: 1.6rem;
+    }
+
+    &-content {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        font-family: $font-heading;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $color-brand-01;
+    }
+}
+

@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import styles from './USPBanner.module.scss';
 
 import Button from '../global/Button';
-import USPBlock from '../USPBlock';
+import USPBlock from './USPBlock';
 
 const USPBanner = (props) => {
     const { data, offsetPos } = props;
@@ -35,3 +35,4 @@ USPBanner.propTypes = {
 };
 
 export default USPBanner;
+

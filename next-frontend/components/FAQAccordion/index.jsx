@@ -9,11 +9,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const FAQAccordion = (props) => {
     const { faqlists } = props;
-    const [accordionExpand, setAccordionState] = useState(false);
+    const [accordionExpand, setAccordionState] = useState();
 
-    const toggleAccordion = (index) => {
+    const toggleAccordion = (event) => {
         //setAccordionState((state) => !state);
-        // console.log(index);
+        console.log(event.target);
     };
 
     return (
@@ -64,13 +64,14 @@ const FAQAccordion = (props) => {
                                 className={
                                     styles['faq-accordion-list-item-heading']
                                 }
-                                onClick={toggleAccordion(i)}
+                                onClick={toggleAccordion}
                             >
                                 <h5>{faq.question}</h5>
                                 <div>
                                     <ExpandMoreIcon sx={{ fontSize: 20 }} />
                                 </div>
                             </div>
+
                             <div
                                 className={`${
                                     styles['faq-accordion-list-item-content']

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import clsx from 'clsx';
 
-import styles from './USPBlock.module.scss';
+import styles from './USPBanner.module.scss';
 
 import Button from '../global/Button';
 
