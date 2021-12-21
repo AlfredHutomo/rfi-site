@@ -7,33 +7,31 @@ import styles from './USPBanner.module.scss';
 
 import Button from '../global/Button';
 
+import { Icon } from '@mui/material';
+
 const USPBlock = (props) => {
-
-    const {
-        icon
-    } = props;
-
+    const { icon } = props;
 
     return (
         <div className={styles['usp-block-wrapper']}>
-            {
-                (props.icon != null) ?
+            {props.icon != null ? (
                 <div className={styles['usp-block-icon']}>
-                    {props.icon}
-                </div> : ''
-            }
-            {
-                (props.children != null) ?
+                    <Icon>{props.icon}</Icon>
+                </div>
+            ) : (
+                ''
+            )}
+            {props.children != null ? (
                 <h5 className={'h5 ' + styles['usp-block-content']}>
                     {props.children}
-                </h5> : ''
-            }
+                </h5>
+            ) : (
+                ''
+            )}
         </div>
     );
-}
+};
 
-USPBlock.propTypes = {
-}
+USPBlock.propTypes = {};
 
 export default USPBlock;
-

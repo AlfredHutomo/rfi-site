@@ -17,13 +17,8 @@ import SponsorBlock from '../components/SponsorBlock/';
 import { InfoGrid } from '../components/InfoGrid/';
 import FAQAccordion from '../components/FAQAccordion/';
 
-import axios from 'axios';
 import { fetchAPI } from '../utils/api';
 import { homeDefaultData } from '../utils/default';
-
-//import Icon from '@material-ui/core/Icon';
-
-
 
 const Home = (props) => {
     const [hero, ourPrograms] = props.pageData.attributes.content;
@@ -31,7 +26,6 @@ const Home = (props) => {
     return (
         <PageWrapper>
             <Header />
-
             <HomeHero
                 //image="https://source.unsplash.com/random/900×900"
                 button1Text='Learn more'
@@ -47,17 +41,17 @@ const Home = (props) => {
                     offsetPos
                     data={[
                         {
-                            icon: 'TrackChanges',
+                            icon: 'location_on',
                             description:
                                 'Who could you become? With a number of different programs in RFI, the opportunities to train like a pro player continue to grow and evolve.',
                         },
                         {
-                            icon: 'icon1',
+                            icon: 'track_changes',
                             description:
                                 'Who could you become? With a number of different programs in RFI, the opportunities to train like a pro player continue to grow and evolve.',
                         },
                         {
-                            icon: 'icon2',
+                            icon: 'people_outline',
                             description: 'adfasdfasdf',
                         },
                     ]}
@@ -122,14 +116,10 @@ const Home = (props) => {
                 </QuoteBlock>
             </SectionWrapper>
 
-
-            <SectionWrapper
-                spaceBtm="0"
-            >
-                <TextBlock
-                    h2="Proudly supported by"
-                >
-                    Their generosity and support of our football development program is acknowledged and very much appreciated.
+            <SectionWrapper spaceBtm='0'>
+                <TextBlock h2='Proudly supported by'>
+                    Their generosity and support of our football development
+                    program is acknowledged and very much appreciated.
                 </TextBlock>
             </SectionWrapper>
 
