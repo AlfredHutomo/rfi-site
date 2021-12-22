@@ -19,7 +19,7 @@ const SponsorBlock = (props) => {
     return (
         <div className={styles['sponsor-block-wrapper']}>
             <div className={styles['sponsor-block-tier']}>
-                {props.sponsorGold.length != 0 || props.sponsorGold != null
+                {props.sponsorGold != null && props.sponsorGold.length != 0
                     ? props.sponsorGold.map((sponsor, i) =>
                           sponsor.image ? (
                               <div

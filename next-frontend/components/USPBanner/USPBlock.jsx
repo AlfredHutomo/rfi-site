@@ -16,7 +16,7 @@ const USPBlock = (props) => {
         <div className={styles['usp-block-wrapper']}>
             {props.icon != null ? (
                 <div className={styles['usp-block-icon']}>
-                    <Icon>{props.icon}</Icon>
+                    <Icon className={styles['usp-block-icon-mui']}>{props.icon}</Icon>
                 </div>
             ) : (
                 ''

@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.scss';
 
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
-import LinkGroupBlockRow from '../components/LinkGroupBlockRow/';
+import IconTextLinkGroup from '../components/IconTextLinkGroup/';
 import LinkGroup from '../components/LinkGroup/';
 import IconTextTileGroup from '../components/IconTextTileGroup/';
 import TextBlock from '../components/TextBlock';
@@ -85,7 +85,7 @@ export default function Philosophy() {
             </SectionWrapper>
 
             <SectionWrapper bgcolor="#fff">
-                <LinkGroupBlockRow
+                <IconTextLinkGroup
                     data={[
                         {
                             icon: 'icon1',
@@ -109,7 +109,7 @@ export default function Philosophy() {
                         },
                     ]}
                 >
-                </LinkGroupBlockRow>
+                </IconTextLinkGroup>
             </SectionWrapper>
 
             <SectionWrapper>
@@ -160,6 +160,8 @@ export default function Philosophy() {
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
+
+            <Footer />
         </PageWrapper>
     );
 }
