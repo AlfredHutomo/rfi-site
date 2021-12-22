@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rfi_team_members",
+  "info": {
+    "singularName": "rfi-team-member",
+    "pluralName": "rfi-team-members",
+    "displayName": "RFI Team Member"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "profile_picture": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

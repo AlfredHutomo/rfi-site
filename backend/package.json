@@ -9,11 +9,10 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.0.0",
-    "@strapi/plugin-users-permissions": "4.0.0",
-    "@strapi/strapi": "4.0.0",
+    "@strapi/plugin-i18n": "4.0.2",
+    "@strapi/plugin-users-permissions": "4.0.2",
+    "@strapi/strapi": "4.0.2",
     "pg-connection-string": "^2.5.0",
     "sqlite3": "5.0.2"
   },
@@ -29,6 +28,6 @@
   },
   "license": "MIT",
   "volta": {
-    "node": "14.18.2"
+    "node": "16.13.1"
   }
 }
