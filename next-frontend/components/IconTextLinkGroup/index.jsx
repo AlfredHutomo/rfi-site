@@ -8,12 +8,14 @@ import IconTextLink from './IconTextLink';
 const IconTextLinkGroup = (props) => {
 
     const {
+        isDarkBackground,
         data,
     } = props;
 
+    //const alterstyle = (isDarkBackground != null) ? styles['alternative'] : '';
 
     return (
-        <div className={styles['link-group-blocks-wrapper']}>
+        <div className={`${styles['link-group-blocks-wrapper']} ${props.isDarkBackground ? styles['alternative'] : ''}`}>
             {
                 (props.data != null && props.data.length != 0) ?
                     props.data.map((item, i) => (
@@ -33,7 +35,6 @@ const IconTextLinkGroup = (props) => {
 }
 
 IconTextLinkGroup.propTypes = {
-
 }
 
 IconTextLinkGroup.defaultProps = {

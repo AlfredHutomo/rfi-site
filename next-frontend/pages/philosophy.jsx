@@ -63,6 +63,29 @@ export default function Philosophy() {
                 </TextImageCard>
             </SectionWrapper>
 
+            <SectionWrapper bgcolor="#010a4f">
+                <IconTextLinkGroup
+                    isDarkBackground
+                    data={[
+                        {
+                            icon: 'icon1',
+                            heading: 'Age and level-specific planning',
+                            content: 'Providing the right challenge to each player according to his/her development stage.',
+                        },
+                        {
+                            icon: 'icon1',
+                            heading: 'Once-per-week training',
+                            content: 'With sessions lasting between 60 to 75 minutes (at coaches’ discretion).',
+                        },
+                        {
+                            icon: 'icon1',
+                            heading: 'Free 2 session trial',
+                            content: 'New players can try out the program for 2 sessions.',
+                        },
+                    ]}
+                >
+                </IconTextLinkGroup>
+            </SectionWrapper>
 
             <SectionWrapper>
                 <TextImageCard
