@@ -13,7 +13,7 @@ const FAQAccordion = (props) => {
 
     const toggleAccordion = (event) => {
         //setAccordionState((state) => !state);
-        console.log(event.target);
+        console.log(event.target.parentElement);
     };
 
     return (

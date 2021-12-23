@@ -9,6 +9,12 @@
         display: flex;
         gap: 2rem;
         flex-wrap: wrap;
+
+        &.alternative {
+            .link-group-block-item-wrapper {
+                color: $color-gs-white;
+            }
+        }
     }
 
 }
@@ -17,6 +23,7 @@
     &-wrapper {
         flex-basis: 0;
         flex-grow: 1;
+        color: $color-brand-01;
     }
 
     &-icon {
@@ -26,7 +33,7 @@
     &-heading {
         margin-top: 2rem;
         margin-bottom: 0;
-        color: $color-brand-01;
+        color: inherit;
         font-family: $font-heading;
         line-height: 1.2em;
         font-size: 2.4rem;
@@ -37,7 +44,7 @@
         max-width: 22rem;
         margin-top: 2rem;
         margin-bottom: 0;
-        color: $color-brand-01;
+        color: inherit;
         font-size: 1.6rem;
         font-family: $font-body;
         line-height: 1.5em;

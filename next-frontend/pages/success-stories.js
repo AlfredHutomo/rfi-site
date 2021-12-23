@@ -6,6 +6,8 @@ import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
+import TextBlock from '../components/TextBlock';
+import LinkGroup from '../components/LinkGroup/';
 import RegisterInterestCard from '../components/global/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 
@@ -20,7 +22,8 @@ export default function SuccessStories() {
         <PageWrapper>
             <Header></Header>
 
-            <PageHeader title='Components Page' />
+            <PageHeader title='Success Stories' />
+
 
             <SectionWrapper bgcolor='#fff'>
                 <StatisticsBlock
@@ -60,9 +63,10 @@ export default function SuccessStories() {
             <SectionWrapper>
                 <TextImageCard
                     //image="https://source.unsplash.com/random/300×300"
+                    isVerticalCentreAlign
                     heading="Becoming Melbourne City's second youngest debutant"
-                    buttonLink='http://www.google.com.au'
-                    buttonText='Test'
+                    buttonLink='#'
+                    buttonText='Read More'
                 >
                     <p>
                         Max spent his key development years at RFI, where he
@@ -76,14 +80,38 @@ export default function SuccessStories() {
                     </p>
                     <p>this is a test</p>
                 </TextImageCard>
+            </SectionWrapper>
 
+            <SectionWrapper>
                 <TextImageCard
                     isImageOnRight
                     isVerticalCentreAlign
                     preHeading='Development'
                     heading="Becoming Melbourne City's second youngest debutant"
-                    buttonLink='http://www.google.com.au'
-                    buttonText='Test'
+                    buttonLink='#'
+                    buttonText='Read More'
+                >
+                    <p>
+                        Max spent his key development years at RFI, where he
+                        established himself as a leading talent in Melbourne.
+                        Together with his teammates from childhood at RFI, he
+                        bossed the NPL system until he was recruited by
+                        Melbourne City. For us it’s not surprising that at the
+                        tender age of 15 he’s already an outstanding talent, we
+                        know he will soon represent Australia and serves as an
+                        inspiration to the current RFI players.
+                    </p>
+                    <p>this is a test</p>
+                </TextImageCard>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <TextImageCard
+                    //image="https://source.unsplash.com/random/300×300"
+                    isVerticalCentreAlign
+                    heading="Becoming Melbourne City's second youngest debutant"
+                    buttonLink='#'
+                    buttonText='Read More'
                 >
                     <p>
                         Max spent his key development years at RFI, where he
@@ -112,8 +140,37 @@ export default function SuccessStories() {
             </SectionWrapper>
 
             <SectionWrapper>
+                <LinkGroup
+                    data={[
+                        {
+                            text: 'History',
+                            link: '#',
+                        },
+                        {
+                            text: 'Philosophy',
+                            link: '#',
+                        },
+                        {
+                            text: 'Success stories',
+                            link: '#',
+                        },
+                        {
+                            text: 'Sponsors',
+                            link: '#',
+                        },
+                        {
+                            text: 'Success stories',
+                            link: '#',
+                        },
+                    ]}
+                />
+            </SectionWrapper>
+
+            <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
+
+            <Footer />
         </PageWrapper>
     );
 }

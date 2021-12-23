@@ -1,0 +1,66 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.program-detail-tiles {
+    &-wrapper {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.program-detail {
+    &-date-tile {
+        padding: 2rem;
+        flex-basis: 0;
+        flex-grow: 1;
+        font-size: 1.6rem;
+        background-color: $color-gs-white;
+        box-shadow: 0px 4px 16px 0px $color-gs-04;
+
+        h3 {
+            margin: 1rem 0 0 0;
+        }
+
+        &-icon {
+            &-mui {
+                color: $color-brand-02;
+                font-size: 40px;
+            }
+        }
+
+        &-block {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            flex-basis: 0;
+            flex-grow: 1;
+            border-radius: 4px;
+            background-color: $color-gs-06;
+
+            &-group {
+                display: flex;
+                gap: 2rem;
+            }
+
+            h5 {
+                margin: 0;
+            }
+
+            p {
+                margin: 1rem 0 0 0;
+            }
+        }
+    }
+
+
+    &-venue-tile {
+        padding: 2rem;
+        flex-basis: 0;
+        flex-grow: 1;
+        background-color: $color-gs-white;
+        box-shadow: 0px 4px 16px 0px $color-gs-04;
+    }
+
+
+}
+

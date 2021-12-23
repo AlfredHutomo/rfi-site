@@ -11,9 +11,6 @@ import Footer from '../components/global/Footer';
 import SponsorBlock from '../components/SponsorBlock/';
 import RegisterInterestCard from '../components/global/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
-
-//import SectionWrapper from '../components/global';
-
 import StatisticsBlock from '../components/StatisticsBlock/';
 import TextImageCard from '../components/TextImageCard/';
 
