@@ -1,0 +1,51 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.location-block {
+
+    &-wrapper {
+        display: flex;
+        gap: 10rem;
+
+        @include bp-down($bp-md) {
+            gap: 4rem;
+            flex-direction: column;
+        }
+    }
+
+    &-map {
+        width: 100%;
+        max-width: 445px;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    &-preheading {
+        color: $color-brand-02;
+        margin: 0 0 1rem 0;
+    }
+
+    &-heading {
+        color: $color-brand-01;
+        margin: 0;
+    }
+
+    &-icon {
+        color: $color-brand-03;
+    }
+
+    &-content {
+        margin-top: 2rem;
+        font-family: $font-body;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $color-gs-01;
+    }
+
+    &-cta {
+        margin-top: 2rem;
+        min-width: 25rem;
+    }
+}
+

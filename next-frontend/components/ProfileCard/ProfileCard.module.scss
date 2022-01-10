@@ -1,0 +1,66 @@
+@import "_utils";
+
+.profile-card-wrapper {
+    cursor: pointer;
+
+    &:hover figure::after {
+        background-size: 100%;
+    }
+}
+
+.profile-card-image {
+    position: relative;
+
+    &::after {
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-size: 170%;
+        background-image: linear-gradient(
+            35deg,
+            rgba(103, 79, 255, 0.7) 0%,
+            rgba(103, 79, 255, 0) 60%
+        );
+        transition: all 1s ease;
+    }
+}
+
+.profile-card-content {
+    > *:first-child { margin-top: 0; }
+    > *:last-child { margin-bottom: 0; }
+
+    &__name {
+        margin-top: 0;
+        margin-bottom: 0.16em;
+    }
+
+    &__title {
+        margin-top: 0.3em;
+        color: $color-brand-03;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.6;
+        letter-spacing: 0.01em;
+    }
+
+    &__desc {
+        margin-top: 1.06em;
+        margin-bottom: 0;
+        color: $color-gs-02;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    @include bp-up($bp-md) {
+        &__title,
+        &__desc {
+          font-size: 1.6rem;
+        }
+    }
+}
+

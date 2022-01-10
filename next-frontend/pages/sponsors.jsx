@@ -9,7 +9,7 @@ import TextBlock from '../components/TextBlock';
 import SponsorDetailBlock from '../components/SponsorDetailBlock';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
-import RegisterInterestCard from '../components/global/RegisterInterestCard';
+import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 
 export default function Teams() {

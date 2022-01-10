@@ -10,6 +10,10 @@
     column-gap: 15px;
     row-gap: 15px;
 
+    @include bp-down($bp-sm) {
+        grid-template-columns: 1fr;
+    }
+
     &-wrapper {
         width: 100%;
     }

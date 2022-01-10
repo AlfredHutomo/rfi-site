@@ -4,11 +4,10 @@ import {
     Card,
     CardContent,
     CardMedia,
-    RegisterInterestCard,
     ProfileCard,
     PageHeader,
+    Footer,
 } from '../components/global';
-import Footer from '../components/global/Footer';
 
 import style from '../styles/pages/components.module.scss';
 
@@ -23,7 +22,8 @@ import HomeHero from '../components/HomeHero';
 import QuoteBlock from '../components/QuoteBlock';
 import SponsorBlock from '../components/SponsorBlock';
 import StatisticsBlock from '../components/StatisticsBlock';
-import LinkGroupBlock from '../components/LinkGroupBlock';
+import LinkGroup from '../components/LinkGroup';
+import RegisterInterestCard from '../components/RegisterInterestCard';
 
 export default function Models(props) {
     const spacedContainerClass = [

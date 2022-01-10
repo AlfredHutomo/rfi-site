@@ -8,7 +8,7 @@ import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
 import TextBlock from '../components/TextBlock';
 import LinkGroup from '../components/LinkGroup/';
-import RegisterInterestCard from '../components/global/RegisterInterestCard';
+import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 
 //import SectionWrapper from '../components/global';
