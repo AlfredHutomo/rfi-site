@@ -5,6 +5,11 @@
     &-wrapper {
         width: 100%;
         display: flex;
+        gap: 2rem;
+
+        @include bp-down($bp-md) {
+            display: block;
+        }
     }
     &-side {
         h2 {
@@ -15,7 +20,7 @@
     &-list {
         width: 100%;
         margin: 0;
-        padding: 2rem;
+        padding: 0;
         list-style: none;
 
     }

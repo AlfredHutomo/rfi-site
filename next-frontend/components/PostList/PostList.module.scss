@@ -1,0 +1,70 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.post-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    //grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    row-gap: 3rem;
+
+    @include bp-down($bp-md) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap: 2rem;
+    }
+    @include bp-down($bp-sm) {
+        grid-template-columns: 1fr;
+        column-gap: 1.5rem;
+        row-gap: 1.5rem;
+    }
+
+    &-wrapper {
+        width: 100%;
+    }
+
+    &-header {
+        text-align: center;
+
+        h2 {
+            margin: 0 0 2rem 0;
+        }
+    }
+
+    &-description {
+        width: 100%;
+        max-width: 50rem;
+        margin: 2rem auto 3rem auto;
+        font-family: $font-body;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+
+    &-item {
+    }
+
+    &-item__first-child {
+        grid-column: 1 / -1;
+        //grid-column: 1;
+
+
+        //composes: post-card-content__description from "../PostCard/PostCard.module.scss";
+        //display: block;
+
+        /*
+        > div > div {
+            display: flex;
+        }
+        */
+    }
+
+
+    &-cta {
+        margin-top: 5rem;
+        text-align: center;
+    }
+}
+

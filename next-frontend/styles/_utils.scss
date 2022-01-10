@@ -65,6 +65,30 @@ $bp-xl: 1200px;
     }
 }
 
+.desktop-only {
+    display: inherit;
+
+    @include bp-down($bp-sm) {
+        display: none;
+    }
+}
+
+.tablet-only {
+    display: inherit;
+
+    @include bp-down($bp-md) {
+        display: none;
+    }
+}
+
+.mobile-only {
+    display: none;
+
+    @include bp-down($bp-sm) {
+        display: inherit;
+    }
+}
+
 // to expose values to js
 :export {
     bpSm: $bp-sm;

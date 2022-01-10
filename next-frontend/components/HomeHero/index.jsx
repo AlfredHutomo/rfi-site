@@ -5,12 +5,14 @@ import clsx from 'clsx';
 
 import styles from './HomeHero.module.scss';
 import DefaultImg from './default-img.jpg';
+import DefaultImgMobile from './default-img-mobile.jpg';
 
 import Button from '../global/Button';
 
 const HomeHero = (props) => {
     const {
-        image,
+        imageDesktop,
+        imageMobile,
         heading,
         button1Text,
         button1Link,
@@ -57,15 +59,33 @@ const HomeHero = (props) => {
             </div>
 
             <div className={styles['hero-banner-img']}>
-                {props.image != null ? (
-                    <Image
-                        src={props.image}
-                        layout='fill'
-                        objectFit='cover'
-                        alt={''}
-                    />
+                {props.imageDesktop != null ? (
+                    <div className="desktop-only">
+                        <Image
+                            src={props.imageDesktop}
+                            layout='fill'
+                            objectFit='cover'
+                            alt={''}
+                        />
+                    </div>
                 ) : (
-                    <Image src={DefaultImg} alt={''} />
+                    <div className="desktop-only">
+                        <Image src={DefaultImg} alt={''} />
+                    </div>
+                )}
+                {props.imageMobile != null ? (
+                    <div className="mobile-only">
+                        <Image
+                            src={props.imageMobile}
+                            layout='fill'
+                            objectFit='cover'
+                            alt={''}
+                        />
+                    </div>
+                ) : (
+                    <div className="mobile-only">
+                        <Image src={DefaultImgMobile} alt={''} />
+                    </div>
                 )}
             </div>
         </div>

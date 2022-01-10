@@ -28,16 +28,20 @@ const InfoGrid = (props) => {
                         international youth football development.
                     </p>
                 </InfoGridItemContentType1>
-                <InfoGridItemImage image='https://source.unsplash.com/random/300x100' />
-                <InfoGridItemContentType1 bgcolor='#f30' />
                 <InfoGridItemImage />
-                <div className={styles['info-grid-item']}>
+                <InfoGridItemImage />
+                <InfoGridItemImage />
+                <InfoGridItemContentType2
+                    bgcolor='#674FFF'
+                    isLightText
+                >
                     <ul>
                         <li>10 years in the game</li>
-                        <li>Warm, welcoming environment </li>
+                        <li>Warm, welcoming</li>
                         <li>Experienced coaches from across the world</li>
                     </ul>
-                </div>
+                </InfoGridItemContentType2>
+
             </div>
         </div>
     );
@@ -119,7 +123,7 @@ const InfoGridItemContentType1 = (props) => {
             )}
 
             {props.buttonText != null ? (
-                <Button to={props.buttonLink}>{props.buttonText}</Button>
+                <Button variant='2' to={props.buttonLink}>{props.buttonText}</Button>
             ) : (
                 ''
             )}
@@ -138,9 +142,30 @@ InfoGridItemContentType1.propTypes = {
 };
 
 const InfoGridItemContentType2 = (props) => {
-    const { image } = props;
+    const {
+        bgcolor,
+        isLightText,
+    } = props;
 
-    return <div className={styles['info-grid-item']}></div>;
+    const light = isLightText ? styles['info-grid-item-lightext'] : '';
+
+    return (
+        <div className={styles['info-grid-item'] + ' ' + light}
+             style={{ backgroundColor: props.bgcolor }}
+        >
+            <div className={styles['info-grid-item-list']}>
+                { props.children }
+            </div>
+        </div>
+    );
+};
+
+InfoGridItemContentType2.defaultProps = {
+    isLightText: false,
+};
+
+InfoGridItemContentType2.propTypes = {
+    isLightText: PropTypes.bool,
 };
 
 const InfoGridItemContentType3 = (props) => {
@@ -160,3 +185,4 @@ export {
     InfoGridItemContentType2,
     InfoGridItemContentType3,
 };
+

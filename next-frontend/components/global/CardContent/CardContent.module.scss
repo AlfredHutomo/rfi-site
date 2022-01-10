@@ -1,19 +1,19 @@
 @import "_utils";
 
 .card-content {
-  display: block;
-  margin: 0;
-  padding: 2.5rem;
+    display: block;
+    margin: 0;
+    padding: 2.5rem;
 
-  @include bp-up($bp-md) {
-    padding: 3.2rem;
+    @include bp-up($bp-md) {
+        padding: 3.2rem;
 
-    &--spaced {
-      padding: 5.5rem;
+        &--spaced {
+            padding: 5.5rem;
+        }
+
+        &--compact {
+            padding: 2.5rem;
+        }
     }
-
-    &--compact {
-      padding: 2.5rem;
-    }
-  }
 }

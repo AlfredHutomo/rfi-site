@@ -10,8 +10,9 @@ import ProgramDetailTiles from '../components/ProgramDetailTiles';
 import TextImageCard from '../components/TextImageCard/';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
-import RegisterInterestCard from '../components/global/RegisterInterestCard';
+import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
+import ProfileCardList from '../components/ProfileCardList';
 
 export default function Programs() {
     return (
@@ -94,6 +95,39 @@ The activity will run alongside our other programs, running for 10 months from e
             <SectionWrapper>
                 <ProgramDetailTiles />
             </SectionWrapper>
+
+
+            <SectionWrapper>
+                <ProfileCardList
+                    isMobileSlider
+                    heading='The Coaches'
+                    data={[
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Warwick Rakesh',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Agrafena Zorro',
+                            title: 'RFI Player',
+                        },
+                    ]}
+                >
+                    Meet some of the key staff working at the Real Futbol Institute for this program. It's a team effort behind the scenes.
+                </ProfileCardList>
+            </SectionWrapper>
+
 
             <SectionWrapper>
                 <RegisterInterestCard />

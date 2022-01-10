@@ -10,8 +10,9 @@ import IconTextTileGroup from '../components/IconTextTileGroup/';
 import TextBlock from '../components/TextBlock';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
-import RegisterInterestCard from '../components/global/RegisterInterestCard';
+import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
+import ProfileCardList from '../components/ProfileCardList';
 
 //import SectionWrapper from '../components/global';
 
@@ -32,6 +33,38 @@ export default function Teams() {
                 >
                     Throughout its proud history our team has built a deep and lasting kinship with communities in RFI.
                 </TextBlock>
+            </SectionWrapper>
+
+
+            <SectionWrapper>
+                <ProfileCardList
+                    //isMobileSlider
+                    heading='Coaches & assistants'
+                    data={[
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Warwick Rakesh',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Agrafena Zorro',
+                            title: 'RFI Player',
+                        },
+                    ]}
+                >
+                    This is some content
+                </ProfileCardList>
             </SectionWrapper>
 
 
@@ -81,7 +114,41 @@ export default function Teams() {
 
 
             <SectionWrapper>
+                <ProfileCardList
+                    //isMobileSlider
+                    heading='The committee'
+                    data={[
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Warwick Rakesh',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Agrafena Zorro',
+                            title: 'RFI Player',
+                        },
+                    ]}
+                >
+                    This is some content
+                </ProfileCardList>
+            </SectionWrapper>
+
+
+
+            <SectionWrapper>
                 <LinkGroup
+                    heading="Learn more about RFI"
                     data={[
                         {
                             text: 'History',

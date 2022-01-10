@@ -6,7 +6,6 @@ import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
-import RegisterInterestCard from '../components/global/RegisterInterestCard';
 
 import HomeHero from '../components/HomeHero/';
 import TextBlock from '../components/TextBlock/';
@@ -16,6 +15,7 @@ import QuoteBlock from '../components/QuoteBlock/';
 import SponsorBlock from '../components/SponsorBlock/';
 import { InfoGrid } from '../components/InfoGrid/';
 import FAQAccordion from '../components/FAQAccordion/';
+import RegisterInterestCard from '../components/RegisterInterestCard';
 
 import { fetchAPI } from '../utils/api';
 import { homeDefaultData } from '../utils/default';
@@ -104,7 +104,7 @@ const Home = (props) => {
                 <InfoGrid />
             </SectionWrapper>
 
-            <SectionWrapper bgcolor='#eee'>
+            <SectionWrapper bgcolor='#e5e5e5'>
                 <QuoteBlock
                     avatar='https://source.unsplash.com/random/300×300'
                     author='Santiago Ortiz'

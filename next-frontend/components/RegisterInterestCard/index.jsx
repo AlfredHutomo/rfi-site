@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Image from 'next/image';
 
-import Button from '../Button/';
-import Card from '../Card/';
-import CardContent from '../CardContent/';
-import CardMedia from '../CardMedia/';
+import Button from '../global/Button/';
+import Card from '../global/Card/';
+import CardContent from '../global/CardContent/';
+import CardMedia from '../global/CardMedia/';
 
 import styles from './RegisterInterestCard.module.scss';
-import LogoText from '../../../public/logo-text-light.png';
+import LogoText from '../../public/logo-text-light.png';
 import DefaultCardImg from './default-reg-card-img.jpg';
 
 /**

@@ -1,0 +1,35 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.contact-form {
+
+    &-wrapper {
+    }
+
+    &-heading {
+        color: $color-brand-01;
+        margin: 0;
+    }
+
+    &-row {
+        padding: 1rem 0;
+    }
+
+    &-label {
+        display: block;
+        font-size: 1.6rem;
+        font-family: $font-body;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        padding: 1rem;
+        width: 100%;
+        font-size: 1.6rem;
+        font-family: $font-body;
+        border: 1px solid $color-gs-04;
+    }
+}
+

@@ -1,92 +1,94 @@
 @import "_utils";
 
 .button {
-  $base: &;
-  display: inline-block;
-  padding: 0.75em 1.5em;
-  border: 0.1rem solid $color-brand-02;
-  border-radius: 0.4rem;
-  background-color: $color-brand-02;
-  color: $color-gs-white;
-  font-size: 1.6rem;
-  font-family: $font-heading;
-  font-weight: 700;
-  line-height: 1.5;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-
-  &:hover,
-  &:focus {
-    background: #3B24C9;
-    border-color: #3B24C9;
-  }
-
-  &--alt-01 {
-    background: $color-brand-04;
-    border-color: $color-brand-04;
-    color: $color-gs-black;
-
-    &:hover,
-    &:focus {
-      background: #E4881D;
-      border-color: #E4881D;
-    }
-  }
-
-  &--alt-02 {
-    background: transparent;
-    color: $color-brand-02;
-
-    &:hover,
-    &:focus {
-      background: transparent;
-      color: #3B24C9;
-    }
-  }
-
-  &--alt-03 {
-    color: $color-gs-black;
-    background: $color-gs-06;
-    border-color: $color-gs-06;
-
-    &:hover,
-    &:focus {
-      background: $color-gs-04;
-      border-color: $color-gs-04;
-    }
-  }
-
-  &--alt-04 {
-    color: $color-gs-black;
-    background: $color-gs-white;
-    border-color: $color-gs-white;
-
-    &:hover,
-    &:focus {
-      background: $color-gs-white;
-      border-color: $color-gs-white;
-    }
-  }
-
-  &--alt-05 {
+    $base: &;
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    border: 0.1rem solid $color-brand-02;
+    border-radius: 0.4rem;
+    background-color: $color-brand-02;
     color: $color-gs-white;
-    background: transparent;
-    border-color: $color-gs-white;
+    font-size: 1.6rem;
+    font-family: $font-heading;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
     &:hover,
     &:focus {
-      background: transparent;
-      border-color: $color-gs-white;
+        background: #3B24C9;
+        border-color: #3B24C9;
     }
-  }
 
-  &--sm {
-    font-size: 1.4rem;
-    padding: 0.64em 1.14em;
-  }
+    &--alt-01 {
+        background: $color-brand-04;
+        border-color: $color-brand-04;
+        color: $color-gs-black;
 
-  &--lg {
-    padding: 1.37em 1.75em;
-  }
+        &:hover,
+        &:focus {
+            background: #E4881D;
+            border-color: #E4881D;
+        }
+    }
+
+    &--alt-02 {
+        background: transparent;
+        color: $color-brand-02;
+
+        &:hover,
+        &:focus {
+            background: transparent;
+            color: #3B24C9;
+        }
+    }
+
+    &--alt-03 {
+        color: $color-gs-black;
+        background: $color-gs-06;
+        border-color: $color-gs-06;
+
+        &:hover,
+        &:focus {
+            background: $color-gs-04;
+            border-color: $color-gs-04;
+        }
+    }
+
+    &--alt-04 {
+        color: $color-gs-black;
+        background: $color-gs-white;
+        border-color: $color-gs-white;
+
+        &:hover,
+        &:focus {
+            background: $color-gs-white;
+            border-color: $color-gs-white;
+        }
+    }
+
+    &--alt-05 {
+        color: $color-gs-white;
+        background: transparent;
+        border-color: $color-gs-white;
+
+        &:hover,
+        &:focus {
+            background: transparent;
+            border-color: $color-gs-white;
+        }
+    }
+
+    &--sm {
+        font-size: 1.4rem;
+        padding: 0.64em 1.14em;
+    }
+
+    &--lg {
+        padding: 1.37em 1.75em;
+    }
 }
+

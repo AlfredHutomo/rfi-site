@@ -1,0 +1,30 @@
+@import "_utils";
+
+.post-card-wrapper {
+    height: 100%;
+    cursor: pointer;
+}
+
+.post-card-content {
+
+    &__heading {
+        margin: 0;
+        color: $color-brand-01;
+        font-family: $font-heading;
+    }
+
+    &__info {
+        margin: 1.5rem 0 0 0;
+        font-size: 1.4rem;
+        font-family: $font-body;
+    }
+
+    &__description {
+        display: none;
+        margin: 2rem 0 0 0;
+        font-size: 1.4rem;
+        font-family: $font-body;
+        line-height: 1.3em;
+    }
+}
+

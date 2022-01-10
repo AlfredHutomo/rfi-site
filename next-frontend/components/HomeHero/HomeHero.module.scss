@@ -1,15 +1,26 @@
 @import "../../styles/_base";
 @import "../../styles/_utils";
 
+$hero-breakpoint: calc($site-max-width + $site-mobile-padding + $site-mobile-padding);
+
 .hero-banner {
     margin: 0 auto;
+    padding: 0 $site-mobile-padding;
     width: 100%;
     max-width: $site-max-width;
     position: absolute;
-    bottom: 20%;
+    bottom: 8rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: $level-base + 10;
+
+    @include bp-up($hero-breakpoint) {
+        padding: 0;
+    }
+
+    @include bp-up($bp-sm) {
+        bottom: 20%;
+    }
 
     &-wrapper {
         position: relative;
@@ -30,6 +41,10 @@
         }
     }
 
+    &-img {
+        //height: 1000px;
+    }
+
     &-heading {
         text-transform: uppercase;
         font-weight: 700;
@@ -39,7 +54,15 @@
         letter-spacing: -1.5px;
         line-height: 1.1em;
 
+        @include bp-up($bp-sm) {
+            font-size: 4.2rem;
+        }
+
         @include bp-up($bp-md) {
+            font-size: 5.2rem;
+        }
+
+        @include bp-up($bp-lg) {
             font-size: 7.2rem;
         }
     }

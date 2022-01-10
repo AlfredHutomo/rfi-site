@@ -4,12 +4,14 @@ import styles from '../styles/Home.module.scss';
 
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
-import IconTextLinkGroup from '../components/IconTextLinkGroup';
-import TextBlock from '../components/TextBlock';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
+import ProfileCardList from '../components/ProfileCardList';
+import IconTextLinkGroup from '../components/IconTextLinkGroup';
+import TextBlock from '../components/TextBlock';
+import { InfoGrid } from '../components/InfoGrid/';
 import SponsorBlock from '../components/SponsorBlock/';
-import RegisterInterestCard from '../components/global/RegisterInterestCard';
+import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 import StatisticsBlock from '../components/StatisticsBlock/';
 import TextImageCard from '../components/TextImageCard/';
@@ -27,6 +29,41 @@ export default function AboutUs() {
                 >
                     Our objective is to provide our players with nothing but the best football experience possible, the Real experience. It consists of all the necessary formation and resources to develop a professional career just as much as enabling a healthy sporting life and habits for the everlasting enjoying of this beautiful game.
                 </TextBlock>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <InfoGrid />
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <ProfileCardList
+                    //isMobileSlider
+                    heading='This is heading'
+                    data={[
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Joe Smith',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Warwick Rakesh',
+                            title: 'RFI Player',
+                        },
+                        {
+                            name: 'Agrafena Zorro',
+                            title: 'RFI Player',
+                        },
+                    ]}
+                >
+                    This is some content
+                </ProfileCardList>
             </SectionWrapper>
 
             <SectionWrapper bgcolor='#fff'>
