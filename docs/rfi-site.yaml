@@ -1,0 +1,32 @@
+alerts:
+    - rule: DEPLOYMENT_FAILED
+    - rule: DOMAIN_FAILED
+databases:
+    - engine: PG
+      name: db
+      num_nodes: 1
+      size: db-s-dev-database
+      version: '12'
+name: rfi-site
+region: sgp
+services:
+    - build_command: NODE_ENV=production yarn build
+      environment_slug: node-js
+      envs:
+          - key: DATABASE_URL
+            scope: RUN_AND_BUILD_TIME
+            value: ${db.DATABASE_URL}
+          - key: RUN_AND_BUILD_TIME
+            scope: RUN_TIME
+            value: ${db.DATABASE_URL}
+      github:
+          branch: do-deployment
+          repo: relabstudios/rfi.site
+      http_port: 8080
+      instance_count: 1
+      instance_size_slug: basic-xxs
+      name: rfi-site
+      routes:
+          - path: /
+      run_command: NODE_ENV=production yarn start
+      source_dir: /backend
