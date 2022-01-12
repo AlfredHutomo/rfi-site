@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import styles from './ProfileCardList.module.scss';
 
@@ -42,16 +41,18 @@ const ProfileCardList = (props) => {
                 <ul className={styles['profile-list'] + ' ' + slider}>
                     {props.data.map((profile, i) => (
                         <li key={i} className={styles['profile-list-item']}>
-                            <Link href="#" passHref={true}>
-                                <ProfileCard
-                                    //style={{ maxWidth: '40rem' }}
-                                    data={{
-                                        image: profile.image,
-                                        name: profile.name,
-                                        title: profile.title,
-                                    }}
-                                />
-                            </Link>
+                            <ProfileCard
+                                //style={{ maxWidth: '40rem' }}
+                                data={{
+                                    image: profile.image,
+                                    name: profile.name,
+                                    title: profile.title,
+                                    description: profile.description,
+                                    programs: profile.programs,
+                                }}
+                            >
+                                { profile.content }
+                            </ProfileCard>
                         </li>
                     ))}
                 </ul>

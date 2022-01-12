@@ -42,24 +42,35 @@ export default function Teams() {
                     heading='Coaches & assistants'
                     data={[
                         {
+                            //image: '',
                             name: 'Joe Smith',
                             title: 'RFI Player',
+                            description: 'some description if any',
+                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                         {
                             name: 'Joe Smith',
                             title: 'RFI Player',
+                            description: 'some description if any',
+                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                         {
                             name: 'Joe Smith',
                             title: 'RFI Player',
+                            description: 'some description if any',
+                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                         {
                             name: 'Warwick Rakesh',
                             title: 'RFI Player',
+                            description: 'some description if any',
+                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                         {
-                            name: 'Agrafena Zorro',
-                            title: 'RFI Player',
+                            name: 'Agrafena Zorro 2',
+                            title: 'RFI Player 2',
+                            description: 'some description if any',
+                            content: 'eatdsf',
                         },
                     ]}
                 >
@@ -135,8 +146,28 @@ export default function Teams() {
                             title: 'RFI Player',
                         },
                         {
-                            name: 'Agrafena Zorro',
+                            name: 'Warwick Rakesh',
                             title: 'RFI Player',
+                            description: 'some description if any',
+                            programs: [
+                                {
+                                    name: 'program 1',
+                                    desc: 'for age 10 - 13',
+                                },
+                                {
+                                    name: 'program 2',
+                                    desc: 'for age 5 - 8',
+                                },
+                                {
+                                    name: 'program 2 test test',
+                                    desc: 'for age 5 - 8',
+                                },
+                                {
+                                    name: 'program 2',
+                                    desc: 'for age 5 - 8',
+                                },
+                            ],
+                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                     ]}
                 >

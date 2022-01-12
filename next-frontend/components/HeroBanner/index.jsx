@@ -3,14 +3,18 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import clsx from 'clsx';
 
-import styles from './HomeHero.module.scss';
-import DefaultImg from './default-img.jpg';
-import DefaultImgMobile from './default-img-mobile.jpg';
+import styles from './HeroBanner.module.scss';
+
+import DefaultImg from './default-img-home.jpg';
+import DefaultImgMobile from './default-img-mobile-home.jpg';
+import DefaultImg1 from './default-img-program.jpg';
+import DefaultImgMobile1 from './default-img-mobile-program.jpg';
 
 import Button from '../global/Button';
 
-const HomeHero = (props) => {
+const HeroBanner = (props) => {
     const {
+        isContentOnRight,
         imageDesktop,
         imageMobile,
         heading,
@@ -22,12 +26,19 @@ const HomeHero = (props) => {
 
     return (
         <div className={styles['hero-banner-wrapper']}>
-            <div className={styles['hero-banner']}>
+            <div className={`${styles['hero-banner']} ${isContentOnRight ? styles['alignRight'] : ''}`}>
                 <div className={styles['hero-banner-content']}>
-                    {props.children != null ? (
+                    {props.heading != null ? (
                         <h1 className={styles['hero-banner-heading']}>
-                            {props.children}
+                            {props.heading}
                         </h1>
+                    ) : (
+                        ''
+                    )}
+                    {props.children != null ? (
+                        <h3 className={styles['hero-banner-post-heading']}>
+                            {props.children}
+                        </h3>
                     ) : (
                         ''
                     )}
@@ -70,7 +81,7 @@ const HomeHero = (props) => {
                     </div>
                 ) : (
                     <div className="desktop-only">
-                        <Image src={DefaultImg} alt={''} />
+                        <Image src={props.isContentOnRight ? DefaultImg1 : DefaultImg} alt={''} />
                     </div>
                 )}
                 {props.imageMobile != null ? (
@@ -84,7 +95,7 @@ const HomeHero = (props) => {
                     </div>
                 ) : (
                     <div className="mobile-only">
-                        <Image src={DefaultImgMobile} alt={''} />
+                        <Image src={props.isContentOnRight ? DefaultImgMobile1 : DefaultImgMobile} alt={''} />
                     </div>
                 )}
             </div>
@@ -92,6 +103,6 @@ const HomeHero = (props) => {
     );
 };
 
-HomeHero.propTypes = {};
+HeroBanner.propTypes = {};
 
-export default HomeHero;
+export default HeroBanner;

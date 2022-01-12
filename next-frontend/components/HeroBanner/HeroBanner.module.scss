@@ -8,6 +8,7 @@ $hero-breakpoint: calc($site-max-width + $site-mobile-padding + $site-mobile-pad
     padding: 0 $site-mobile-padding;
     width: 100%;
     max-width: $site-max-width;
+    display: flex;
     position: absolute;
     bottom: 8rem;
     left: 50%;
@@ -22,6 +23,10 @@ $hero-breakpoint: calc($site-max-width + $site-mobile-padding + $site-mobile-pad
         bottom: 20%;
     }
 
+    &.alignRight {
+        justify-content: right;
+    }
+
     &-wrapper {
         position: relative;
         z-index: $level-base;
@@ -29,7 +34,7 @@ $hero-breakpoint: calc($site-max-width + $site-mobile-padding + $site-mobile-pad
 
     &-content {
         width: 100%;
-        max-width: 70rem;
+        max-width: 60rem;
     }
     &-button {
         width: 100%;
@@ -46,6 +51,7 @@ $hero-breakpoint: calc($site-max-width + $site-mobile-padding + $site-mobile-pad
     }
 
     &-heading {
+        margin: 0 0 2rem 0;
         text-transform: uppercase;
         font-weight: 700;
         font-family: $font-heading;
@@ -64,6 +70,18 @@ $hero-breakpoint: calc($site-max-width + $site-mobile-padding + $site-mobile-pad
 
         @include bp-up($bp-lg) {
             font-size: 7.2rem;
+        }
+    }
+
+    &-post-heading {
+        font-weight: 700;
+        font-family: $font-heading;
+        font-size: 1.6rem;
+        color: $color-gs-white;
+        line-height: 1.1em;
+
+        @include bp-up($bp-lg) {
+            font-size: 2.4rem;
         }
     }
 }

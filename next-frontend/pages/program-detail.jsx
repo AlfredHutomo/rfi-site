@@ -4,14 +4,15 @@ import styles from '../styles/Home.module.scss';
 
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
+import HeroBanner from '../components/HeroBanner';
 import TextBlock from '../components/TextBlock';
+import TextTileBlockRow from '../components/TextTileBlockRow';
 import IconTextLinkGroup from '../components/IconTextLinkGroup';
 import ProgramDetailTiles from '../components/ProgramDetailTiles';
 import TextImageCard from '../components/TextImageCard/';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
 import RegisterInterestCard from '../components/RegisterInterestCard';
-import PageHeader from '../components/global/PageHeader';
 import ProfileCardList from '../components/ProfileCardList';
 
 export default function Programs() {
@@ -19,28 +20,53 @@ export default function Programs() {
         <PageWrapper>
             <Header></Header>
 
-            <PageHeader title='Programs' />
+            <HeroBanner
+                isContentOnRight
+                heading='RFI Initiation program'
+                button2Text='Register your interest'
+                button2Link='#'
+            >
+                Designed for players who who wish to get started in football and advance quickly.
+            </HeroBanner>
 
-            <SectionWrapper>
-                <TextBlock
-                    h3="The people who make RFI great"
-                >
-                    Throughout its proud history our team has built a deep and lasting kinship with communities in RFI.
-                </TextBlock>
+            <SectionWrapper spaceTop='0' spaceBtm='0'>
+                <TextTileBlockRow
+                    offsetPos
+                    data={[
+                        {
+                            heading: 'For players aged 10-15',
+                            content: 'We are pleased to announce the start of the 2019 Initiation Program, for players born 2011 and after, who wish to get started in football and advance quickly.'
+                        },
+                        {
+                            heading: 'Train like pro players',
+                            content: 'Advanced players can be invited to train with the Benjamines teams to increase their exposure to a more competitive environment and boost their development.'
+                        },
+                        {
+                            heading: 'Slow and safe introduction',
+                            content: 'To match situations, with detail and care put into the playing environment in which they are to participate.'
+                        },
+                    ]}
+                />
             </SectionWrapper>
 
             <SectionWrapper>
                 <TextImageCard
+                    isImageOnRight
                     //image="https://source.unsplash.com/random/300×300"
                     preHeading={"What to expect"}
                     heading={"Get started in football and advance quickly"}
-                    buttonLink='#'
-                    buttonText='Test'
                 >
                     <p>
-The activity will run alongside our other programs, running for 10 months from early February to late November. We will have 2 established groups in this program:
+                        The activity will run alongside our other programs, running for 10 months from early February to late November. We will have 2 established groups in this program:
                     </p>
-                    <p>this is a test</p>
+                    <p><b>First Step</b></p>
+                    <p>
+                        To introduce players to the basics of the sport (basic rules and principles such as scoring goals, ball exiting the pitch, key ideas of the game). 
+                    </p>
+                    <p><b>Advanced</b></p>
+                    <p>
+                        The activity will run alongside our other programs, running for 10 months from early February to late November. We will have 2 established groups in this program:
+                    </p>
                 </TextImageCard>
 
             </SectionWrapper>

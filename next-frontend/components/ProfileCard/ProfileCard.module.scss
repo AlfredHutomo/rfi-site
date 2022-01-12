@@ -1,65 +1,236 @@
 @import "_utils";
 
-.profile-card-wrapper {
-    cursor: pointer;
+.profile-card {
+    &-wrapper {
+        cursor: pointer;
+        height: 100%;
 
-    &:hover figure::after {
-        background-size: 100%;
+        &:hover figure::after {
+            background-size: 100%;
+        }
+    }
+
+    &-image {
+        position: relative;
+
+        &::after {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-size: 170%;
+            background-image: linear-gradient(
+                35deg,
+                rgba(103, 79, 255, 0.7) 0%,
+                rgba(103, 79, 255, 0) 60%
+            );
+            transition: all 1s ease;
+        }
+    }
+
+    &-content {
+        &__name {
+            margin-top: 0;
+            margin-bottom: 0.16em;
+        }
+
+        &__title {
+            margin-top: 0.3em;
+            color: $color-brand-03;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+
+        &__desc {
+            margin-top: 1.06em;
+            margin-bottom: 0;
+            color: $color-gs-02;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        @include bp-up($bp-md) {
+            &__title,
+            &__desc {
+              font-size: 1.6rem;
+            }
+        }
     }
 }
 
-.profile-card-image {
-    position: relative;
+.profile-card-detail {
+    padding: 4rem;
+    width: 100%;
+    max-width: $site-max-width;
+    margin: auto;
+    display: flex;
+    gap: 4rem;
 
-    &::after {
-        content: '';
-        pointer-events: none;
-        position: absolute;
+    @include bp-down($bp-md) {
+        flex-direction: column;
+    }
+
+    @include bp-down($bp-sm) {
+        padding: $site-mobile-padding;
+    }
+
+    &-wrapper {
+        display: none;
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        font-family: $font-body;
+        font-size: 1.6rem;
+        position: fixed;
+        cursor: default;
         top: 0;
         left: 0;
-        background-size: 170%;
-        background-image: linear-gradient(
-            35deg,
-            rgba(103, 79, 255, 0.7) 0%,
-            rgba(103, 79, 255, 0) 60%
-        );
+        background-color: $color-gs-06;
+        z-index: $level-top;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    &-close {
+        display: block;
+        position: fixed;
+        top: 3rem;
+        right: 3rem;
+        width: 6rem;
+        height: 6rem;
+        cursor: pointer;
+        background-color: $color-gs-white;
+        box-shadow: 0 0 8px $color-gs-04;
+        border-radius: 50%;
+        z-index: $level-top;
         transition: all 1s ease;
+
+        &:hover {
+            transform: rotate(180deg);
+        }
+
+        &-icon {
+            font-size: 3rem;
+            position: absolute;
+            top: calc(50% - 1.5rem);
+            left: calc(50% - 1.5rem);
+            z-index: $level-top + 1;
+        }
     }
-}
 
-.profile-card-content {
-    > *:first-child { margin-top: 0; }
-    > *:last-child { margin-bottom: 0; }
+    &-avatar {
+        max-width: 40rem;
+        flex-shrink: 0;
 
-    &__name {
-        margin-top: 0;
-        margin-bottom: 0.16em;
+        @include bp-down($bp-md) {
+            max-width: 100%;
+        }
+
+        > div {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+
+            &::after {
+                content: '';
+                pointer-events: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-image: linear-gradient(
+                    35deg,
+                    rgba(103, 79, 255, 0.8) 0%,
+                    rgba(103, 79, 255, 0) 80%
+                );
+            }
+        }
     }
 
-    &__title {
-        margin-top: 0.3em;
+    &-content {
+        margin: 4rem 0 0 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: 1.5em;
+    }
+
+    &-heading {
+        margin: 0 0 1rem 0;
+    }
+
+    &-role {
         color: $color-brand-03;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-weight: 600;
-        line-height: 1.6;
-        letter-spacing: 0.01em;
     }
 
-    &__desc {
-        margin-top: 1.06em;
-        margin-bottom: 0;
-        color: $color-gs-02;
-        font-size: 1.2rem;
-        font-weight: 400;
-        line-height: 1.5;
+    &-programs {
+        margin: 4rem 0 0 0;
     }
 
-    @include bp-up($bp-md) {
-        &__title,
-        &__desc {
-          font-size: 1.6rem;
+    &-plist {
+        margin: 2rem 0 0 0;
+        padding: 1rem 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        @include bp-down($bp-md) {
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling:touch;
+            scrollbar-width: thin;
+            scrollbar-color: $color-gs-03;
+
+            &::-webkit-scrollbar {
+                height: 6px;
+            }
+            &::-webkit-scrollbar-track {
+                border-radius: 6px;
+                background-color: $color-gs-04;
+                border: 1px solid $color-gs-03;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+                background-color: $color-gs-03;
+                border: 1px solid $color-gs-02;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: $color-gs-05;
+            }
+            &::-webkit-scrollbar-thumb:active {
+                background-color: $color-gs-03;
+            }
+        }
+
+        li {
+            margin: 0;
+            padding: 2rem;
+            flex-shrink: 0;
+            font-size: 1.4rem;
+            background-color: $color-gs-white;
+            box-shadow: 0 1px 8px $color-gs-04;
+
+
+            h5 {
+                margin: 0 0 1rem 0;
+            }
         }
     }
 }

@@ -36,10 +36,13 @@ const PostList = (props) => {
                 }
             </div>
 
+                        {/*
+                        <li key={i} className={`${styles['post-list-item']} ${(i == 0) ? styles['post-list-item__first-child'] : ''}`}>
+                        */}
             {(props.data != null && props.data.length != 0) ? (
                 <ul className={styles['post-list']}>
                     {props.data.map((post, i) => (
-                        <li key={i} className={`${styles['post-list-item']} ${(i == 0) ? styles['post-list-item__first-child'] : ''}`}>
+                        <li key={i} className={styles['post-list-item']}>
                             <Link href={post.link} passHref={true}>
                                 <PostCard
                                     //style={{ maxWidth: '40rem' }}
