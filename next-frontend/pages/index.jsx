@@ -7,7 +7,7 @@ import SectionWrapper from '../components/global/SectionWrapper';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
 
-import HomeHero from '../components/HomeHero/';
+import HeroBanner from '../components/HeroBanner/';
 import TextBlock from '../components/TextBlock/';
 import USPBanner from '../components/USPBanner/';
 import ProgramList from '../components/ProgramList/';
@@ -26,15 +26,14 @@ const Home = (props) => {
     return (
         <PageWrapper>
             <Header />
-            <HomeHero
-                //image="https://source.unsplash.com/random/900×900"
+            <HeroBanner
+                //imageDesktop="https://source.unsplash.com/random/900×900"
+                heading={hero.heading}
                 button1Text='Learn more'
                 button1Link='#'
                 button2Text='Register Interest'
                 button2Link='#'
-            >
-                {hero.heading}
-            </HomeHero>
+            />
 
             <SectionWrapper spaceTop='0' spaceBtm='0'>
                 <USPBanner

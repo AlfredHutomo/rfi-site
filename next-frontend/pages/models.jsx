@@ -9,21 +9,21 @@ import {
     Footer,
 } from '../components/global';
 
-import style from '../styles/pages/components.module.scss';
-
 import ProgramCard from '../components/ProgramCard';
 import { InfoGrid } from '../components/InfoGrid';
-import BlogPostCard from '../components/BlogPostCard';
+import PostCard from '../components/PostCard';
 import FAQAccordion from '../components/FAQAccordion';
 import TextImageCard from '../components/TextImageCard';
 import TimelineCard from '../components/TimeLineCard';
 import USPBanner from '../components/USPBanner';
-import HomeHero from '../components/HomeHero';
+import HeroBanner from '../components/HeroBanner';
 import QuoteBlock from '../components/QuoteBlock';
 import SponsorBlock from '../components/SponsorBlock';
 import StatisticsBlock from '../components/StatisticsBlock';
 import LinkGroup from '../components/LinkGroup';
 import RegisterInterestCard from '../components/RegisterInterestCard';
+
+import style from '../styles/pages/components.module.scss';
 
 export default function Models(props) {
     const spacedContainerClass = [
@@ -547,15 +547,14 @@ export default function Models(props) {
             <div>
                 <h2>Home Hero</h2>
                 <div className={style['container']}>
-                    <HomeHero
+                    <HeroBanner
                         //image="https://source.unsplash.com/random/300×300"
+                        heading='The Future of Youth Football Development'
                         button1Text='Learn more'
                         button1Link='#'
                         button2Text='Register Interest'
                         button2Link='#'
-                    >
-                        The Future of Youth Football Development
-                    </HomeHero>
+                    />
                 </div>
             </div>
 

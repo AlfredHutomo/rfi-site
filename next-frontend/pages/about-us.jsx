@@ -37,7 +37,7 @@ export default function AboutUs() {
 
             <SectionWrapper>
                 <ProfileCardList
-                    //isMobileSlider
+                    isMobileSlider
                     heading='This is heading'
                     data={[
                         {

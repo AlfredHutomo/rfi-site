@@ -44,23 +44,21 @@
     }
 
     &-item {
-    }
-
-    &-item__first-child {
-        grid-column: 1 / -1;
-        //grid-column: 1;
-
-
         //composes: post-card-content__description from "../PostCard/PostCard.module.scss";
-        //display: block;
 
-        /*
-        > div > div {
-            display: flex;
+        &:first-child {
+            grid-column: 1 / -1;
+            //grid-column: 1;
+
+            //display: block;
+
+            /*
+            > div > div {
+                display: flex;
+            }
+            */
         }
-        */
     }
-
 
     &-cta {
         margin-top: 5rem;

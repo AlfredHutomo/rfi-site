@@ -1,20 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Image from 'next/image';
-import { useState } from 'react';
 
 import styles from './FAQAccordion.module.scss';
 
+import AccordionItem from './AccordionItem';
+
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 const FAQAccordion = (props) => {
     const { faqlists } = props;
-    const [accordionExpand, setAccordionState] = useState();
-
-    const toggleAccordion = (event) => {
-        //setAccordionState((state) => !state);
-        console.log(event.target.parentElement);
-    };
 
     return (
         <div className={styles['faq-accordion-wrapper']}>
@@ -56,34 +51,13 @@ const FAQAccordion = (props) => {
                 </div>
             </div>
             {props.faqlists != null && props.faqlists.length != 0 ? (
-                <ul className={styles['faq-accordion-list']}>
+                <div className={styles['faq-accordion-list']}>
                     {props.faqlists.map((faq, i) => (
-                        <li
-                            key={i}
-                            className={styles['faq-accordion-list-item']}
-                        >
-                            <div
-                                className={
-                                    styles['faq-accordion-list-item-heading']
-                                }
-                                onClick={toggleAccordion}
-                            >
-                                <h5>{faq.question}</h5>
-                                <div>
-                                    <ExpandMoreIcon sx={{ fontSize: 20 }} />
-                                </div>
-                            </div>
-
-                            <div
-                                className={`${
-                                    styles['faq-accordion-list-item-content']
-                                } ${accordionExpand ? styles['active'] : ''}`}
-                            >
-                                {faq.answer}
-                            </div>
-                        </li>
+                        <AccordionItem key={i} question={faq.question} >
+                            {faq.answer}
+                        </AccordionItem>
                     ))}
-                </ul>
+                </div>
             ) : (
                 ''
             )}
@@ -94,3 +68,4 @@ const FAQAccordion = (props) => {
 FAQAccordion.propTypes = {};
 
 export default FAQAccordion;
+
