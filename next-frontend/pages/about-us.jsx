@@ -6,6 +6,7 @@ import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
+import Breadcrumb from '../components/Breadcrumb';
 import ProfileCardList from '../components/ProfileCardList';
 import IconTextLinkGroup from '../components/IconTextLinkGroup';
 import TextBlock from '../components/TextBlock';
@@ -22,6 +23,21 @@ export default function AboutUs() {
             <Header></Header>
 
             <PageHeader title='About Us' />
+
+            <SectionWrapper>
+                <Breadcrumb
+                    data={[
+                        {
+                            text: 'Home',
+                            link: '/home',
+                        },
+                        {
+                            text: 'About Us',
+                            link: '/about-us',
+                        },
+                    ]}
+                />
+            </SectionWrapper>
 
             <SectionWrapper>
                 <TextBlock

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import clsx from 'clsx';
 
 import styles from './TimelineCard.module.scss';
 
@@ -14,7 +13,11 @@ const TimelineCard = (props) => {
 
     return (
         <div className={styles['timeline-card-wrapper']}>
-            <div className={styles['timeline-card-icon']}></div>
+            <div className={styles['timeline-card-dot']}></div>
+
+            <div className={styles['timeline-card-date']}>
+                {props.date != null ? props.date : ''}
+            </div>
 
             <div className={styles['timeline-card-main']}>
                 <div className={styles['timeline-card-image']}>
@@ -25,12 +28,9 @@ const TimelineCard = (props) => {
                     )}
                 </div>
                 <div className={styles['timeline-card-content']}>
-                    <h2>{props.heading != null ? props.heading : ''}</h2>
-                    {props.children != null ? props.children : ''}
+                    {props.heading != null ? <h2>{props.heading}</h2> : ''}
+                    {props.children != null ? <h4>{props.children}</h4> : ''}
                 </div>
-                <span className={styles['timeline-card-date']}>
-                    {props.date != null ? props.date : ''}
-                </span>
             </div>
         </div>
     );
@@ -39,3 +39,4 @@ const TimelineCard = (props) => {
 TimelineCard.propTypes = {};
 
 export default TimelineCard;
+

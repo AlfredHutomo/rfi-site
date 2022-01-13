@@ -1,0 +1,21 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.breadcrumb {
+    &-wrapper {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    &-link {
+        padding: 0.5rem 1rem;
+        font-size: 1.6rem;
+        color: $color-gs-02;
+
+        &.active {
+            color: $color-brand-02;
+        }
+    }
+}
+
