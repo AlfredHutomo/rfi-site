@@ -32,14 +32,15 @@
       "type": "text",
       "required": true
     },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program-tag.program-tag",
+      "mappedBy": "program"
+    },
     "slug": {
       "type": "uid",
       "targetField": "program_name"
-    },
-    "tags": {
-      "type": "component",
-      "repeatable": false,
-      "component": "program.program-tag"
     }
   }
 }
