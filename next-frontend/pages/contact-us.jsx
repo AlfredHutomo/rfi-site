@@ -27,11 +27,19 @@ export default function ContactUs() {
                 </TextBlock>
             </SectionWrapper>
 
-            <SectionWrapper>
+            <SectionWrapper isTwoColumns>
                 <ContactForm
                     heading="Please fill in the form below to get in touch with our team"
                 />
                 <InfoTileList
+                    data={[
+                        {
+                            heading: '',
+                            phone: '',
+                            email: '',
+                            content: '',
+                        },
+                    ]}
                 />
             </SectionWrapper>
 

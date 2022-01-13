@@ -2,9 +2,10 @@ import styles from './sectionWrapper.module.scss';
 import PropTypes from 'prop-types';
 
 const SectionWrapper = (props) => {
-    const { bgcolor, spaceTop, spaceBtm } = props;
+    const { bgcolor, spaceTop, spaceBtm, isTwoColumns } = props;
 
     let sectionStyle = { backgroundColor: props.bgcolor };
+    let sectionContentStyle = { display: 'flex' };
 
     if(props.spaceTop) {
         sectionStyle = { ...sectionStyle, paddingTop: props.spaceTop + 'px' }
@@ -19,7 +20,9 @@ const SectionWrapper = (props) => {
             className={styles['section-wrapper']}
             style={sectionStyle}
         >
-            <div className={styles['section-content']}>{props.children}</div>
+            <div className={`${styles['section-content']} ${styles['section-content-in-cols']}`}>
+                {props.children}
+            </div>
         </div>
     );
 };
