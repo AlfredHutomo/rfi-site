@@ -1,0 +1,36 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.banner {
+    margin: 0 auto;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    z-index: $level-base + 1;
+
+    &-wrapper {
+        position: relative;
+        color: $color-gs-white;
+        z-index: $level-base;
+    }
+
+    &-icon {
+        margin: 0 0 3rem 0;
+    }
+
+    &-heading {
+        margin: 0 auto;
+        color: inherit;
+        max-width: calc($site-max-width - 200px);
+    }
+
+    &-content {
+        margin: 2rem auto 0 auto;
+        font-family: $font-body;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.4em;
+        color: inherit;
+    }
+}
+

@@ -5,7 +5,6 @@ const SectionWrapper = (props) => {
     const { bgcolor, spaceTop, spaceBtm, isTwoColumns } = props;
 
     let sectionStyle = { backgroundColor: props.bgcolor };
-    let sectionContentStyle = { display: 'flex' };
 
     if(props.spaceTop) {
         sectionStyle = { ...sectionStyle, paddingTop: props.spaceTop + 'px' }
@@ -20,7 +19,7 @@ const SectionWrapper = (props) => {
             className={styles['section-wrapper']}
             style={sectionStyle}
         >
-            <div className={`${styles['section-content']} ${styles['section-content-in-cols']}`}>
+            <div className={`${styles['section-content']} ${isTwoColumns ? styles['section-content-in-cols'] : ''}`}>
                 {props.children}
             </div>
         </div>
@@ -29,12 +28,13 @@ const SectionWrapper = (props) => {
 
 SectionWrapper.propTypes = {
     bgcolor: PropTypes.string,
-    noPadding: PropTypes.bool,
+    isTwoColumns: PropTypes.bool,
 };
 
 SectionWrapper.defaultProps = {
     bgcolor: '#E5E5E5',
-    noPadding: false,
+    isTwoColumns: false,
 };
 
 export default SectionWrapper;
+

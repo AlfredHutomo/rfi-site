@@ -53,3 +53,149 @@
 .page-wrapper {
 }
 
+.form {
+    &-wrapper {
+        color: $color-brand-01;
+    }
+
+    &-section {
+        margin: 0 0 4rem 0;
+        padding: 0;
+        border: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-heading {
+            margin: 0 0 1rem 0;
+            padding: 0;
+            font-size: 2.4rem;
+            font-weight: 700;
+            font-family: $font-heading;
+            color: inherit;
+        }
+    }
+
+    &-row {
+        padding: 1rem 0;
+        display: flex;
+        gap: 3rem;
+    }
+
+    &-col {
+        width: 100%;
+    }
+
+    &-label {
+        padding: 1rem 0;
+        display: block;
+        color: inherit;
+        font-size: 1.6rem;
+        font-weight: 600;
+        font-family: $font-body;
+    }
+
+    &-input-text,
+    &-textarea {
+        padding: 1.2rem 1rem;
+        width: 100%;
+        font-size: 1.6rem;
+        font-family: $font-body;
+        background-color: $color-gs-white;
+        border: 1px solid $color-gs-04;
+        border-radius: 5px;
+
+        &::placeholder {
+            color: $color-gs-03;
+        }
+    }
+    &-textarea {
+        min-height: 20rem;
+    }
+
+    &-radio {
+        display: none;
+        &-group {
+            display: flex;
+            gap: 3rem;
+        }
+
+        &-label {
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            font-weight: 400;
+            font-family: $font-body;
+            color: inherit;
+            cursor: pointer;
+            position: relative;
+            z-index: $level-base;
+
+            &::before {
+                content: '';
+                margin-right: 0.5rem;
+                display: inline-block;
+                vertical-align: middle;
+                width: 1.6rem;
+                height: 1.6rem;
+                border: 2px solid $color-gs-02;
+                border-radius: 50%;
+                transition: all 0.4s ease;
+            }
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: 1rem;
+                height: 1rem;
+                background-color: transparent;
+                border-radius: 50%;
+                transition: all 0.4s ease;
+            }
+        }
+
+        &:checked + label::before {
+            border: 2px solid $color-brand-02;
+        }
+        &:checked + label::after {
+            background-color: $color-brand-02;
+        }
+    }
+
+    &-custom-radio {
+        display: none;
+        &:checked + label {
+            color: $color-gs-white;
+            background-color: $color-brand-02;
+        }
+        &-group {
+            display: flex;
+            gap: 3rem;
+
+            > div {
+                width: 100%;
+            }
+        }
+
+        &-label {
+            width: 100%;
+            display: block;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            color: $color-brand-02;
+            font-family: $font-heading;
+            font-weight: 700;
+            font-size: 1.6rem;
+            border-radius: 5px;
+            background-color: transparent;
+            border: 2px solid $color-brand-02;
+            transition: all 0.4s ease;
+
+        }
+    }
+}
+
