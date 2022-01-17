@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_elements_social_buttons",
+  "info": {
+    "displayName": "Social Button",
+    "icon": "share-alt"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "instagram",
+        "twitter",
+        "whatsapp",
+        "linkedIn"
+      ]
+    },
+    "linkTo": {
+      "type": "string"
+    }
+  }
+}

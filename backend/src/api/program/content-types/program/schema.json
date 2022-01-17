@@ -40,6 +40,16 @@
       "type": "component",
       "repeatable": false,
       "component": "program.program-tag"
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.block-content",
+        "sections.hero",
+        "sections.our-programs",
+        "sections.page-banner",
+        "sections.testimonials"
+      ]
     }
   }
 }

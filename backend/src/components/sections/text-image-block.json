@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_sections_text_image_blocks",
+  "info": {
+    "displayName": "Text Image Block",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "imageOnRight": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

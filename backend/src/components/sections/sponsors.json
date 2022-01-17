@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_sponsors",
+  "info": {
+    "displayName": "Sponsors",
+    "icon": "money-bill"
+  },
+  "options": {},
+  "attributes": {
+    "sponsors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sponsor.sponsor"
+    }
+  }
+}

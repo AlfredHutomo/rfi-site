@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_statistic_blocks",
+  "info": {
+    "displayName": "Statistic Block",
+    "icon": "percent"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "data": {
+      "displayName": "Statistic Data",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.statistic-data"
+    }
+  }
+}

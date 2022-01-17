@@ -27,6 +27,14 @@
         "files",
         "videos"
       ]
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "gold",
+        "silver",
+        "bronze"
+      ]
     }
   }
 }
