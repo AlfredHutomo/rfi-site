@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_elements_statistic_data",
+  "info": {
+    "displayName": "Statistic Data",
+    "icon": "database"
+  },
+  "options": {},
+  "attributes": {
+    "dataName": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    }
+  }
+}

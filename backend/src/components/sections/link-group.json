@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_link_groups",
+  "info": {
+    "displayName": "Link Group",
+    "icon": "layer-group"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "linkBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.button-link"
+    }
+  }
+}

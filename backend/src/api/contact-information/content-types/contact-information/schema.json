@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_informations",
+  "info": {
+    "singularName": "contact-information",
+    "pluralName": "contact-informations",
+    "displayName": "Contact Information",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contactList": {
+      "displayName": "Contact Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.contact-card"
+    },
+    "socialMediaList": {
+      "displayName": "Social Button",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.social-button"
+    },
+    "addressLocationName": {
+      "type": "string"
+    },
+    "addressLocationDescription": {
+      "type": "text"
+    },
+    "fullAddress": {
+      "type": "text"
+    }
+  }
+}

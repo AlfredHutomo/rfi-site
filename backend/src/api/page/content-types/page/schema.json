@@ -24,7 +24,16 @@
         "sections.hero",
         "sections.our-programs",
         "sections.testimonials",
-        "sections.block-content"
+        "sections.block-content",
+        "sections.page-banner",
+        "sections.text-image-block",
+        "sections.text-block",
+        "sections.statistic-block",
+        "sections.link-group",
+        "sections.icon-text-link-block",
+        "sections.sponsors",
+        "sections.faq",
+        "sections.register-interest"
       ]
     },
     "shortName": {
