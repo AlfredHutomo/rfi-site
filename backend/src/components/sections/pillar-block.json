@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_pillar_blocks",
+  "info": {
+    "displayName": "Pillar Block",
+    "icon": "window-minimize"
+  },
+  "options": {},
+  "attributes": {
+    "pillars": {
+      "displayName": "Icon And Text",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.icon-and-text"
+    }
+  }
+}

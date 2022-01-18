@@ -16,13 +16,17 @@ import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 import StatisticsBlock from '../components/StatisticsBlock/';
 import TextImageCard from '../components/TextImageCard/';
+import { homeDefaultData } from '../utils/default';
+import { fetchAPI } from '../utils/api';
 
-export default function AboutUs() {
+const AboutUs = (props) => {
+    const [banner, textBlock1, skip1] = props.pageData.attributes.content;
+
     return (
         <PageWrapper>
             <Header></Header>
 
-            <PageHeader title='About Us' />
+            <PageHeader title={banner.banner_text} />
 
             <SectionWrapper>
                 <Breadcrumb
@@ -41,10 +45,11 @@ export default function AboutUs() {
 
             <SectionWrapper>
                 <TextBlock
-                    h3="RFI takes pride in bringing to Australia the finest in international youth football development."
-                >
-                    Our objective is to provide our players with nothing but the best football experience possible, the Real experience. It consists of all the necessary formation and resources to develop a professional career just as much as enabling a healthy sporting life and habits for the everlasting enjoying of this beautiful game.
-                </TextBlock>
+                    h3='RFI takes pride in bringing to Australia the finest in international youth football development.'
+                    heading={textBlock1.heading}
+                    headingType={textBlock1.headingType}
+                    description={textBlock1.description}
+                />
             </SectionWrapper>
 
             <SectionWrapper>
@@ -112,41 +117,42 @@ export default function AboutUs() {
                         },
                     ]}
                 >
-                    Our programs have been helping players with some amazing
-                    Our programs have been helping players with some amazing
-                    Our programs have been helping players with some amazing
-                    success stories.
+                    Our programs have been helping players with some amazing Our
+                    programs have been helping players with some amazing Our
+                    programs have been helping players with some amazing success
+                    stories.
                 </StatisticsBlock>
             </SectionWrapper>
-
-
 
             <SectionWrapper>
                 <TextImageCard
                     isVerticalCentreAlign
-
                     //image="https://source.unsplash.com/random/300×300"
-                    preHeading={"RFI successes"}
-                    heading={"Becoming Melbourne City's second youngest debutant"}
+                    preHeading={'RFI successes'}
+                    heading={
+                        "Becoming Melbourne City's second youngest debutant"
+                    }
                     buttonLink='http://www.google.com.au'
                     buttonText='Test'
                 >
                     <p>
-                        Max spent his key development years at RFI, where he established himself as a leading talent in Melbourne.  Together with his teammates from childhood at RFI, he bossed the NPL system until he was recruited by Melbourne City. For us it’s not surprising that at the tender age of 15 he’s already an outstanding talent, we know he will soon represent Australia and serves as an inspiration to the current RFI players.
+                        Max spent his key development years at RFI, where he
+                        established himself as a leading talent in Melbourne.
+                        Together with his teammates from childhood at RFI, he
+                        bossed the NPL system until he was recruited by
+                        Melbourne City. For us it's not surprising that at the
+                        tender age of 15 he's already an outstanding talent, we
+                        know he will soon represent Australia and serves as an
+                        inspiration to the current RFI players.
                     </p>
                     <p>this is a test</p>
                 </TextImageCard>
-
             </SectionWrapper>
 
-
-            <SectionWrapper
-                spaceBtm="0"
-            >
-                <TextBlock
-                    h2="Our sponsors make RFI possible"
-                >
-                    Their generosity and support of our football development program is acknowledged and very much appreciated.
+            <SectionWrapper spaceBtm='0'>
+                <TextBlock h2='Our sponsors make RFI possible'>
+                    Their generosity and support of our football development
+                    program is acknowledged and very much appreciated.
                 </TextBlock>
             </SectionWrapper>
 
@@ -188,20 +194,16 @@ export default function AboutUs() {
                 />
             </SectionWrapper>
 
-
-
-            <SectionWrapper
-                bgcolor="#fff"
-                spaceBtm="0"
-            >
-                <TextBlock
-                    h2="Our Policy"
-                >
-                    It's important to RFI to uphold ethical and behavioual standards. If you'd like to know more, have a look at the policies below, and get in touch if you can’t find what you're looking for.
+            <SectionWrapper bgcolor='#fff' spaceBtm='0'>
+                <TextBlock h2='Our Policy'>
+                    It's important to RFI to uphold ethical and behavioual
+                    standards. If you'd like to know more, have a look at the
+                    policies below, and get in touch if you can't find what
+                    you're looking for.
                 </TextBlock>
             </SectionWrapper>
 
-            <SectionWrapper bgcolor="#fff">
+            <SectionWrapper bgcolor='#fff'>
                 <IconTextLinkGroup
                     data={[
                         {
@@ -229,11 +231,8 @@ export default function AboutUs() {
                             linkUrl: '#',
                         },
                     ]}
-                >
-                </IconTextLinkGroup>
+                ></IconTextLinkGroup>
             </SectionWrapper>
-
-
 
             <SectionWrapper>
                 <RegisterInterestCard />
@@ -242,5 +241,27 @@ export default function AboutUs() {
             <Footer />
         </PageWrapper>
     );
-}
+};
 
+export const getStaticProps = async (context) => {
+    try {
+        const respond = await fetchAPI('/pages/7', {
+            populate: ['content'],
+        });
+
+        return {
+            props: {
+                pageData: respond.data,
+            },
+        };
+    } catch (error) {
+        return {
+            props: {
+                // default data goes here
+                pageData: homeDefaultData,
+            },
+        };
+    }
+};
+
+export default AboutUs;

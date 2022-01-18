@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_people_highlight_blocks",
+  "info": {
+    "displayName": "People Highlight Block",
+    "icon": "child",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "people": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rfi-team-member.rfi-team-member"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

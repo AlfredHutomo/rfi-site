@@ -41,7 +41,9 @@
         "sections.sponsors",
         "sections.faq",
         "sections.register-interest",
-        "sections.usp-banner"
+        "sections.usp-banner",
+        "sections.pillar-block",
+        "sections.people-highlight-block"
       ]
     }
   }
