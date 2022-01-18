@@ -7,23 +7,44 @@
   },
   "options": {},
   "attributes": {
-    "hero_card": {
-      "displayName": "Card",
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.card"
-    },
     "heading": {
       "type": "string"
     },
-    "bgImage": {
+    "bgImageDesktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
+      ]
+    },
+    "bgImageMobile": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "button1Text": {
+      "type": "string"
+    },
+    "button1Link": {
+      "type": "string"
+    },
+    "button2Text": {
+      "type": "string"
+    },
+    "button2Link": {
+      "type": "string"
+    },
+    "isContentOnRight": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -1,4 +1,4 @@
-import Image from 'next/dist/client/image';
+import Image from 'next/image';
 import styles from './header.module.scss';
 import LogoImg from '../../../public/logo-with-text.svg';
 
@@ -11,9 +11,10 @@ import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Header = () => {
+const Header = (props) => {
     const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
     const [mobileMenuActive, setMobileMenu] = useState(false); // note: same as var active = false in v js
+    const { logo } = props;
 
     const toggleMobileMenu = () => {
         setMobileMenu((state) => !state); //reading for sam https://reactjs.org/docs/hooks-state.html
@@ -30,14 +31,28 @@ const Header = () => {
             <header className={styles['page-header-main']}>
                 <div className={styles['page-header']}>
                     <div className={styles['page-header-logo']}>
-                        <Link href={'/'}>
-                            <Image
-                                src={LogoImg}
-                                height={54}
-                                width={202}
-                                alt={''}
-                            />
-                        </Link>
+                        {props.logo != null ? (
+                            <Link href={'/'}>
+                                <a>
+                                    <Image
+                                        src={props.logo}
+                                        width='200'
+                                        height='100'
+                                        alt=''
+                                    />
+                                </a>
+                            </Link>
+                        ) : (
+                            <Link href={'/'}>
+                                <a>
+                                    <Image
+                                        src={LogoImg}
+                                        layout='responsive'
+                                        alt=''
+                                    />
+                                </a>
+                            </Link>
+                        )}
                     </div>
 
                     <nav

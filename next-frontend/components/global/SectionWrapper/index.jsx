@@ -6,20 +6,24 @@ const SectionWrapper = (props) => {
 
     let sectionStyle = { backgroundColor: props.bgcolor };
 
-    if(props.spaceTop) {
-        sectionStyle = { ...sectionStyle, paddingTop: props.spaceTop + 'px' }
+    if (props.spaceTop) {
+        sectionStyle = { ...sectionStyle, paddingTop: props.spaceTop + 'px' };
     }
 
-    if(props.spaceBtm) {
-        sectionStyle = { ...sectionStyle, paddingBottom: props.spaceBtm + 'px' }
+    if (props.spaceBtm) {
+        sectionStyle = {
+            ...sectionStyle,
+            paddingBottom: props.spaceBtm + 'px',
+        };
     }
 
     return (
-        <div
-            className={styles['section-wrapper']}
-            style={sectionStyle}
-        >
-            <div className={`${styles['section-content']} ${isTwoColumns ? styles['section-content-in-cols'] : ''}`}>
+        <div className={styles['section-wrapper']} style={sectionStyle}>
+            <div
+                className={`${styles['section-content']} ${
+                    isTwoColumns ? styles['section-content-in-cols'] : ''
+                }`}
+            >
                 {props.children}
             </div>
         </div>
@@ -37,4 +41,3 @@ SectionWrapper.defaultProps = {
 };
 
 export default SectionWrapper;
-

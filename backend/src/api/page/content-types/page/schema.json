@@ -40,7 +40,8 @@
         "sections.icon-text-link-block",
         "sections.sponsors",
         "sections.faq",
-        "sections.register-interest"
+        "sections.register-interest",
+        "sections.usp-banner"
       ]
     }
   }

@@ -21,49 +21,29 @@ import { fetchAPI } from '../utils/api';
 import { homeDefaultData } from '../utils/default';
 
 const Home = (props) => {
-    const [hero, ourPrograms] = props.pageData.attributes.content;
+    const [hero, uspBanner, textBlock1, skip1, skip2, quoteBlock, textBlock2] =
+        props.pageData.attributes.content;
 
     return (
         <PageWrapper>
-            <Header />
+            <Header logo='https://source.unsplash.com/random/300x100' />
             <HeroBanner
                 //imageDesktop="https://source.unsplash.com/random/900×900"
+                //imageDesktop="https://source.unsplash.com/random/900×900"
                 heading={hero.heading}
-                button1Text='Learn more'
-                button1Link='#'
-                button2Text='Register Interest'
-                button2Link='#'
+                button1Text={hero.button1Text}
+                button1Link={hero.button1Link}
+                button2Text={hero.button2Text}
+                button2Link={hero.button2Link}
+                isContentOnRight={hero.isContentOnRight}
             />
+            <USPBanner offsetPos data={uspBanner.block} />
 
-            <SectionWrapper spaceTop='0' spaceBtm='0'>
-                <USPBanner
-                    offsetPos
-                    data={[
-                        {
-                            icon: 'location_on',
-                            description:
-                                'Who could you become? With a number of different programs in RFI, the opportunities to train like a pro player continue to grow and evolve.',
-                        },
-                        {
-                            icon: 'track_changes',
-                            description:
-                                'Who could you become? With a number of different programs in RFI, the opportunities to train like a pro player continue to grow and evolve.',
-                        },
-                        {
-                            icon: 'people_outline',
-                            description: 'adfasdfasdf',
-                        },
-                    ]}
-                />
-            </SectionWrapper>
-
-            <SectionWrapper>
-                <TextBlock h2='Our Program'>
-                    Who could you become? With a number of different programs in
-                    RFI, the opportunities to train like a pro player continue
-                    to grow and evolve.
-                </TextBlock>
-            </SectionWrapper>
+            <TextBlock
+                heading={textBlock1.heading}
+                headingType={textBlock1.headingType}
+                description={textBlock1.description}
+            />
 
             <SectionWrapper>
                 <ProgramList
@@ -106,20 +86,19 @@ const Home = (props) => {
             <SectionWrapper bgcolor='#e5e5e5'>
                 <QuoteBlock
                     avatar='https://source.unsplash.com/random/300×300'
-                    author='Santiago Ortiz'
-                    role='Coach, RFI'
+                    author={quoteBlock.auhtorName}
+                    role={quoteBlock.authorRole}
                 >
-                    A LOT OF MEMORIES COME TO MY MIND AS A PLAYER, COACH, OR
-                    FAN. THE BEST ONES ARE THOSE WHICH I LIVED AND SHARED WITH
-                    PEOPLE.
+                    {quoteBlock.quote}
                 </QuoteBlock>
             </SectionWrapper>
 
             <SectionWrapper spaceBtm='0'>
-                <TextBlock h2='Proudly supported by'>
-                    Their generosity and support of our football development
-                    program is acknowledged and very much appreciated.
-                </TextBlock>
+                <TextBlock
+                    heading={textBlock2.heading}
+                    headingType={textBlock2.headingType}
+                    description={textBlock2.description}
+                />
             </SectionWrapper>
 
             <SectionWrapper>
@@ -189,12 +168,12 @@ export const getStaticProps = async (context) => {
         const respond = await fetchAPI('/pages/6', {
             populate: [
                 'content.hero_card',
+                'content.block',
                 'content.programs.tags',
                 'content.sponsor',
+                'content.personPhoto',
             ],
         });
-
-        console.log(respond);
 
         return {
             props: {

@@ -7,8 +7,15 @@
   },
   "options": {},
   "attributes": {
-    "text": {
+    "description": {
+      "type": "text"
+    },
+    "icon": {
       "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "default": "card"
     }
   }
 }

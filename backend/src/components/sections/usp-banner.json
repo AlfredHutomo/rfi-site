@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_usp_banners",
+  "info": {
+    "displayName": "USP Banner",
+    "icon": "grip-horizontal"
+  },
+  "options": {},
+  "attributes": {
+    "block": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.card"
+    }
+  }
+}

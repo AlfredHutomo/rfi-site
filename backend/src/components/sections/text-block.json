@@ -2,7 +2,8 @@
   "collectionName": "components_sections_text_blocks",
   "info": {
     "displayName": "Text Block",
-    "icon": "ad"
+    "icon": "ad",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,7 +21,7 @@
         "h6"
       ]
     },
-    "text": {
+    "description": {
       "type": "richtext"
     }
   }

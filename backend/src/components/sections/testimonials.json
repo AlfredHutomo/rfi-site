@@ -1,19 +1,16 @@
 {
   "collectionName": "components_sections_testimonials",
   "info": {
-    "displayName": "Testimonials",
+    "displayName": "Quote Block",
     "icon": "male",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "testimony": {
-      "type": "text"
-    },
-    "personName": {
+    "authorName": {
       "type": "string"
     },
-    "personPhoto": {
+    "avatar": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -23,8 +20,11 @@
         "videos"
       ]
     },
-    "personOccupation": {
+    "authorRole": {
       "type": "string"
+    },
+    "quote": {
+      "type": "richtext"
     }
   }
 }
