@@ -186,9 +186,15 @@ const Home = (props) => {
 
 export const getStaticProps = async (context) => {
     try {
-        const respond = await fetchAPI('/pages/1', {
-            populate: ['content.programs.tags'],
+        const respond = await fetchAPI('/pages/6', {
+            populate: [
+                'content.hero_card',
+                'content.programs.tags',
+                'content.sponsor',
+            ],
         });
+
+        console.log(respond);
 
         return {
             props: {

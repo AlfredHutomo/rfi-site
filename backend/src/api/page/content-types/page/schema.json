@@ -12,6 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "shortName": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "shortName"
+    },
     "seo": {
       "displayName": "SEO",
       "type": "component",
@@ -35,13 +42,6 @@
         "sections.faq",
         "sections.register-interest"
       ]
-    },
-    "shortName": {
-      "type": "string"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "shortName"
     }
   }
 }

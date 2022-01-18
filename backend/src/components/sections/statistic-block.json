@@ -2,10 +2,14 @@
   "collectionName": "components_sections_statistic_blocks",
   "info": {
     "displayName": "Statistic Block",
-    "icon": "percent"
+    "icon": "percent",
+    "description": ""
   },
   "options": {},
   "attributes": {
+    "heading": {
+      "type": "string"
+    },
     "description": {
       "type": "text"
     },

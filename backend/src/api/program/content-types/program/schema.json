@@ -48,7 +48,15 @@
         "sections.hero",
         "sections.our-programs",
         "sections.page-banner",
-        "sections.testimonials"
+        "sections.testimonials",
+        "sections.faq",
+        "sections.icon-text-link-block",
+        "sections.link-group",
+        "sections.register-interest",
+        "sections.sponsors",
+        "sections.statistic-block",
+        "sections.text-block",
+        "sections.text-image-block"
       ]
     }
   }

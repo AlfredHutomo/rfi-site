@@ -18,6 +18,9 @@
     "website": {
       "type": "string"
     },
+    "mobile": {
+      "type": "string"
+    },
     "logo": {
       "type": "media",
       "multiple": false,
@@ -35,6 +38,9 @@
         "silver",
         "bronze"
       ]
+    },
+    "email": {
+      "type": "string"
     }
   }
 }

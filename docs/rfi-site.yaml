@@ -20,7 +20,7 @@ services:
             scope: RUN_TIME
             value: ${db.DATABASE_URL}
       github:
-          branch: do-deployment
+          branch: main
           repo: relabstudios/rfi.site
       http_port: 8080
       instance_count: 1
