@@ -1,0 +1,33 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.post-article-hero {
+    margin: 0 auto;
+    max-width: $site-max-width;
+    position: relative;
+    z-index: $level-base + 1;
+
+    &-wrapper {
+        height: 60rem;
+        position: relative;
+        z-index: $level-base;
+    }
+
+    &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        width: 5rem;
+        height: 5rem;
+        background-color: $color-gs-white;
+        border-radius: 50%;
+        z-index: $level-base + 1;
+    }
+
+    &-mui {
+    }
+}
+

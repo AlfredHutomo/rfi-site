@@ -1,0 +1,34 @@
+@import "../../styles/_base";
+@import "../../styles/_utils";
+
+.contact-form {
+
+    &-wrapper {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 73rem;
+    }
+
+    &-heading {
+        max-width: 80%;
+        color: $color-brand-01;
+        margin: 0 0 3rem 0;
+
+        span {
+            color: $color-brand-02;
+        }
+    }
+
+    &-misc {
+        margin: 0rem 0 6rem 0;
+        color: $color-gs-02;
+        font-size: 1.6rem;
+
+        a {
+            color: $color-brand-02;
+            text-decoration: underline;
+        }
+    }
+
+}
+

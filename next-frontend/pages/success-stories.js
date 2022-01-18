@@ -8,6 +8,7 @@ import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
 import TextBlock from '../components/TextBlock';
 import LinkGroup from '../components/LinkGroup/';
+import Banner from '../components/Banner';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 
@@ -141,6 +142,7 @@ export default function SuccessStories() {
 
             <SectionWrapper>
                 <LinkGroup
+                    heading="Learn more about RFI"
                     data={[
                         {
                             text: 'History',
@@ -165,6 +167,8 @@ export default function SuccessStories() {
                     ]}
                 />
             </SectionWrapper>
+
+            <Banner />
 
             <SectionWrapper>
                 <RegisterInterestCard />

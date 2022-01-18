@@ -66,3 +66,45 @@
     }
 }
 
+// Below styles are for mobile slider
+.post-list-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+
+    @include bp-down($bp-md) {
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling:touch;
+
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            border-radius: 6px;
+            background-color: $color-gs-04;
+            border: 1px solid $color-gs-03;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background-color: $color-gs-03;
+            border: 1px solid $color-gs-02;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: $color-gs-05;
+        }
+        &::-webkit-scrollbar-thumb:active {
+            background-color: $color-gs-03;
+        }
+    }
+
+    li {
+        width: 32%;
+        flex-shrink: 0;
+
+        @include bp-down($bp-md) {
+            width: 20rem;
+        }
+    }
+}
+

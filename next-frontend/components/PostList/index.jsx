@@ -12,8 +12,10 @@ const PostList = (props) => {
     const {
         heading,
         data,
+        isMobileSlider,
     } = props;
 
+    const slider = (isMobileSlider != null) ? styles['post-list-slider'] : '';
 
     return (
         <div className={styles['post-list-wrapper']}>
@@ -36,11 +38,8 @@ const PostList = (props) => {
                 }
             </div>
 
-                        {/*
-                        <li key={i} className={`${styles['post-list-item']} ${(i == 0) ? styles['post-list-item__first-child'] : ''}`}>
-                        */}
             {(props.data != null && props.data.length != 0) ? (
-                <ul className={styles['post-list']}>
+                <ul className={styles['post-list'] + ' ' + slider}>
                     {props.data.map((post, i) => (
                         <li key={i} className={styles['post-list-item']}>
                             <Link href={post.link} passHref={true}>
@@ -64,7 +63,7 @@ const PostList = (props) => {
             )}
             <div className={styles['post-list-cta']}>
                 <Button to='#'>
-                    See the whole team
+                    Load more
                 </Button>
             </div>
         </div>

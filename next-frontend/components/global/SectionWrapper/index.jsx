@@ -2,7 +2,7 @@ import styles from './sectionWrapper.module.scss';
 import PropTypes from 'prop-types';
 
 const SectionWrapper = (props) => {
-    const { bgcolor, spaceTop, spaceBtm } = props;
+    const { bgcolor, spaceTop, spaceBtm, isTwoColumns } = props;
 
     let sectionStyle = { backgroundColor: props.bgcolor };
 
@@ -19,19 +19,22 @@ const SectionWrapper = (props) => {
             className={styles['section-wrapper']}
             style={sectionStyle}
         >
-            <div className={styles['section-content']}>{props.children}</div>
+            <div className={`${styles['section-content']} ${isTwoColumns ? styles['section-content-in-cols'] : ''}`}>
+                {props.children}
+            </div>
         </div>
     );
 };
 
 SectionWrapper.propTypes = {
     bgcolor: PropTypes.string,
-    noPadding: PropTypes.bool,
+    isTwoColumns: PropTypes.bool,
 };
 
 SectionWrapper.defaultProps = {
     bgcolor: '#E5E5E5',
-    noPadding: false,
+    isTwoColumns: false,
 };
 
 export default SectionWrapper;
+

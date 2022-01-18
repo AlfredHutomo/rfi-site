@@ -8,14 +8,12 @@ import IconTextLinkGroup from '../components/IconTextLinkGroup/';
 import LinkGroup from '../components/LinkGroup/';
 import IconTextTileGroup from '../components/IconTextTileGroup/';
 import TextBlock from '../components/TextBlock';
+import StatisticsBlock from '../components/StatisticsBlock/';
 import Header from '../components/global/Header';
 import Footer from '../components/global/Footer';
+import Banner from '../components/Banner';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
-
-//import SectionWrapper from '../components/global';
-
-import StatisticsBlock from '../components/StatisticsBlock/';
 import TextImageCard from '../components/TextImageCard/';
 import QuoteBlock from '../components/QuoteBlock/';
 
@@ -167,11 +165,7 @@ export default function Philosophy() {
                 </TextImageCard>
             </SectionWrapper>
 
-            <SectionWrapper>
-                {
-                    // <Image src="https://source.unsplash.com/random/1000x500" layout="fill" objectFit="cover" alt="" />}
-                }
-            </SectionWrapper>
+            <Banner />
 
             <SectionWrapper>
                 <LinkGroup

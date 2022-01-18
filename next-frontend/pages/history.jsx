@@ -10,6 +10,7 @@ import PageHeader from '../components/global/PageHeader';
 import Breadcrumb from '../components/Breadcrumb';
 import TextBlock from '../components/TextBlock';
 import Timeline from '../components/Timeline';
+import Banner from '../components/Banner';
 import LinkGroup from '../components/LinkGroup/';
 
 export default function History() {
@@ -69,8 +70,17 @@ export default function History() {
                 />
             </SectionWrapper>
 
+            <Banner
+                //icon="./public/logo-no-text.svg"
+                //image="https://source.unsplash.com/random/1000x400"
+                heading="The history of RFI is one of non-conformity, counterculture and determination."
+            >
+                But above all, it's about ideas, mentality and conviction required to persevere and thrive in a constant quest for excellence. It was written by people who believed in this, who made RFI their struggle, taking responsibility and carrying the burden of being different – being better.
+            </Banner>
+
             <SectionWrapper>
                 <LinkGroup
+                    heading="Learn more about RFI"
                     data={[
                         {
                             text: 'History',
