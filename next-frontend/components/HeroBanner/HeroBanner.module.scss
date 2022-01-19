@@ -1,7 +1,9 @@
-@import "../../styles/_base";
-@import "../../styles/_utils";
+@import '../../styles/_base';
+@import '../../styles/_utils';
 
-$hero-breakpoint: calc($site-max-width + $site-mobile-padding + $site-mobile-padding);
+$hero-breakpoint: calc(
+    $site-max-width + $site-mobile-padding + $site-mobile-padding
+);
 
 .hero-banner {
     margin: 0 auto;
@@ -85,5 +87,3 @@ $hero-breakpoint: calc($site-max-width + $site-mobile-padding + $site-mobile-pad
         }
     }
 }
-
-
