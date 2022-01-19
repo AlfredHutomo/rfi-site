@@ -2,13 +2,25 @@
 @import "../../styles/_utils";
 
 .statistics-block {
+    $base: &;
 
     &-wrapper {
         text-align: center;
+
+        &.darkBg {
+            #{$base}-data-detail {
+                color: $color-gs-white;
+
+                span {
+                    color: $color-gs-white;
+                }
+            }
+        }
     }
 
     &-heading {
-        margin: 0;
+        margin: 0 0 5rem 0;
+        color: inherit;
     }
 
     &-description {
@@ -19,7 +31,6 @@
     }
 
     &-data {
-        margin-top: 5rem;
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
