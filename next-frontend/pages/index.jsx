@@ -1,7 +1,3 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
-
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import Header from '../components/global/Header';
@@ -17,26 +13,24 @@ import { InfoGrid } from '../components/InfoGrid/';
 import FAQAccordion from '../components/FAQAccordion/';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 
-import { fetchAPI } from '../utils/api';
+import { getLayoutData, getPageData } from '../utils/api';
+import delve from 'dlv';
 import { homeDefaultData } from '../utils/default';
 
 const Home = (props) => {
     const [hero, uspBanner, textBlock1, skip1, skip2, quoteBlock, textBlock2] =
         props.pageData.attributes.content;
 
+    const header = delve(props.layoutData, 'header.data.attributes');
+
+    console.log(header);
+
     return (
         <PageWrapper>
-            <Header logo='https://source.unsplash.com/random/300x100' />
-            <HeroBanner
-                //imageDesktop="https://source.unsplash.com/random/900×900"
-                //imageDesktop="https://source.unsplash.com/random/900×900"
-                heading={hero.heading}
-                button1Text={hero.button1Text}
-                button1Link={hero.button1Link}
-                button2Text={hero.button2Text}
-                button2Link={hero.button2Link}
-                isContentOnRight={hero.isContentOnRight}
-            />
+            <Header headerData={header} />
+
+            <HeroBanner data={hero} />
+
             <USPBanner offsetPos data={uspBanner.block} />
 
             <TextBlock
@@ -93,7 +87,7 @@ const Home = (props) => {
                 </QuoteBlock>
             </SectionWrapper>
 
-            <SectionWrapper spaceBtm='0'>
+            <SectionWrapper spaceBtm='0' option={{ spaceBtm: '0' }}>
                 <TextBlock
                     heading={textBlock2.heading}
                     headingType={textBlock2.headingType}
@@ -164,30 +158,40 @@ const Home = (props) => {
 };
 
 export const getStaticProps = async (context) => {
-    try {
-        const respond = await fetchAPI('/pages/6', {
-            populate: [
-                'content.hero_card',
-                'content.block',
-                'content.programs.tags',
-                'content.sponsor',
-                'content.personPhoto',
-            ],
-        });
+    const pageData = await getPageData({ slug: 'home' });
+    const layoutData = await getLayoutData();
 
-        return {
-            props: {
-                pageData: respond.data,
-            },
-        };
-    } catch (error) {
-        return {
-            props: {
-                // default data goes here
-                pageData: homeDefaultData,
-            },
-        };
-    }
+    return {
+        props: {
+            pageData,
+            layoutData,
+        },
+    };
+
+    // try {
+    //     const respond = await fetchAPI('/pages/6', {
+    //         populate: [
+    //             'content.hero_card',
+    //             'content.block',
+    //             'content.programs.tags',
+    //             'content.sponsor',
+    //             'content.personPhoto',
+    //         ],
+    //     });
+
+    //     return {
+    //         props: {
+    //             pageData: respond.data,
+    //         },
+    //     };
+    // } catch (error) {
+    //     return {
+    //         props: {
+    //             // default data goes here
+    //             pageData: homeDefaultData,
+    //         },
+    //     };
+    // }
 };
 
 export default Home;

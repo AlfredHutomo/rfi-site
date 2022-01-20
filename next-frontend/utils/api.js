@@ -1,4 +1,6 @@
 import qs from 'qs';
+import client from './apollo-client';
+import { LAYOUT_DATA, PAGE_DATA } from './gqlQueries';
 
 export function getStrapiURL(path) {
     return `${
@@ -39,5 +41,26 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
         throw new Error(`An error occured please try again`);
     }
     const data = await response.json();
+    return data;
+}
+
+export async function getPageData({ slug }) {
+    const { data } = await client.query({
+        query: PAGE_DATA,
+        variables: {
+            slug,
+        },
+    });
+
+    console.log(data.pages.data[0]);
+
+    return data.pages.data[0];
+}
+
+export async function getLayoutData() {
+    const { data } = await client.query({
+        query: LAYOUT_DATA,
+    });
+
     return data;
 }

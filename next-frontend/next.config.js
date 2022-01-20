@@ -7,7 +7,10 @@ module.exports = {
         includePaths: [path.join(__dirname, 'styles')],
     },
     images: {
-        domains: ['source.unsplash.com'],
+        domains: [
+            'source.unsplash.com',
+            'rfi-site.s3.ap-southeast-2.amazonaws.com',
+        ],
         //loader: "imgix",
         //path: "http://",
     },

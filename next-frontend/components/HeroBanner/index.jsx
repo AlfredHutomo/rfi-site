@@ -14,23 +14,25 @@ import Button from '../global/Button';
 
 const HeroBanner = (props) => {
     const {
-        isContentOnRight,
-        imageDesktop,
-        imageMobile,
+        bgImageDesktop,
+        bgImageMobile,
         heading,
-        button1Text,
-        button1Link,
-        button2Text,
-        button2Link,
-    } = props;
+        button1,
+        button2,
+        isContentOnRight,
+    } = props.data;
 
     return (
         <div className={styles['hero-banner-wrapper']}>
-            <div className={`${styles['hero-banner']} ${isContentOnRight ? styles['alignRight'] : ''}`}>
+            <div
+                className={`${styles['hero-banner']} ${
+                    isContentOnRight ? styles['alignRight'] : ''
+                }`}
+            >
                 <div className={styles['hero-banner-content']}>
-                    {props.heading != null ? (
+                    {heading != null ? (
                         <h1 className={styles['hero-banner-heading']}>
-                            {props.heading}
+                            {heading}
                         </h1>
                     ) : (
                         ''
@@ -42,26 +44,26 @@ const HeroBanner = (props) => {
                     ) : (
                         ''
                     )}
-                    {props.button1Text != null && props.button1Link != null ? (
+                    {button1.text != null && button1.url != null ? (
                         <Button
                             variant='4'
                             //size='large'
                             className={styles['hero-banner-button']}
-                            to={props.button1Link}
+                            to={button1.url}
                         >
-                            {props.button1Text}
+                            {button1.text}
                         </Button>
                     ) : (
                         ''
                     )}
-                    {props.button2Text != null && props.button2Link != null ? (
+                    {button2.text != null && button2.url != null ? (
                         <Button
                             variant='1'
                             //size='large'
                             className={styles['hero-banner-button']}
-                            to={props.button2Link}
+                            to={button2.url}
                         >
-                            {props.button2Text}
+                            {button2.text}
                         </Button>
                     ) : (
                         ''
@@ -70,32 +72,42 @@ const HeroBanner = (props) => {
             </div>
 
             <div className={styles['hero-banner-img']}>
-                {props.imageDesktop != null ? (
-                    <div className="desktop-only">
+                {bgImageDesktop != null ? (
+                    <div className='desktop-only'>
                         <Image
-                            src={props.imageDesktop}
-                            layout='fill'
-                            objectFit='cover'
+                            src={bgImageDesktop.data.attributes.url}
+                            width={bgImageDesktop.data.attributes.width}
+                            height={bgImageDesktop.data.attributes.height}
                             alt={''}
                         />
                     </div>
                 ) : (
-                    <div className="desktop-only">
-                        <Image src={props.isContentOnRight ? DefaultImg1 : DefaultImg} alt={''} />
+                    <div className='desktop-only'>
+                        <Image
+                            src={isContentOnRight ? DefaultImg1 : DefaultImg}
+                            alt={''}
+                        />
                     </div>
                 )}
-                {props.imageMobile != null ? (
-                    <div className="mobile-only">
+                {bgImageMobile != null ? (
+                    <div className='mobile-only'>
                         <Image
-                            src={props.imageMobile}
-                            layout='fill'
-                            objectFit='cover'
+                            src={bgImageMobile.data.attributes.url}
+                            width={bgImageMobile.data.attributes.width}
+                            height={bgImageMobile.data.attributes.height}
                             alt={''}
                         />
                     </div>
                 ) : (
-                    <div className="mobile-only">
-                        <Image src={props.isContentOnRight ? DefaultImgMobile1 : DefaultImgMobile} alt={''} />
+                    <div className='mobile-only'>
+                        <Image
+                            src={
+                                isContentOnRight
+                                    ? DefaultImgMobile1
+                                    : DefaultImgMobile
+                            }
+                            alt={''}
+                        />
                     </div>
                 )}
             </div>

@@ -12,7 +12,7 @@ const ProgramList = (props) => {
 
     return (
         <div className={styles['program-list-wrapper']}>
-            {(props.programData != null && props.programData.length != 0) ? (
+            {props.programData != null && props.programData.length != 0 ? (
                 <ul className={styles['program-list']}>
                     {props.programData.map((program, i) => (
                         <li key={i}>

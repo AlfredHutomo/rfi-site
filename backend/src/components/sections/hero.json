@@ -30,21 +30,19 @@
         "videos"
       ]
     },
-    "button1Text": {
-      "type": "string"
-    },
-    "button1Link": {
-      "type": "string"
-    },
-    "button2Text": {
-      "type": "string"
-    },
-    "button2Link": {
-      "type": "string"
-    },
     "isContentOnRight": {
       "type": "boolean",
       "default": false
+    },
+    "button1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-link"
+    },
+    "button2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-link"
     }
   }
 }

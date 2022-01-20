@@ -11,10 +11,10 @@ import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Header = (props) => {
+const Header = ({ headerData }) => {
     const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
     const [mobileMenuActive, setMobileMenu] = useState(false); // note: same as var active = false in v js
-    const { logo } = props;
+    const { logo } = headerData;
 
     const toggleMobileMenu = () => {
         setMobileMenu((state) => !state); //reading for sam https://reactjs.org/docs/hooks-state.html
@@ -31,13 +31,13 @@ const Header = (props) => {
             <header className={styles['page-header-main']}>
                 <div className={styles['page-header']}>
                     <div className={styles['page-header-logo']}>
-                        {props.logo != null ? (
+                        {logo != null ? (
                             <Link href={'/'}>
                                 <a>
                                     <Image
-                                        src={props.logo}
-                                        width='200'
-                                        height='100'
+                                        src={logo.data.attributes.url}
+                                        width={logo.data.attributes.width}
+                                        height={logo.data.attributes.height}
                                         alt=''
                                     />
                                 </a>
