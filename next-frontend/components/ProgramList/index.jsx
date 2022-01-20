@@ -9,12 +9,12 @@ import Button from '../global/Button';
 import SectionWrapper from '../global/SectionWrapper';
 
 const ProgramList = (props) => {
-    const { data } = props;
+    const { sectionData, wrapperOptions } = props;
 
-    const programData = data.programs.data;
+    const programData = sectionData.programs.data;
 
     return (
-        <SectionWrapper>
+        <SectionWrapper options={wrapperOptions}>
             <div className={styles['program-list-wrapper']}>
                 {programData != null && programData.length != 0 ? (
                     <ul className={styles['program-list']}>

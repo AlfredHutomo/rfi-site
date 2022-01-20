@@ -12,7 +12,6 @@ import FAQAccordion from '../components/FAQAccordion/';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 
 import { getLayoutData, getPageData } from '../utils/api';
-import delve from 'dlv';
 import { homeDefaultData } from '../utils/default';
 
 const Home = (props) => {
@@ -25,28 +24,29 @@ const Home = (props) => {
         quoteBlock,
         textBlock2,
         sponsors,
+        registerInterest,
+        faq,
     ] = props.pageData.attributes.content;
+
+    // wrapperOptions should be in sectionData for the dynamic pages
 
     return (
         <PageWrapper layoutData={props.layoutData}>
-            <HeroBanner data={hero} />
+            <HeroBanner sectionData={hero} />
 
             <USPBanner
-                wrapperOptions={{ spaceTop: '0', spaceBtm: '0' }}
-                offsetPos
-                data={uspBanner.block}
+                sectionData={uspBanner}
+                wrapperOptions={{
+                    spaceTop: '0',
+                    spaceBtm: '0',
+                }}
             />
 
-            <TextBlock
-                heading={textBlock1.heading}
-                headingType={textBlock1.headingType}
-                description={textBlock1.description}
-            />
-
-            <ProgramList data={ourPrograms} />
-
+            <TextBlock sectionData={textBlock1} />
+            <ProgramList sectionData={ourPrograms} />
             <InfoGrid sectionData={infoGrid} />
 
+            {/* TODO: not refactored to sectionData*/}
             <QuoteBlock
                 avatar={quoteBlock.avatar.data.attributes.url}
                 author={quoteBlock.authorName}
@@ -56,69 +56,20 @@ const Home = (props) => {
             </QuoteBlock>
 
             <TextBlock
+                sectionData={textBlock2}
                 wrapperOptions={{ spaceBtm: '0' }}
-                heading={textBlock2.heading}
-                headingType={textBlock2.headingType}
-                description={textBlock2.description}
             />
 
-            <SectionWrapper>
-                <SponsorBlock
-                    sectionData={sponsors}
-                    sponsorGold={[
-                        {
-                            name: 'Relab',
-                            image: '',
-                        },
-                        {
-                            name: 'Sponsor 1',
-                            image: '',
-                        },
-                    ]}
-                    sponsorSilver={[
-                        {
-                            image: 'https://source.unsplash.com/random/700x200',
-                            name: 'Test1',
-                        },
-                        {
-                            name: 'Test1',
-                            image: '',
-                        },
-                        {
-                            name: 'Test1',
-                            image: '',
-                        },
-                        {
-                            name: 'Test2',
-                            image: '',
-                        },
-                    ]}
-                    button1Text='Become a sponsor'
-                    button1Link='#'
-                    button2Text='More about our sponsor'
-                    button2Link='#'
-                />
-            </SectionWrapper>
+            <SponsorBlock sectionData={sponsors} />
 
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
 
-            <SectionWrapper bgcolor='#1F265D'>
-                <FAQAccordion
-                    faqlists={[
-                        {
-                            question:
-                                'How is the RFI Development Program structured?',
-                            answer: 'this is test 1',
-                        },
-                        {
-                            question: 'What is RFI’s approach?',
-                            answer: 'Our approach is to focus on the individual, within the natural team setting and game environment. Our mentality is to focus on the individual, within the natural team setting and game environment.',
-                        },
-                    ]}
-                ></FAQAccordion>
-            </SectionWrapper>
+            <FAQAccordion
+                sectionData={faq}
+                wrapperOptions={{ bgcolor: '#1F265D' }}
+            ></FAQAccordion>
         </PageWrapper>
     );
 };

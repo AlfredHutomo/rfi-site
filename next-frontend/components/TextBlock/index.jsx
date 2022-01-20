@@ -7,9 +7,8 @@ import styles from './TextBlock.module.scss';
 import Button from '../global/Button';
 import SectionWrapper from '../global/SectionWrapper';
 
-const TextBlock = (props) => {
-    const { maxWidth, heading, headingType, description, wrapperOptions } =
-        props;
+const TextBlock = ({ sectionData, wrapperOptions }) => {
+    const { maxWidth, heading, headingType, description } = sectionData;
 
     const headingCheck = () => {
         switch (headingType) {
@@ -52,7 +51,9 @@ const TextBlock = (props) => {
 TextBlock.propTypes = {};
 
 TextBlock.defaultProps = {
-    maxWidth: 730,
+    sectionData: {
+        maxWidth: 730,
+    },
 };
 
 export default TextBlock;

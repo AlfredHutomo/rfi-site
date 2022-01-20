@@ -37,13 +37,14 @@
         "sections.text-block",
         "sections.statistic-block",
         "sections.link-group",
-        "sections.icon-text-link-block",
         "sections.sponsors",
         "sections.faq",
         "sections.register-interest",
         "sections.usp-banner",
         "sections.pillar-block",
-        "sections.people-highlight-block"
+        "sections.people-highlight-block",
+        "sections.grid-about-us",
+        "sections.icon-text-link-group"
       ]
     }
   }

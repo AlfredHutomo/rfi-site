@@ -10,15 +10,17 @@ import SectionWrapper from '../global/SectionWrapper';
 import USPBlock from './USPBlock';
 
 const USPBanner = (props) => {
-    const { data, offsetPos, wrapperOptions } = props;
+    const { sectionData, wrapperOptions } = props;
 
-    const offset = offsetPos ? ' ' + styles['usp-banner-offset'] : '';
+    const offset = sectionData.offsetPos
+        ? ' ' + styles['usp-banner-offset']
+        : '';
 
     return (
         <SectionWrapper options={wrapperOptions}>
             <div className={styles['usp-banner-wrapper'] + offset}>
-                {data != null && data.length != 0
-                    ? data.map((usp, i) => (
+                {sectionData.block != null && sectionData.block.length != 0
+                    ? sectionData.block.map((usp, i) => (
                           <USPBlock key={i} icon={usp['icon']}>
                               {usp['description']}
                           </USPBlock>

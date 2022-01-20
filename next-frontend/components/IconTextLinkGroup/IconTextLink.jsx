@@ -3,48 +3,46 @@ import PropTypes from 'prop-types';
 
 import styles from './IconTextLinkGroup.module.scss';
 
+import { Icon } from '@mui/material';
+import Link from 'next/link';
+
 const IconTextLink = (props) => {
-
-    const {
-        icon,
-        heading,
-        linkText,
-        linkUrl,
-    } = props;
-
+    const { icon, heading, linkText, linkUrl, children } = props;
 
     return (
         <div className={styles['link-group-block-item-wrapper']}>
-            {
-                (props.icon != null) ?
+            {icon != null ? (
                 <div className={styles['link-group-block-item-icon']}>
-                    {props.icon}
-                </div> : ''
-            }
-            {
-                (props.heading != null) ?
+                    <Icon>{icon}</Icon>
+                </div>
+            ) : (
+                ''
+            )}
+            {heading != null ? (
                 <h3 className={'h3 ' + styles['link-group-block-item-heading']}>
-                    {props.heading}
-                </h3> : ''
-            }
-            {
-                (props.children != null) ?
+                    {heading}
+                </h3>
+            ) : (
+                ''
+            )}
+            {children != null ? (
                 <div className={styles['link-group-block-item-content']}>
-                    {props.children}
-                </div> : ''
-            }
-            {
-                (props.linkText != null) ?
+                    {children}
+                </div>
+            ) : (
+                ''
+            )}
+            {linkText != null ? (
                 <a className={styles['link-group-block-item-link']}>
-                    {props.linkText}
-                </a> : ''
-            }
+                    {linkText}
+                </a>
+            ) : (
+                ''
+            )}
         </div>
     );
-}
+};
 
-IconTextLink.propTypes = {
-}
+IconTextLink.propTypes = {};
 
 export default IconTextLink;
-

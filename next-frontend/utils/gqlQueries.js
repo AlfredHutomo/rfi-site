@@ -59,6 +59,7 @@ export const PAGE_DATA = gql`
                                 name
                                 description
                             }
+                            offsetPos
                         }
                         ... on ComponentSectionsTextBlock {
                             heading
@@ -110,6 +111,65 @@ export const PAGE_DATA = gql`
                                 description
                                 bgColor
                                 isLightText
+                            }
+                        }
+                        ... on ComponentSectionsGridAboutUs {
+                            gridItemOne {
+                                __typename
+                                heading
+                                paragraph
+                                backgroundColor
+                                isLightText
+                                isDoubleSize
+                                buttonText
+                                buttonLink
+                            }
+                            gridImageOne {
+                                image {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
+                            }
+                            gridItemTwo {
+                                __typename
+                                heading
+                                paragraph
+                                backgroundColor
+                                isLightText
+                                isDoubleSize
+                                buttonText
+                                buttonLink
+                            }
+                            gridImageTwo {
+                                image {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
+                            }
+                            gridItemThree {
+                                __typename
+                                heading
+                                paragraph
+                                backgroundColor
+                                isLightText
+                                isDoubleSize
+                                buttonText
+                                buttonLink
+                            }
+                            gridImageThree {
+                                image {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                             }
                         }
                         ... on ComponentSectionsTestimonials {
@@ -206,16 +266,36 @@ export const PAGE_DATA = gql`
                             }
                         }
                         ... on ComponentSectionsFaq {
-                            questionBlocks {
+                            faqlists: questionBlocks {
                                 question
                                 answer
                             }
                         }
                         ... on ComponentSectionsPeopleHighlightBlock {
+                            heading
+                            description
+                            isMobileSlider
                             people {
                                 data {
                                     attributes {
                                         name
+                                        title
+                                        bio
+                                        profile_picture {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                        coaches {
+                                            data {
+                                                attributes {
+                                                    program_name
+                                                    description
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -229,17 +309,33 @@ export const PAGE_DATA = gql`
                             }
                         }
                         ... on ComponentSectionsTextImageBlock {
+                            preHeading
                             heading
-                            subHeading
                             text
-                            Image {
+                            image {
                                 data {
                                     attributes {
                                         url
+                                        width
+                                        height
                                     }
                                 }
                             }
+                            button {
+                                text
+                                url
+                            }
                             imageOnRight
+                            verticalAlign
+                        }
+                        ... on ComponentSectionsIconTextLinkGroup {
+                            items {
+                                icon
+                                heading
+                                content
+                                linkText
+                                linkTo
+                            }
                         }
                     }
                 }

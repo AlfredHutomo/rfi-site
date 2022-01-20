@@ -20,7 +20,7 @@ const HeroBanner = (props) => {
         button1,
         button2,
         isContentOnRight,
-    } = props.data;
+    } = props.sectionData;
 
     return (
         <div className={styles['hero-banner-wrapper']}>

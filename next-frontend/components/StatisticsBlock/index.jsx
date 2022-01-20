@@ -4,39 +4,54 @@ import PropTypes from 'prop-types';
 import styles from './StatisticsBlock.module.scss';
 
 import Button from '../global/Button';
+import SectionWrapper from '../global/SectionWrapper';
 
 const StatisticsBlock = (props) => {
-    const { heading, statsData, isDarkBackground } = props;
-    const altStyle = (isDarkBackground != null) ? styles['darkBg'] : '';
+    const {
+        heading,
+        data: statsData,
+        description,
+        isDarkBackground,
+    } = props.sectionData;
+
+    const altStyle = isDarkBackground != null ? styles['darkBg'] : '';
 
     return (
-        <div className={styles['statistics-block-wrapper'] + ' ' + altStyle}>
-            {
-                props.heading != null ?  (
-                    <h2 className={'h2 ' + styles['statistics-block-heading']}>{props.heading}</h2>
-                ) : ''
-            }
-            {
-                props.children != null ?  (
+        <SectionWrapper options={props.wrapperOptions}>
+            <div
+                className={styles['statistics-block-wrapper'] + ' ' + altStyle}
+            >
+                {heading != null ? (
+                    <h2 className={'h2 ' + styles['statistics-block-heading']}>
+                        {heading}
+                    </h2>
+                ) : (
+                    ''
+                )}
+                {description != null ? (
                     <div className={styles['statistics-block-description']}>
-                        {props.children}
+                        {description}
                     </div>
-                ) : ''
-            }
-            <div className={styles['statistics-block-data']}>
-                {props.statsData.length != 0 || props.statsData != null
-                    ? props.statsData.map((stat, i) => (
-                          <div
-                              key={i}
-                              className={styles['statistics-block-data-detail']}
-                          >
-                              {stat.number}
-                              <span>{stat.content}</span>
-                          </div>
-                      ))
-                    : ''}
+                ) : (
+                    ''
+                )}
+                <div className={styles['statistics-block-data']}>
+                    {statsData.length != 0 || statsData != null
+                        ? statsData.map((stat, i) => (
+                              <div
+                                  key={i}
+                                  className={
+                                      styles['statistics-block-data-detail']
+                                  }
+                              >
+                                  {stat.number}
+                                  <span>{stat.dataName}</span>
+                              </div>
+                          ))
+                        : ''}
+                </div>
             </div>
-        </div>
+        </SectionWrapper>
     );
 };
 

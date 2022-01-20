@@ -13,7 +13,6 @@ import ReactMarkdown from 'react-markdown';
 const InfoGrid = (props) => {
     const { sectionData, wrapperOptions } = props;
 
-    console.log(sectionData.gridItemsImages);
     return (
         <SectionWrapper options={wrapperOptions}>
             <div className={styles['info-grid-wrapper']}>
@@ -26,6 +25,39 @@ const InfoGrid = (props) => {
                         />
                     ))}
                     <InfoGridItemContentType2 data={sectionData.gridItemTwo} />
+                </div>
+            </div>
+        </SectionWrapper>
+    );
+};
+
+const InfoGridTwo = (props) => {
+    const { sectionData, wrapperOptions } = props;
+
+    return (
+        <SectionWrapper options={wrapperOptions}>
+            <div className={styles['info-grid-wrapper']}>
+                <div className={styles['info-grid']}>
+                    <InfoGridItemContentType1 data={sectionData.gridItemOne} />
+                    <InfoGridItemImage
+                        image={
+                            sectionData.gridImageOne.image.data.attributes.url
+                        }
+                    />
+                    <InfoGridItemContentType1 data={sectionData.gridItemTwo} />
+                    <InfoGridItemImage
+                        image={
+                            sectionData.gridImageTwo.image.data.attributes.url
+                        }
+                    />
+                    <InfoGridItemContentType1
+                        data={sectionData.gridItemThree}
+                    />
+                    <InfoGridItemImage
+                        image={
+                            sectionData.gridImageThree.image.data.attributes.url
+                        }
+                    />
                 </div>
             </div>
         </SectionWrapper>
@@ -160,6 +192,7 @@ InfoGridItemImage.propTypes = {};
 
 export {
     InfoGrid,
+    InfoGridTwo,
     InfoGridItemImage,
     InfoGridItemContentType1,
     InfoGridItemContentType2,

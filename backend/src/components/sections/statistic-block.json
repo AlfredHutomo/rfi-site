@@ -18,6 +18,9 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.statistic-data"
+    },
+    "isDarkBackground": {
+      "type": "boolean"
     }
   }
 }

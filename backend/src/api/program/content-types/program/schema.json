@@ -50,7 +50,7 @@
         "sections.page-banner",
         "sections.testimonials",
         "sections.faq",
-        "sections.icon-text-link-block",
+        "elements.icon-text-link-block",
         "sections.link-group",
         "sections.register-interest",
         "sections.sponsors",

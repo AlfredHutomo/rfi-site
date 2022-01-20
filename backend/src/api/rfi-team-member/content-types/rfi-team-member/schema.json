@@ -30,6 +30,11 @@
     },
     "title": {
       "type": "string"
+    },
+    "coaches": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program.program"
     }
   }
 }

@@ -1,9 +1,25 @@
 import styles from './sectionWrapper.module.scss';
 import PropTypes from 'prop-types';
 
-const SectionWrapper = (props) => {
-    const { bgcolor, spaceTop, spaceBtm, isTwoColumns } = props.options;
+/*  NOTE:
+    New work-around to prevent the anomaly when options are added 
+    the section wrapper the default props are removed
+    This is because the default props are only maintained shallowly 
+*/
 
+const SectionWrapper = ({ children, options }) => {
+    return <Wrapper {...options}>{children}</Wrapper>;
+};
+
+SectionWrapper.propTypes = {
+    options: PropTypes.object,
+};
+
+SectionWrapper.defaultProps = {
+    options: {},
+};
+
+const Wrapper = ({ bgcolor, spaceTop, spaceBtm, isTwoColumns, children }) => {
     let sectionStyle = { backgroundColor: bgcolor };
 
     if (spaceTop) {
@@ -24,22 +40,15 @@ const SectionWrapper = (props) => {
                     isTwoColumns ? styles['section-content-in-cols'] : ''
                 }`}
             >
-                {props.children}
+                {children}
             </div>
         </div>
     );
 };
 
-SectionWrapper.propTypes = {
-    // bgcolor: PropTypes.string,
-    // isTwoColumns: PropTypes.bool,
-};
-
-SectionWrapper.defaultProps = {
-    options: {
-        bgcolor: '#73f',
-        isTwoColumns: false,
-    },
+Wrapper.defaultProps = {
+    bgcolor: '#0044ff',
+    isTwoColumns: false,
 };
 
 export default SectionWrapper;
