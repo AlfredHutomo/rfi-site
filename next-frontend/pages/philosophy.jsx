@@ -9,19 +9,15 @@ import LinkGroup from '../components/LinkGroup/';
 import IconTextTileGroup from '../components/IconTextTileGroup/';
 import TextBlock from '../components/TextBlock';
 import StatisticsBlock from '../components/StatisticsBlock/';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 import Banner from '../components/Banner';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 import TextImageCard from '../components/TextImageCard/';
 import QuoteBlock from '../components/QuoteBlock/';
 
-export default function Philosophy() {
+const Philosophy = (props) => {
     return (
         <PageWrapper>
-            <Header></Header>
-
             <PageHeader title='Philosophy' />
 
             <SectionWrapper>
@@ -197,8 +193,20 @@ export default function Philosophy() {
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
-
-            <Footer />
         </PageWrapper>
     );
-}
+};
+
+export const getStaticProps = async (context) => {
+    const pageData = await getPageData({ slug: 'philosophy' });
+    const layoutData = await getLayoutData();
+
+    return {
+        props: {
+            pageData,
+            layoutData,
+        },
+    };
+};
+
+export default Philosophy;

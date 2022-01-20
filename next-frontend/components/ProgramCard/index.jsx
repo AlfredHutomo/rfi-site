@@ -9,22 +9,27 @@ import DefaultCardImg from './default-card-img.jpg';
 import Button from '../global/Button';
 
 const ProgramCard = (props) => {
-    const { image, name, tags, cta, link } = props;
+    const { image, name, tags, slug } = props;
 
     return (
         <div className={styles['program-card-wrapper']}>
             <div className={styles['program-card-image']}>
-                {props.image != null ? (
-                    props.image
+                {image != null ? (
+                    <Image
+                        src={image.data.attributes.url}
+                        layout='fill'
+                        objectFit='cover'
+                        alt={''}
+                    />
                 ) : (
                     <Image src={DefaultCardImg} alt={''} />
                 )}
             </div>
             <div className={styles['program-card-detail']}>
-                <h4 className={styles['program-card-name']}>{props.name}</h4>
-                {props.tags != null && props.tags.length != 0 ? (
+                <h4 className={styles['program-card-name']}>{name}</h4>
+                {tags != null && tags.length != 0 ? (
                     <ul className={styles['program-card-taglist']}>
-                        {props.tags.map((tag, i) => (
+                        {tags.map((tag, i) => (
                             <li key={i} className={styles['program-card-tag']}>
                                 {tag}
                             </li>
@@ -37,7 +42,7 @@ const ProgramCard = (props) => {
                     {props.children}
                 </div>
                 <div className={styles['program-card-cta']}>
-                    <Button to={props.link}>{cta}</Button>
+                    <Button to={`/programs/${slug}`}>Learn More</Button>
                 </div>
             </div>
         </div>

@@ -7,21 +7,17 @@ import styles from './SponsorBlock.module.scss';
 import Button from '../global/Button';
 
 const SponsorBlock = (props) => {
-    const {
-        sponsorGold,
-        sponsorSilver,
-        button1Text,
-        button1Link,
-        button2Text,
-        button2Link,
-    } = props;
+    const { goldSponsors, silverSponsors, bronzeSponsors, button1, button2 } =
+        props.sectionData;
+
+    console.log(props.sectionData);
 
     return (
         <div className={styles['sponsor-block-wrapper']}>
             <div className={styles['sponsor-block-tier']}>
-                {props.sponsorGold != null && props.sponsorGold.length != 0
-                    ? props.sponsorGold.map((sponsor, i) =>
-                          sponsor.image ? (
+                {goldSponsors.data != null && goldSponsors.data.length != 0
+                    ? goldSponsors.data.map((sponsor, i) =>
+                          sponsor.attributes.logo.data ? (
                               <div
                                   key={i}
                                   className={
@@ -29,8 +25,11 @@ const SponsorBlock = (props) => {
                                   }
                               >
                                   <Image
-                                      src={sponsor.image}
-                                      alt={sponsor.name}
+                                      src={
+                                          sponsor.attributes.logo.data
+                                              .attributes.url
+                                      }
+                                      alt={sponsor.attributes.name}
                                       layout='fill'
                                       objectFit='contain'
                                   />
@@ -93,23 +92,23 @@ const SponsorBlock = (props) => {
                     : ''}
             </div>
             <div className={styles['sponsor-block-cta-group']}>
-                {props.button1Text != null ? (
+                {button1 != null ? (
                     <Button
                         variant='2'
                         className={styles['sponsor-block-button']}
-                        to={props.button1Link}
+                        to={button1.url}
                     >
-                        {props.button1Text}
+                        {button1.text}
                     </Button>
                 ) : (
                     ''
                 )}
-                {props.button2Text != null ? (
+                {button2 != null ? (
                     <Button
                         className={styles['sponsor-block-button']}
-                        to={props.button2Link}
+                        to={button2.url}
                     >
-                        {props.button2Text}
+                        {button2.text}
                     </Button>
                 ) : (
                     ''

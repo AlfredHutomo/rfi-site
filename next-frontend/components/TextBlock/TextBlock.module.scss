@@ -1,12 +1,10 @@
-@import "../../styles/_base";
-@import "../../styles/_utils";
+@import '../../styles/_base';
+@import '../../styles/_utils';
 
 .text-block {
-
     &-wrapper {
         margin: 0 auto;
         text-align: center;
-        border: 1px solid #f30;
     }
 
     &-icon {
@@ -21,4 +19,3 @@
         color: $color-gs-01;
     }
 }
-

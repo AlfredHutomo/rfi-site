@@ -6,22 +6,16 @@ import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import PostList from '../components/PostList/';
 import TextBlock from '../components/TextBlock';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 
-export default function Blog() {
+const Blog = (props) => {
     return (
         <PageWrapper>
-            <Header></Header>
-
             <PageHeader title='Blog' />
 
             <SectionWrapper>
-                <TextBlock
-                    h3="Get all the RFI latest news, event updates, program information and much more."
-                >
+                <TextBlock h3='Get all the RFI latest news, event updates, program information and much more.'>
                     some description
                 </TextBlock>
             </SectionWrapper>
@@ -34,7 +28,8 @@ export default function Blog() {
                             title: 'Announcement: Santiago Ortiz appointed to coaching role at Green Gulley',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: 'http://www.google.com.au',
                         },
                         {
@@ -42,7 +37,8 @@ export default function Blog() {
                             title: 'What are the benefits of taking part in football classes for kids?',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                         {
@@ -50,7 +46,8 @@ export default function Blog() {
                             title: 'The rise of ladies football',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                         {
@@ -58,7 +55,8 @@ export default function Blog() {
                             title: 'Why use different sized footballs for different age groups?',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                         {
@@ -66,7 +64,8 @@ export default function Blog() {
                             title: 'What are the benefits of taking part in football classes for kids?',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                         {
@@ -74,7 +73,8 @@ export default function Blog() {
                             title: 'The rise of ladies football',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                         {
@@ -82,7 +82,8 @@ export default function Blog() {
                             title: 'Why use different sized footballs for different age groups?',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                         {
@@ -90,7 +91,8 @@ export default function Blog() {
                             title: 'What are the benefits of taking part in football classes for kids?',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                     ]}
@@ -102,9 +104,20 @@ export default function Blog() {
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
-
-            <Footer />
         </PageWrapper>
     );
-}
+};
 
+export const getStaticProps = async (context) => {
+    const pageData = await getPageData({ slug: 'blog' });
+    const layoutData = await getLayoutData();
+
+    return {
+        props: {
+            pageData,
+            layoutData,
+        },
+    };
+};
+
+export default Blog;

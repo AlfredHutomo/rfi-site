@@ -4,8 +4,6 @@ import styles from '../styles/Home.module.scss';
 
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 import TextBlock from '../components/TextBlock';
 import LinkGroup from '../components/LinkGroup/';
 import Banner from '../components/Banner';
@@ -18,13 +16,10 @@ import StatisticsBlock from '../components/StatisticsBlock/';
 import TextImageCard from '../components/TextImageCard/';
 import QuoteBlock from '../components/QuoteBlock/';
 
-export default function SuccessStories() {
+const SuccessStories = (props) => {
     return (
         <PageWrapper>
-            <Header></Header>
-
             <PageHeader title='Success Stories' />
-
 
             <SectionWrapper bgcolor='#fff'>
                 <StatisticsBlock
@@ -142,7 +137,7 @@ export default function SuccessStories() {
 
             <SectionWrapper>
                 <LinkGroup
-                    heading="Learn more about RFI"
+                    heading='Learn more about RFI'
                     data={[
                         {
                             text: 'History',
@@ -173,8 +168,20 @@ export default function SuccessStories() {
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
-
-            <Footer />
         </PageWrapper>
     );
-}
+};
+
+export const getStaticProps = async (context) => {
+    const pageData = await getPageData({ slug: 'success-stories' });
+    const layoutData = await getLayoutData();
+
+    return {
+        props: {
+            pageData,
+            layoutData,
+        },
+    };
+};
+
+export default SuccessStories;

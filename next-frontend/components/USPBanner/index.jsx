@@ -6,23 +6,26 @@ import clsx from 'clsx';
 import styles from './USPBanner.module.scss';
 
 import Button from '../global/Button';
+import SectionWrapper from '../global/SectionWrapper';
 import USPBlock from './USPBlock';
 
 const USPBanner = (props) => {
-    const { data, offsetPos } = props;
+    const { data, offsetPos, wrapperOptions } = props;
 
-    const offset = (props.offsetPos) ? ' ' + styles['usp-banner-offset'] : '';
+    const offset = offsetPos ? ' ' + styles['usp-banner-offset'] : '';
 
     return (
-        <div className={styles['usp-banner-wrapper'] + offset}>
-            {props.data != null && props.data.length != 0
-                ? props.data.map((usp, i) => (
-                      <USPBlock key={i} icon={usp['icon']}>
-                          {usp['description']}
-                      </USPBlock>
-                  ))
-                : ''}
-        </div>
+        <SectionWrapper options={wrapperOptions}>
+            <div className={styles['usp-banner-wrapper'] + offset}>
+                {data != null && data.length != 0
+                    ? data.map((usp, i) => (
+                          <USPBlock key={i} icon={usp['icon']}>
+                              {usp['description']}
+                          </USPBlock>
+                      ))
+                    : ''}
+            </div>
+        </SectionWrapper>
     );
 };
 
@@ -35,4 +38,3 @@ USPBanner.propTypes = {
 };
 
 export default USPBanner;
-

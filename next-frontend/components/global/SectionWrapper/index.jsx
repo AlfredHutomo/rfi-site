@@ -2,18 +2,18 @@ import styles from './sectionWrapper.module.scss';
 import PropTypes from 'prop-types';
 
 const SectionWrapper = (props) => {
-    const { bgcolor, spaceTop, spaceBtm, isTwoColumns } = props;
+    const { bgcolor, spaceTop, spaceBtm, isTwoColumns } = props.options;
 
-    let sectionStyle = { backgroundColor: props.bgcolor };
+    let sectionStyle = { backgroundColor: bgcolor };
 
-    if (props.spaceTop) {
-        sectionStyle = { ...sectionStyle, paddingTop: props.spaceTop + 'px' };
+    if (spaceTop) {
+        sectionStyle = { ...sectionStyle, paddingTop: spaceTop + 'px' };
     }
 
-    if (props.spaceBtm) {
+    if (spaceBtm) {
         sectionStyle = {
             ...sectionStyle,
-            paddingBottom: props.spaceBtm + 'px',
+            paddingBottom: spaceBtm + 'px',
         };
     }
 
@@ -31,13 +31,15 @@ const SectionWrapper = (props) => {
 };
 
 SectionWrapper.propTypes = {
-    bgcolor: PropTypes.string,
-    isTwoColumns: PropTypes.bool,
+    // bgcolor: PropTypes.string,
+    // isTwoColumns: PropTypes.bool,
 };
 
 SectionWrapper.defaultProps = {
-    bgcolor: '#E5E5E5',
-    isTwoColumns: false,
+    options: {
+        bgcolor: '#73f',
+        isTwoColumns: false,
+    },
 };
 
 export default SectionWrapper;

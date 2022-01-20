@@ -4,8 +4,6 @@ import styles from '../styles/Home.module.scss';
 
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 import Breadcrumb from '../components/Breadcrumb';
 import ProfileCardList from '../components/ProfileCardList';
 import IconTextLinkGroup from '../components/IconTextLinkGroup';
@@ -18,14 +16,16 @@ import StatisticsBlock from '../components/StatisticsBlock/';
 import TextImageCard from '../components/TextImageCard/';
 import { homeDefaultData } from '../utils/default';
 import { fetchAPI } from '../utils/api';
+import { getPageData, getLayoutData } from '../utils/api';
+import delve from 'dlv';
 
 const AboutUs = (props) => {
     const [banner, textBlock1, skip1] = props.pageData.attributes.content;
 
+    const header = delve(props.layoutData, 'header.data.attributes');
+
     return (
         <PageWrapper>
-            <Header></Header>
-
             <PageHeader title={banner.banner_text} />
 
             <SectionWrapper>
@@ -237,31 +237,39 @@ const AboutUs = (props) => {
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
-
-            <Footer />
         </PageWrapper>
     );
 };
 
 export const getStaticProps = async (context) => {
-    try {
-        const respond = await fetchAPI('/pages/7', {
-            populate: ['content'],
-        });
+    const pageData = await getPageData({ slug: 'about-us' });
+    const layoutData = await getLayoutData();
 
-        return {
-            props: {
-                pageData: respond.data,
-            },
-        };
-    } catch (error) {
-        return {
-            props: {
-                // default data goes here
-                pageData: homeDefaultData,
-            },
-        };
-    }
+    return {
+        props: {
+            pageData,
+            layoutData,
+        },
+    };
+
+    // try {
+    //     const respond = await fetchAPI('/pages/7', {
+    //         populate: ['content'],
+    //     });
+
+    //     return {
+    //         props: {
+    //             pageData: respond.data,
+    //         },
+    //     };
+    // } catch (error) {
+    //     return {
+    //         props: {
+    //             // default data goes here
+    //             pageData: homeDefaultData,
+    //         },
+    //     };
+    // }
 };
 
 export default AboutUs;

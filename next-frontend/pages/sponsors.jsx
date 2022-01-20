@@ -7,26 +7,20 @@ import SectionWrapper from '../components/global/SectionWrapper';
 import LinkGroup from '../components/LinkGroup/';
 import TextBlock from '../components/TextBlock';
 import SponsorDetailBlock from '../components/SponsorDetailBlock';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 
-export default function Teams() {
+const Sponsors = (props) => {
     return (
         <PageWrapper>
-            <Header></Header>
-
             <PageHeader title='Sponsors' />
 
             <SectionWrapper>
-                <TextBlock
-                    h3="The people who make RFI great"
-                >
-                    Throughout its proud history our team has built a deep and lasting kinship with communities in RFI.
+                <TextBlock h3='The people who make RFI great'>
+                    Throughout its proud history our team has built a deep and
+                    lasting kinship with communities in RFI.
                 </TextBlock>
             </SectionWrapper>
-
 
             <SectionWrapper>
                 <SponsorDetailBlock
@@ -80,10 +74,8 @@ export default function Teams() {
                             social: ['ages: 10 - 19', 'beginner'],
                         },
                     ]}
-                >
-                </SponsorDetailBlock>
+                ></SponsorDetailBlock>
             </SectionWrapper>
-
 
             <SectionWrapper>
                 <LinkGroup
@@ -115,9 +107,20 @@ export default function Teams() {
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
-
-            <Footer />
         </PageWrapper>
     );
-}
+};
 
+export const getStaticProps = async (context) => {
+    const pageData = await getPageData({ slug: 'sponsors' });
+    const layoutData = await getLayoutData();
+
+    return {
+        props: {
+            pageData,
+            layoutData,
+        },
+    };
+};
+
+export default Sponsors;

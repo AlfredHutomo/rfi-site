@@ -5,45 +5,30 @@ import Image from 'next/image';
 import styles from './InfoGrid.module.scss';
 import DefaultImg from './default-grid-img.jpg';
 
+import SectionWrapper from '../global/SectionWrapper';
 import Button from '../global/Button';
 
+import ReactMarkdown from 'react-markdown';
+
 const InfoGrid = (props) => {
-    const {} = props;
+    const { sectionData, wrapperOptions } = props;
 
+    console.log(sectionData.gridItemsImages);
     return (
-        <div className={styles['info-grid-wrapper']}>
-            <div className={styles['info-grid']}>
-                <InfoGridItemContentType1
-                    isDoubleSize
-                    isLightText
-                    bgcolor='#010A4F'
-                    heading='RFI is real experience more content will be displayed here'
-                    buttonText='Learn about us'
-                    buttonLink='#'
-                >
-                    <p>
-                        RFI takes pride in bringing to Australia the finest in
-                        international youth football development. RFI takes
-                        pride in bringing to Australia the finest in
-                        international youth football development.
-                    </p>
-                </InfoGridItemContentType1>
-                <InfoGridItemImage />
-                <InfoGridItemImage />
-                <InfoGridItemImage />
-                <InfoGridItemContentType2
-                    bgcolor='#674FFF'
-                    isLightText
-                >
-                    <ul>
-                        <li>10 years in the game</li>
-                        <li>Warm, welcoming</li>
-                        <li>Experienced coaches from across the world</li>
-                    </ul>
-                </InfoGridItemContentType2>
-
+        <SectionWrapper options={wrapperOptions}>
+            <div className={styles['info-grid-wrapper']}>
+                <div className={styles['info-grid']}>
+                    <InfoGridItemContentType1 data={sectionData.gridItemOne} />
+                    {sectionData.gridItemsImages.map((imageData, i) => (
+                        <InfoGridItemImage
+                            key={`grid-item-${i}`}
+                            image={imageData.image.data.attributes.url}
+                        />
+                    ))}
+                    <InfoGridItemContentType2 data={sectionData.gridItemTwo} />
+                </div>
             </div>
-        </div>
+        </SectionWrapper>
     );
 };
 
@@ -57,13 +42,8 @@ const InfoGridItemImage = (props) => {
 
     return (
         <div className={styles['info-grid-item'] + ' ' + double}>
-            {props.image != null ? (
-                <Image
-                    src={props.image}
-                    layout='fill'
-                    objectFit='cover'
-                    alt={''}
-                />
+            {image != null ? (
+                <Image src={image} layout='fill' objectFit='cover' alt={''} />
             ) : (
                 <Image
                     src={DefaultImg}
@@ -91,12 +71,12 @@ const InfoGridItemContentType1 = (props) => {
     const {
         isDoubleSize,
         isLightText,
-        bgcolor,
+        backgroundColor,
         heading,
-        content,
+        paragraph,
         buttonText,
         buttonLink,
-    } = props;
+    } = props.data;
 
     const double = isDoubleSize ? styles['info-grid-item-double'] : '';
     const light = isLightText ? styles['info-grid-item-lightext'] : '';
@@ -104,26 +84,28 @@ const InfoGridItemContentType1 = (props) => {
     return (
         <div
             className={styles['info-grid-item'] + ' ' + double + ' ' + light}
-            style={{ backgroundColor: props.bgcolor }}
+            style={{ backgroundColor: backgroundColor }}
         >
-            {props.heading != null ? (
+            {heading != null ? (
                 <h1 className={'h1 ' + styles['info-grid-item-heading']}>
-                    {props.heading}
+                    {heading}
                 </h1>
             ) : (
                 ''
             )}
 
-            {props.children != null ? (
+            {paragraph != null ? (
                 <div className={styles['info-grid-item-content']}>
-                    {props.children}
+                    <ReactMarkdown>{paragraph}</ReactMarkdown>
                 </div>
             ) : (
                 ''
             )}
 
-            {props.buttonText != null ? (
-                <Button variant='2' to={props.buttonLink}>{props.buttonText}</Button>
+            {buttonText != null ? (
+                <Button variant='2' to={buttonLink}>
+                    {buttonText}
+                </Button>
             ) : (
                 ''
             )}
@@ -142,19 +124,17 @@ InfoGridItemContentType1.propTypes = {
 };
 
 const InfoGridItemContentType2 = (props) => {
-    const {
-        bgcolor,
-        isLightText,
-    } = props;
+    const { bgColor, isLightText, description } = props.data;
 
     const light = isLightText ? styles['info-grid-item-lightext'] : '';
 
     return (
-        <div className={styles['info-grid-item'] + ' ' + light}
-             style={{ backgroundColor: props.bgcolor }}
+        <div
+            className={styles['info-grid-item'] + ' ' + light}
+            style={{ backgroundColor: bgColor }}
         >
             <div className={styles['info-grid-item-list']}>
-                { props.children }
+                <ReactMarkdown>{description}</ReactMarkdown>
             </div>
         </div>
     );
@@ -185,4 +165,3 @@ export {
     InfoGridItemContentType2,
     InfoGridItemContentType3,
 };
-

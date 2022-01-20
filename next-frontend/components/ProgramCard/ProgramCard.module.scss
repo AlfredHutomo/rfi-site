@@ -1,5 +1,5 @@
-@import "../../styles/_base";
-@import "../../styles/_utils";
+@import '../../styles/_base';
+@import '../../styles/_utils';
 
 .program-card {
     &-wrapper {
@@ -11,8 +11,10 @@
     }
 
     &-image {
+        display: block;
         position: relative;
         z-index: $level-base;
+        min-height: 25rem;
     }
 
     &-detail {
@@ -56,4 +58,3 @@
         padding: 1.5rem 0 0 0;
     }
 }
-

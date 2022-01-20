@@ -6,23 +6,18 @@ import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import ProgramList from '../components/ProgramList/';
 import TextBlock from '../components/TextBlock';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 
-export default function Programs() {
+const Programs = (props) => {
     return (
         <PageWrapper>
-            <Header></Header>
-
             <PageHeader title='Programs' />
 
             <SectionWrapper>
-                <TextBlock
-                    h3="The people who make RFI great"
-                >
-                    Throughout its proud history our team has built a deep and lasting kinship with communities in RFI.
+                <TextBlock h3='The people who make RFI great'>
+                    Throughout its proud history our team has built a deep and
+                    lasting kinship with communities in RFI.
                 </TextBlock>
             </SectionWrapper>
 
@@ -63,9 +58,20 @@ export default function Programs() {
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
-
-            <Footer />
         </PageWrapper>
     );
-}
+};
 
+export const getStaticProps = async (context) => {
+    const pageData = await getPageData({ slug: 'programs' });
+    const layoutData = await getLayoutData();
+
+    return {
+        props: {
+            pageData,
+            layoutData,
+        },
+    };
+};
+
+export default Programs;

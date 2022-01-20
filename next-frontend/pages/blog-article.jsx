@@ -7,21 +7,16 @@ import SectionWrapper from '../components/global/SectionWrapper';
 import PostArticle from '../components/PostArticle/';
 import PostList from '../components/PostList/';
 import PostArticleHero from '../components/PostArticleHero/';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 import PageHeader from '../components/global/PageHeader';
 
 export default function BlogArticle() {
     return (
         <PageWrapper>
-            <Header></Header>
-
             <PostArticleHero
-                //image='https://source.unsplash.com/random/300x100'
+            //image='https://source.unsplash.com/random/300x100'
             />
 
             <SectionWrapper>
-
                 <PostArticle
                     data={[
                         {
@@ -29,7 +24,8 @@ export default function BlogArticle() {
                             title: 'Announcement: Santiago Ortiz appointed to coaching role at Green Gulley',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: 'http://www.google.com.au',
                         },
                     ]}
@@ -47,7 +43,8 @@ export default function BlogArticle() {
                             title: 'Announcement: Santiago Ortiz appointed to coaching role at Green Gulley',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: 'http://www.google.com.au',
                         },
                         {
@@ -55,7 +52,8 @@ export default function BlogArticle() {
                             title: 'What are the benefits of taking part in football classes for kids?',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                         {
@@ -63,7 +61,8 @@ export default function BlogArticle() {
                             title: 'The rise of ladies football',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                         {
@@ -71,16 +70,13 @@ export default function BlogArticle() {
                             title: 'Why use different sized footballs for different age groups?',
                             date: '15 Sep',
                             author: 'RFI Management Team',
-                            description: 'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
+                            description:
+                                'We are excited to provide you with news of the appointment of Santiago Ortiz – Santi – to a coaching role at Green Gully in the NPL for season 2022.',
                             link: '#',
                         },
                     ]}
-                >
-                </PostList>
+                ></PostList>
             </SectionWrapper>
-
-            <Footer />
         </PageWrapper>
     );
 }
-

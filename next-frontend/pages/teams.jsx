@@ -8,8 +8,6 @@ import IconTextLinkGroup from '../components/IconTextLinkGroup/';
 import LinkGroup from '../components/LinkGroup/';
 import IconTextTileGroup from '../components/IconTextTileGroup/';
 import TextBlock from '../components/TextBlock';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 import ProfileCardList from '../components/ProfileCardList';
@@ -20,21 +18,17 @@ import StatisticsBlock from '../components/StatisticsBlock/';
 import TextImageCard from '../components/TextImageCard/';
 import QuoteBlock from '../components/QuoteBlock/';
 
-export default function Teams() {
+const Teams = (props) => {
     return (
         <PageWrapper>
-            <Header></Header>
-
             <PageHeader title='Team' />
 
             <SectionWrapper>
-                <TextBlock
-                    h3="The people who make RFI great"
-                >
-                    Throughout its proud history our team has built a deep and lasting kinship with communities in RFI.
+                <TextBlock h3='The people who make RFI great'>
+                    Throughout its proud history our team has built a deep and
+                    lasting kinship with communities in RFI.
                 </TextBlock>
             </SectionWrapper>
-
 
             <SectionWrapper>
                 <ProfileCardList
@@ -46,25 +40,29 @@ export default function Teams() {
                             name: 'Joe Smith',
                             title: 'RFI Player',
                             description: 'some description if any',
-                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
+                            content:
+                                '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                         {
                             name: 'Joe Smith',
                             title: 'RFI Player',
                             description: 'some description if any',
-                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
+                            content:
+                                '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                         {
                             name: 'Joe Smith',
                             title: 'RFI Player',
                             description: 'some description if any',
-                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
+                            content:
+                                '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                         {
                             name: 'Warwick Rakesh',
                             title: 'RFI Player',
                             description: 'some description if any',
-                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
+                            content:
+                                '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                         {
                             name: 'Agrafena Zorro 2',
@@ -77,7 +75,6 @@ export default function Teams() {
                     This is some content
                 </ProfileCardList>
             </SectionWrapper>
-
 
             <SectionWrapper bgcolor='#010A4F'>
                 <StatisticsBlock
@@ -107,8 +104,7 @@ export default function Teams() {
                             content: 'Players ademies',
                         },
                     ]}
-                >
-                </StatisticsBlock>
+                ></StatisticsBlock>
             </SectionWrapper>
 
             <SectionWrapper bgcolor='#eee'>
@@ -122,7 +118,6 @@ export default function Teams() {
                     PEOPLE.
                 </QuoteBlock>
             </SectionWrapper>
-
 
             <SectionWrapper>
                 <ProfileCardList
@@ -167,7 +162,8 @@ export default function Teams() {
                                     desc: 'for age 5 - 8',
                                 },
                             ],
-                            content: '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
+                            content:
+                                '<p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</b></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In odio nunc cras sit volutpat. Eu et pretium morbi quisque purus sagittis maecenas morbi nam. Aenean diam risus egestas id quis fusce.</p> ',
                         },
                     ]}
                 >
@@ -175,11 +171,9 @@ export default function Teams() {
                 </ProfileCardList>
             </SectionWrapper>
 
-
-
             <SectionWrapper>
                 <LinkGroup
-                    heading="Learn more about RFI"
+                    heading='Learn more about RFI'
                     data={[
                         {
                             text: 'History',
@@ -208,9 +202,20 @@ export default function Teams() {
             <SectionWrapper>
                 <RegisterInterestCard />
             </SectionWrapper>
-
-            <Footer />
         </PageWrapper>
     );
-}
+};
 
+export const getStaticProps = async (context) => {
+    const pageData = await getPageData({ slug: 'teams' });
+    const layoutData = await getLayoutData();
+
+    return {
+        props: {
+            pageData,
+            layoutData,
+        },
+    };
+};
+
+export default Teams;

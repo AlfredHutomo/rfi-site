@@ -6,37 +6,44 @@ import styles from './ProgramList.module.scss';
 import ProgramCard from '../ProgramCard';
 
 import Button from '../global/Button';
+import SectionWrapper from '../global/SectionWrapper';
 
 const ProgramList = (props) => {
-    const { programData } = props;
+    const { data } = props;
+
+    const programData = data.programs.data;
 
     return (
-        <div className={styles['program-list-wrapper']}>
-            {props.programData != null && props.programData.length != 0 ? (
-                <ul className={styles['program-list']}>
-                    {props.programData.map((program, i) => (
-                        <li key={i}>
-                            <ProgramCard
-                                //image={Image}
-                                name={program.name}
-                                tags={program.tags}
-                                cta={program.cta}
-                                link={program.link}
-                            >
-                                {program.description}
-                            </ProgramCard>
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                ''
-            )}
-            <div className={styles['program-list-cta']}>
-                <Button variant='2' to='#'>
-                    See all programs
-                </Button>
+        <SectionWrapper>
+            <div className={styles['program-list-wrapper']}>
+                {programData != null && programData.length != 0 ? (
+                    <ul className={styles['program-list']}>
+                        {programData.map((program, i) => (
+                            <li key={i}>
+                                <ProgramCard
+                                    image={program.attributes.coverImage}
+                                    name={program.attributes.program_name}
+                                    tags={[
+                                        program.attributes.age_range,
+                                        program.attributes.level,
+                                    ]}
+                                    slug={program.attributes.slug}
+                                >
+                                    {program.attributes.description}
+                                </ProgramCard>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    ''
+                )}
+                <div className={styles['program-list-cta']}>
+                    <Button variant='2' to='/programs'>
+                        See all programs
+                    </Button>
+                </div>
             </div>
-        </div>
+        </SectionWrapper>
     );
 };
 

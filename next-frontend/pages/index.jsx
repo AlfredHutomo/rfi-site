@@ -1,7 +1,5 @@
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
-import Header from '../components/global/Header';
-import Footer from '../components/global/Footer';
 
 import HeroBanner from '../components/HeroBanner/';
 import TextBlock from '../components/TextBlock/';
@@ -18,20 +16,26 @@ import delve from 'dlv';
 import { homeDefaultData } from '../utils/default';
 
 const Home = (props) => {
-    const [hero, uspBanner, textBlock1, skip1, skip2, quoteBlock, textBlock2] =
-        props.pageData.attributes.content;
-
-    const header = delve(props.layoutData, 'header.data.attributes');
-
-    console.log(header);
+    const [
+        hero,
+        uspBanner,
+        textBlock1,
+        ourPrograms,
+        infoGrid,
+        quoteBlock,
+        textBlock2,
+        sponsors,
+    ] = props.pageData.attributes.content;
 
     return (
-        <PageWrapper>
-            <Header headerData={header} />
-
+        <PageWrapper layoutData={props.layoutData}>
             <HeroBanner data={hero} />
 
-            <USPBanner offsetPos data={uspBanner.block} />
+            <USPBanner
+                wrapperOptions={{ spaceTop: '0', spaceBtm: '0' }}
+                offsetPos
+                data={uspBanner.block}
+            />
 
             <TextBlock
                 heading={textBlock1.heading}
@@ -39,64 +43,28 @@ const Home = (props) => {
                 description={textBlock1.description}
             />
 
-            <SectionWrapper>
-                <ProgramList
-                    programData={[
-                        {
-                            image: '',
-                            name: 'RFI Initation Program 1',
-                            tags: ['ages: 10 - 19', 'beginner'],
-                            description:
-                                'For players born 2011 and after, who wish to get started in football and advance quickly1.',
-                            cta: 'Learn More 1',
-                            link: '#',
-                        },
-                        {
-                            image: '',
-                            name: 'RFI Initation Program 3',
-                            tags: ['ages: 10 - 19', 'beginner'],
-                            description:
-                                'For players born 2011 and after, who wish to get started in football and advance quickly1.',
-                            cta: 'Learn More 1',
-                            link: '#',
-                        },
-                        {
-                            image: '',
-                            name: 'RFI Initation Program 2',
-                            tags: ['ages: 10 - 19', 'beginner'],
-                            description:
-                                'For players born 2011 and after, who wish to get started in football and advance quickly2.',
-                            cta: 'Learn More 2',
-                            link: '#',
-                        },
-                    ]}
-                />
-            </SectionWrapper>
+            <ProgramList data={ourPrograms} />
 
-            <SectionWrapper>
-                <InfoGrid />
-            </SectionWrapper>
+            <InfoGrid sectionData={infoGrid} />
 
-            <SectionWrapper bgcolor='#e5e5e5'>
-                <QuoteBlock
-                    avatar='https://source.unsplash.com/random/300×300'
-                    author={quoteBlock.auhtorName}
-                    role={quoteBlock.authorRole}
-                >
-                    {quoteBlock.quote}
-                </QuoteBlock>
-            </SectionWrapper>
+            <QuoteBlock
+                avatar={quoteBlock.avatar.data.attributes.url}
+                author={quoteBlock.authorName}
+                role={quoteBlock.authorRole}
+            >
+                {quoteBlock.quote}
+            </QuoteBlock>
 
-            <SectionWrapper spaceBtm='0' option={{ spaceBtm: '0' }}>
-                <TextBlock
-                    heading={textBlock2.heading}
-                    headingType={textBlock2.headingType}
-                    description={textBlock2.description}
-                />
-            </SectionWrapper>
+            <TextBlock
+                wrapperOptions={{ spaceBtm: '0' }}
+                heading={textBlock2.heading}
+                headingType={textBlock2.headingType}
+                description={textBlock2.description}
+            />
 
             <SectionWrapper>
                 <SponsorBlock
+                    sectionData={sponsors}
                     sponsorGold={[
                         {
                             name: 'Relab',
@@ -111,7 +79,6 @@ const Home = (props) => {
                         {
                             image: 'https://source.unsplash.com/random/700x200',
                             name: 'Test1',
-                            image: '',
                         },
                         {
                             name: 'Test1',
@@ -152,7 +119,6 @@ const Home = (props) => {
                     ]}
                 ></FAQAccordion>
             </SectionWrapper>
-            <Footer />
         </PageWrapper>
     );
 };
@@ -167,31 +133,6 @@ export const getStaticProps = async (context) => {
             layoutData,
         },
     };
-
-    // try {
-    //     const respond = await fetchAPI('/pages/6', {
-    //         populate: [
-    //             'content.hero_card',
-    //             'content.block',
-    //             'content.programs.tags',
-    //             'content.sponsor',
-    //             'content.personPhoto',
-    //         ],
-    //     });
-
-    //     return {
-    //         props: {
-    //             pageData: respond.data,
-    //         },
-    //     };
-    // } catch (error) {
-    //     return {
-    //         props: {
-    //             // default data goes here
-    //             pageData: homeDefaultData,
-    //         },
-    //     };
-    // }
 };
 
 export default Home;

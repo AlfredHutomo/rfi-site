@@ -58,6 +58,15 @@
         "sections.text-block",
         "sections.text-image-block"
       ]
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

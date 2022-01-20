@@ -52,8 +52,6 @@ export async function getPageData({ slug }) {
         },
     });
 
-    console.log(data.pages.data[0]);
-
     return data.pages.data[0];
 }
 

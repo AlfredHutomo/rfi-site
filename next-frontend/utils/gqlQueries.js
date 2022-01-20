@@ -71,16 +71,46 @@ export const PAGE_DATA = gql`
                                     id
                                     attributes {
                                         program_name
+                                        age_range
+                                        level
+                                        description
+                                        slug
+                                        coverImage {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
                         ... on ComponentSectionsBlockContent {
-                            content {
+                            gridItemOne {
+                                __typename
                                 heading
-                                imageOnly
+                                paragraph
+                                backgroundColor
+                                isLightText
+                                isDoubleSize
+                                buttonText
+                                buttonLink
                             }
-                            blockStyle
+                            gridItemsImages {
+                                image {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
+                            }
+                            gridItemTwo {
+                                description
+                                bgColor
+                                isLightText
+                            }
                         }
                         ... on ComponentSectionsTestimonials {
                             authorName
@@ -95,7 +125,9 @@ export const PAGE_DATA = gql`
                             quote
                         }
                         ... on ComponentSectionsSponsors {
-                            sponsors {
+                            goldSponsors: sponsors(
+                                filters: { level: { eq: "gold" } }
+                            ) {
                                 data {
                                     attributes {
                                         name
@@ -103,8 +135,63 @@ export const PAGE_DATA = gql`
                                         mobile
                                         email
                                         website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                        social {
+                                            platform
+                                            linkTo
+                                        }
                                     }
                                 }
+                            }
+                            silverSponsors: sponsors(
+                                filters: { level: { eq: "silver" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        mobile
+                                        email
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            bronzeSponsors: sponsors(
+                                filters: { level: { eq: "bronze" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            button1 {
+                                text
+                                url
+                            }
+                            button2 {
+                                text
+                                url
                             }
                         }
                         ... on ComponentSectionsRegisterInterest {

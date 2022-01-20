@@ -41,6 +41,11 @@
     },
     "email": {
       "type": "string"
+    },
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.social-button"
     }
   }
 }
