@@ -1,7 +1,8 @@
 import styles from './sectionWrapper.module.scss';
 import PropTypes from 'prop-types';
 
-/*  NOTE:
+/*  
+    NOTE:
     New work-around to prevent the anomaly when options are added 
     the section wrapper the default props are removed
     This is because the default props are only maintained shallowly 
