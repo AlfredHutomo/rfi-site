@@ -1,22 +1,20 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
+import PageWrapper from '../../components/global/PageWrapper';
+import SectionWrapper from '../../components/global/SectionWrapper';
+import PageHeader from '../../components/global/PageHeader';
+import Breadcrumb from '../../components/Breadcrumb';
+import TextBlock from '../../components/TextBlock';
+import Timeline from '../../components/Timeline';
+import Banner from '../../components/Banner';
+import LinkGroup from '../../components/LinkGroup';
 
-import PageWrapper from '../components/global/PageWrapper';
-import SectionWrapper from '../components/global/SectionWrapper';
-import PageHeader from '../components/global/PageHeader';
-import Breadcrumb from '../components/Breadcrumb';
-import TextBlock from '../components/TextBlock';
-import Timeline from '../components/Timeline';
-import Banner from '../components/Banner';
-import LinkGroup from '../components/LinkGroup/';
+import { getPageData, getLayoutData } from '../../utils/api';
 
 const History = (props) => {
     return (
-        <PageWrapper>
+        <PageWrapper layoutData={props.layoutData}>
             <PageHeader title='History' />
 
-            <SectionWrapper>
+            {/* <SectionWrapper>
                 <Breadcrumb
                     data={[
                         {
@@ -29,9 +27,9 @@ const History = (props) => {
                         },
                     ]}
                 />
-            </SectionWrapper>
+            </SectionWrapper> */}
 
-            <SectionWrapper>
+            {/* <SectionWrapper>
                 <TextBlock h3='RFI takes pride in bringing to Australia the finest in international youth football development.'>
                     Our objective is to provide our players with nothing but the
                     best football experience possible, the Real experience. It
@@ -40,7 +38,7 @@ const History = (props) => {
                     healthy sporting life and habits for the everlasting
                     enjoying of this beautiful game.
                 </TextBlock>
-            </SectionWrapper>
+            </SectionWrapper> */}
 
             <SectionWrapper>
                 <Timeline
@@ -69,7 +67,7 @@ const History = (props) => {
                 />
             </SectionWrapper>
 
-            <Banner
+            {/* <Banner
                 //icon="./public/logo-no-text.svg"
                 //image="https://source.unsplash.com/random/1000x400"
                 heading='The history of RFI is one of non-conformity, counterculture and determination.'
@@ -79,7 +77,7 @@ const History = (props) => {
                 excellence. It was written by people who believed in this, who
                 made RFI their struggle, taking responsibility and carrying the
                 burden of being different – being better.
-            </Banner>
+            </Banner> */}
 
             <SectionWrapper>
                 <LinkGroup
@@ -118,7 +116,7 @@ export const getStaticProps = async (context) => {
 
     return {
         props: {
-            pageData,
+            pageData: {},
             layoutData,
         },
     };

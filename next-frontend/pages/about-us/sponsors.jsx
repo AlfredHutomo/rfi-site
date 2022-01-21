@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
-import PageWrapper from '../components/global/PageWrapper';
-import SectionWrapper from '../components/global/SectionWrapper';
-import LinkGroup from '../components/LinkGroup/';
-import TextBlock from '../components/TextBlock';
-import SponsorDetailBlock from '../components/SponsorDetailBlock';
-import RegisterInterestCard from '../components/RegisterInterestCard';
-import PageHeader from '../components/global/PageHeader';
+import PageWrapper from '../../components/global/PageWrapper';
+import SectionWrapper from '../../components/global/SectionWrapper';
+import LinkGroup from '../../components/LinkGroup';
+import TextBlock from '../../components/TextBlock';
+import SponsorDetailBlock from '../../components/SponsorDetailBlock';
+import RegisterInterestCard from '../../components/RegisterInterestCard';
+import PageHeader from '../../components/global/PageHeader';
 
 const Sponsors = (props) => {
     return (

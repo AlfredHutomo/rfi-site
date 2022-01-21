@@ -23,6 +23,10 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "isDarkBackground": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

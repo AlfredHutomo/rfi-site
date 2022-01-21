@@ -2,19 +2,19 @@ import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
-import PageWrapper from '../components/global/PageWrapper';
-import SectionWrapper from '../components/global/SectionWrapper';
-import TextBlock from '../components/TextBlock';
-import LinkGroup from '../components/LinkGroup/';
-import Banner from '../components/Banner';
-import RegisterInterestCard from '../components/RegisterInterestCard';
-import PageHeader from '../components/global/PageHeader';
+import PageWrapper from '../../components/global/PageWrapper';
+import SectionWrapper from '../../components/global/SectionWrapper';
+import TextBlock from '../../components/TextBlock';
+import LinkGroup from '../../components/LinkGroup';
+import Banner from '../../components/Banner';
+import RegisterInterestCard from '../../components/RegisterInterestCard';
+import PageHeader from '../../components/global/PageHeader';
 
 //import SectionWrapper from '../components/global';
 
-import StatisticsBlock from '../components/StatisticsBlock/';
-import TextImageCard from '../components/TextImageCard/';
-import QuoteBlock from '../components/QuoteBlock/';
+import StatisticsBlock from '../../components/StatisticsBlock';
+import TextImageCard from '../../components/TextImageCard';
+import QuoteBlock from '../../components/QuoteBlock';
 
 const SuccessStories = (props) => {
     return (

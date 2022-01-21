@@ -2,21 +2,21 @@ import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
-import PageWrapper from '../components/global/PageWrapper';
-import SectionWrapper from '../components/global/SectionWrapper';
-import IconTextLinkGroup from '../components/IconTextLinkGroup/';
-import LinkGroup from '../components/LinkGroup/';
-import IconTextTileGroup from '../components/IconTextTileGroup/';
-import TextBlock from '../components/TextBlock';
-import RegisterInterestCard from '../components/RegisterInterestCard';
-import PageHeader from '../components/global/PageHeader';
-import ProfileCardList from '../components/ProfileCardList';
+import PageWrapper from '../../components/global/PageWrapper';
+import SectionWrapper from '../../components/global/SectionWrapper';
+import IconTextLinkGroup from '../../components/IconTextLinkGroup';
+import LinkGroup from '../../components/LinkGroup';
+import IconTextTileGroup from '../../components/IconTextTileGroup';
+import TextBlock from '../../components/TextBlock';
+import RegisterInterestCard from '../../components/RegisterInterestCard';
+import PageHeader from '../../components/global/PageHeader';
+import ProfileCardList from '../../components/ProfileCardList';
 
 //import SectionWrapper from '../components/global';
 
-import StatisticsBlock from '../components/StatisticsBlock/';
-import TextImageCard from '../components/TextImageCard/';
-import QuoteBlock from '../components/QuoteBlock/';
+import StatisticsBlock from '../../components/StatisticsBlock';
+import TextImageCard from '../../components/TextImageCard';
+import QuoteBlock from '../../components/QuoteBlock';
 
 const Teams = (props) => {
     return (

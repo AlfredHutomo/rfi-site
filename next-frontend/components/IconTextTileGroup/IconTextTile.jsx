@@ -2,41 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './IconTextTile.module.scss';
+import { Icon } from '@mui/material';
 
 const IconTextTile = (props) => {
-
-    const {
-        icon,
-        heading,
-    } = props;
-
+    const { icon, heading } = props;
 
     return (
         <div className={styles['icon-text-tile-wrapper']}>
-            {
-                (props.icon != null) ?
+            {props.icon != null ? (
                 <div className={styles['icon-text-tile-icon']}>
-                    {props.icon}
-                </div> : ''
-            }
-            {
-                (props.heading != null) ?
+                    <Icon>{props.icon}</Icon>
+                </div>
+            ) : (
+                ''
+            )}
+            {props.heading != null ? (
                 <h2 className={'h2 ' + styles['icon-text-tile-heading']}>
                     {props.heading}
-                </h2> : ''
-            }
-            {
-                (props.children != null) ?
+                </h2>
+            ) : (
+                ''
+            )}
+            {props.children != null ? (
                 <div className={styles['icon-text-tile-content']}>
                     {props.children}
-                </div> : ''
-            }
+                </div>
+            ) : (
+                ''
+            )}
         </div>
     );
-}
+};
 
-IconTextTile.propTypes = {
-}
+IconTextTile.propTypes = {};
 
 export default IconTextTile;
-

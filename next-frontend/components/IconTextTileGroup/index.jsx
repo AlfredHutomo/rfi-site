@@ -3,34 +3,30 @@ import PropTypes from 'prop-types';
 
 import styles from './IconTextTile.module.scss';
 import IconTextTile from './IconTextTile';
+import SectionWrapper from '../global/SectionWrapper';
 
-const IconTextTileGroup = (props) => {
-
-    const {
-        data
-    } = props;
-
+const IconTextTileGroup = ({ sectionData, wrapperOptions }) => {
+    const { tiles } = sectionData;
 
     return (
-        <div className={styles['icon-text-tile-group-wrapper']}>
-            {
-                (props.data != null && props.data.length != 0) ?
-                    props.data.map((item, i) => (
-                        <IconTextTile
-                            key={i}
-                            icon={item['icon']}
-                            heading={item['heading']}
-                        >
-                            {item['content']}
-                        </IconTextTile>
-                    )) : ''
-            }
-        </div>
+        <SectionWrapper options={wrapperOptions}>
+            <div className={styles['icon-text-tile-group-wrapper']}>
+                {tiles != null && tiles.length != 0
+                    ? tiles.map((item, i) => (
+                          <IconTextTile
+                              key={i}
+                              icon={item['icon']}
+                              heading={item['heading']}
+                          >
+                              {item['description']}
+                          </IconTextTile>
+                      ))
+                    : ''}
+            </div>
+        </SectionWrapper>
     );
-}
+};
 
-IconTextTileGroup.propTypes = {
-}
+IconTextTileGroup.propTypes = {};
 
 export default IconTextTileGroup;
-

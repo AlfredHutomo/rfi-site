@@ -9,16 +9,12 @@ import SectionWrapper from '../global/SectionWrapper';
 const IconTextLinkGroup = (props) => {
     const { isDarkBackground, items } = props.sectionData;
 
-    console.log(props.sectionData);
-
-    //const alterstyle = (isDarkBackground != null) ? styles['alternative'] : '';
+    const alterstyle = isDarkBackground != null ? styles['alternative'] : '';
 
     return (
         <SectionWrapper options={props.wrapperOptions}>
             <div
-                className={`${styles['link-group-blocks-wrapper']} ${
-                    props.isDarkBackground ? styles['alternative'] : ''
-                }`}
+                className={`${styles['link-group-blocks-wrapper']} ${alterstyle}`}
             >
                 {items != null && items.length != 0
                     ? items.map((item, i) => (

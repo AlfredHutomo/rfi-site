@@ -1,5 +1,5 @@
-@import "../../styles/_base";
-@import "../../styles/_utils";
+@import '../../styles/_base';
+@import '../../styles/_utils';
 
 .statistics-block {
     $base: &;
@@ -24,7 +24,7 @@
     }
 
     &-description {
-        margin: 3rem auto 0 auto;
+        margin: 3rem auto 4rem auto;
         max-width: 70rem;
         font-size: 1.6rem;
         font-family: $font-body;
@@ -56,4 +56,3 @@
         }
     }
 }
-

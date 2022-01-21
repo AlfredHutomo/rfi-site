@@ -1,18 +1,18 @@
-import PageWrapper from '../components/global/PageWrapper';
-import SectionWrapper from '../components/global/SectionWrapper';
-import Breadcrumb from '../components/Breadcrumb';
-import ProfileCardList from '../components/ProfileCardList';
-import IconTextLinkGroup from '../components/IconTextLinkGroup';
-import TextBlock from '../components/TextBlock';
-import { InfoGridTwo } from '../components/InfoGrid/';
-import SponsorBlock from '../components/SponsorBlock/';
-import RegisterInterestCard from '../components/RegisterInterestCard';
-import PageHeader from '../components/global/PageHeader';
-import StatisticsBlock from '../components/StatisticsBlock/';
-import TextImageCard from '../components/TextImageCard/';
-import { homeDefaultData } from '../utils/default';
-import { fetchAPI } from '../utils/api';
-import { getPageData, getLayoutData } from '../utils/api';
+import PageWrapper from '../../components/global/PageWrapper';
+import SectionWrapper from '../../components/global/SectionWrapper';
+import Breadcrumb from '../../components/Breadcrumb';
+import ProfileCardList from '../../components/ProfileCardList';
+import IconTextLinkGroup from '../../components/IconTextLinkGroup';
+import TextBlock from '../../components/TextBlock';
+import { InfoGridTwo } from '../../components/InfoGrid/';
+import SponsorBlock from '../../components/SponsorBlock/';
+import RegisterInterestCard from '../../components/RegisterInterestCard';
+import PageHeader from '../../components/global/PageHeader';
+import StatisticsBlock from '../../components/StatisticsBlock/';
+import TextImageCard from '../../components/TextImageCard/';
+import { homeDefaultData } from '../../utils/default';
+import { fetchAPI } from '../../utils/api';
+import { getPageData, getLayoutData } from '../../utils/api';
 import delve from 'dlv';
 
 const AboutUs = (props) => {

@@ -44,8 +44,22 @@
         "sections.pillar-block",
         "sections.people-highlight-block",
         "sections.grid-about-us",
-        "sections.icon-text-link-group"
+        "sections.icon-text-link-group",
+        "sections.icon-text-tile",
+        "sections.banner"
       ]
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page",
+      "mappedBy": "parent"
     }
   }
 }

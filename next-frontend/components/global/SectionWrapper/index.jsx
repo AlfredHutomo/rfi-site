@@ -48,7 +48,7 @@ const Wrapper = ({ bgcolor, spaceTop, spaceBtm, isTwoColumns, children }) => {
 };
 
 Wrapper.defaultProps = {
-    bgcolor: '#0044ff',
+    bgcolor: '#e5e5e5',
     isTwoColumns: false,
 };
 

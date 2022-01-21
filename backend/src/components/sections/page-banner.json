@@ -1,8 +1,9 @@
 {
   "collectionName": "components_sections_page_banners",
   "info": {
-    "displayName": "Page Banner",
-    "icon": "flag"
+    "displayName": "Header Banner",
+    "icon": "flag",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,13 +11,14 @@
       "type": "string"
     },
     "banner_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

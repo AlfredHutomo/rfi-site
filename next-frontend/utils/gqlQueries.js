@@ -65,6 +65,7 @@ export const PAGE_DATA = gql`
                             heading
                             headingType
                             description
+                            isDarkBackground
                         }
                         ... on ComponentSectionsOurPrograms {
                             programs {
@@ -336,6 +337,34 @@ export const PAGE_DATA = gql`
                                 linkText
                                 linkTo
                             }
+                            isDarkBackground
+                        }
+                        ... on ComponentSectionsIconTextTile {
+                            tiles {
+                                icon
+                                heading
+                                description
+                            }
+                        }
+                        ... on ComponentSectionsBanner {
+                            image {
+                                data {
+                                    attributes {
+                                        url
+                                        width
+                                        height
+                                    }
+                                }
+                            }
+                            icon {
+                                data {
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
+                            heading
+                            description
                         }
                     }
                 }

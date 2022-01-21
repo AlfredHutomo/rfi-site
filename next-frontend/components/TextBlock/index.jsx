@@ -8,7 +8,10 @@ import Button from '../global/Button';
 import SectionWrapper from '../global/SectionWrapper';
 
 const TextBlock = ({ sectionData, wrapperOptions }) => {
-    const { maxWidth, heading, headingType, description } = sectionData;
+    const { isDarkBackground, maxWidth, heading, headingType, description } =
+        sectionData;
+
+    const altStyle = isDarkBackground != null ? styles['darkBg'] : '';
 
     const headingCheck = () => {
         switch (headingType) {
@@ -28,7 +31,7 @@ const TextBlock = ({ sectionData, wrapperOptions }) => {
     return (
         <SectionWrapper options={wrapperOptions}>
             <div
-                className={styles['text-block-wrapper']}
+                className={styles['text-block-wrapper'] + ' ' + altStyle}
                 style={
                     maxWidth != null
                         ? { maxWidth: maxWidth + 'px' }

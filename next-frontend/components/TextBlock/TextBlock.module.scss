@@ -5,6 +5,11 @@
     &-wrapper {
         margin: 0 auto;
         text-align: center;
+        color: $color-gs-01;
+
+        &.darkBg {
+            color: $color-gs-white;
+        }
     }
 
     &-icon {
@@ -16,6 +21,6 @@
         font-weight: 400;
         font-size: 1.6rem;
         line-height: 2.4rem;
-        color: $color-gs-01;
+        color: inherit;
     }
 }
