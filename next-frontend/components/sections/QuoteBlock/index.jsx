@@ -5,30 +5,31 @@ import clsx from 'clsx';
 
 import styles from './QuoteBlock.module.scss';
 import DefaultImg from './default-img.png';
-import SectionWrapper from '../global/SectionWrapper';
+import SectionWrapper from '../../global/SectionWrapper';
 
 const QuoteBlock = (props) => {
     const {
         avatar, // Avatar image
-        author,
-        role,
-    } = props;
+        authorName,
+        authorRole,
+        quote,
+    } = props.sectionData;
 
     return (
         <SectionWrapper>
             <div className={styles['quote-block-wrapper']}>
                 <div className={styles['quote-block']}>
-                    {props.children != null ? (
+                    {quote != null ? (
                         <div className={styles['quote-block-content']}>
-                            {props.children}
+                            {quote}
                         </div>
                     ) : (
                         ''
                     )}
-                    {avatar != null ? (
+                    {avatar?.data != null ? (
                         <div className={styles['quote-block-avatar']}>
                             <Image
-                                src={avatar}
+                                src={avatar.data.attributes.url}
                                 layout='fill'
                                 objectFit='cover'
                                 alt={''}
@@ -39,15 +40,17 @@ const QuoteBlock = (props) => {
                             <Image src={DefaultImg} alt={''} />
                         </div>
                     )}
-                    {author != null ? (
+                    {authorName != null ? (
                         <div className={styles['quote-block-author']}>
-                            {author}
+                            {authorName}
                         </div>
                     ) : (
                         ''
                     )}
-                    {role != null ? (
-                        <div className={styles['quote-block-role']}>{role}</div>
+                    {authorRole != null ? (
+                        <div className={styles['quote-block-role']}>
+                            {authorRole}
+                        </div>
                     ) : (
                         ''
                     )}

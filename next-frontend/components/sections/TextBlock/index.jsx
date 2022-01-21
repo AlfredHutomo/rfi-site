@@ -4,14 +4,15 @@ import Image from 'next/image';
 
 import styles from './TextBlock.module.scss';
 
-import Button from '../global/Button';
-import SectionWrapper from '../global/SectionWrapper';
+import Button from '../../global/Button';
+import SectionWrapper from '../../global/SectionWrapper';
 
 const TextBlock = ({ sectionData, wrapperOptions }) => {
     const { isDarkBackground, maxWidth, heading, headingType, description } =
         sectionData;
 
-    const altStyle = isDarkBackground != null ? styles['darkBg'] : '';
+    const altStyle =
+        isDarkBackground != null ? isDarkBackground && styles['darkBg'] : '';
 
     const headingCheck = () => {
         switch (headingType) {

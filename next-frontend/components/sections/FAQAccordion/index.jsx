@@ -8,7 +8,7 @@ import AccordionItem from './AccordionItem';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
-import SectionWrapper from '../global/SectionWrapper';
+import SectionWrapper from '../../global/SectionWrapper';
 
 const FAQAccordion = ({ sectionData, wrapperOptions }) => {
     const { faqlists } = sectionData;

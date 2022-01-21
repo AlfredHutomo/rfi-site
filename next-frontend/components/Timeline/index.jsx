@@ -6,29 +6,35 @@ import styles from './TimelineCard.module.scss';
 import TimelineCard from './TimelineCard';
 
 import Button from '../global/Button';
+import SectionWrapper from '../global/SectionWrapper';
 
 const Timeline = (props) => {
-    const { date } = props;
+    const { timelineEvents } = props.sectionData;
 
     return (
-        <div className={styles['timeline-wrapper']}>
-            {
-                (props.data != null && props.data.length != 0) ? 
-                    props.data.map((tlcard, i) => (
-                        <TimelineCard key={i}
-                            image={tlcard.image}
-                            date={tlcard.date}
-                        >
-                            {tlcard.content}
-                        </TimelineCard>
-                    ))
-                : ''
-            }
-        </div>
+        <SectionWrapper options={props.wrapperOptions}>
+            <div className={styles['timeline-wrapper']}>
+                {timelineEvents != null && timelineEvents.length != 0
+                    ? timelineEvents.map((tlcard, i) => (
+                          <TimelineCard
+                              key={i}
+                              image={tlcard.image.data?.attributes.url}
+                              date={tlcard.date}
+                          >
+                              {tlcard.description}
+                          </TimelineCard>
+                      ))
+                    : ''}
+            </div>
+        </SectionWrapper>
     );
 };
 
 Timeline.propTypes = {};
 
-export default Timeline;
+Timeline.defaultProps = {
+    sectionData: {},
+    wrapperOptions: {},
+};
 
+export default Timeline;

@@ -38,7 +38,7 @@ const TextImageCard = (props) => {
                 }
             >
                 <div className={styles['text-image-card-col-img']}>
-                    {image.data != null ? (
+                    {image?.data != null ? (
                         <Image
                             src={image.data.attributes.url}
                             width={image.data.attributes.width}

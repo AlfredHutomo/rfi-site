@@ -36,8 +36,8 @@ const StatisticsBlock = (props) => {
                     ''
                 )}
                 <div className={styles['statistics-block-data']}>
-                    {statsData.length != 0 || statsData != null
-                        ? statsData.map((stat, i) => (
+                    {statsData?.length != 0 || statsData != null
+                        ? statsData?.map((stat, i) => (
                               <div
                                   key={i}
                                   className={

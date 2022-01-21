@@ -3,7 +3,7 @@ import SectionWrapper from '../../components/global/SectionWrapper';
 import Breadcrumb from '../../components/Breadcrumb';
 import ProfileCardList from '../../components/ProfileCardList';
 import IconTextLinkGroup from '../../components/IconTextLinkGroup';
-import TextBlock from '../../components/TextBlock';
+import TextBlock from '../../components/sections/TextBlock';
 import { InfoGridTwo } from '../../components/InfoGrid/';
 import SponsorBlock from '../../components/SponsorBlock/';
 import RegisterInterestCard from '../../components/RegisterInterestCard';
@@ -38,7 +38,7 @@ const AboutUs = (props) => {
                     data: [
                         {
                             text: 'Home',
-                            link: '/home',
+                            link: '/',
                         },
                         {
                             text: 'About Us',

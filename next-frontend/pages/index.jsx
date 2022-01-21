@@ -1,14 +1,14 @@
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 
-import HeroBanner from '../components/HeroBanner/';
-import TextBlock from '../components/TextBlock/';
-import USPBanner from '../components/USPBanner/';
-import ProgramList from '../components/ProgramList/';
-import QuoteBlock from '../components/QuoteBlock/';
-import SponsorBlock from '../components/SponsorBlock/';
-import { InfoGrid } from '../components/InfoGrid/';
-import FAQAccordion from '../components/FAQAccordion/';
+import HeroBanner from '../components/HeroBanner';
+import TextBlock from '../components/sections/TextBlock';
+import USPBanner from '../components/USPBanner';
+import ProgramList from '../components/ProgramList';
+import QuoteBlock from '../components/sections/QuoteBlock';
+import SponsorBlock from '../components/SponsorBlock';
+import { InfoGrid } from '../components/InfoGrid';
+import FAQAccordion from '../components/sections/FAQAccordion';
 import RegisterInterestCard from '../components/RegisterInterestCard';
 
 import { getLayoutData, getPageData } from '../utils/api';
@@ -46,14 +46,7 @@ const Home = (props) => {
             <ProgramList sectionData={ourPrograms} />
             <InfoGrid sectionData={infoGrid} />
 
-            {/* TODO: not refactored to sectionData*/}
-            <QuoteBlock
-                avatar={quoteBlock.avatar.data.attributes.url}
-                author={quoteBlock.authorName}
-                role={quoteBlock.authorRole}
-            >
-                {quoteBlock.quote}
-            </QuoteBlock>
+            <QuoteBlock sectionData={quoteBlock}></QuoteBlock>
 
             <TextBlock
                 sectionData={textBlock2}
@@ -75,7 +68,7 @@ const Home = (props) => {
 };
 
 export const getStaticProps = async (context) => {
-    const pageData = await getPageData({ slug: 'home' });
+    const pageData = await getPageData({ slug: '' });
     const layoutData = await getLayoutData();
 
     return {

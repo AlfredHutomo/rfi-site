@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 
-import SectionWrapper from '../global/SectionWrapper';
+import SectionWrapper from '../../global/SectionWrapper';
 import styles from './Banner.module.scss';
 import DefaultImg from './default-img.jpg';
 import DefaultIcon from './default-icon.svg';
@@ -14,11 +14,11 @@ const Banner = (props) => {
 
     return (
         <div className={styles['banner-wrapper']}>
-            {icon.data != null || heading != null || description != null ? (
+            {icon?.data != null || heading != null || description != null ? (
                 <>
                     <SectionWrapper>
                         <div className={styles['banner']}>
-                            {props.icon != null ? (
+                            {icon?.data != null ? (
                                 <div className={styles['banner-icon']}>
                                     <Image
                                         width='90'
@@ -59,7 +59,7 @@ const Banner = (props) => {
                     </SectionWrapper>
                     <Image
                         src={
-                            image.data != null
+                            image?.data != null
                                 ? image.data.attributes.url
                                 : DefaultImg
                         }
@@ -73,17 +73,17 @@ const Banner = (props) => {
                     layout='responsive'
                     className={styles['banner-content-image']}
                     src={
-                        image.data != null
+                        image?.data != null
                             ? image.data.attributes.url
                             : DefaultImg
                     }
                     width={
-                        image.data != null
+                        image?.data != null
                             ? image.data.attributes.width
                             : '1440'
                     }
                     height={
-                        image.data != null
+                        image?.data != null
                             ? image.data.attributes.height
                             : '570'
                     }

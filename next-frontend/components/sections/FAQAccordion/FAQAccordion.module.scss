@@ -1,5 +1,5 @@
-@import "../../styles/_base";
-@import "../../styles/_utils";
+@import '../../../styles/_base';
+@import '../../../styles/_utils';
 
 .faq-accordion {
     &-wrapper {
@@ -22,7 +22,6 @@
         margin: 0;
         padding: 0;
         list-style: none;
-
     }
     &-list-item {
         margin: 0 0 20px 0;
@@ -57,4 +56,3 @@
         }
     }
 }
-

@@ -366,6 +366,19 @@ export const PAGE_DATA = gql`
                             heading
                             description
                         }
+                        ... on ComponentSectionsTimelineBlock {
+                            timelineEvents {
+                                date
+                                description
+                                image {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

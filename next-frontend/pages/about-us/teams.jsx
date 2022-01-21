@@ -7,7 +7,7 @@ import SectionWrapper from '../../components/global/SectionWrapper';
 import IconTextLinkGroup from '../../components/IconTextLinkGroup';
 import LinkGroup from '../../components/LinkGroup';
 import IconTextTileGroup from '../../components/IconTextTileGroup';
-import TextBlock from '../../components/TextBlock';
+import TextBlock from '../../components/sections/TextBlock';
 import RegisterInterestCard from '../../components/RegisterInterestCard';
 import PageHeader from '../../components/global/PageHeader';
 import ProfileCardList from '../../components/ProfileCardList';
@@ -16,7 +16,7 @@ import ProfileCardList from '../../components/ProfileCardList';
 
 import StatisticsBlock from '../../components/StatisticsBlock';
 import TextImageCard from '../../components/TextImageCard';
-import QuoteBlock from '../../components/QuoteBlock';
+import QuoteBlock from '../../components/sections/QuoteBlock';
 
 const Teams = (props) => {
     return (

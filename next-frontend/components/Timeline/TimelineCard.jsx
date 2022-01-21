@@ -22,7 +22,13 @@ const TimelineCard = (props) => {
             <div className={styles['timeline-card-main']}>
                 <div className={styles['timeline-card-image']}>
                     {props.image != null ? (
-                        props.image
+                        // TODO: CSS Need FIXING!!!
+                        <Image
+                            src={props.image}
+                            layout='fill'
+                            objectFit='cover'
+                            alt={''}
+                        />
                     ) : (
                         <Image src={DefaultCardImg} alt={''} />
                     )}
@@ -39,4 +45,3 @@ const TimelineCard = (props) => {
 TimelineCard.propTypes = {};
 
 export default TimelineCard;
-

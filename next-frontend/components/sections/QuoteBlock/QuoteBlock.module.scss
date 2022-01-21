@@ -1,5 +1,5 @@
-@import "../../styles/_base";
-@import "../../styles/_utils";
+@import '../../../styles/_base';
+@import '../../../styles/_utils';
 
 .quote-block {
     margin: 0 auto;
@@ -60,5 +60,3 @@
         color: $color-brand-03;
     }
 }
-
-

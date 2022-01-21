@@ -20,7 +20,8 @@
       "component": "elements.statistic-data"
     },
     "isDarkBackground": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }
