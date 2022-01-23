@@ -60,49 +60,37 @@ const SuccessStories = (props) => {
             <TextImageCard sectionData={textImage3}></TextImageCard>
 
             <Banner sectionData={banner}></Banner>
-            {/* 
 
-            <SectionWrapper bgcolor='#eee'>
-                <QuoteBlock
-                    avatar='https://source.unsplash.com/random/300×300'
-                    author='Santiago Ortiz'
-                    role='Coach, RFI'
-                >
-                    A LOT OF MEMORIES COME TO MY MIND AS A PLAYER, COACH, OR
-                    FAN. THE BEST ONES ARE THOSE WHICH I LIVED AND SHARED WITH
-                    PEOPLE.
-                </QuoteBlock>
-            </SectionWrapper>
+            <QuoteBlock
+                sectionData={quote}
+                wrapperOptions={{ bgcolor: '#eee' }}
+            ></QuoteBlock>
 
-            <SectionWrapper>
-                <LinkGroup
-                    heading='Learn more about RFI'
-                    data={[
-                        {
-                            text: 'History',
-                            link: '#',
-                        },
-                        {
-                            text: 'Philosophy',
-                            link: '#',
-                        },
-                        {
-                            text: 'Success stories',
-                            link: '#',
-                        },
-                        {
-                            text: 'Sponsors',
-                            link: '#',
-                        },
-                        {
-                            text: 'Success stories',
-                            link: '#',
-                        },
-                    ]}
-                />
-            </SectionWrapper>
-
-            <Banner /> */}
+            <LinkGroup
+                heading='Learn more about RFI'
+                data={[
+                    {
+                        text: 'History',
+                        link: '#',
+                    },
+                    {
+                        text: 'Philosophy',
+                        link: '#',
+                    },
+                    {
+                        text: 'Success stories',
+                        link: '#',
+                    },
+                    {
+                        text: 'Sponsors',
+                        link: '#',
+                    },
+                    {
+                        text: 'Success stories',
+                        link: '#',
+                    },
+                ]}
+            />
 
             <SectionWrapper>
                 <RegisterInterestCard />

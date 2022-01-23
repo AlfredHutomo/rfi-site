@@ -5,7 +5,7 @@ import LinkGroup from '../../components/LinkGroup';
 import IconTextTileGroup from '../../components/IconTextTileGroup';
 import TextBlock from '../../components/sections/TextBlock';
 import StatisticsBlock from '../../components/StatisticsBlock';
-import Banner from '../../components/sectios/Banner';
+import Banner from '../../components/sections/Banner';
 import RegisterInterestCard from '../../components/RegisterInterestCard';
 import PageHeader from '../../components/global/PageHeader';
 import TextImageCard from '../../components/TextImageCard';

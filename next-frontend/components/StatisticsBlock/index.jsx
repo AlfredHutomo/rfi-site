@@ -14,7 +14,7 @@ const StatisticsBlock = (props) => {
         isDarkBackground,
     } = props.sectionData;
 
-    const altStyle = isDarkBackground != null ? styles['darkBg'] : '';
+    const altStyle = isDarkBackground ? styles['darkBg'] : '';
 
     return (
         <SectionWrapper options={props.wrapperOptions}>

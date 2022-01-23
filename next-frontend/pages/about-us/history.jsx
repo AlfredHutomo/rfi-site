@@ -2,7 +2,7 @@ import PageWrapper from '../../components/global/PageWrapper';
 import SectionWrapper from '../../components/global/SectionWrapper';
 import PageHeader from '../../components/global/PageHeader';
 import Breadcrumb from '../../components/Breadcrumb';
-import TextBlock from '../../components/TextBlock';
+import TextBlock from '../../components/sections/TextBlock';
 import Timeline from '../../components/Timeline';
 import Banner from '../../components/sections/Banner';
 import LinkGroup from '../../components/LinkGroup';

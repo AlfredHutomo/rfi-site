@@ -308,6 +308,7 @@ export const PAGE_DATA = gql`
                                 dataName
                                 number
                             }
+                            isDarkBackground
                         }
                         ... on ComponentSectionsTextImageBlock {
                             preHeading

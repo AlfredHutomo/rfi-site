@@ -27,7 +27,7 @@ const ProfileCardList = ({ sectionData, wrapperOptions }) => {
                     )}
                 </div>
 
-                {people.data != null && people.data.length != 0 ? (
+                {people?.data != null && people.data.length != 0 ? (
                     <ul className={styles['profile-list'] + ' ' + slider}>
                         {people.data.map((profile, i) => (
                             <li key={i} className={styles['profile-list-item']}>
