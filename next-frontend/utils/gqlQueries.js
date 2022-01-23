@@ -193,6 +193,68 @@ export const PAGE_DATA = gql`
                                     attributes {
                                         name
                                         level
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            silverSponsors: sponsors(
+                                filters: { level: { eq: "silver" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            bronzeSponsors: sponsors(
+                                filters: { level: { eq: "bronze" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            button1 {
+                                text
+                                url
+                            }
+                            button2 {
+                                text
+                                url
+                            }
+                        }
+                        ... on ComponentSectionsSponsorsDetails {
+                            goldSponsors: sponsors(
+                                filters: { level: { eq: "gold" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        level
                                         mobile
                                         email
                                         website
@@ -245,14 +307,6 @@ export const PAGE_DATA = gql`
                                         }
                                     }
                                 }
-                            }
-                            button1 {
-                                text
-                                url
-                            }
-                            button2 {
-                                text
-                                url
                             }
                         }
                         ... on ComponentSectionsRegisterInterest {

@@ -46,7 +46,8 @@
         "sections.icon-text-link-group",
         "sections.icon-text-tile",
         "sections.banner",
-        "sections.timeline-block"
+        "sections.timeline-block",
+        "sections.sponsors-details"
       ]
     },
     "parent": {

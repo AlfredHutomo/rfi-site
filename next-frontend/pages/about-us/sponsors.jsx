@@ -1,29 +1,25 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
-
 import PageWrapper from '../../components/global/PageWrapper';
 import SectionWrapper from '../../components/global/SectionWrapper';
 import LinkGroup from '../../components/LinkGroup';
-import TextBlock from '../../components/TextBlock';
+import TextBlock from '../../components/sections/TextBlock';
 import SponsorDetailBlock from '../../components/SponsorDetailBlock';
 import RegisterInterestCard from '../../components/RegisterInterestCard';
 import PageHeader from '../../components/global/PageHeader';
+import { getPageData, getLayoutData } from '../../utils/api';
 
-const Sponsors = (props) => {
+const Sponsors = ({ pageData, layoutData }) => {
+    const [headerBanner, textBlock1, sponsorsDetails] =
+        pageData.attributes.content;
+
     return (
-        <PageWrapper>
-            <PageHeader title='Sponsors' />
+        <PageWrapper layoutData={layoutData}>
+            <PageHeader title={headerBanner.banner_text} />
 
-            <SectionWrapper>
-                <TextBlock h3='The people who make RFI great'>
-                    Throughout its proud history our team has built a deep and
-                    lasting kinship with communities in RFI.
-                </TextBlock>
-            </SectionWrapper>
+            <TextBlock sectionData={textBlock1}></TextBlock>
 
             <SectionWrapper>
                 <SponsorDetailBlock
+                    sectionData={sponsorsDetails}
                     sponsorsData={[
                         {
                             type: 'Gold',

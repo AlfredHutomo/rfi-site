@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_sponsors_details",
+  "info": {
+    "displayName": "Sponsors Details",
+    "icon": "money-check-alt"
+  },
+  "options": {},
+  "attributes": {
+    "sponsors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sponsor.sponsor"
+    }
+  }
+}
