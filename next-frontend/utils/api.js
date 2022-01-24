@@ -1,6 +1,11 @@
 import qs from 'qs';
 import client from './apollo-client';
-import { LAYOUT_DATA, PAGE_DATA } from './gqlQueries';
+import {
+    LAYOUT_DATA,
+    PAGE_DATA,
+    PROGRAMS_DATA,
+    PROGRAMS_PATHS,
+} from './gqlQueries';
 
 export function getStrapiURL(path) {
     return `${
@@ -65,4 +70,25 @@ export async function getLayoutData() {
     });
 
     return data;
+}
+
+export async function getProgramsPaths() {
+    const { data } = await client.query({
+        query: PROGRAMS_PATHS,
+    });
+
+    const paths = data.programs.data.map((program, i) => ({
+        params: { slug: program.attributes.slug },
+    }));
+
+    return paths;
+}
+
+export async function getProgramsData({ slug }) {
+    const { data } = await client.query({
+        query: PROGRAMS_DATA,
+        variables: { slug },
+    });
+
+    return data.programs.data[0];
 }

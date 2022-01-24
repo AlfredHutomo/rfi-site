@@ -1,8 +1,7 @@
-@import "../../styles/_base";
-@import "../../styles/_utils";
+@import '../../styles/_base';
+@import '../../styles/_utils';
 
 .timeline-card {
-
     &-wrapper {
         margin-bottom: 6rem;
         width: 100%;
@@ -16,7 +15,7 @@
             margin-bottom: 0;
         }
 
-        @include bp-down ($bp-md) {
+        @include bp-down($bp-md) {
             margin-left: 4rem;
             max-width: calc(100% - 40px);
         }
@@ -24,7 +23,7 @@
         &:nth-child(even) {
             float: right;
 
-            @include bp-down ($bp-md) {
+            @include bp-down($bp-md) {
                 float: none;
             }
 
@@ -40,7 +39,7 @@
                 right: calc(100% + 10rem);
                 text-align: right;
 
-                @include bp-down ($bp-md) {
+                @include bp-down($bp-md) {
                     text-align: left;
                 }
             }
@@ -49,7 +48,7 @@
                 left: auto;
                 right: calc(100% - 8px + 50px + 0.5px);
 
-                @include bp-down ($bp-md) {
+                @include bp-down($bp-md) {
                     left: calc(-3rem + 1.5px);
                     right: auto;
                 }
@@ -67,7 +66,7 @@
         border-radius: 50%;
         z-index: $level-base + 1;
 
-        @include bp-down ($bp-md) {
+        @include bp-down($bp-md) {
             left: calc(-3rem + 1.5px);
         }
 
@@ -84,7 +83,7 @@
             border-radius: 50%;
             transform: translate(-50%, -50%);
 
-            @include bp-down ($bp-md) {
+            @include bp-down($bp-md) {
                 width: 3rem;
                 height: 3rem;
             }
@@ -99,6 +98,8 @@
     }
 
     &-image {
+        min-height: 28rem;
+        position: relative;
     }
 
     &-date {
@@ -112,11 +113,10 @@
         font-family: $font-heading;
         z-index: $level-base + 1;
 
-        @include bp-down ($bp-md) {
+        @include bp-down($bp-md) {
             position: static;
             margin-bottom: 1.5rem;
         }
-
     }
 
     &-content {
@@ -141,7 +141,6 @@
         display: inline-block;
         width: 100%;
 
-
         &::before {
             /* this is the vertical line */
             content: '';
@@ -155,7 +154,6 @@
         }
 
         @include bp-up($bp-md) {
-
             &::before {
                 left: 50%;
                 margin-left: -2px;
@@ -163,4 +161,3 @@
         }
     }
 }
-

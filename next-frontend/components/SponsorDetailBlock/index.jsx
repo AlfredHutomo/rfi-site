@@ -13,10 +13,6 @@ const SponsorDetailBlock = (props) => {
 
     const { goldSponsors, silverSponsors, bronzeSponsors } = props.sectionData;
 
-    console.log(goldSponsors);
-
-    // TODOS: Finish up the data connection inside the Sponsor* components
-
     return (
         <div className={styles['sponsor-detail-block-wrapper']}>
             {goldSponsors?.data !== null && goldSponsors?.data.length !== 0 && (
@@ -27,9 +23,6 @@ const SponsorDetailBlock = (props) => {
                             <SponsorGold
                                 key={`${sponsor.name}-${i}`}
                                 data={sponsor}
-                                name='Relab Studios'
-                                phone='9999 8888'
-                                email='hello@relab.com.au'
                             />
                         ))}
                     </div>
@@ -47,11 +40,8 @@ const SponsorDetailBlock = (props) => {
                         >
                             {silverSponsors.data.map((sponsor, i) => (
                                 <SponsorSilver
-                                    data={sponsor}
                                     key={`${sponsor.name}-${i}`}
-                                    name='Relab Studios'
-                                    phone='9999 8888'
-                                    email='hello@relab.com.au'
+                                    data={sponsor}
                                 />
                             ))}
                         </div>
@@ -69,9 +59,8 @@ const SponsorDetailBlock = (props) => {
                         >
                             {bronzeSponsors.data.map((sponsor, i) => (
                                 <SponsorBronze
-                                    name='Relab Studios'
-                                    phone='9999 8888'
-                                    email='hello@relab.com.au'
+                                    key={`${sponsor.name}-${i}`}
+                                    data={sponsor}
                                 />
                             ))}
                         </div>

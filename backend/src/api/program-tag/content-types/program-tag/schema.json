@@ -13,7 +13,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "tag_name": {
+    "programs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::program.program",
+      "inversedBy": "tags"
+    },
+    "name": {
       "type": "string"
     }
   }

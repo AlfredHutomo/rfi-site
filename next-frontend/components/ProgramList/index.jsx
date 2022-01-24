@@ -13,6 +13,12 @@ const ProgramList = (props) => {
 
     const programData = sectionData.programs.data;
 
+    const generateTags = (tagsData) => {
+        const tags = tagsData.data.map((tags) => tags.attributes.name);
+
+        return tags;
+    };
+
     return (
         <SectionWrapper options={wrapperOptions}>
             <div className={styles['program-list-wrapper']}>
@@ -22,11 +28,8 @@ const ProgramList = (props) => {
                             <li key={i}>
                                 <ProgramCard
                                     image={program.attributes.coverImage}
-                                    name={program.attributes.program_name}
-                                    tags={[
-                                        program.attributes.age_range,
-                                        program.attributes.level,
-                                    ]}
+                                    name={program.attributes.name}
+                                    tags={generateTags(program.attributes.tags)}
                                     slug={program.attributes.slug}
                                 >
                                     {program.attributes.description}

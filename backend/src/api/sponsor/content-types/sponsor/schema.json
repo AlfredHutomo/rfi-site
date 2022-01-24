@@ -18,7 +18,7 @@
     "website": {
       "type": "string"
     },
-    "mobile": {
+    "phone": {
       "type": "string"
     },
     "logo": {

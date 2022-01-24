@@ -17,11 +17,16 @@ const ProgramDetailVenueTile = (props) => {
                 </Icon>
             </div>
             <div>
+                {/* Maybe make this to markdown? */}
                 <h3 className='h3'>Venue</h3>
                 <p>Gladstone Park Reserve</p>
                 <p>Gladstone Park, VIC, 3043</p>
-                <p>The Gladstone Park Community Centre is located on South Circular Road, and hosts a number of community bodies, such as the basketball club and mothers' groups.</p>
-                <Button size="small">Get directions</Button>
+                <p>
+                    The Gladstone Park Community Centre is located on South
+                    Circular Road, and hosts a number of community bodies, such
+                    as the basketball club and mothers' groups.
+                </p>
+                <Button size='small'>Get directions</Button>
             </div>
 
             {props.children != null ? (
@@ -38,4 +43,3 @@ const ProgramDetailVenueTile = (props) => {
 ProgramDetailVenueTile.propTypes = {};
 
 export default ProgramDetailVenueTile;
-

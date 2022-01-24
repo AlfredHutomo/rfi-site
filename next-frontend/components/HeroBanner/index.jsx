@@ -44,7 +44,7 @@ const HeroBanner = (props) => {
                     ) : (
                         ''
                     )}
-                    {button1.text != null && button1.url != null ? (
+                    {button1?.text != null && button1?.url != null ? (
                         <Button
                             variant='4'
                             //size='large'
@@ -56,7 +56,7 @@ const HeroBanner = (props) => {
                     ) : (
                         ''
                     )}
-                    {button2.text != null && button2.url != null ? (
+                    {button2?.text != null && button2?.url != null ? (
                         <Button
                             variant='1'
                             //size='large'
@@ -75,9 +75,9 @@ const HeroBanner = (props) => {
                 {bgImageDesktop != null ? (
                     <div className='desktop-only'>
                         <Image
-                            src={bgImageDesktop.data.attributes.url}
-                            width={bgImageDesktop.data.attributes.width}
-                            height={bgImageDesktop.data.attributes.height}
+                            src={bgImageDesktop.data?.attributes.url}
+                            width={bgImageDesktop.data?.attributes.width}
+                            height={bgImageDesktop.data?.attributes.height}
                             alt={''}
                         />
                     </div>
@@ -92,9 +92,9 @@ const HeroBanner = (props) => {
                 {bgImageMobile != null ? (
                     <div className='mobile-only'>
                         <Image
-                            src={bgImageMobile.data.attributes.url}
-                            width={bgImageMobile.data.attributes.width}
-                            height={bgImageMobile.data.attributes.height}
+                            src={bgImageMobile.data?.attributes.url}
+                            width={bgImageMobile.data?.attributes.width}
+                            height={bgImageMobile.data?.attributes.height}
                             alt={''}
                         />
                     </div>
@@ -115,6 +115,8 @@ const HeroBanner = (props) => {
     );
 };
 
-HeroBanner.propTypes = {};
+HeroBanner.propTypes = {
+    sectionData: PropTypes.object,
+};
 
 export default HeroBanner;

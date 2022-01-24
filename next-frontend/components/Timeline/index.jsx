@@ -10,6 +10,7 @@ import SectionWrapper from '../global/SectionWrapper';
 
 const Timeline = (props) => {
     const { timelineEvents } = props.sectionData;
+    console.log(props.sectionData);
 
     return (
         <SectionWrapper options={props.wrapperOptions}>

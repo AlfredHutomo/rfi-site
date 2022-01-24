@@ -4,30 +4,38 @@ import PropTypes from 'prop-types';
 import TextTileBlock from './TextTileBlock';
 
 import styles from './TextTileBlockRow.module.scss';
+import SectionWrapper from '../global/SectionWrapper';
 
 const TextTileBlockRow = (props) => {
-    const { data } = props;
+    const { offsetPos, tiles } = props.sectionData;
 
-    const offset = (props.offsetPos) ? ' ' + styles['text-tile-blocks-offset'] : '';
+    const offset = offsetPos ? ' ' + styles['text-tile-blocks-offset'] : '';
 
     return (
-        <div className={styles['text-tile-blocks-wrapper'] + offset}>
-            {props.data != null && props.data.length != 0
-                ? props.data.map((block, i) => (
-                      <TextTileBlock key={i} heading={block.heading}>
-                          {block.content != null ? block.content : ''}
-                      </TextTileBlock>
-                  ))
-                : ''}
-        </div>
+        <SectionWrapper options={props.wrapperOptions}>
+            <div className={styles['text-tile-blocks-wrapper'] + offset}>
+                {tiles != null && tiles?.length != 0
+                    ? tiles.map((block, i) => (
+                          <TextTileBlock key={i} heading={block.heading}>
+                              {block.description != null
+                                  ? block.description
+                                  : ''}
+                          </TextTileBlock>
+                      ))
+                    : ''}
+            </div>
+        </SectionWrapper>
     );
 };
 
-TextTileBlockRow.propTypes = {};
+TextTileBlockRow.propTypes = {
+    sectionData: PropTypes.object,
+    wrapperOptions: PropTypes.object,
+};
 
 TextTileBlockRow.defaultProps = {
-    data: null,
+    sectionData: {},
+    wrapperOptions: {},
 };
 
 export default TextTileBlockRow;
-

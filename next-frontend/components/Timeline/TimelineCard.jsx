@@ -22,7 +22,6 @@ const TimelineCard = (props) => {
             <div className={styles['timeline-card-main']}>
                 <div className={styles['timeline-card-image']}>
                     {props.image != null ? (
-                        // TODO: CSS Need FIXING!!!
                         <Image
                             src={props.image}
                             layout='fill'

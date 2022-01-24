@@ -36,7 +36,6 @@ const ProfileCard = (props) => {
             <Card {...others} onClick={togglePopup}>
                 <CardMedia className={styles['profile-card-image']}>
                     {props.data.profile_picture.data != null ? (
-                        // TODO: style need to be fixed for the image
                         <Image
                             src={props.data.profile_picture.data.attributes.url}
                             layout='fill'
@@ -84,7 +83,6 @@ const ProfileCard = (props) => {
                     <div className={styles['profile-card-detail-avatar']}>
                         <div>
                             {props.data.profile_picture.data != null ? (
-                                // TODO: style need to be fixed for the image
                                 <Image
                                     src={
                                         props.data.profile_picture.data

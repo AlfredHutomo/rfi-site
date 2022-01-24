@@ -12,7 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "program_name": {
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "name": {
       "type": "string",
       "required": true
     },
@@ -34,39 +44,58 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "program_name"
-    },
-    "tags": {
-      "type": "component",
-      "repeatable": false,
-      "component": "program.program-tag"
+      "targetField": "name"
     },
     "content": {
       "type": "dynamiczone",
       "components": [
+        "sections.banner",
         "sections.block-content",
+        "sections.faq",
+        "sections.grid-about-us",
         "sections.hero",
+        "sections.icon-text-link-group",
+        "sections.icon-text-tile",
+        "sections.link-group",
         "sections.our-programs",
         "sections.page-banner",
-        "sections.testimonials",
-        "sections.faq",
-        "elements.icon-text-link-block",
-        "sections.link-group",
+        "sections.people-highlight-block",
         "sections.register-interest",
+        "sections.sponsors-details",
         "sections.sponsors",
         "sections.statistic-block",
+        "sections.testimonials",
         "sections.text-block",
-        "sections.text-image-block"
+        "sections.text-image-block",
+        "sections.text-tile-row-block",
+        "sections.timeline-block",
+        "sections.usp-banner"
       ]
     },
-    "coverImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "type": "media",
-      "multiple": false
+    "venue": {
+      "type": "component",
+      "repeatable": false,
+      "component": "program.program-venue"
+    },
+    "schedule": {
+      "type": "component",
+      "repeatable": false,
+      "component": "program.program-schedule"
+    },
+    "disclamer": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::program-tag.program-tag",
+      "mappedBy": "programs"
+    },
+    "coaches": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::rfi-team-member.rfi-team-member",
+      "inversedBy": "coaches"
     }
   }
 }

@@ -33,8 +33,9 @@
     },
     "coaches": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::program.program"
+      "relation": "manyToMany",
+      "target": "api::program.program",
+      "mappedBy": "coaches"
     }
   }
 }

@@ -5,68 +5,57 @@ import Image from 'next/image';
 import styles from './SponsorDetailBlock.module.scss';
 import Link from 'next/link';
 
-
 const SponsorSilver = (props) => {
-    const {
-        logo,
-        name,
-        phone,
-        email,
-        social,
-    } = props;
+    const { data, logo, name, phone, email, social } = props;
 
     return (
         <div className={styles['sponsor-detail-block-silver']}>
             <div className={styles['sponsor-detail-block-silver-info']}>
-                {
-                    (props.name != null) ?
-                    <h3 className="h3">
-                        {props.name}
-                    </h3> : ''
-                }
-                {
-                    (props.name != null) ?
+                {data.attributes.name != null ? (
+                    <h3 className='h3'>{data.attributes.name}</h3>
+                ) : (
+                    ''
+                )}
+                {data.attributes.phone != null ? (
+                    <p>{data.attributes.phone}</p>
+                ) : (
+                    ''
+                )}
+                {data.attributes.email != null ? (
                     <p>
-                        {props.phone}
-                    </p> : ''
-                }
-                {
-                    (props.name != null) ?
-                    <p>
-                        <Link href={'mailto:'+props.email} passHref={true}>
-                            {props.email}
+                        <Link
+                            href={'mailto:' + data.attributes.email}
+                            passHref={true}
+                        >
+                            {data.attributes.email}
                         </Link>
-
-                    </p> : ''
-                }
-                {
-                    (props.social != null) ?
-                    <h3 className="h3">
-                        {props.social}
-                    </h3> : ''
-                }
+                    </p>
+                ) : (
+                    ''
+                )}
+                {props.social != null ? (
+                    <h3 className='h3'>{props.social}</h3>
+                ) : (
+                    ''
+                )}
             </div>
 
             <div className={styles['sponsor-detail-block-silver-logo']}>
-                {
-                    (props.logo != null) ? (
-                        <Image
-                            src={props.logo}
-                            alt={props.name}
-                            layout='fill'
-                            objectFit='contain'
-                        />
-                    ) : (
-                        <Image
-                            src={
-                                'https://source.unsplash.com/random/220x220'
-                            }
-                            alt={props.name}
-                            layout='fill'
-                            objectFit='contain'
-                        />
-                    )
-                }
+                {data.attributes.logo.data.attributes.url != null ? (
+                    <Image
+                        src={data.attributes.logo.data.attributes.url}
+                        alt={data.attributes.name}
+                        layout='fill'
+                        objectFit='contain'
+                    />
+                ) : (
+                    <Image
+                        src={'https://source.unsplash.com/random/220x220'}
+                        alt=''
+                        layout='fill'
+                        objectFit='contain'
+                    />
+                )}
             </div>
         </div>
     );
@@ -75,4 +64,3 @@ const SponsorSilver = (props) => {
 SponsorSilver.propTypes = {};
 
 export default SponsorSilver;
-
