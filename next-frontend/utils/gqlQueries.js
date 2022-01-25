@@ -593,6 +593,12 @@ export const PROGRAMS_DATA = gql`
                             headingType
                             description
                             isDarkBackground
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsOurPrograms {
                             programs {
@@ -917,6 +923,12 @@ export const PROGRAMS_DATA = gql`
                             }
                             imageOnRight
                             verticalAlign
+                            wrapperOptions {
+                                bgcolor
+                                spaceBtm
+                                spaceTop
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsIconTextLinkGroup {
                             items {

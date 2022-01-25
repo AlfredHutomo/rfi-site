@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_elements_wrapper_options",
+  "info": {
+    "displayName": "Wrapper Options",
+    "icon": "cogs"
+  },
+  "options": {},
+  "attributes": {
+    "bgcolor": {
+      "type": "string"
+    },
+    "spaceTop": {
+      "type": "string"
+    },
+    "spaceBtm": {
+      "type": "string"
+    },
+    "isTwoColumns": {
+      "type": "boolean"
+    }
+  }
+}

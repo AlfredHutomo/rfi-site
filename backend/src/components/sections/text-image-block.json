@@ -38,6 +38,11 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.button-link"
+    },
+    "wrapperOptions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
     }
   }
 }

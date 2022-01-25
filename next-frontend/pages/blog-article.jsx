@@ -1,7 +1,3 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
-
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import PostArticle from '../components/PostArticle/';
@@ -9,9 +5,11 @@ import PostList from '../components/PostList/';
 import PostArticleHero from '../components/PostArticleHero/';
 import PageHeader from '../components/global/PageHeader';
 
-export default function BlogArticle() {
+import { getLayoutData } from '../utils/api';
+
+export default function BlogArticle(props) {
     return (
-        <PageWrapper>
+        <PageWrapper layoutData={props.layoutData}>
             <PostArticleHero
             //image='https://source.unsplash.com/random/300x100'
             />
@@ -80,3 +78,15 @@ export default function BlogArticle() {
         </PageWrapper>
     );
 }
+
+export const getStaticProps = async (context) => {
+    // const pageData = await getPageData({ slug: 'blog' });
+    const layoutData = await getLayoutData();
+
+    return {
+        props: {
+            // pageData,
+            layoutData,
+        },
+    };
+};

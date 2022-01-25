@@ -33,9 +33,8 @@ const ProgramLayout = ({ programData, children }) => {
             {children}
             <ProgramDetailTiles data={details} />
             {/* Only render if coach is set to program */}
-            {coachData.people.length > 0 && (
-                <ProfileCardList sectionData={coachData} />
-            )}
+
+            <ProfileCardList sectionData={coachData} />
         </>
     );
 };

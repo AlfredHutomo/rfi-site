@@ -68,7 +68,7 @@ const Home = (props) => {
 };
 
 export const getStaticProps = async (context) => {
-    const pageData = await getPageData({ slug: '' });
+    const pageData = await getPageData({ slug: 'home' });
     const layoutData = await getLayoutData();
 
     return {
