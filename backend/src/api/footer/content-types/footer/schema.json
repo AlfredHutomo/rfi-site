@@ -21,6 +21,33 @@
         "elements.link-dropdown",
         "elements.link"
       ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "motto": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "social": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.social-button"
+    },
+    "copyrightInfo": {
+      "type": "string"
     }
   }
 }

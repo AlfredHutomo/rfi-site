@@ -27,13 +27,17 @@
       "components": [
         "elements.link-dropdown",
         "elements.button-link",
-        "elements.link"
+        "elements.link",
+        "elements.programs-dropdown"
       ]
     },
     "Buttons": {
       "type": "component",
       "repeatable": true,
       "component": "elements.button-link"
+    },
+    "announcement": {
+      "type": "text"
     }
   }
 }
