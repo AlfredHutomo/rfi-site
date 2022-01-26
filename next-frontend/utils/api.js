@@ -1,3 +1,4 @@
+import { func } from 'prop-types';
 import qs from 'qs';
 import client from './apollo-client';
 import {
@@ -5,6 +6,10 @@ import {
     PAGE_DATA,
     PROGRAMS_DATA,
     PROGRAMS_PATHS,
+    BLOGS_DATA,
+    BLOGS_PATHS,
+    ONE_BLOG_DATA,
+    THREE_LATEST_BLOGS,
 } from './gqlQueries';
 
 export function getStrapiURL(path) {
@@ -91,4 +96,46 @@ export async function getProgramsData({ slug }) {
     });
 
     return data.programs.data[0];
+}
+
+/**
+ *
+ * @param {*} options
+ * @returns {Promise<Array>} an Array of blog inside strapi cms
+ */
+export async function getPostList() {
+    const { data } = await client.query({
+        query: BLOGS_DATA,
+    });
+
+    return data.blogs.data;
+}
+
+export async function getBlogPaths() {
+    const { data } = await client.query({
+        query: BLOGS_PATHS,
+    });
+
+    const paths = data.blogs.data.map((blog, i) => ({
+        params: { slug: blog.attributes.slug },
+    }));
+
+    return paths || [];
+}
+
+export async function getBlogData({ slug }) {
+    const { data } = await client.query({
+        query: ONE_BLOG_DATA,
+        variables: { slug },
+    });
+
+    return data.blogs.data[0];
+}
+
+export async function getThreeLatestBlogs() {
+    const { data } = await client.query({
+        query: THREE_LATEST_BLOGS,
+    });
+
+    return data.blogs.data;
 }

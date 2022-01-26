@@ -19,6 +19,9 @@
         "files",
         "videos"
       ]
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

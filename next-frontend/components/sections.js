@@ -3,6 +3,7 @@ import HeroBanner from './HeroBanner';
 import IconTextLinkGroup from './sections/IconTextLinkGroup';
 import { InfoGrid, InfoGridTwo } from './sections/InfoGrid';
 import LinkGroup from './sections/LinkGroup';
+import PostList from './PostList';
 import ProfileCardList from './ProfileCardList';
 import ProgramList from './sections/ProgramList';
 import RegisterInterestCard from './sections/RegisterInterestCard';
@@ -42,6 +43,7 @@ const sectionComponents = {
     ComponentSectionsTimelineBlock: Timeline,
     ComponentSectionsSponsorsDetails: SponsorDetailBlock,
     ComponentSectionsTextTileRowBlock: TextTileBlockRow,
+    ComponentSectionsBlogLists: PostList,
 };
 
 // Display a section individually

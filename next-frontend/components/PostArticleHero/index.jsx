@@ -18,46 +18,44 @@ import { Icon } from '@mui/material';
  * NOTE: might need a temporary or placeholder image later
  */
 const PostArticleHero = (props) => {
-    const {
-        image
-    } = props;
+    const { image } = props;
 
     return (
         <div className={styles['post-article-hero-wrapper']}>
             <div className={styles['post-article-hero']}>
                 <div className={styles['post-article-hero-icon']}>
-                    <Link href='#' passHref={true}>
-                        <a><Icon className={styles['post-article-hero-mui']}>arrow_back</Icon></a>
+                    <Link href='/blog' passHref={true}>
+                        <a>
+                            <Icon className={styles['post-article-hero-mui']}>
+                                arrow_back
+                            </Icon>
+                        </a>
                     </Link>
                 </div>
             </div>
-            {
-                (props.image != null) ?
-                    <Image
-                        src={props.image}
-                        layout='fill'
-                        objectFit='cover'
-                        alt={''}
-                    />
-                :
-                    <Image
-                        src={DefaultHeroImg}
-                        layout='fill'
-                        objectFit='cover'
-                        alt={''}
-                    />
-            }
+            {props.image != null ? (
+                <Image
+                    src={props.image}
+                    layout='fill'
+                    objectFit='cover'
+                    alt={''}
+                />
+            ) : (
+                <Image
+                    src={DefaultHeroImg}
+                    layout='fill'
+                    objectFit='cover'
+                    alt={''}
+                />
+            )}
         </div>
     );
 };
 
 /* PostArticleHero default props */
-PostArticleHero.defaultProps = {
-};
+PostArticleHero.defaultProps = {};
 
 /* PostArticleHero Prop Types */
-PostArticleHero.propTypes = {
-};
+PostArticleHero.propTypes = {};
 
 export default PostArticleHero;
-

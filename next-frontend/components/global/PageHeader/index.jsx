@@ -15,7 +15,9 @@ import styles, { bpMd } from './PageHeader.module.scss';
  * there might be another instance of this component in a same page
  */
 const PageHeader = (props) => {
-    const { title, className, id, bgDesktop, bgMobile, ...others } = props;
+    const { className, id, bgDesktop, bgMobile, ...others } = props;
+
+    const { title } = props.sectionData;
 
     const classes = clsx(styles['page-header'], className);
 
