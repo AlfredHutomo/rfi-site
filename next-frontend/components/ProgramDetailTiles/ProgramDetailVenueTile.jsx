@@ -7,7 +7,7 @@ import Button from '../global/Button';
 import { Icon } from '@mui/material';
 
 const ProgramDetailVenueTile = (props) => {
-    const { icon } = props;
+    const { data } = props;
 
     return (
         <div className={styles['program-detail-date-tile']}>
@@ -17,17 +17,16 @@ const ProgramDetailVenueTile = (props) => {
                 </Icon>
             </div>
             <div>
-                {/* Maybe make this to markdown? */}
                 <h3 className='h3'>Venue</h3>
-                <p>Gladstone Park Reserve</p>
-                <p>Gladstone Park, VIC, 3043</p>
-                <p>
-                    The Gladstone Park Community Centre is located on South
-                    Circular Road, and hosts a number of community bodies, such
-                    as the basketball club and mothers' groups.
-                </p>
-                <Button size='small'>Get directions</Button>
+                {
+                    (data.venue != '') ? <p>{data.venue}</p> : 'No venue available at this time'
+                }
+                {
+                    (data.venueDescription != '') ? <p>{data.venueDescription}</p> : 'No venue info available at this time'
+                }
+                <Button size='small' to={data.venueMapLink}>Get directions</Button>
             </div>
+
 
             {props.children != null ? (
                 <h5 className={'h5 ' + styles['usp-block-content']}>

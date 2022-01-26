@@ -6,7 +6,7 @@ import styles from './ProgramDetailTiles.module.scss';
 import { Icon } from '@mui/material';
 
 const ProgramDetailDateTile = (props) => {
-    const { icon } = props;
+    const { data } = props;
 
     return (
         <div className={styles['program-detail-date-tile']}>
@@ -17,20 +17,28 @@ const ProgramDetailDateTile = (props) => {
             </div>
             <div>
                 <h3 className='h3'>Schedule</h3>
-                <p>Saturdays - 9am to 10.15am</p>
+                {
+                    (data.schedule != '') ? <p>{data.schedule}</p> : 'No schedule available at this time'
+                }
 
                 <div className={styles['program-detail-date-tile-block-group']}>
                     <div className={styles['program-detail-date-tile-block']}>
                         <h5 className='h5'>Starting date</h5>
-                        <p>Saturday 9th February</p>
+                        {
+                            (data.startDate != '') ? <p>{data.startDate}</p> : 'N/A'
+                        }
                     </div>
                     <div className={styles['program-detail-date-tile-block']}>
                         <h5 className='h5'>End date</h5>
-                        <p>Saturday 30th November</p>
+                        {
+                            (data.endDate != '') ? <p>{data.endDate}</p> : 'N/A'
+                        }
                     </div>
                 </div>
 
-                <p>*There will be a break of one session between each term</p>
+                <div className={styles['program-detail-date-tile-info']}>
+                    <p>*There will be a break of one session between each term</p>
+                </div>
             </div>
 
             {props.children != null ? (

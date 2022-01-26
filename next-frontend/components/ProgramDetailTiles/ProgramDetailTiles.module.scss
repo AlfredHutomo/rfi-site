@@ -2,9 +2,10 @@
 @import "../../styles/_utils";
 
 .program-detail-tiles {
+    display: flex;
+    gap: 2rem;
+
     &-wrapper {
-        display: flex;
-        gap: 2rem;
     }
 }
 
@@ -50,8 +51,25 @@
                 margin: 1rem 0 0 0;
             }
         }
+
+        &-info {
+            color: $color-gs-02;
+            font-family: $font-body;
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
     }
 
+    &-misc-info {
+        margin: 3rem auto 0 auto;
+        width: 100%;
+        text-align: center;
+        max-width: 68rem;
+        color: $color-gs-02;
+        font-family: $font-body;
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
 
     &-venue-tile {
         padding: 2rem;
