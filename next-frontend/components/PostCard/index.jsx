@@ -32,8 +32,8 @@ const PostCard = (props) => {
                     {props.data.image != null ? (
                         <Image
                             src={props.data.image}
-                            layout='fill'
-                            objectFit='cover'
+                            width={data.imageWidth}
+                            height={data.imageHeight}
                             alt={''}
                         />
                     ) : (
@@ -41,24 +41,36 @@ const PostCard = (props) => {
                     )}
                 </CardMedia>
                 <CardContent className={styles['post-card-content']} compact>
-                    <h4 className={'h4 ' + styles['post-card-content__heading']}>
+                    <h4
+                        className={'h4 ' + styles['post-card-content__heading']}
+                    >
                         {data.title}
                     </h4>
-                    {
-                        (data.date != null && data.author != null) ? (
-                            <p className={styles['post-card-content__info']}>
-                                {(data.date != null) ? data.date : ''}
-                                {(data.author != null) ? ' by ' + data.author : ''}
-                            </p>
-                        ) : ''
-                    }
-                    {
-                        (data.description != null) ? (
-                            <p className={styles['post-card-content__description']}>
-                                {data.description}
-                            </p>
-                        ) : ''
-                    }
+                    {data.date != null ? (
+                        <p className={styles['post-card-content__info']}>
+                            {data.date != null
+                                ? new Date(data.date).toLocaleDateString(
+                                      'en-AU',
+                                      {
+                                          day: 'numeric',
+                                          month: 'short',
+                                      }
+                                  )
+                                : ''}
+                            {data.author != null
+                                ? ' by ' + data.author.attributes.username
+                                : ' by RFI Management Team'}
+                        </p>
+                    ) : (
+                        ''
+                    )}
+                    {data.description != null ? (
+                        <p className={styles['post-card-content__description']}>
+                            {data.description}
+                        </p>
+                    ) : (
+                        ''
+                    )}
                 </CardContent>
             </Card>
         </div>
@@ -76,4 +88,3 @@ PostCard.propTypes = {
 };
 
 export default PostCard;
-

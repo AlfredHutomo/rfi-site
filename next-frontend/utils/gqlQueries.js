@@ -44,7 +44,7 @@ export const PAGE_DATA = gql`
                             isContentOnRight
                         }
                         ... on ComponentSectionsPageBanner {
-                            banner_text
+                            title
                             banner_image {
                                 data {
                                     attributes {
@@ -441,6 +441,9 @@ export const PAGE_DATA = gql`
                                 }
                             }
                         }
+                        ... on ComponentSectionsBlogLists {
+                            heading
+                        }
                     }
                 }
             }
@@ -571,7 +574,7 @@ export const PROGRAMS_DATA = gql`
                             isContentOnRight
                         }
                         ... on ComponentSectionsPageBanner {
-                            banner_text
+                            title
                             banner_image {
                                 data {
                                     attributes {
@@ -987,6 +990,9 @@ export const PROGRAMS_DATA = gql`
                                 description
                             }
                         }
+                        ... on ComponentSectionsBlogLists {
+                            heading
+                        }
                     }
                     venue {
                         venue
@@ -999,6 +1005,115 @@ export const PROGRAMS_DATA = gql`
                         endDate
                     }
                     disclamer
+                }
+            }
+        }
+    }
+`;
+
+export const BLOGS_DATA = gql`
+    query getAllBlogs {
+        blogs(sort: "createdAt:desc") {
+            data {
+                attributes {
+                    slug
+                    cover_Image {
+                        data {
+                            attributes {
+                                url
+                                width
+                                height
+                            }
+                        }
+                    }
+                    author {
+                        data {
+                            attributes {
+                                username
+                            }
+                        }
+                    }
+                    title
+                    shortDescription
+                    content
+                    createdAt
+                }
+            }
+        }
+    }
+`;
+
+export const BLOGS_PATHS = gql`
+    query blogsPath {
+        blogs {
+            data {
+                attributes {
+                    title
+                    slug
+                }
+            }
+        }
+    }
+`;
+
+export const ONE_BLOG_DATA = gql`
+    query ($slug: String!) {
+        blogs(filters: { slug: { eq: $slug } }) {
+            data {
+                attributes {
+                    cover_Image {
+                        data {
+                            attributes {
+                                url
+                                width
+                                height
+                            }
+                        }
+                    }
+                    title
+                    slug
+                    shortDescription
+                    content
+                    author {
+                        data {
+                            attributes {
+                                username
+                            }
+                        }
+                    }
+                    createdAt
+                }
+            }
+        }
+    }
+`;
+
+export const THREE_LATEST_BLOGS = gql`
+    query latestThreePosts {
+        blogs(sort: "createdAt:desc", pagination: { start: 0, limit: 3 }) {
+            data {
+                attributes {
+                    slug
+                    cover_Image {
+                        data {
+                            attributes {
+                                url
+                                width
+                                height
+                            }
+                        }
+                    }
+                    author {
+                        data {
+                            attributes {
+                                username
+                            }
+                        }
+                    }
+                    title
+                    shortDescription
+                    content
+                    createdAt
                 }
             }
         }
