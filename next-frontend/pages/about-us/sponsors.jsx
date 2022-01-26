@@ -1,9 +1,9 @@
 import PageWrapper from '../../components/global/PageWrapper';
 import SectionWrapper from '../../components/global/SectionWrapper';
-import LinkGroup from '../../components/LinkGroup';
+import LinkGroup from '../../components/sections/LinkGroup';
 import TextBlock from '../../components/sections/TextBlock';
-import SponsorDetailBlock from '../../components/SponsorDetailBlock';
-import RegisterInterestCard from '../../components/RegisterInterestCard';
+import SponsorDetailBlock from '../../components/sections/SponsorDetailBlock';
+import RegisterInterestCard from '../../components/sections/RegisterInterestCard';
 import PageHeader from '../../components/global/PageHeader';
 import { getPageData, getLayoutData } from '../../utils/api';
 

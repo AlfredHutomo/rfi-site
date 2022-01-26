@@ -1,23 +1,23 @@
 import PageHeader from './global/PageHeader';
 import HeroBanner from './HeroBanner';
-import IconTextLinkGroup from './IconTextLinkGroup';
-import { InfoGrid, InfoGridTwo } from './InfoGrid';
-import LinkGroup from './LinkGroup';
+import IconTextLinkGroup from './sections/IconTextLinkGroup';
+import { InfoGrid, InfoGridTwo } from './sections/InfoGrid';
+import LinkGroup from './sections/LinkGroup';
 import ProfileCardList from './ProfileCardList';
-import ProgramList from './ProgramList';
-import RegisterInterestCard from './RegisterInterestCard';
+import ProgramList from './sections/ProgramList';
+import RegisterInterestCard from './sections/RegisterInterestCard';
 import Banner from './sections/Banner';
 import FAQAccordion from './sections/FAQAccordion';
 import QuoteBlock from './sections/QuoteBlock';
 import TextBlock from './sections/TextBlock';
-import SponsorBlock from './SponsorBlock';
-import SponsorDetailBlock from './SponsorDetailBlock';
-import StatisticsBlock from './StatisticsBlock';
-import TextImageCard from './TextImageCard';
-import TextTileBlockRow from './TextTileBlockRow';
-import TextTileBlock from './TextTileBlockRow/TextTileBlock';
-import Timeline from './Timeline';
-import USPBanner from './USPBanner';
+import SponsorBlock from './sections/SponsorBlock';
+import SponsorDetailBlock from './sections/SponsorDetailBlock';
+import StatisticsBlock from './sections/StatisticsBlock';
+import TextImageCard from './sections/TextImageCard';
+import TextTileBlockRow from './sections/TextTileBlockRow';
+import TextTileBlock from './sections/TextTileBlockRow/TextTileBlock';
+import Timeline from './sections/Timeline';
+import USPBanner from './sections/USPBanner';
 
 // Map Strapi sections to section components
 const sectionComponents = {

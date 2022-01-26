@@ -4,7 +4,7 @@ import ProgramLayout from '../../components/ProgramLayout';
 
 import Sections from '../../components/sections';
 
-import RegisterInterestCard from '../../components/RegisterInterestCard';
+import RegisterInterestCard from '../../components/sections/RegisterInterestCard';
 
 import {
     getLayoutData,

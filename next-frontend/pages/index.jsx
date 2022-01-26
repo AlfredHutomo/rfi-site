@@ -3,13 +3,13 @@ import SectionWrapper from '../components/global/SectionWrapper';
 
 import HeroBanner from '../components/HeroBanner';
 import TextBlock from '../components/sections/TextBlock';
-import USPBanner from '../components/USPBanner';
-import ProgramList from '../components/ProgramList';
+import USPBanner from '../components/sections/USPBanner';
+import ProgramList from '../components/sections/ProgramList';
 import QuoteBlock from '../components/sections/QuoteBlock';
-import SponsorBlock from '../components/SponsorBlock';
-import { InfoGrid } from '../components/InfoGrid';
+import SponsorBlock from '../components/sections/SponsorBlock';
+import { InfoGrid } from '../components/sections/InfoGrid';
 import FAQAccordion from '../components/sections/FAQAccordion';
-import RegisterInterestCard from '../components/RegisterInterestCard';
+import RegisterInterestCard from '../components/sections/RegisterInterestCard';
 
 import { getLayoutData, getPageData } from '../utils/api';
 import { homeDefaultData } from '../utils/default';

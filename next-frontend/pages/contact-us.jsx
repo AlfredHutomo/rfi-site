@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.scss';
 
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
-import TextBlock from '../components/TextBlock';
+import TextBlock from '../components/sections/TextBlock';
 import InfoTileList from '../components/InfoTileList';
 import ContactForm from '../components/ContactForm';
 import LocationBlock from '../components/LocationBlock';

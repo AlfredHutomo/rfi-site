@@ -1,8 +1,8 @@
 import PageWrapper from '../../components/global/PageWrapper';
 import SectionWrapper from '../../components/global/SectionWrapper';
-import ProgramList from '../../components/ProgramList/';
+import ProgramList from '../../components/sections/ProgramList/';
 import TextBlock from '../../components/sections/TextBlock';
-import RegisterInterestCard from '../../components/RegisterInterestCard';
+import RegisterInterestCard from '../../components/sections/RegisterInterestCard';
 import PageHeader from '../../components/global/PageHeader';
 import Breadcrumb from '../../components/Breadcrumb';
 

@@ -1,17 +1,17 @@
 import PageWrapper from '../../components/global/PageWrapper';
 import SectionWrapper from '../../components/global/SectionWrapper';
-import IconTextLinkGroup from '../../components/IconTextLinkGroup';
-import LinkGroup from '../../components/LinkGroup';
+import IconTextLinkGroup from '../../components/sections/IconTextLinkGroup';
+import LinkGroup from '../../components/sections/LinkGroup';
 import IconTextTileGroup from '../../components/IconTextTileGroup';
 import TextBlock from '../../components/sections/TextBlock';
-import RegisterInterestCard from '../../components/RegisterInterestCard';
+import RegisterInterestCard from '../../components/sections/RegisterInterestCard';
 import PageHeader from '../../components/global/PageHeader';
-import ProfileCardList from '../../components/ProfileCardList';
+import ProfileCardList from '../../components/sections/ProfileCardList';
 import Breadcrumb from '../../components/Breadcrumb';
 //import SectionWrapper from '../components/global';
 
-import StatisticsBlock from '../../components/StatisticsBlock';
-import TextImageCard from '../../components/TextImageCard';
+import StatisticsBlock from '../../components/sections/StatisticsBlock';
+import TextImageCard from '../../components/sections/TextImageCard';
 import QuoteBlock from '../../components/sections/QuoteBlock';
 
 import { getPageData, getLayoutData } from '../../utils/api';

@@ -1,14 +1,14 @@
 import PageWrapper from '../../components/global/PageWrapper';
 import SectionWrapper from '../../components/global/SectionWrapper';
 import TextBlock from '../../components/sections/TextBlock';
-import LinkGroup from '../../components/LinkGroup';
+import LinkGroup from '../../components/sections/LinkGroup';
 import Banner from '../../components/sections/Banner';
-import RegisterInterestCard from '../../components/RegisterInterestCard';
+import RegisterInterestCard from '../../components/sections/RegisterInterestCard';
 import PageHeader from '../../components/global/PageHeader';
 import Breadcrumb from '../../components/Breadcrumb';
 
-import StatisticsBlock from '../../components/StatisticsBlock';
-import TextImageCard from '../../components/TextImageCard';
+import StatisticsBlock from '../../components/sections/StatisticsBlock';
+import TextImageCard from '../../components/sections/TextImageCard';
 import QuoteBlock from '../../components/sections/QuoteBlock';
 import { getPageData, getLayoutData } from '../../utils/api';
 

@@ -2,7 +2,7 @@ import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import PostList from '../components/PostList/';
 import TextBlock from '../components/sections/TextBlock';
-import RegisterInterestCard from '../components/RegisterInterestCard';
+import RegisterInterestCard from '../components/sections/RegisterInterestCard';
 import PageHeader from '../components/global/PageHeader';
 
 import { getLayoutData } from '../utils/api';

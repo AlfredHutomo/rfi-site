@@ -1,0 +1,52 @@
+@import "../../../styles/_base";
+@import "../../../styles/_utils";
+
+.usp-banner {
+    &-wrapper {
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+        max-width: $site-max-width;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 4px;
+        background-color: $color-gs-white;
+        box-shadow: 0px 4px 16px 0px $color-gs-04;
+    }
+
+    &-offset {
+        position: relative;
+        top: -5rem;
+    }
+}
+
+.usp-block {
+    &-wrapper {
+        padding: 4rem 2rem;
+        max-width: 25rem;
+        min-width: 20rem;
+        text-align: center;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    &-icon {
+        color: $color-brand-02;
+
+        &-mui {
+            font-size: 4rem;
+        }
+    }
+
+    &-content {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        font-family: $font-heading;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $color-brand-01;
+    }
+}
+
