@@ -44,26 +44,26 @@ const HeroBanner = (props) => {
                     ) : (
                         ''
                     )}
-                    {button1?.text != null && button1?.url != null ? (
+                    {button1?.displayName != null && button1?.url != null ? (
                         <Button
                             variant='4'
                             //size='large'
                             className={styles['hero-banner-button']}
                             to={button1.url}
                         >
-                            {button1.text}
+                            {button1.displayName}
                         </Button>
                     ) : (
                         ''
                     )}
-                    {button2?.text != null && button2?.url != null ? (
+                    {button2?.displayName != null && button2?.url != null ? (
                         <Button
                             variant='1'
                             //size='large'
                             className={styles['hero-banner-button']}
                             to={button2.url}
                         >
-                            {button2.text}
+                            {button2.displayName}
                         </Button>
                     ) : (
                         ''

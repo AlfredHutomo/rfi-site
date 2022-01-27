@@ -22,7 +22,7 @@
         "videos"
       ]
     },
-    "Navigation": {
+    "navigation": {
       "type": "dynamiczone",
       "components": [
         "elements.link-dropdown",
@@ -31,7 +31,7 @@
         "elements.programs-dropdown"
       ]
     },
-    "Buttons": {
+    "buttons": {
       "type": "component",
       "repeatable": true,
       "component": "elements.button-link"

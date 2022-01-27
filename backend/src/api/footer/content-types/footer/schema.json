@@ -15,11 +15,12 @@
     "message": {
       "type": "string"
     },
-    "footer_Menu": {
+    "footerMenu": {
       "type": "dynamiczone",
       "components": [
         "elements.link-dropdown",
-        "elements.link"
+        "elements.link",
+        "elements.programs-dropdown"
       ]
     },
     "logo": {

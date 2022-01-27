@@ -7,17 +7,18 @@
   },
   "options": {},
   "attributes": {
-    "text": {
+    "displayName": {
       "type": "string"
     },
-    "type": {
+    "variation": {
       "type": "enumeration",
       "enum": [
-        "primary",
-        "secondary",
-        "primary_outline",
-        "secondary_outline"
-      ]
+        "one",
+        "two",
+        "three",
+        "four"
+      ],
+      "default": "one"
     },
     "url": {
       "type": "string"
@@ -26,6 +27,10 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::page.page"
+    },
+    "isExternalLink": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

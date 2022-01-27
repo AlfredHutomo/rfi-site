@@ -4,7 +4,6 @@ import LogoImg from '../../../public/logo-with-text.svg';
 
 import Link from 'next/link';
 
-import SectionWrapper from '../SectionWrapper';
 import Button from '../Button';
 import { useState } from 'react';
 
@@ -108,10 +107,33 @@ const NavElement = ({ navItem }) => {
     return <NavComponent navData={navItem} />;
 };
 
+const HeaderButtons = ({ data }) => {
+    const { displayName, isExternalLink, url, page, variation } = data;
+
+    const primaryUrl = isExternalLink
+        ? checkValidURL(url)
+        : checkValidURL(page.data.attributes.slug);
+
+    const variant = {
+        one: '1',
+        two: '2',
+        three: '3',
+        four: '4',
+        five: '5',
+        six: '6',
+    };
+
+    return (
+        <Button size='small' variant={variant[variation]} to={primaryUrl}>
+            {displayName}
+        </Button>
+    );
+};
+
 const Header = ({ headerData }) => {
     // const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
     const [mobileMenuActive, setMobileMenu] = useState(false); // note: same as var active = false in v js
-    const { logo, Navigation, announcement } = headerData;
+    const { logo, navigation, announcement, buttons } = headerData;
 
     const toggleMobileMenu = () => {
         setMobileMenu((state) => !state); //reading for sam https://reactjs.org/docs/hooks-state.html
@@ -166,7 +188,7 @@ const Header = ({ headerData }) => {
                             <CloseIcon sx={{ fontSize: 40 }} />
                         </div>
                         <ul className={styles['page-navigation']}>
-                            {Navigation.map((navItem, i) => (
+                            {navigation.map((navItem, i) => (
                                 <NavElement
                                     key={`${navItem.__typename}__${i}`}
                                     navItem={navItem}
@@ -175,12 +197,9 @@ const Header = ({ headerData }) => {
                         </ul>
 
                         <div className={styles['page-navigation-buttons']}>
-                            <Button size='small' variant={'3'}>
-                                Member portal
-                            </Button>
-                            <Button size='small' variant={'1'}>
-                                Register
-                            </Button>
+                            {buttons.map((button, i) => (
+                                <HeaderButtons key={i} data={button} />
+                            ))}
                         </div>
                     </nav>
 

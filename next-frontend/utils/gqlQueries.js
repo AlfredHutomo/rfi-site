@@ -34,11 +34,11 @@ export const PAGE_DATA = gql`
                                 }
                             }
                             button1 {
-                                text
+                                displayName
                                 url
                             }
                             button2 {
-                                text
+                                displayName
                                 url
                             }
                             isContentOnRight
@@ -246,11 +246,11 @@ export const PAGE_DATA = gql`
                                 }
                             }
                             button1 {
-                                text
+                                displayName
                                 url
                             }
                             button2 {
-                                text
+                                displayName
                                 url
                             }
                         }
@@ -385,7 +385,7 @@ export const PAGE_DATA = gql`
                                 }
                             }
                             button {
-                                text
+                                displayName
                                 url
                             }
                             imageOnRight
@@ -466,14 +466,23 @@ export const LAYOUT_DATA = gql`
                             }
                         }
                     }
-                    Navigation {
+                    navigation {
                         __typename
                         ... on ComponentElementsLinkDropdown {
                             displayName
                             url
                             links {
-                                url
                                 displayName
+                                page {
+                                    data {
+                                        attributes {
+                                            shortName
+                                            slug
+                                        }
+                                    }
+                                }
+                                url
+                                isExternalLink
                             }
                         }
                         ... on ComponentElementsProgramsDropdown {
@@ -501,6 +510,19 @@ export const LAYOUT_DATA = gql`
                             isExternalLink
                         }
                     }
+                    buttons {
+                        displayName
+                        variation
+                        page {
+                            data {
+                                attributes {
+                                    slug
+                                }
+                            }
+                        }
+                        url
+                        isExternalLink
+                    }
                 }
             }
         }
@@ -523,14 +545,34 @@ export const LAYOUT_DATA = gql`
                         platform
                         linkTo
                     }
-                    footer_Menu {
+                    footerMenu {
                         __typename
                         ... on ComponentElementsLinkDropdown {
                             displayName
                             url
                             links {
-                                url
                                 displayName
+                                page {
+                                    data {
+                                        attributes {
+                                            shortName
+                                            slug
+                                        }
+                                    }
+                                }
+                                url
+                                isExternalLink
+                            }
+                        }
+                        ... on ComponentElementsProgramsDropdown {
+                            displayName
+                            programs {
+                                data {
+                                    attributes {
+                                        name
+                                        slug
+                                    }
+                                }
                             }
                         }
                         ... on ComponentElementsLink {
@@ -630,11 +672,11 @@ export const PROGRAMS_DATA = gql`
                                 }
                             }
                             button1 {
-                                text
+                                displayName
                                 url
                             }
                             button2 {
-                                text
+                                displayName
                                 url
                             }
                             isContentOnRight
@@ -848,11 +890,11 @@ export const PROGRAMS_DATA = gql`
                                 }
                             }
                             button1 {
-                                text
+                                displayName
                                 url
                             }
                             button2 {
-                                text
+                                displayName
                                 url
                             }
                         }
@@ -987,7 +1029,7 @@ export const PROGRAMS_DATA = gql`
                                 }
                             }
                             button {
-                                text
+                                displayName
                                 url
                             }
                             imageOnRight

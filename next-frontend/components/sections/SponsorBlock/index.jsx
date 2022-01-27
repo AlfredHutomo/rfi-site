@@ -141,7 +141,7 @@ const SponsorBlock = ({ sectionData, wrapperOptions }) => {
                             className={styles['sponsor-block-button']}
                             to={button1.url}
                         >
-                            {button1.text}
+                            {button1.displayName}
                         </Button>
                     ) : (
                         ''
@@ -151,7 +151,7 @@ const SponsorBlock = ({ sectionData, wrapperOptions }) => {
                             className={styles['sponsor-block-button']}
                             to={button2.url}
                         >
-                            {button2.text}
+                            {button2.displayName}
                         </Button>
                     ) : (
                         ''
