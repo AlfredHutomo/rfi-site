@@ -1,7 +1,7 @@
 import PostArticleHero from './PostArticleHero';
 import PostArticle from './PostArticle';
 import { getThreeLatestBlogs } from '../utils/api';
-import PostList from './PostList';
+import PostList from './sections/PostList';
 
 const BlogLayout = ({ data }) => {
     return (

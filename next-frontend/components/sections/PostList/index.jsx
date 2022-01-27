@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 import styles from './PostList.module.scss';
 
-import PostCard from '../PostCard';
+import PostCard from '../../PostCard';
 
-import Button from '../global/Button';
-import SectionWrapper from '../global/SectionWrapper';
+import Button from '../../global/Button';
+import SectionWrapper from '../../global/SectionWrapper';
 
-import { getPostList, getThreeLatestBlogs } from '../../utils/api';
+import { getPostList, getThreeLatestBlogs } from '../../../utils/api';
 import { useEffect } from 'react';
 import { useState } from 'react';
 

@@ -1,7 +1,7 @@
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 
-import HeroBanner from '../components/HeroBanner';
+import HeroBanner from '../components/sections/HeroBanner';
 import TextBlock from '../components/sections/TextBlock';
 import USPBanner from '../components/sections/USPBanner';
 import ProgramList from '../components/sections/ProgramList';

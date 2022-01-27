@@ -10,7 +10,7 @@ import DefaultImgMobile from './default-img-mobile-home.jpg';
 import DefaultImg1 from './default-img-program.jpg';
 import DefaultImgMobile1 from './default-img-mobile-program.jpg';
 
-import Button from '../global/Button';
+import Button from '../../global/Button';
 
 const HeroBanner = (props) => {
     const {

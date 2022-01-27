@@ -13,7 +13,7 @@ const Sponsors = ({ pageData, layoutData }) => {
 
     return (
         <PageWrapper layoutData={layoutData}>
-            <PageHeader title={headerBanner.banner_text} />
+            <PageHeader sectionData={headerBanner} />
 
             <TextBlock sectionData={textBlock1}></TextBlock>
 

@@ -31,7 +31,7 @@ const AboutUs = (props) => {
 
     return (
         <PageWrapper layoutData={props.layoutData}>
-            <PageHeader title={banner.banner_text} />
+            <PageHeader sectionData={banner} />
             {/* TODO: Breadcrumb is crumbly */}
             <Breadcrumb
                 sectionData={{

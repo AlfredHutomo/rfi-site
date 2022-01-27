@@ -1,10 +1,10 @@
 import PageHeader from './global/PageHeader';
-import HeroBanner from './HeroBanner';
+import HeroBanner from './sections/HeroBanner';
 import IconTextLinkGroup from './sections/IconTextLinkGroup';
 import { InfoGrid, InfoGridTwo } from './sections/InfoGrid';
 import LinkGroup from './sections/LinkGroup';
-import PostList from './PostList';
-import ProfileCardList from './ProfileCardList';
+import PostList from './sections/PostList';
+import ProfileCardList from './sections/ProfileCardList';
 import ProgramList from './sections/ProgramList';
 import RegisterInterestCard from './sections/RegisterInterestCard';
 import Banner from './sections/Banner';

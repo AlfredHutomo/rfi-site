@@ -26,7 +26,7 @@ const SuccessStories = (props) => {
 
     return (
         <PageWrapper layoutData={props.layoutData}>
-            <PageHeader title={headerBanner.banner_text} />
+            <PageHeader sectionData={headerBanner} />
 
             <Breadcrumb
                 sectionData={{

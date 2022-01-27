@@ -30,7 +30,7 @@ const Philosophy = ({ pageData, layoutData }) => {
     ] = pageData.attributes.content;
     return (
         <PageWrapper layoutData={layoutData}>
-            <PageHeader title={headerBanner.banner_text} />
+            <PageHeader sectionData={headerBanner} />
 
             <Breadcrumb
                 sectionData={{
