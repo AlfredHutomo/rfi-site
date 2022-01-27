@@ -1,5 +1,5 @@
-import HeroBanner from './HeroBanner';
-import ProfileCardList from './ProfileCardList';
+import HeroBanner from './sections/HeroBanner';
+import ProfileCardList from './sections/ProfileCardList';
 import ProgramDetailTiles from './ProgramDetailTiles';
 
 const ProgramLayout = ({ programData, children }) => {

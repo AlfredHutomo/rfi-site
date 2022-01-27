@@ -13,7 +13,7 @@ const Programs = ({ pageData, layoutData }) => {
 
     return (
         <PageWrapper layoutData={layoutData}>
-            <PageHeader title={headerBanner.banner_text} />
+            <PageHeader sectionData={headerBanner} />
 
             <Breadcrumb
                 sectionData={{

@@ -89,11 +89,14 @@ const PostList = (props) => {
                 ) : (
                     ''
                 )}
-                {recommendation ? null : (
+                {
+                    /*recommendation ? null : (
                     <div className={styles['post-list-cta']}>
                         <Button to='#'>Load more</Button>
                     </div>
-                )}
+                    )
+                    */
+                }
             </div>
         </SectionWrapper>
     );
