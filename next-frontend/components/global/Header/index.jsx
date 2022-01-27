@@ -10,11 +10,108 @@ import { useState } from 'react';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { checkValidURL } from '../../../utils/utils';
+
+const LinkOnly = ({ navData }) => {
+    const to = navData.isExternalLink
+        ? checkValidURL(navData.url)
+        : checkValidURL(navData.page.data.attributes.slug);
+
+    return (
+        <li className={styles['page-navigation-item']}>
+            <Link href={to}>
+                <a>{navData.displayName}</a>
+            </Link>
+        </li>
+    );
+};
+
+const LinkDropDown = ({ navData }) => {
+    const primaryUrl = checkValidURL(navData.url);
+
+    const SubLinks = ({ data }) => {
+        const { url, displayName } = data;
+
+        const secondaryUrl = checkValidURL(url);
+
+        return (
+            <li className={styles['page-navigation-subnav-item']}>
+                <Link href={secondaryUrl}>
+                    <a>{displayName}</a>
+                </Link>
+            </li>
+        );
+    };
+
+    return (
+        <li className={styles['page-navigation-item']}>
+            <Link href={primaryUrl}>
+                <a>{navData.displayName}</a>
+            </Link>
+
+            <ul className={styles['page-navigation-subnav']}>
+                {navData.links.map((link, i) => (
+                    <SubLinks key={i} data={link} />
+                ))}
+            </ul>
+        </li>
+    );
+};
+
+const ProgramsDropdown = ({ navData }) => {
+    const { displayName, programs } = navData;
+
+    const SubLinks = ({ data }) => {
+        const { name, slug } = data.attributes;
+
+        const secondaryUrl = checkValidURL('/programs/' + slug);
+
+        return (
+            <li className={styles['page-navigation-subnav-item']}>
+                <Link href={secondaryUrl}>
+                    <a>{name}</a>
+                </Link>
+            </li>
+        );
+    };
+
+    return (
+        <li className={styles['page-navigation-item']}>
+            <Link href={'/programs'}>
+                <a>{displayName}</a>
+            </Link>
+
+            <ul className={styles['page-navigation-subnav']}>
+                {programs.data.map((program, i) => (
+                    <SubLinks key={i} data={program} />
+                ))}
+            </ul>
+        </li>
+    );
+};
+
+const linkComponents = {
+    ComponentElementsLinkDropdown: LinkDropDown,
+    ComponentElementsProgramsDropdown: ProgramsDropdown,
+    ComponentElementsLink: LinkOnly,
+};
+
+const NavElement = ({ navItem }) => {
+    // Prepare the component
+    const NavComponent = linkComponents[navItem.__typename];
+
+    if (!NavComponent) {
+        return null;
+    }
+
+    // Display the section
+    return <NavComponent navData={navItem} />;
+};
 
 const Header = ({ headerData }) => {
-    const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
+    // const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
     const [mobileMenuActive, setMobileMenu] = useState(false); // note: same as var active = false in v js
-    const { logo } = headerData;
+    const { logo, Navigation, announcement } = headerData;
 
     const toggleMobileMenu = () => {
         setMobileMenu((state) => !state); //reading for sam https://reactjs.org/docs/hooks-state.html
@@ -22,11 +119,13 @@ const Header = ({ headerData }) => {
 
     return (
         <div className={styles['page-header-wrapper']}>
-            <div className={styles['page-header-banner']}>
-                <div className={styles['page-header-banner-content']}>
-                    Celebrating 10 years in the game!
+            {announcement !== null && (
+                <div className={styles['page-header-banner']}>
+                    <div className={styles['page-header-banner-content']}>
+                        {announcement}
+                    </div>
                 </div>
-            </div>
+            )}
 
             <header className={styles['page-header-main']}>
                 <div className={styles['page-header']}>
@@ -67,55 +166,11 @@ const Header = ({ headerData }) => {
                             <CloseIcon sx={{ fontSize: 40 }} />
                         </div>
                         <ul className={styles['page-navigation']}>
-                            {links.map((link, i) => (
-                                <li
-                                    key={i}
-                                    className={styles['page-navigation-item']}
-                                >
-                                    <Link href={'#'} passHref>
-                                        <a>{link}</a>
-                                    </Link>
-
-                                    <ul
-                                        className={
-                                            styles['page-navigation-subnav']
-                                        }
-                                    >
-                                        <li
-                                            className={
-                                                styles[
-                                                    'page-navigation-subnav-item'
-                                                ]
-                                            }
-                                        >
-                                            <Link href={'#'}>
-                                                <a>Test 1</a>
-                                            </Link>
-                                        </li>
-                                        <li
-                                            className={
-                                                styles[
-                                                    'page-navigation-subnav-item'
-                                                ]
-                                            }
-                                        >
-                                            <Link href={'#'}>
-                                                <a>Test 1</a>
-                                            </Link>
-                                        </li>
-                                        <li
-                                            className={
-                                                styles[
-                                                    'page-navigation-subnav-item'
-                                                ]
-                                            }
-                                        >
-                                            <Link href={'#'}>
-                                                <a>Test 1</a>
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </li>
+                            {Navigation.map((navItem, i) => (
+                                <NavElement
+                                    key={`${navItem.__typename}__${i}`}
+                                    navItem={navItem}
+                                />
                             ))}
                         </ul>
 

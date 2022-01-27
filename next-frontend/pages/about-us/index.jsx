@@ -10,7 +10,6 @@ import RegisterInterestCard from '../../components/sections/RegisterInterestCard
 import PageHeader from '../../components/global/PageHeader';
 import StatisticsBlock from '../../components/sections/StatisticsBlock/';
 import TextImageCard from '../../components/sections/TextImageCard/';
-import { homeDefaultData } from '../../utils/default';
 import { fetchAPI } from '../../utils/api';
 import { getPageData, getLayoutData } from '../../utils/api';
 import delve from 'dlv';

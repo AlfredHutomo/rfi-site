@@ -9,7 +9,7 @@ import { Icon } from '@mui/material';
 
 const SponsorGold = (props) => {
     const { data, logo, name, phone, email, social } = props;
-    console.log(data.attributes);
+
     return (
         <div className={styles['sponsor-detail-block-gold']}>
             <div className={styles['sponsor-detail-block-gold-logo']}>

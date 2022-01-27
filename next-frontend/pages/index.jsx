@@ -12,7 +12,6 @@ import FAQAccordion from '../components/sections/FAQAccordion';
 import RegisterInterestCard from '../components/sections/RegisterInterestCard';
 
 import { getLayoutData, getPageData } from '../utils/api';
-import { homeDefaultData } from '../utils/default';
 
 const Home = (props) => {
     const [

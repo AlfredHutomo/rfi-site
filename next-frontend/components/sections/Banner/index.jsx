@@ -10,8 +10,6 @@ import DefaultIcon from './default-icon.svg';
 const Banner = (props) => {
     const { icon, image, heading, description } = props.sectionData;
 
-    console.log(props.sectionData, 'Banner sectionData');
-
     return (
         <div className={styles['banner-wrapper']}>
             {icon?.data != null || heading != null || description != null ? (

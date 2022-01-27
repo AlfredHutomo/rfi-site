@@ -456,6 +456,7 @@ export const LAYOUT_DATA = gql`
         header {
             data {
                 attributes {
+                    announcement
                     logo {
                         data {
                             attributes {
@@ -469,10 +470,35 @@ export const LAYOUT_DATA = gql`
                         __typename
                         ... on ComponentElementsLinkDropdown {
                             displayName
+                            url
                             links {
                                 url
                                 displayName
                             }
+                        }
+                        ... on ComponentElementsProgramsDropdown {
+                            displayName
+                            programs {
+                                data {
+                                    attributes {
+                                        name
+                                        slug
+                                    }
+                                }
+                            }
+                        }
+                        ... on ComponentElementsLink {
+                            displayName
+                            page {
+                                data {
+                                    attributes {
+                                        shortName
+                                        slug
+                                    }
+                                }
+                            }
+                            url
+                            isExternalLink
                         }
                     }
                 }
@@ -481,7 +507,47 @@ export const LAYOUT_DATA = gql`
         footer {
             data {
                 attributes {
+                    logo {
+                        data {
+                            attributes {
+                                url
+                                width
+                                height
+                            }
+                        }
+                    }
+                    name
                     message
+                    email
+                    social {
+                        platform
+                        linkTo
+                    }
+                    footer_Menu {
+                        __typename
+                        ... on ComponentElementsLinkDropdown {
+                            displayName
+                            url
+                            links {
+                                url
+                                displayName
+                            }
+                        }
+                        ... on ComponentElementsLink {
+                            displayName
+                            page {
+                                data {
+                                    attributes {
+                                        shortName
+                                        slug
+                                    }
+                                }
+                            }
+                            url
+                            isExternalLink
+                        }
+                    }
+                    copyrightInfo
                 }
             }
         }
