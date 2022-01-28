@@ -11,6 +11,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::program.program"
+    },
+    "wrapperOptions": {
+      "displayName": "Wrapper Options",
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
     }
   }
 }

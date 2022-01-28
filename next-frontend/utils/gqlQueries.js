@@ -60,6 +60,12 @@ export const PAGE_DATA = gql`
                                 description
                             }
                             offsetPos
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsTextBlock {
                             heading
@@ -191,6 +197,12 @@ export const PAGE_DATA = gql`
                                 }
                             }
                             quote
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsSponsors {
                             goldSponsors: sponsors(
@@ -370,6 +382,12 @@ export const PAGE_DATA = gql`
                                 number
                             }
                             isDarkBackground
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsTextImageBlock {
                             preHeading
@@ -390,6 +408,12 @@ export const PAGE_DATA = gql`
                             }
                             imageOnRight
                             verticalAlign
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsIconTextLinkGroup {
                             items {
@@ -439,6 +463,12 @@ export const PAGE_DATA = gql`
                                         }
                                     }
                                 }
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsBlogLists {
@@ -698,6 +728,12 @@ export const PROGRAMS_DATA = gql`
                                 description
                             }
                             offsetPos
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsTextBlock {
                             heading
@@ -835,6 +871,12 @@ export const PROGRAMS_DATA = gql`
                                 }
                             }
                             quote
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsSponsors {
                             goldSponsors: sponsors(
@@ -1014,6 +1056,12 @@ export const PROGRAMS_DATA = gql`
                                 number
                             }
                             isDarkBackground
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsTextImageBlock {
                             preHeading
@@ -1050,6 +1098,12 @@ export const PROGRAMS_DATA = gql`
                                 linkTo
                             }
                             isDarkBackground
+                            wrapperOptions {
+                                bgcolor
+                                spaceBtm
+                                spaceTop
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsIconTextTile {
                             tiles {
@@ -1090,12 +1144,24 @@ export const PROGRAMS_DATA = gql`
                                     }
                                 }
                             }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsTextTileRowBlock {
                             offsetPos
                             tiles {
                                 heading
                                 description
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsBlogLists {

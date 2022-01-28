@@ -6,13 +6,17 @@ import styles from './IconTextLinkGroup.module.scss';
 import IconTextLink from './IconTextLink';
 import SectionWrapper from '../../global/SectionWrapper';
 
-const IconTextLinkGroup = (props) => {
-    const { isDarkBackground, items } = props.sectionData;
+const IconTextLinkGroup = ({ sectionData }) => {
+    const {
+        isDarkBackground,
+        items,
+        wrapperOptions,
+    } = sectionData;
 
     const alterstyle = isDarkBackground != null ? styles['alternative'] : '';
 
     return (
-        <SectionWrapper options={props.wrapperOptions}>
+        <SectionWrapper options={wrapperOptions}>
             <div
                 className={`${styles['link-group-blocks-wrapper']} ${alterstyle}`}
             >

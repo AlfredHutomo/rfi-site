@@ -16,6 +16,12 @@
     "offsetPos": {
       "type": "boolean",
       "default": true
+    },
+    "wrapperOptions": {
+      "displayName": "Wrapper Options",
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
     }
   }
 }

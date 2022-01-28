@@ -22,6 +22,12 @@
     "isDarkBackground": {
       "type": "boolean",
       "default": false
+    },
+    "wrapperOptions": {
+      "displayName": "Wrapper Options",
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
     }
   }
 }

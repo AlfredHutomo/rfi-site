@@ -30,8 +30,9 @@ const LinkDropDown = ({ navData }) => {
 
     const SubLinks = ({ data }) => {
         const { url, displayName } = data;
-
+        console.log(data);
         const secondaryUrl = checkValidURL(url);
+        console.log(secondaryUrl);
 
         return (
             <li className={styles['page-navigation-subnav-item']}>
