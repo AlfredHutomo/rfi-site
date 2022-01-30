@@ -10,9 +10,11 @@ import {
     ONE_BLOG_DATA,
     THREE_LATEST_BLOGS,
     CONTACT_INFORMATION,
+    PAGE_PATHS,
 } from './gqlQueries';
 
 import { getApolloClient } from './apollo-client';
+import { func } from 'prop-types';
 
 export function getStrapiURL(path) {
     return `${
@@ -71,6 +73,30 @@ export async function getPageData({ slug }) {
     }
 
     return data.pages.data[0];
+}
+
+export async function getPagePaths() {
+    const apolloClient = getApolloClient();
+
+    const { data } = await apolloClient.query({
+        query: PAGE_PATHS,
+    });
+
+    const pages = data.pages.data.map((page) => {
+        if (page.attributes.parent.data === null) {
+            return { params: { slug: page.attributes.slug } };
+        }
+        return {
+            params: {
+                slug: [
+                    page.attributes.parent.data.attributes.slug,
+                    page.attributes.slug,
+                ],
+            },
+        };
+    });
+
+    return pages;
 }
 
 export async function getLayoutData() {
