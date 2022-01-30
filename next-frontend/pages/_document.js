@@ -28,14 +28,14 @@ export default class MyDocument extends Document {
                         href='https://fonts.googleapis.com/icon?family=Material+Icons'
                         rel='stylesheet'
                     ></link>
-                    <link
+                    {/* <link
                         href='https://fonts.googleapis.com/icon?family=Material+Icons+Outlined'
                         rel='stylesheet'
                     ></link>
                     <link
                         href='https://fonts.googleapis.com/icon?family=Material+Icons+Rounded'
                         rel='stylesheet'
-                    ></link>
+                    ></link> */}
                     {/* PWA primary color */}
                     <meta name='theme-color' content='#010a4f' />
                 </Head>

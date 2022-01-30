@@ -28,19 +28,19 @@ const ContactForm = (props) => {
             )}
             <div className={styles['contact-form']}>
                 <div className={styles['contact-form-row']}>
-                    <label for='' className={styles['contact-form-label']}>
+                    <label htmlFor='' className={styles['contact-form-label']}>
                         Full Name
                     </label>
                     <input type='text' value='' placeholder='Full Name' />
                 </div>
                 <div className={styles['contact-form-row']}>
-                    <label for='' className={styles['contact-form-label']}>
+                    <label htmlFor='' className={styles['contact-form-label']}>
                         Email
                     </label>
                     <input type='email' value='' placeholder='Email' />
                 </div>
                 <div className={styles['contact-form-row']}>
-                    <label for='' className={styles['contact-form-label']}>
+                    <label htmlFor='' className={styles['contact-form-label']}>
                         Type of enquiry
                     </label>
                     <select>
@@ -48,7 +48,7 @@ const ContactForm = (props) => {
                     </select>
                 </div>
                 <div className={styles['contact-form-row']}>
-                    <label for='' className={styles['contact-form-label']}>
+                    <label htmlFor='' className={styles['contact-form-label']}>
                         Enquiry
                     </label>
                     <textarea></textarea>

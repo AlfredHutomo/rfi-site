@@ -57,7 +57,7 @@ const SponsorGold = (props) => {
                 data.attributes.social.length != 0 ? (
                     <>
                         {data.attributes.social.map((item, i) => (
-                            <Icon>{item.platform}</Icon>
+                            <Icon key={i}>{item.platform}</Icon>
                         ))}
                     </>
                 ) : (
