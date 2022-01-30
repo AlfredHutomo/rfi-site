@@ -105,7 +105,6 @@ const NavElement = ({ navItem }) => {
 };
 
 const Footer = ({ footerData }) => {
-    console.log(footerData);
     const { name, message, email, logo, footerMenu, copyrightInfo } =
         footerData;
 

@@ -8,47 +8,32 @@ import { Icon } from '@mui/material';
 import InfoTile from './InfoTile';
 import styles from './InfoTile.module.scss';
 
-
-const InfoTileList = (props) => {
-
-    const {
-        heading,
-        phone,
-        email,
-    } = props;
+const InfoTileList = ({ data }) => {
+    const { contacts, socials } = data;
 
     return (
         <div className={styles['info-tile-list-wrapper']}>
-            <InfoTile
-                heading="General Inquiries"
-                phone="0800-123-4567"
-                email="general@rfi.com"
-            />
-            <InfoTile
-                heading="Membership Inquiries"
-                phone="0800-123-4567"
-                email="membership@rfi.com"
-            />
-            <InfoTile
-                heading="Sponsorship Inquiries"
-                phone="0800-123-4567"
-                email="sponsor@rfi.com"
-            />
-            <InfoTile
-                heading="Social Media"
-            >
-                <Link href="#"><Icon>facebook</Icon></Link>
-                <Link href="#"><Icon>instagram</Icon></Link>
+            {contacts?.map((contact, i) => (
+                <InfoTile
+                    key={i}
+                    heading={contact.contactName}
+                    phone={contact.phoneNumber}
+                    email={contact.email}
+                />
+            ))}
+            <InfoTile heading='Social Media'>
+                {socials?.map((social, i) => (
+                    <Link key={i} href={social.linkTo}>
+                        <Icon>{social.platform}</Icon>
+                    </Link>
+                ))}
             </InfoTile>
         </div>
     );
-}
+};
 
-InfoTileList.propTypes = {
-}
+InfoTileList.propTypes = {};
 
-InfoTileList.defaultProps = {
-}
+InfoTileList.defaultProps = {};
 
 export default InfoTileList;
-

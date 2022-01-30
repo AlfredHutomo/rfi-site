@@ -8,9 +8,7 @@ import ProgramCard from '../../ProgramCard';
 import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
 
-const ProgramList = (props) => {
-    const { sectionData, wrapperOptions } = props;
-
+const ProgramList = ({ sectionData }) => {
     const programData = sectionData.programs.data;
 
     const generateTags = (tagsData) => {
@@ -20,7 +18,7 @@ const ProgramList = (props) => {
     };
 
     return (
-        <SectionWrapper options={wrapperOptions}>
+        <SectionWrapper options={sectionData.wrapperOptions}>
             <div className={styles['program-list-wrapper']}>
                 {programData != null && programData.length != 0 ? (
                     <ul className={styles['program-list']}>

@@ -17,7 +17,7 @@ import styles, { bpMd } from './PageHeader.module.scss';
 const PageHeader = (props) => {
     const { className, id, bgDesktop, bgMobile, ...others } = props;
 
-    const { title } = props.sectionData;
+    const { title, banner_image } = props.sectionData;
 
     const classes = clsx(styles['page-header'], className);
 
@@ -33,6 +33,7 @@ const PageHeader = (props) => {
           }
       `;
     }
+
     if (bgMobile) {
         extraStyling += `
         @media(max-width: ${parseInt(bpMd.replace('px', '')) - 1}px) {

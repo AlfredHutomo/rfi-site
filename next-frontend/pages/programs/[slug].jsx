@@ -1,5 +1,4 @@
 import PageWrapper from '../../components/global/PageWrapper';
-import SectionWrapper from '../../components/global/SectionWrapper';
 import ProgramLayout from '../../components/ProgramLayout';
 
 import Sections from '../../components/sections';
@@ -21,9 +20,8 @@ const ProgramDetails = ({ programData, layoutData }) => {
                 {/* Dynamic Sections */}
                 <Sections sections={sections} />
             </ProgramLayout>
-            <SectionWrapper>
-                <RegisterInterestCard />
-            </SectionWrapper>
+
+            <RegisterInterestCard />
         </PageWrapper>
     );
 };

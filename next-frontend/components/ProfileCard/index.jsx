@@ -135,10 +135,7 @@ const ProfileCard = (props) => {
                                         (program, i) => (
                                             <li key={i}>
                                                 <h5 className='h5'>
-                                                    {
-                                                        program.attributes
-                                                            .program_name
-                                                    }
+                                                    {program.attributes.name}
                                                 </h5>
                                                 {program.attributes.description}
                                             </li>

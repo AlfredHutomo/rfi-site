@@ -11,6 +11,7 @@ const SponsorBlock = ({ sectionData, wrapperOptions }) => {
     const { goldSponsors, silverSponsors, bronzeSponsors, button1, button2 } =
         sectionData;
 
+    console.log(sectionData);
     return (
         <SectionWrapper options={wrapperOptions}>
             <div className={styles['sponsor-block-wrapper']}>

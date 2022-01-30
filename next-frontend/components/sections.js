@@ -19,6 +19,8 @@ import TextTileBlockRow from './sections/TextTileBlockRow';
 import TextTileBlock from './sections/TextTileBlockRow/TextTileBlock';
 import Timeline from './sections/Timeline';
 import USPBanner from './sections/USPBanner';
+import ContactLayout from './sections/ContactLayout';
+import RegisterLayout from './sections/RegisterLayout';
 
 // Map Strapi sections to section components
 const sectionComponents = {
@@ -44,6 +46,8 @@ const sectionComponents = {
     ComponentSectionsSponsorsDetails: SponsorDetailBlock,
     ComponentSectionsTextTileRowBlock: TextTileBlockRow,
     ComponentSectionsBlogLists: PostList,
+    ComponentLayoutContactUs: ContactLayout,
+    ComponentLayoutRegister: RegisterLayout,
 };
 
 // Display a section individually
@@ -63,10 +67,10 @@ const Sections = ({ sections }) => {
     return (
         <div className='flex flex-col'>
             {/* Show the actual sections */}
-            {sections.map((section) => (
+            {sections.map((section, i) => (
                 <Section
                     sectionData={section}
-                    key={`${section.__typename}${section.id}`}
+                    key={`${section.__typename}__${i}`}
                 />
             ))}
         </div>

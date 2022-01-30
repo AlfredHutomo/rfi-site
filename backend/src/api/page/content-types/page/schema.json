@@ -49,7 +49,9 @@
         "sections.timeline-block",
         "sections.sponsors-details",
         "sections.text-tile-row-block",
-        "sections.blog-lists"
+        "sections.blog-lists",
+        "layout.contact-us",
+        "layout.register"
       ]
     },
     "parent": {
@@ -63,6 +65,10 @@
       "relation": "oneToMany",
       "target": "api::page.page",
       "mappedBy": "parent"
+    },
+    "indexPage": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

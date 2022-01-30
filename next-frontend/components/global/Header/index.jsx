@@ -28,11 +28,12 @@ const LinkOnly = ({ navData }) => {
 const LinkDropDown = ({ navData }) => {
     const primaryUrl = checkValidURL(navData.url);
 
-    const SubLinks = ({ data }) => {
-        const { url, displayName } = data;
-        console.log(data);
-        const secondaryUrl = checkValidURL(url);
-        console.log(secondaryUrl);
+    const SubLinks = ({ data, parentUrl }) => {
+        const { url, displayName, isExternalLink, page } = data;
+
+        const secondaryUrl = isExternalLink
+            ? checkValidURL(url)
+            : primaryUrl + checkValidURL(page.data.attributes.slug);
 
         return (
             <li className={styles['page-navigation-subnav-item']}>
@@ -51,7 +52,7 @@ const LinkDropDown = ({ navData }) => {
 
             <ul className={styles['page-navigation-subnav']}>
                 {navData.links.map((link, i) => (
-                    <SubLinks key={i} data={link} />
+                    <SubLinks key={i} data={link} parentUrl={primaryUrl} />
                 ))}
             </ul>
         </li>

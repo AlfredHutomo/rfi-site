@@ -7,36 +7,13 @@ import PageHeader from '../../components/global/PageHeader';
 import Breadcrumb from '../../components/Breadcrumb';
 
 import { getPageData, getLayoutData } from '../../utils/api';
+import Sections from '../../components/sections';
 
 const Programs = ({ pageData, layoutData }) => {
-    const [headerBanner, textBlock1, programs] = pageData.attributes.content;
-
     return (
         <PageWrapper layoutData={layoutData}>
-            <PageHeader sectionData={headerBanner} />
-
-            <Breadcrumb
-                sectionData={{
-                    data: [
-                        {
-                            text: 'Home',
-                            link: '/',
-                        },
-                        {
-                            text: 'Programs',
-                            link: '/programs',
-                        },
-                    ],
-                }}
-            />
-
-            <TextBlock sectionData={textBlock1}></TextBlock>
-
-            <ProgramList sectionData={programs} />
-
-            <SectionWrapper>
-                <RegisterInterestCard />
-            </SectionWrapper>
+            <Sections sections={pageData.attributes.content} />
+            <RegisterInterestCard />
         </PageWrapper>
     );
 };

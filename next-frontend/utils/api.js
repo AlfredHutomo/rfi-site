@@ -1,6 +1,5 @@
-import { func } from 'prop-types';
 import qs from 'qs';
-import client from './apollo-client';
+// import client from './apollo-client';
 import {
     LAYOUT_DATA,
     PAGE_DATA,
@@ -10,7 +9,10 @@ import {
     BLOGS_PATHS,
     ONE_BLOG_DATA,
     THREE_LATEST_BLOGS,
+    CONTACT_INFORMATION,
 } from './gqlQueries';
+
+import { getApolloClient } from './apollo-client';
 
 export function getStrapiURL(path) {
     return `${
@@ -55,7 +57,9 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
 }
 
 export async function getPageData({ slug }) {
-    const { data } = await client.query({
+    const apolloClient = getApolloClient();
+
+    const { data } = await apolloClient.query({
         query: PAGE_DATA,
         variables: {
             slug,
@@ -70,7 +74,9 @@ export async function getPageData({ slug }) {
 }
 
 export async function getLayoutData() {
-    const { data } = await client.query({
+    const apolloClient = getApolloClient();
+
+    const { data } = await apolloClient.query({
         query: LAYOUT_DATA,
     });
 
@@ -78,7 +84,9 @@ export async function getLayoutData() {
 }
 
 export async function getProgramsPaths() {
-    const { data } = await client.query({
+    const apolloClient = getApolloClient();
+
+    const { data } = await apolloClient.query({
         query: PROGRAMS_PATHS,
     });
 
@@ -90,7 +98,9 @@ export async function getProgramsPaths() {
 }
 
 export async function getProgramsData({ slug }) {
-    const { data } = await client.query({
+    const apolloClient = getApolloClient();
+
+    const { data } = await apolloClient.query({
         query: PROGRAMS_DATA,
         variables: { slug },
     });
@@ -104,7 +114,8 @@ export async function getProgramsData({ slug }) {
  * @returns {Promise<Array>} an Array of blog inside strapi cms
  */
 export async function getPostList() {
-    const { data } = await client.query({
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({
         query: BLOGS_DATA,
     });
 
@@ -112,7 +123,8 @@ export async function getPostList() {
 }
 
 export async function getBlogPaths() {
-    const { data } = await client.query({
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({
         query: BLOGS_PATHS,
     });
 
@@ -124,7 +136,8 @@ export async function getBlogPaths() {
 }
 
 export async function getBlogData({ slug }) {
-    const { data } = await client.query({
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({
         query: ONE_BLOG_DATA,
         variables: { slug },
     });
@@ -133,9 +146,19 @@ export async function getBlogData({ slug }) {
 }
 
 export async function getThreeLatestBlogs() {
-    const { data } = await client.query({
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({
         query: THREE_LATEST_BLOGS,
     });
 
     return data.blogs.data;
+}
+
+export async function getContactData() {
+    const apolloClient = getApolloClient();
+    const { data } = await apolloClient.query({
+        query: CONTACT_INFORMATION,
+    });
+
+    return data.contactInformation.data;
 }

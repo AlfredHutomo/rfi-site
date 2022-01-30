@@ -6,103 +6,39 @@ import SponsorDetailBlock from '../../components/sections/SponsorDetailBlock';
 import RegisterInterestCard from '../../components/sections/RegisterInterestCard';
 import PageHeader from '../../components/global/PageHeader';
 import { getPageData, getLayoutData } from '../../utils/api';
+import Sections from '../../components/sections';
 
 const Sponsors = ({ pageData, layoutData }) => {
-    const [headerBanner, textBlock1, sponsorsDetails] =
-        pageData.attributes.content;
-
     return (
         <PageWrapper layoutData={layoutData}>
-            <PageHeader sectionData={headerBanner} />
+            <Sections sections={pageData.attributes.content} />
 
-            <TextBlock sectionData={textBlock1}></TextBlock>
+            <LinkGroup
+                data={[
+                    {
+                        text: 'History',
+                        link: '#',
+                    },
+                    {
+                        text: 'Philosophy',
+                        link: '#',
+                    },
+                    {
+                        text: 'Success stories',
+                        link: '#',
+                    },
+                    {
+                        text: 'Sponsors',
+                        link: '#',
+                    },
+                    {
+                        text: 'Success stories',
+                        link: '#',
+                    },
+                ]}
+            />
 
-            <SectionWrapper>
-                <SponsorDetailBlock
-                    sectionData={sponsorsDetails}
-                    sponsorsData={[
-                        {
-                            type: 'Gold',
-                            logo: '',
-                            name: 'Relab Studios',
-                            phone: 'RFI Initation Program 1',
-                            email: '',
-                            social: ['ages: 10 - 19', 'beginner'],
-                        },
-                        {
-                            type: 'Gold',
-                            logo: '',
-                            name: 'Relab Studios',
-                            phone: 'RFI Initation Program 1',
-                            email: '',
-                            social: ['ages: 10 - 19', 'beginner'],
-                        },
-                        {
-                            type: 'Silver',
-                            logo: '',
-                            name: 'Relab Studios',
-                            phone: 'RFI Initation Program 1',
-                            email: '',
-                            social: ['ages: 10 - 19', 'beginner'],
-                        },
-                        {
-                            type: 'Bronze',
-                            logo: '',
-                            name: 'Relab Studios',
-                            phone: 'RFI Initation Program 1',
-                            email: '',
-                            social: ['ages: 10 - 19', 'beginner'],
-                        },
-                        {
-                            type: 'Bronze',
-                            logo: '',
-                            name: 'Relab Studios',
-                            phone: 'RFI Initation Program 1',
-                            email: '',
-                            social: ['ages: 10 - 19', 'beginner'],
-                        },
-                        {
-                            type: 'Bronze',
-                            logo: '',
-                            name: 'Relab Studios',
-                            phone: 'RFI Initation Program 1',
-                            email: '',
-                            social: ['ages: 10 - 19', 'beginner'],
-                        },
-                    ]}
-                ></SponsorDetailBlock>
-            </SectionWrapper>
-
-            <SectionWrapper>
-                <LinkGroup
-                    data={[
-                        {
-                            text: 'History',
-                            link: '#',
-                        },
-                        {
-                            text: 'Philosophy',
-                            link: '#',
-                        },
-                        {
-                            text: 'Success stories',
-                            link: '#',
-                        },
-                        {
-                            text: 'Sponsors',
-                            link: '#',
-                        },
-                        {
-                            text: 'Success stories',
-                            link: '#',
-                        },
-                    ]}
-                />
-            </SectionWrapper>
-
-            <SectionWrapper>
-                <RegisterInterestCard />
-            </SectionWrapper>
+            <RegisterInterestCard />
         </PageWrapper>
     );
 };

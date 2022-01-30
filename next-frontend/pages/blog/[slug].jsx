@@ -1,7 +1,8 @@
 import PageWrapper from '../../components/global/PageWrapper';
 
-import { getLayoutData, getBlogPaths, getBlogData } from '../../utils/api';
 import BlogLayout from '../../components/BlogLayout';
+
+import { getLayoutData, getBlogPaths, getBlogData } from '../../utils/api';
 
 const BlogArticle = ({ blogData, layoutData }) => {
     return (

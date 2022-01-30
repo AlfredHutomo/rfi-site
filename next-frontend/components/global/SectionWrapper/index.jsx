@@ -21,7 +21,9 @@ SectionWrapper.defaultProps = {
 };
 
 const Wrapper = ({ bgcolor, spaceTop, spaceBtm, isTwoColumns, children }) => {
-    let sectionStyle = { backgroundColor: bgcolor };
+    let sectionStyle = {
+        backgroundColor: bgcolor || Wrapper.defaultProps.bgcolor,
+    };
 
     if (spaceTop) {
         sectionStyle = { ...sectionStyle, paddingTop: spaceTop + 'px' };
@@ -47,8 +49,15 @@ const Wrapper = ({ bgcolor, spaceTop, spaceBtm, isTwoColumns, children }) => {
     );
 };
 
+Wrapper.propTypes = {
+    bgcolor: PropTypes.string,
+    spaceTop: PropTypes.string,
+    spaceBtm: PropTypes.string,
+    isTwoColumns: PropTypes.bool,
+};
+
 Wrapper.defaultProps = {
-    bgcolor: '#e5e5e5',
+    bgcolor: '#e2e2e2',
     isTwoColumns: false,
 };
 

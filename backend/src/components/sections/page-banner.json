@@ -7,10 +7,16 @@
   },
   "options": {},
   "attributes": {
-    "banner_text": {
+    "title": {
       "type": "string"
     },
-    "banner_image": {
+    "wrapperOptions": {
+      "displayName": "Wrapper Options",
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
+    },
+    "bgDesktop": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -20,14 +26,15 @@
         "videos"
       ]
     },
-    "title": {
-      "type": "string"
-    },
-    "wrapperOptions": {
-      "displayName": "Wrapper Options",
-      "type": "component",
-      "repeatable": false,
-      "component": "elements.wrapper-options"
+    "bgMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     }
   }
 }

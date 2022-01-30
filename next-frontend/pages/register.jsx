@@ -1,17 +1,14 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
-
 import PageWrapper from '../components/global/PageWrapper';
 import SectionWrapper from '../components/global/SectionWrapper';
 import RegisterForm from '../components/RegisterForm';
+import Sections from '../components/sections';
 
-const Register = (props) => {
+import { getPageData, getLayoutData } from '../utils/api';
+
+const Register = ({ pageData, layoutData }) => {
     return (
-        <PageWrapper>
-            <SectionWrapper>
-                <RegisterForm />
-            </SectionWrapper>
+        <PageWrapper layoutData={layoutData}>
+            <Sections sections={pageData.attributes.content} />
         </PageWrapper>
     );
 };

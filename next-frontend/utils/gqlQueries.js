@@ -1,5 +1,31 @@
 import { gql } from '@apollo/client';
 
+export const PAGE_PATHS = gql`
+    query pagesPaths {
+        pages {
+            data {
+                attributes {
+                    slug
+                    parent {
+                        data {
+                            attributes {
+                                slug
+                            }
+                        }
+                    }
+                    children {
+                        data {
+                            attributes {
+                                slug
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
 export const PAGE_DATA = gql`
     query Pages($slug: String!) {
         pages(filters: { slug: { eq: $slug } }) {
@@ -45,12 +71,25 @@ export const PAGE_DATA = gql`
                         }
                         ... on ComponentSectionsPageBanner {
                             title
-                            banner_image {
+                            bgDesktop {
                                 data {
                                     attributes {
                                         url
                                     }
                                 }
+                            }
+                            bgMobile {
+                                data {
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsUspBanner {
@@ -72,6 +111,12 @@ export const PAGE_DATA = gql`
                             headingType
                             description
                             isDarkBackground
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsOurPrograms {
                             programs {
@@ -90,7 +135,7 @@ export const PAGE_DATA = gql`
                                                 }
                                             }
                                         }
-                                        tags(sort: "name") {
+                                        tags(sort: "name:desc") {
                                             data {
                                                 attributes {
                                                     name
@@ -99,6 +144,12 @@ export const PAGE_DATA = gql`
                                         }
                                     }
                                 }
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsBlockContent {
@@ -125,6 +176,12 @@ export const PAGE_DATA = gql`
                                 description
                                 bgColor
                                 isLightText
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsGridAboutUs {
@@ -184,6 +241,12 @@ export const PAGE_DATA = gql`
                                         }
                                     }
                                 }
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsTestimonials {
@@ -265,6 +328,12 @@ export const PAGE_DATA = gql`
                                 displayName
                                 url
                             }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsSponsorsDetails {
                             goldSponsors: sponsors(
@@ -327,6 +396,12 @@ export const PAGE_DATA = gql`
                                     }
                                 }
                             }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsRegisterInterest {
                             heading
@@ -343,6 +418,12 @@ export const PAGE_DATA = gql`
                             faqlists: questionBlocks {
                                 question
                                 answer
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsPeopleHighlightBlock {
@@ -372,6 +453,12 @@ export const PAGE_DATA = gql`
                                         }
                                     }
                                 }
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsStatisticBlock {
@@ -424,12 +511,24 @@ export const PAGE_DATA = gql`
                                 linkTo
                             }
                             isDarkBackground
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsIconTextTile {
                             tiles {
                                 icon
                                 heading
                                 description
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsBanner {
@@ -451,6 +550,12 @@ export const PAGE_DATA = gql`
                             }
                             heading
                             description
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsTimelineBlock {
                             timelineEvents {
@@ -713,12 +818,25 @@ export const PROGRAMS_DATA = gql`
                         }
                         ... on ComponentSectionsPageBanner {
                             title
-                            banner_image {
+                            bgDesktop {
                                 data {
                                     attributes {
                                         url
                                     }
                                 }
+                            }
+                            bgMobile {
+                                data {
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsUspBanner {
@@ -774,6 +892,12 @@ export const PROGRAMS_DATA = gql`
                                     }
                                 }
                             }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsBlockContent {
                             gridItemOne {
@@ -799,6 +923,12 @@ export const PROGRAMS_DATA = gql`
                                 description
                                 bgColor
                                 isLightText
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsGridAboutUs {
@@ -858,6 +988,12 @@ export const PROGRAMS_DATA = gql`
                                         }
                                     }
                                 }
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsTestimonials {
@@ -939,6 +1075,12 @@ export const PROGRAMS_DATA = gql`
                                 displayName
                                 url
                             }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsSponsorsDetails {
                             goldSponsors: sponsors(
@@ -1001,6 +1143,12 @@ export const PROGRAMS_DATA = gql`
                                     }
                                 }
                             }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsRegisterInterest {
                             heading
@@ -1017,6 +1165,12 @@ export const PROGRAMS_DATA = gql`
                             faqlists: questionBlocks {
                                 question
                                 answer
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsPeopleHighlightBlock {
@@ -1046,6 +1200,12 @@ export const PROGRAMS_DATA = gql`
                                         }
                                     }
                                 }
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsStatisticBlock {
@@ -1084,8 +1244,8 @@ export const PROGRAMS_DATA = gql`
                             verticalAlign
                             wrapperOptions {
                                 bgcolor
-                                spaceBtm
                                 spaceTop
+                                spaceBtm
                                 isTwoColumns
                             }
                         }
@@ -1100,8 +1260,8 @@ export const PROGRAMS_DATA = gql`
                             isDarkBackground
                             wrapperOptions {
                                 bgcolor
-                                spaceBtm
                                 spaceTop
+                                spaceBtm
                                 isTwoColumns
                             }
                         }
@@ -1110,6 +1270,12 @@ export const PROGRAMS_DATA = gql`
                                 icon
                                 heading
                                 description
+                            }
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
                             }
                         }
                         ... on ComponentSectionsBanner {
@@ -1131,6 +1297,12 @@ export const PROGRAMS_DATA = gql`
                             }
                             heading
                             description
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
                         }
                         ... on ComponentSectionsTimelineBlock {
                             timelineEvents {
@@ -1150,22 +1322,6 @@ export const PROGRAMS_DATA = gql`
                                 spaceBtm
                                 isTwoColumns
                             }
-                        }
-                        ... on ComponentSectionsTextTileRowBlock {
-                            offsetPos
-                            tiles {
-                                heading
-                                description
-                            }
-                            wrapperOptions {
-                                bgcolor
-                                spaceTop
-                                spaceBtm
-                                isTwoColumns
-                            }
-                        }
-                        ... on ComponentSectionsBlogLists {
-                            heading
                         }
                     }
                     venue {
@@ -1288,6 +1444,29 @@ export const THREE_LATEST_BLOGS = gql`
                     shortDescription
                     content
                     createdAt
+                }
+            }
+        }
+    }
+`;
+
+export const CONTACT_INFORMATION = gql`
+    query contactInformation {
+        contactInformation {
+            data {
+                attributes {
+                    contactList {
+                        contactName
+                        email
+                        phoneNumber
+                    }
+                    socialMediaList {
+                        platform
+                        linkTo
+                    }
+                    addressLocationName
+                    fullAddress
+                    addressLocationDescription
                 }
             }
         }

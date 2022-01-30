@@ -10,8 +10,8 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 import SectionWrapper from '../../global/SectionWrapper';
 
-const FAQAccordion = ({ sectionData, wrapperOptions }) => {
-    const { faqlists } = sectionData;
+const FAQAccordion = ({ sectionData }) => {
+    const { faqlists, wrapperOptions } = sectionData;
 
     return (
         <SectionWrapper options={wrapperOptions}>

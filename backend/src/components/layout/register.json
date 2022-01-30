@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_layout_registers",
+  "info": {
+    "displayName": "Register",
+    "icon": "envelope-open-text"
+  },
+  "options": {},
+  "attributes": {
+    "dummy": {
+      "type": "string"
+    }
+  }
+}

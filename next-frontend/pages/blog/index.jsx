@@ -1,12 +1,9 @@
 import PageWrapper from '../../components/global/PageWrapper';
-import SectionWrapper from '../../components/global/SectionWrapper';
-import PostList from '../../components/sections/PostList';
-import TextBlock from '../../components/sections/TextBlock';
+import Sections from '../../components/sections';
+
 import RegisterInterestCard from '../../components/sections/RegisterInterestCard';
-import PageHeader from '../../components/global/PageHeader';
 
 import { getLayoutData, getPageData } from '../../utils/api';
-import Sections from '../../components/sections';
 
 const Blog = ({ pageData, layoutData }) => {
     const { seo, content } = pageData.attributes;
@@ -15,9 +12,7 @@ const Blog = ({ pageData, layoutData }) => {
         <PageWrapper layoutData={layoutData}>
             <Sections sections={content} />
 
-            <SectionWrapper>
-                <RegisterInterestCard />
-            </SectionWrapper>
+            <RegisterInterestCard />
         </PageWrapper>
     );
 };

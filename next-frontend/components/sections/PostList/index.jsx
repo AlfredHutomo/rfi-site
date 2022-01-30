@@ -58,7 +58,7 @@ const PostList = (props) => {
                         {posts.map((post, i) => (
                             <li key={i} className={styles['post-list-item']}>
                                 <Link
-                                    href={`blog/${post.attributes.slug}`}
+                                    href={`/blog/${post.attributes.slug}`}
                                     passHref={true}
                                 >
                                     {/* missing description styling */}
@@ -89,14 +89,12 @@ const PostList = (props) => {
                 ) : (
                     ''
                 )}
-                {
-                    /*recommendation ? null : (
+                {/*recommendation ? null : (
                     <div className={styles['post-list-cta']}>
                         <Button to='#'>Load more</Button>
                     </div>
                     )
-                    */
-                }
+                    */}
             </div>
         </SectionWrapper>
     );
