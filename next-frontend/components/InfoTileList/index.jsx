@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { Icon } from '@mui/material';
 
-import InfoTile from './InfoTile';
+import InfoTile from './infoTile';
 import styles from './InfoTile.module.scss';
 
 const InfoTileList = ({ data }) => {
