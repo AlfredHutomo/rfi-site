@@ -10,8 +10,8 @@ import Button from '../../global/Button';
 
 import ReactMarkdown from 'react-markdown';
 
-const InfoGrid = (props) => {
-    const { sectionData, wrapperOptions } = props;
+const InfoGrid = ({ sectionData }) => {
+    const { wrapperOptions } = sectionData;
 
     return (
         <SectionWrapper options={wrapperOptions}>
@@ -32,10 +32,10 @@ const InfoGrid = (props) => {
 };
 
 const InfoGridTwo = (props) => {
-    const { sectionData, wrapperOptions } = props;
+    const { sectionData } = props;
 
     return (
-        <SectionWrapper options={wrapperOptions}>
+        <SectionWrapper options={sectionData.wrapperOptions}>
             <div className={styles['info-grid-wrapper']}>
                 <div className={styles['info-grid']}>
                     <InfoGridItemContentType1 data={sectionData.gridItemOne} />

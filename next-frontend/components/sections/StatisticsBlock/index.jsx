@@ -6,18 +6,19 @@ import styles from './StatisticsBlock.module.scss';
 import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
 
-const StatisticsBlock = (props) => {
+const StatisticsBlock = ({ sectionData }) => {
     const {
         heading,
         data: statsData,
         description,
         isDarkBackground,
-    } = props.sectionData;
+        wrapperOptions,
+    } = sectionData;
 
     const altStyle = isDarkBackground ? styles['darkBg'] : '';
 
     return (
-        <SectionWrapper options={props.wrapperOptions}>
+        <SectionWrapper options={wrapperOptions}>
             <div
                 className={styles['statistics-block-wrapper'] + ' ' + altStyle}
             >

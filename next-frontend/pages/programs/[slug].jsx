@@ -44,6 +44,7 @@ export const getStaticProps = async (context) => {
             programData,
             layoutData,
         },
+        revalidate: 60,
     };
 };
 

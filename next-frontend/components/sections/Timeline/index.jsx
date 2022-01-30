@@ -8,11 +8,11 @@ import TimelineCard from './TimelineCard';
 import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
 
-const Timeline = (props) => {
-    const { timelineEvents } = props.sectionData;
+const Timeline = ({ sectionData }) => {
+    const { timelineEvents, wrapperOptions } = sectionData;
 
     return (
-        <SectionWrapper options={props.wrapperOptions}>
+        <SectionWrapper options={wrapperOptions}>
             <div className={styles['timeline-wrapper']}>
                 {timelineEvents != null && timelineEvents.length != 0
                     ? timelineEvents.map((tlcard, i) => (

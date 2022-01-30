@@ -12,7 +12,7 @@ import SectionWrapper from '../../global/SectionWrapper';
 
 import ReactMarkdown from 'react-markdown';
 
-const TextImageCard = (props) => {
+const TextImageCard = ({ sectionData }) => {
     const {
         imageOnRight,
         verticalAlign,
@@ -21,13 +21,14 @@ const TextImageCard = (props) => {
         heading,
         text,
         button,
-    } = props.sectionData;
+        wrapperOptions,
+    } = sectionData;
 
     const reverse = imageOnRight ? styles['text-image-card--reverse'] : '';
     const vcentre = verticalAlign ? styles['text-image-card--vcentre'] : '';
 
     return (
-        <SectionWrapper options={props.wrapperOptions}>
+        <SectionWrapper options={wrapperOptions}>
             <div
                 className={
                     styles['text-image-card-wrapper'] +

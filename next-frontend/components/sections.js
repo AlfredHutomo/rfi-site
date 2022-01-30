@@ -16,11 +16,11 @@ import SponsorDetailBlock from './sections/SponsorDetailBlock';
 import StatisticsBlock from './sections/StatisticsBlock';
 import TextImageCard from './sections/TextImageCard';
 import TextTileBlockRow from './sections/TextTileBlockRow';
-import TextTileBlock from './sections/TextTileBlockRow/TextTileBlock';
 import Timeline from './sections/Timeline';
 import USPBanner from './sections/USPBanner';
 import ContactLayout from './sections/ContactLayout';
 import RegisterLayout from './sections/RegisterLayout';
+import IconTextTileGroup from './IconTextTileGroup';
 
 // Map Strapi sections to section components
 const sectionComponents = {
@@ -32,7 +32,9 @@ const sectionComponents = {
     ComponentSectionsTextImageBlock: TextImageCard,
     ComponentSectionsTextBlock: TextBlock,
     ComponentSectionsStatisticBlock: StatisticsBlock,
+    // check
     ComponentSectionsLinkGroup: LinkGroup,
+    // check
     ComponentSectionsSponsors: SponsorBlock,
     ComponentSectionsFaq: FAQAccordion,
     ComponentSectionsRegisterInterest: RegisterInterestCard,
@@ -40,12 +42,13 @@ const sectionComponents = {
     ComponentSectionsPeopleHighlightBlock: ProfileCardList,
     ComponentSectionsGridAboutUs: InfoGridTwo,
     ComponentSectionsIconTextLinkGroup: IconTextLinkGroup,
-    ComponentSectionsIconTextTile: TextTileBlock,
+    ComponentSectionsIconTextTile: IconTextTileGroup,
     ComponentSectionsBanner: Banner,
     ComponentSectionsTimelineBlock: Timeline,
     ComponentSectionsSponsorsDetails: SponsorDetailBlock,
     ComponentSectionsTextTileRowBlock: TextTileBlockRow,
     ComponentSectionsBlogLists: PostList,
+    // Layout Components
     ComponentLayoutContactUs: ContactLayout,
     ComponentLayoutRegister: RegisterLayout,
 };

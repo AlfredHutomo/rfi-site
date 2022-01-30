@@ -1,5 +1,4 @@
 import qs from 'qs';
-// import client from './apollo-client';
 import {
     LAYOUT_DATA,
     PAGE_DATA,
@@ -11,10 +10,10 @@ import {
     THREE_LATEST_BLOGS,
     CONTACT_INFORMATION,
     PAGE_PATHS,
+    CHILD_PAGES,
 } from './gqlQueries';
 
 import { getApolloClient } from './apollo-client';
-import { func } from 'prop-types';
 
 export function getStrapiURL(path) {
     return `${
@@ -75,28 +74,73 @@ export async function getPageData({ slug }) {
     return data.pages.data[0];
 }
 
-export async function getPagePaths() {
+/**
+ *
+ * @param {object} options optional field, if not passed it will return the whole website pages
+ * @returns Array of paths
+ */
+export async function getPagePaths({ childOf = null }) {
     const apolloClient = getApolloClient();
 
     const { data } = await apolloClient.query({
         query: PAGE_PATHS,
     });
 
-    const pages = data.pages.data.map((page) => {
-        if (page.attributes.parent.data === null) {
-            return { params: { slug: page.attributes.slug } };
+    let paths = data.pages.data.map((page) => {
+        if (childOf === null) {
+            if (page.attributes.parent.data === null) {
+                return { params: { slug: page.attributes.slug } };
+            }
+
+            return {
+                params: {
+                    slug: [
+                        page.attributes.parent.data.attributes.slug,
+                        page.attributes.slug,
+                    ],
+                },
+            };
+        } else {
+            if (
+                page.attributes.parent.data !== null &&
+                page.attributes.parent.data.attributes.slug === childOf
+            ) {
+                return { params: { slug: page.attributes.slug } };
+            }
         }
-        return {
-            params: {
-                slug: [
-                    page.attributes.parent.data.attributes.slug,
-                    page.attributes.slug,
-                ],
-            },
-        };
     });
 
-    return pages;
+    if (childOf !== null) {
+        paths = paths.filter((item) => {
+            return typeof item === 'object';
+        });
+    }
+
+    return paths;
+}
+
+export async function getChildPagesOf(slug) {
+    const apolloClient = getApolloClient();
+
+    const { data } = await apolloClient.query({
+        query: CHILD_PAGES,
+        variables: { slug },
+    });
+
+    const parent = data.pages.data[0];
+
+    if (parent.attributes.children.data.length === 0) {
+        return [];
+    }
+
+    const childPages = parent.attributes.children.data.map((page) => ({
+        text: page.attributes.shortName,
+        link: `/${parent.attributes.slug}/${page.attributes.slug}`,
+    }));
+
+    console.log(childPages);
+
+    return childPages;
 }
 
 export async function getLayoutData() {

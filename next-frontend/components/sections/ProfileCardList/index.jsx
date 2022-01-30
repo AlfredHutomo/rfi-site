@@ -8,8 +8,9 @@ import ProfileCard from '../../ProfileCard';
 import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
 
-const ProfileCardList = ({ sectionData, wrapperOptions }) => {
-    const { heading, description, isMobileSlider, people } = sectionData;
+const ProfileCardList = ({ sectionData }) => {
+    const { heading, description, isMobileSlider, people, wrapperOptions } =
+        sectionData;
 
     const slider = isMobileSlider != null ? styles['profile-list-slider'] : '';
 

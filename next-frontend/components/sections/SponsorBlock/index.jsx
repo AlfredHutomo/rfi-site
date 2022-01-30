@@ -7,11 +7,16 @@ import styles from './SponsorBlock.module.scss';
 import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
 
-const SponsorBlock = ({ sectionData, wrapperOptions }) => {
-    const { goldSponsors, silverSponsors, bronzeSponsors, button1, button2 } =
-        sectionData;
+const SponsorBlock = ({ sectionData }) => {
+    const {
+        goldSponsors,
+        silverSponsors,
+        bronzeSponsors,
+        button1,
+        button2,
+        wrapperOptions,
+    } = sectionData;
 
-    console.log(sectionData);
     return (
         <SectionWrapper options={wrapperOptions}>
             <div className={styles['sponsor-block-wrapper']}>

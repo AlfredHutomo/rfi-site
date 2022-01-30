@@ -9,10 +9,11 @@ import SponsorBronze from './SponsorBronze';
 import { SectionWrapper } from '../../global';
 
 const SponsorDetailBlock = (props) => {
-    const { goldSponsors, silverSponsors, bronzeSponsors } = props.sectionData;
+    const { goldSponsors, silverSponsors, bronzeSponsors, wrapperOptions } =
+        props.sectionData;
 
     return (
-        <SectionWrapper>
+        <SectionWrapper options={wrapperOptions}>
             <div className={styles['sponsor-detail-block-wrapper']}>
                 {goldSponsors?.data !== null &&
                     goldSponsors?.data.length !== 0 && (

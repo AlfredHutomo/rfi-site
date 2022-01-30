@@ -13,10 +13,11 @@ const QuoteBlock = (props) => {
         authorName,
         authorRole,
         quote,
+        wrapperOptions,
     } = props.sectionData;
 
     return (
-        <SectionWrapper>
+        <SectionWrapper options={wrapperOptions}>
             <div className={styles['quote-block-wrapper']}>
                 <div className={styles['quote-block']}>
                     {quote != null ? (

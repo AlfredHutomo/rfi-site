@@ -1,15 +1,42 @@
 import PageWrapper from '../../components/global/PageWrapper';
-import Sections from '../../components/sections';
-
+import SectionWrapper from '../../components/global/SectionWrapper';
+import TextBlock from '../../components/sections/TextBlock';
 import LinkGroup from '../../components/sections/LinkGroup';
+import Banner from '../../components/sections/Banner';
 import RegisterInterestCard from '../../components/sections/RegisterInterestCard';
+import PageHeader from '../../components/global/PageHeader';
+import Breadcrumb from '../../components/Breadcrumb';
 
+import StatisticsBlock from '../../components/sections/StatisticsBlock';
+import TextImageCard from '../../components/sections/TextImageCard';
+import QuoteBlock from '../../components/sections/QuoteBlock';
 import { getPageData, getLayoutData } from '../../utils/api';
+import Sections from '../../components/sections';
 
 const SuccessStories = ({ pageData, layoutData }) => {
     return (
         <PageWrapper layoutData={layoutData}>
             <Sections sections={pageData.attributes.content} />
+            <PageHeader sectionData={headerBanner} />
+
+            <TextBlock sectionData={textBlock1}></TextBlock>
+
+            <StatisticsBlock
+                sectionData={statistics}
+                wrapperOptions={{ bgcolor: '#fff' }}
+            ></StatisticsBlock>
+
+            <TextImageCard sectionData={textImage1}></TextImageCard>
+
+            <TextImageCard sectionData={textImage2}></TextImageCard>
+            <TextImageCard sectionData={textImage3}></TextImageCard>
+
+            <Banner sectionData={banner}></Banner>
+
+            <QuoteBlock
+                sectionData={quote}
+                wrapperOptions={{ bgcolor: '#eee' }}
+            ></QuoteBlock>
 
             <LinkGroup
                 heading='Learn more about RFI'

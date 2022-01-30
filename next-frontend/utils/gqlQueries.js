@@ -586,6 +586,27 @@ export const PAGE_DATA = gql`
     }
 `;
 
+export const CHILD_PAGES = gql`
+    query childrenPage($slug: String!) {
+        pages(filters: { slug: { eq: $slug } }) {
+            data {
+                attributes {
+                    shortName
+                    slug
+                    children {
+                        data {
+                            attributes {
+                                shortName
+                                slug
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
 export const LAYOUT_DATA = gql`
     query GetLayoutData {
         header {

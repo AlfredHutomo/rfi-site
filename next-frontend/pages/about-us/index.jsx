@@ -7,21 +7,6 @@ import { getPageData, getLayoutData } from '../../utils/api';
 const AboutUs = ({ pageData, layoutData }) => {
     return (
         <PageWrapper layoutData={layoutData}>
-            {/* TODO: Breadcrumb is crumbly */}
-            {/* <Breadcrumb
-                sectionData={{
-                    data: [
-                        {
-                            text: 'Home',
-                            link: '/',
-                        },
-                        {
-                            text: 'About Us',
-                            link: '/about-us',
-                        },
-                    ],
-                }}
-            /> */}
             <Sections sections={pageData.attributes.content} />
             <RegisterInterestCard />
         </PageWrapper>
@@ -37,6 +22,7 @@ export const getStaticProps = async (context) => {
             pageData,
             layoutData,
         },
+        revalidate: 60,
     };
 };
 

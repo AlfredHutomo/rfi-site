@@ -7,11 +7,7 @@ import IconTextLink from './IconTextLink';
 import SectionWrapper from '../../global/SectionWrapper';
 
 const IconTextLinkGroup = ({ sectionData }) => {
-    const {
-        isDarkBackground,
-        items,
-        wrapperOptions,
-    } = sectionData;
+    const { isDarkBackground, items, wrapperOptions } = sectionData;
 
     const alterstyle = isDarkBackground != null ? styles['alternative'] : '';
 
