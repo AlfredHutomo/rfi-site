@@ -7,6 +7,8 @@ import styles from './FAQAccordion.module.scss';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
+import ReactMarkdown from 'react-markdown';
+
 const AccordionItem = (props) => {
     const {
         question,
@@ -33,7 +35,7 @@ const AccordionItem = (props) => {
             </div>
 
             <div className={`${ styles['faq-accordion-list-item-content'] } ${isActive ? styles['active'] : ''}`} >
-                {props.children}
+                <ReactMarkdown>{props.children}</ReactMarkdown>
             </div>
         </div>
     );

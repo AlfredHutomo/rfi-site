@@ -16,8 +16,11 @@
     }
 
     &-label {
+        padding: 1rem 0;
         display: block;
+        color: inherit;
         font-size: 1.6rem;
+        font-weight: 600;
         font-family: $font-body;
     }
 
@@ -25,11 +28,20 @@
     input[type="email"],
     select,
     textarea {
-        padding: 1rem;
+        padding: 1.2rem 1rem;
         width: 100%;
         font-size: 1.6rem;
         font-family: $font-body;
+        background-color: $color-gs-white;
         border: 1px solid $color-gs-04;
+        border-radius: 5px;
+
+        &::placeholder {
+            color: $color-gs-03;
+        }
+    }
+    textarea {
+        min-height: 20rem;
     }
 }
 

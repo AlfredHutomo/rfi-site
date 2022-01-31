@@ -42,7 +42,7 @@ const InfoTile = (props) => {
                     ''
                 )}
             </div>
-            <div>{props.children != null ? props.children : ''}</div>
+            <div><ReactMarkdown>{props.children != null ? props.children : ''}</ReactMarkdown></div>
         </div>
     );
 };

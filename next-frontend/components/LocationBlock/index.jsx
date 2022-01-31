@@ -7,6 +7,8 @@ import styles from './LocationBlock.module.scss';
 
 import DefaultImg from './default-img.jpg';
 
+import ReactMarkdown from 'react-markdown';
+
 const LocationBlock = (props) => {
 
     const {
@@ -37,7 +39,7 @@ const LocationBlock = (props) => {
                 {
                     (props.children != null) ?
                     <div className={styles['location-block-content']}>
-                        {props.children}
+                        <ReactMarkdown>{props.children}</ReactMarkdown>
                     </div> : ''
                 }
                 {
