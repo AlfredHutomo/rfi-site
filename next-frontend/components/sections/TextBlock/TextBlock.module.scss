@@ -11,7 +11,10 @@
             color: $color-gs-white;
         }
     }
-
+    &-heading {
+        margin-bottom: 0;
+        padding-bottom: 3rem;
+    }
     &-icon {
         color: $color-brand-03;
     }

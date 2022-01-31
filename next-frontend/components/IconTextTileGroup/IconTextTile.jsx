@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styles from './IconTextTile.module.scss';
 import { Icon } from '@mui/material';
 
+import ReactMarkdown from 'react-markdown';
+
 const IconTextTile = (props) => {
     const { icon, heading } = props;
 
@@ -25,7 +27,7 @@ const IconTextTile = (props) => {
             )}
             {props.children != null ? (
                 <div className={styles['icon-text-tile-content']}>
-                    {props.children}
+                    <ReactMarkdown>{props.children}</ReactMarkdown>
                 </div>
             ) : (
                 ''

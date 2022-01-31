@@ -6,6 +6,8 @@ import styles from './IconTextLinkGroup.module.scss';
 import { Icon } from '@mui/material';
 import Link from 'next/link';
 
+import ReactMarkdown from 'react-markdown';
+
 const IconTextLink = (props) => {
     const { icon, heading, linkText, linkUrl, children } = props;
 
@@ -27,7 +29,7 @@ const IconTextLink = (props) => {
             )}
             {children != null ? (
                 <div className={styles['link-group-block-item-content']}>
-                    {children}
+                    <ReactMarkdown>{children}</ReactMarkdown>
                 </div>
             ) : (
                 ''

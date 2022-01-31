@@ -3,7 +3,6 @@
 
 .info-grid {
     &-wrapper {
-        border: 1px solid #f30;
     }
 
     display: grid;
@@ -12,7 +11,17 @@
     column-gap: 15px;
     row-gap: 15px;
 
+    @include bp-down($bp-md) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include bp-down($bp-sm) {
+        display: flex;
+        flex-direction: column;
+    }
+
     &-item {
+        min-height: 25rem;
         padding: 4rem;
         font-size: 2rem;
         position: relative;
