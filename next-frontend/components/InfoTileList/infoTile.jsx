@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Icon } from '@mui/material';
 
 import styles from './InfoTile.module.scss';
+import ReactMarkdown from 'react-markdown';
 
 const InfoTile = (props) => {
     const { heading, phone, email } = props;
