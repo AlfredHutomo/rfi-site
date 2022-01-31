@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_sections_text_image_blocks",
+  "info": {
+    "displayName": "Text Image Block",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "heading": {
+      "type": "string"
+    },
+    "preHeading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "verticalAlign": {
+      "type": "boolean",
+      "default": false
+    },
+    "imageOnRight": {
+      "type": "boolean",
+      "default": false
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-link"
+    },
+    "wrapperOptions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "program_tags",
+  "info": {
+    "singularName": "program-tag",
+    "pluralName": "program-tags",
+    "displayName": "Program Tag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "populateCreatorFields": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "programs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::program.program",
+      "inversedBy": "tags"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

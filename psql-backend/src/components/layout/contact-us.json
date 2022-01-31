@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_contact_uses",
+  "info": {
+    "displayName": "Contact Us",
+    "icon": "concierge-bell",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "dummy": {
+      "type": "string"
+    }
+  }
+}

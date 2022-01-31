@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_program_program_venues",
+  "info": {
+    "displayName": "Program Venue",
+    "icon": "location-arrow"
+  },
+  "options": {},
+  "attributes": {
+    "venue": {
+      "type": "string"
+    },
+    "venueDescription": {
+      "type": "text"
+    },
+    "venueMapLink": {
+      "type": "string"
+    }
+  }
+}

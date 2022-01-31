@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_elements_button_links",
+  "info": {
+    "displayName": "Button Link",
+    "icon": "external-link-square-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "displayName": {
+      "type": "string"
+    },
+    "variation": {
+      "type": "enumeration",
+      "enum": [
+        "one",
+        "two",
+        "three",
+        "four"
+      ],
+      "default": "one"
+    },
+    "url": {
+      "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "isExternalLink": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

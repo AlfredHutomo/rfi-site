@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_elements_item_contents",
+  "info": {
+    "displayName": "Grid Item One",
+    "icon": "window-maximize",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "richtext"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "isLightText": {
+      "type": "boolean",
+      "default": true
+    },
+    "isDoubleSize": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_icon_text_tiles",
+  "info": {
+    "displayName": "Icon Text Tile",
+    "icon": "grip-vertical"
+  },
+  "options": {},
+  "attributes": {
+    "tiles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.icon-and-text"
+    },
+    "wrapperOptions": {
+      "displayName": "Wrapper Options",
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
+    }
+  }
+}

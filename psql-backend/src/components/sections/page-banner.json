@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_sections_page_banners",
+  "info": {
+    "displayName": "Header Banner",
+    "icon": "flag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "wrapperOptions": {
+      "displayName": "Wrapper Options",
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
+    },
+    "bgDesktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "bgMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  }
+}

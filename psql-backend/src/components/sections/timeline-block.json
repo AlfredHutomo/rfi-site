@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_timeline_blocks",
+  "info": {
+    "displayName": "Timeline Block",
+    "icon": "history"
+  },
+  "options": {},
+  "attributes": {
+    "timelineEvents": {
+      "displayName": "Events",
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.events"
+    },
+    "wrapperOptions": {
+      "displayName": "Wrapper Options",
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.wrapper-options"
+    }
+  }
+}

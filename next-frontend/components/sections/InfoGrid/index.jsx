@@ -21,7 +21,7 @@ const InfoGrid = ({ sectionData }) => {
                     {sectionData.gridItemsImages.map((imageData, i) => (
                         <InfoGridItemImage
                             key={`grid-item-${i}`}
-                            image={imageData.image.data.attributes.url}
+                            image={imageData.image.data?.attributes.url}
                         />
                     ))}
                     <InfoGridItemContentType2 data={sectionData.gridItemTwo} />
@@ -41,13 +41,13 @@ const InfoGridTwo = (props) => {
                     <InfoGridItemContentType1 data={sectionData.gridItemOne} />
                     <InfoGridItemImage
                         image={
-                            sectionData.gridImageOne.image.data.attributes.url
+                            sectionData.gridImageOne.image.data?.attributes.url
                         }
                     />
                     <InfoGridItemContentType1 data={sectionData.gridItemTwo} />
                     <InfoGridItemImage
                         image={
-                            sectionData.gridImageTwo.image.data.attributes.url
+                            sectionData.gridImageTwo.image.data?.attributes.url
                         }
                     />
                     <InfoGridItemContentType1
@@ -55,7 +55,8 @@ const InfoGridTwo = (props) => {
                     />
                     <InfoGridItemImage
                         image={
-                            sectionData.gridImageThree.image.data.attributes.url
+                            sectionData.gridImageThree.image.data?.attributes
+                                .url
                         }
                     />
                 </div>
