@@ -18,8 +18,6 @@ const ContactLayout = (props) => {
         fetchData();
     }, []);
 
-    console.log(data);
-
     return (
         <>
             <SectionWrapper options={{ isTwoColumns: true }}>

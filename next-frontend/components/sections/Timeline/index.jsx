@@ -18,7 +18,7 @@ const Timeline = ({ sectionData }) => {
                     ? timelineEvents.map((tlcard, i) => (
                           <TimelineCard
                               key={i}
-                              image={tlcard.image.data?.attributes.url}
+                              image={tlcard.image}
                               date={tlcard.date}
                           >
                               {tlcard.description}

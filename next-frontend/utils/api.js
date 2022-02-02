@@ -74,11 +74,6 @@ export async function getPageData({ slug }) {
     return data.pages.data[0];
 }
 
-/**
- *
- * @param {object} options optional field, if not passed it will return the whole website pages
- * @returns Array of paths
- */
 export async function getPagePaths({ childOf = null }) {
     const apolloClient = getApolloClient();
 
@@ -119,6 +114,11 @@ export async function getPagePaths({ childOf = null }) {
     return paths;
 }
 
+/**
+ * It takes a slug and returns a list of child pages
+ * @param slug - The slug of the parent page.
+ * @returns An array of objects with the text and link properties.
+ */
 export async function getChildPagesOf(slug) {
     const apolloClient = getApolloClient();
 
@@ -138,11 +138,13 @@ export async function getChildPagesOf(slug) {
         link: `/${parent.attributes.slug}/${page.attributes.slug}`,
     }));
 
-    console.log(childPages);
-
     return childPages;
 }
 
+/**
+ * It queries the layout data from the server and returns it
+ * @returns The query returns a `data` object with a `layout` property.
+ */
 export async function getLayoutData() {
     const apolloClient = getApolloClient();
 
@@ -153,6 +155,10 @@ export async function getLayoutData() {
     return data;
 }
 
+/**
+ * It queries the GraphQL API for the programs data, and returns an array of paths
+ * @returns An array of objects with the following shape:
+ */
 export async function getProgramsPaths() {
     const apolloClient = getApolloClient();
 
@@ -167,6 +173,10 @@ export async function getProgramsPaths() {
     return paths;
 }
 
+/**
+ * It takes a program slug and returns the program data
+ * @returns The query returns a program object.
+ */
 export async function getProgramsData({ slug }) {
     const apolloClient = getApolloClient();
 
@@ -179,9 +189,8 @@ export async function getProgramsData({ slug }) {
 }
 
 /**
- *
- * @param {*} options
- * @returns {Promise<Array>} an Array of blog inside strapi cms
+ * It queries the GraphQL server for the blogs data.
+ * @returns The query returns a list of blogs.
  */
 export async function getPostList() {
     const apolloClient = getApolloClient();
@@ -192,6 +201,10 @@ export async function getPostList() {
     return data.blogs.data;
 }
 
+/**
+ * It queries the GraphQL API for the blog paths
+ * @returns An array of objects with the `params` property set to the `slug` of the blog.
+ */
 export async function getBlogPaths() {
     const apolloClient = getApolloClient();
     const { data } = await apolloClient.query({
@@ -205,6 +218,10 @@ export async function getBlogPaths() {
     return paths || [];
 }
 
+/**
+ * It queries the GraphQL API for the blog data
+ * @returns The data for the blog post.
+ */
 export async function getBlogData({ slug }) {
     const apolloClient = getApolloClient();
     const { data } = await apolloClient.query({
@@ -215,6 +232,10 @@ export async function getBlogData({ slug }) {
     return data.blogs.data[0];
 }
 
+/**
+ * Get the three latest blogs from the database.
+ * @returns The query returns a list of blogs.
+ */
 export async function getThreeLatestBlogs() {
     const apolloClient = getApolloClient();
     const { data } = await apolloClient.query({
@@ -224,6 +245,10 @@ export async function getThreeLatestBlogs() {
     return data.blogs.data;
 }
 
+/**
+ * It queries the contact information from the server and returns the data.
+ * @returns The data from the contactInformation query.
+ */
 export async function getContactData() {
     const apolloClient = getApolloClient();
     const { data } = await apolloClient.query({

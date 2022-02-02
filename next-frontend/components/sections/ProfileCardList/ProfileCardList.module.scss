@@ -1,5 +1,5 @@
-@import "../../../styles/_base";
-@import "../../../styles/_utils";
+@import '../../../styles/_base';
+@import '../../../styles/_utils';
 
 .profile-list {
     margin: 0;
@@ -50,7 +50,7 @@
     @include bp-down($bp-md) {
         overflow-x: scroll;
         scroll-behavior: smooth;
-        -webkit-overflow-scrolling:touch;
+        -webkit-overflow-scrolling: touch;
 
         &::-webkit-scrollbar {
             height: 6px;
@@ -82,4 +82,3 @@
         }
     }
 }
-

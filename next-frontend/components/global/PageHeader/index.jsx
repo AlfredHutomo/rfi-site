@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import styles, { bpMd } from './PageHeader.module.scss';
+import DefaultBgImage from '../../../public/page-banner--d.jpg';
 
 /**
  * PageHeader
@@ -15,43 +16,57 @@ import styles, { bpMd } from './PageHeader.module.scss';
  * there might be another instance of this component in a same page
  */
 const PageHeader = (props) => {
-    const { className, id, bgDesktop, bgMobile, ...others } = props;
+    const { className, id, ...others } = props;
 
-    const { title, banner_image } = props.sectionData;
+    const { title, bgDesktop, bgMobile } = props.sectionData;
 
     const classes = clsx(styles['page-header'], className);
 
     // extra styling if there's a custom background image used
     let extraStyling = '';
 
-    if (bgDesktop) {
-        extraStyling += `
-          @media (min-width: ${bpMd}) {
-              #${id} {
-                  background-image: url('${bgDesktop}');
-              }
-          }
-      `;
-    }
+    // if (bgDesktop.data) {
+    //     extraStyling += `
+    //       @media (min-width: ${bpMd}) {
+    //           #${id} {
+    //               background-image: url("${bgDesktop.data.attributes.url}");
+    //           }
+    //       }
+    //   `;
+    // }
 
-    if (bgMobile) {
+    if (bgMobile.data) {
         extraStyling += `
         @media(max-width: ${parseInt(bpMd.replace('px', '')) - 1}px) {
             #${id} {
-                background-image: url('${bgMobile}');
+                background-image: url("${bgMobile.data.attributes.url}");
             }
         }
       `;
     }
 
+    console.log(extraStyling);
+
+    // TODO: by default it should just take bgDesktop but if bgMobile is present then add a media query to change the backgroundImage to bgMobile
+
     return (
         <>
-            <div id={id} className={classes} {...others}>
+            <div
+                id={id}
+                className={classes}
+                style={{
+                    backgroundImage: `url("${bgDesktop.data?.attributes.url}")`,
+                }}
+            >
                 <h1 className={'h1 ' + styles['page-header__title']}>
                     {title}
                 </h1>
             </div>
-            {bgMobile || bgDesktop ? <style>{extraStyling}</style> : ''}
+            {/* {bgMobile.data || bgDesktop.data ? (
+                <style>{extraStyling}</style>
+            ) : (
+                ''
+            )} */}
         </>
     );
 };

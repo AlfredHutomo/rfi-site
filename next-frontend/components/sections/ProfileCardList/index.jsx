@@ -9,8 +9,14 @@ import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
 
 const ProfileCardList = ({ sectionData }) => {
-    const { heading, description, isMobileSlider, people, wrapperOptions } =
-        sectionData;
+    const {
+        heading,
+        description,
+        isMobileSlider,
+        people,
+        wrapperOptions,
+        ctaButton,
+    } = sectionData;
 
     const slider = isMobileSlider != null ? styles['profile-list-slider'] : '';
 
@@ -42,9 +48,11 @@ const ProfileCardList = ({ sectionData }) => {
                 ) : (
                     ''
                 )}
-                <div className={styles['profile-list-cta']}>
-                    <Button to='#'>See the whole team</Button>
-                </div>
+                {ctaButton && (
+                    <div className={styles['profile-list-cta']}>
+                        <Button to='#'>See the whole team</Button>
+                    </div>
+                )}
             </div>
         </SectionWrapper>
     );

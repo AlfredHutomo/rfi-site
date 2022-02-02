@@ -22,21 +22,39 @@
         "videos"
       ]
     },
+    "bgDesktop": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "bgMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "listingThumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
     "name": {
       "type": "string",
       "required": true
-    },
-    "level": {
-      "type": "enumeration",
-      "enum": [
-        "Beginner",
-        "Intermediate",
-        "Advanced"
-      ],
-      "default": "Beginner"
-    },
-    "age_range": {
-      "type": "string"
     },
     "description": {
       "type": "text",
@@ -45,6 +63,11 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-link"
     },
     "content": {
       "type": "dynamiczone",
@@ -96,6 +119,11 @@
       "relation": "manyToMany",
       "target": "api::rfi-team-member.rfi-team-member",
       "inversedBy": "coaches"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.faq"
     }
   }
 }

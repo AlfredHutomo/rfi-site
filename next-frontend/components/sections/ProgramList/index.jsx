@@ -17,6 +17,8 @@ const ProgramList = ({ sectionData }) => {
         return tags;
     };
 
+    console.log(programData);
+
     return (
         <SectionWrapper options={sectionData.wrapperOptions}>
             <div className={styles['program-list-wrapper']}>
@@ -25,7 +27,7 @@ const ProgramList = ({ sectionData }) => {
                         {programData.map((program, i) => (
                             <li key={i}>
                                 <ProgramCard
-                                    image={program.attributes.coverImage}
+                                    image={program.attributes.listingThumbnail}
                                     name={program.attributes.name}
                                     tags={generateTags(program.attributes.tags)}
                                     slug={program.attributes.slug}

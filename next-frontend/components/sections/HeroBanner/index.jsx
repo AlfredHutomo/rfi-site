@@ -72,7 +72,7 @@ const HeroBanner = (props) => {
             </div>
 
             <div className={styles['hero-banner-img']}>
-                {bgImageDesktop != null ? (
+                {bgImageDesktop.data != null ? (
                     <div className='desktop-only'>
                         <Image
                             src={bgImageDesktop.data?.attributes.url}
@@ -89,7 +89,7 @@ const HeroBanner = (props) => {
                         />
                     </div>
                 )}
-                {bgImageMobile != null ? (
+                {bgImageMobile.data != null ? (
                     <div className='mobile-only'>
                         <Image
                             src={bgImageMobile.data?.attributes.url}

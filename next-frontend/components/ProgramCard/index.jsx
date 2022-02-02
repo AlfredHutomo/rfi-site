@@ -14,9 +14,9 @@ const ProgramCard = (props) => {
     return (
         <div className={styles['program-card-wrapper']}>
             <div className={styles['program-card-image']}>
-                {image != null ? (
+                {image.data != null ? (
                     <Image
-                        src={image.data.attributes.url}
+                        src={image.data?.attributes.url}
                         layout='fill'
                         objectFit='cover'
                         alt={''}

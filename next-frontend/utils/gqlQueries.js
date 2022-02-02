@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const PAGE_PATHS = gql`
     query pagesPaths {
-        pages {
+        pages(pagination: { pageSize: 30 }) {
             data {
                 attributes {
                     slug
@@ -111,6 +111,7 @@ export const PAGE_DATA = gql`
                             headingType
                             description
                             isDarkBackground
+                            maxWidth
                             wrapperOptions {
                                 bgcolor
                                 spaceTop
@@ -124,11 +125,9 @@ export const PAGE_DATA = gql`
                                     id
                                     attributes {
                                         name
-                                        age_range
-                                        level
                                         description
                                         slug
-                                        coverImage {
+                                        listingThumbnail {
                                             data {
                                                 attributes {
                                                     url
@@ -430,7 +429,7 @@ export const PAGE_DATA = gql`
                             heading
                             description
                             isMobileSlider
-                            people {
+                            people(pagination: { pageSize: 20 }) {
                                 data {
                                     attributes {
                                         name
@@ -453,6 +452,19 @@ export const PAGE_DATA = gql`
                                         }
                                     }
                                 }
+                            }
+                            ctaButton {
+                                displayName
+                                page {
+                                    data {
+                                        attributes {
+                                            slug
+                                        }
+                                    }
+                                }
+                                isExternalLink
+                                url
+                                variation
                             }
                             wrapperOptions {
                                 bgcolor
@@ -772,7 +784,25 @@ export const PROGRAMS_DATA = gql`
                     slug
                     name
                     description
-                    coverImage {
+                    bgDesktop {
+                        data {
+                            attributes {
+                                url
+                                width
+                                height
+                            }
+                        }
+                    }
+                    bgMobile {
+                        data {
+                            attributes {
+                                url
+                                width
+                                height
+                            }
+                        }
+                    }
+                    listingThumbnail {
                         data {
                             attributes {
                                 url
@@ -804,6 +834,25 @@ export const PROGRAMS_DATA = gql`
                                 }
                             }
                         }
+                    }
+                    ctaButton {
+                        displayName
+                        page {
+                            data {
+                                attributes {
+                                    parent {
+                                        data {
+                                            attributes {
+                                                slug
+                                            }
+                                        }
+                                    }
+                                    slug
+                                }
+                            }
+                        }
+                        isExternalLink
+                        url
                     }
                     content {
                         __typename
@@ -879,6 +928,7 @@ export const PROGRAMS_DATA = gql`
                             headingType
                             description
                             isDarkBackground
+                            maxWidth
                             wrapperOptions {
                                 bgcolor
                                 spaceTop
@@ -892,11 +942,9 @@ export const PROGRAMS_DATA = gql`
                                     id
                                     attributes {
                                         name
-                                        age_range
-                                        level
                                         description
                                         slug
-                                        coverImage {
+                                        listingThumbnail {
                                             data {
                                                 attributes {
                                                     url
@@ -1198,7 +1246,7 @@ export const PROGRAMS_DATA = gql`
                             heading
                             description
                             isMobileSlider
-                            people {
+                            people(pagination: { pageSize: 20 }) {
                                 data {
                                     attributes {
                                         name
@@ -1221,6 +1269,19 @@ export const PROGRAMS_DATA = gql`
                                         }
                                     }
                                 }
+                            }
+                            ctaButton {
+                                displayName
+                                page {
+                                    data {
+                                        attributes {
+                                            slug
+                                        }
+                                    }
+                                }
+                                isExternalLink
+                                url
+                                variation
                             }
                             wrapperOptions {
                                 bgcolor
@@ -1344,6 +1405,19 @@ export const PROGRAMS_DATA = gql`
                                 isTwoColumns
                             }
                         }
+                        ... on ComponentSectionsTextTileRowBlock {
+                            tiles {
+                                heading
+                                description
+                            }
+                            offsetPos
+                            wrapperOptions {
+                                bgcolor
+                                spaceTop
+                                spaceBtm
+                                isTwoColumns
+                            }
+                        }
                     }
                     venue {
                         venue
@@ -1356,6 +1430,18 @@ export const PROGRAMS_DATA = gql`
                         endDate
                     }
                     disclamer
+                    faq {
+                        faqlists: questionBlocks {
+                            question
+                            answer
+                        }
+                        wrapperOptions {
+                            bgcolor
+                            spaceTop
+                            spaceBtm
+                            isTwoColumns
+                        }
+                    }
                 }
             }
         }

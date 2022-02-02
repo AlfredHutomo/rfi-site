@@ -20,8 +20,6 @@ const ProgramDetails = ({ programData, layoutData }) => {
                 {/* Dynamic Sections */}
                 <Sections sections={sections} />
             </ProgramLayout>
-
-            <RegisterInterestCard />
         </PageWrapper>
     );
 };

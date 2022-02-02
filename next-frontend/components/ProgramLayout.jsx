@@ -1,14 +1,16 @@
 import HeroBanner from './sections/HeroBanner';
 import ProfileCardList from './sections/ProfileCardList';
 import ProgramDetailTiles from './ProgramDetailTiles';
+import RegisterInterestCard from './sections/RegisterInterestCard';
+import FAQAccordion from './sections/FAQAccordion';
 
 const ProgramLayout = ({ programData, children }) => {
     const headerData = {
-        bgImageDesktop: programData.attributes.coverImage,
-        bgImageMobile: programData.attributes.coverImage,
+        bgImageDesktop: programData.attributes.bgDesktop,
+        bgImageMobile: programData.attributes.bgMobile,
         heading: programData.attributes.name,
         button2: {
-            text: 'Register Your Interest',
+            displayName: 'Register Your Interest',
             url: '#',
         },
         isContentOnRight: true,
@@ -33,8 +35,11 @@ const ProgramLayout = ({ programData, children }) => {
             {children}
             <ProgramDetailTiles data={details} />
             {/* Only render if coach is set to program */}
-
             <ProfileCardList sectionData={coachData} />
+            <RegisterInterestCard />
+            {programData.attributes.faq && (
+                <FAQAccordion sectionData={programData.attributes.faq} />
+            )}
         </>
     );
 };

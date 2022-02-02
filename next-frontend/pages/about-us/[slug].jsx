@@ -9,20 +9,8 @@ import {
     getPagePaths,
     getChildPagesOf,
 } from '../../utils/api';
-import { useEffect, useState } from 'react';
 
-const Pages = ({ pageData, layoutData }) => {
-    const [childPages, setChildPages] = useState([]);
-
-    useEffect(async () => {
-        const fetchData = async () => {
-            const links = await getChildPagesOf('about-us');
-            setChildPages(links);
-        };
-
-        fetchData();
-    }, []);
-
+const Pages = ({ pageData, layoutData, childPages }) => {
     return (
         <PageWrapper layoutData={layoutData}>
             <Sections sections={pageData.attributes.content} />
@@ -40,12 +28,13 @@ export const getStaticPaths = async (context) => {
 
 export const getStaticProps = async (context) => {
     const pageData = await getPageData({ slug: context.params.slug });
-
     const layoutData = await getLayoutData();
+    const childPages = await getChildPagesOf('about-us');
 
     return {
         props: {
             pageData,
+            childPages,
             layoutData,
         },
     };

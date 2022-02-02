@@ -9,32 +9,30 @@ import DefaultCardImg from './default-card-img.jpg';
 import Button from '../../global/Button';
 
 const TimelineCard = (props) => {
-    const { image, heading, date } = props;
+    const { image, heading, date, children } = props;
 
     return (
         <div className={styles['timeline-card-wrapper']}>
             <div className={styles['timeline-card-dot']}></div>
 
             <div className={styles['timeline-card-date']}>
-                {props.date != null ? props.date : ''}
+                {date != null ? date : ''}
             </div>
 
             <div className={styles['timeline-card-main']}>
-                <div className={styles['timeline-card-image']}>
-                    {props.image != null ? (
+                {image.data != null && (
+                    <div className={styles['timeline-card-image']}>
                         <Image
-                            src={props.image}
+                            src={image.data.attributes.url}
                             layout='fill'
                             objectFit='cover'
                             alt={''}
                         />
-                    ) : (
-                        <Image src={DefaultCardImg} alt={''} />
-                    )}
-                </div>
+                    </div>
+                )}
                 <div className={styles['timeline-card-content']}>
-                    {props.heading != null ? <h2>{props.heading}</h2> : ''}
-                    {props.children != null ? <h4>{props.children}</h4> : ''}
+                    {props.heading != null ? <h2>{heading}</h2> : ''}
+                    {props.children != null ? <h4>{children}</h4> : ''}
                 </div>
             </div>
         </div>

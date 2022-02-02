@@ -3,7 +3,7 @@ alerts:
     - rule: DOMAIN_FAILED
 databases:
     - engine: PG
-      name: db
+      name: strapi-rfi
       num_nodes: 1
       size: db-s-dev-database
       version: '12'
@@ -15,10 +15,10 @@ services:
       envs:
           - key: DATABASE_URL
             scope: RUN_AND_BUILD_TIME
-            value: ${db.DATABASE_URL}
+            value: ${strapi-rfi.DATABASE_URL}
           - key: RUN_AND_BUILD_TIME
             scope: RUN_TIME
-            value: ${db.DATABASE_URL}
+            value: ${strapi-rfi.DATABASE_URL}
       github:
           branch: main
           repo: relabstudios/rfi.site

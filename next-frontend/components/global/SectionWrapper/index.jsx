@@ -57,7 +57,7 @@ Wrapper.propTypes = {
 };
 
 Wrapper.defaultProps = {
-    bgcolor: '#e5e5e5',
+    bgcolor: '#F7F7F7',
     isTwoColumns: false,
 };
 

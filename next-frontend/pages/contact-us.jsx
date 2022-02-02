@@ -2,6 +2,7 @@ import PageWrapper from '../components/global/PageWrapper';
 import Sections from '../components/sections';
 
 import { getLayoutData, getPageData } from '../utils/api';
+import { checkForLayoutComponent } from '../utils/utils';
 
 const ContactUs = ({ pageData, layoutData }) => {
     return (
@@ -12,7 +13,11 @@ const ContactUs = ({ pageData, layoutData }) => {
 };
 
 export const getStaticProps = async (context) => {
+    let misc = [];
     const pageData = await getPageData({ slug: 'contact-us' });
+    const specialLayout = await checkForLayoutComponent(
+        pageData.attributes.content
+    );
     const layoutData = await getLayoutData();
 
     return {

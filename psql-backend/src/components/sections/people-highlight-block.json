@@ -27,6 +27,11 @@
       "type": "component",
       "repeatable": false,
       "component": "elements.wrapper-options"
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.button-link"
     }
   }
 }

@@ -63,7 +63,7 @@ const Section = ({ sectionData }) => {
     }
 
     // Display the section
-    return <SectionComponent sectionData={sectionData} />;
+    return <SectionComponent sectionData={sectionData} specialLayout={{}} />;
 };
 
 const Sections = ({ sections }) => {

@@ -13,20 +13,30 @@ const ProgramDetailVenueTile = (props) => {
         <div className={styles['program-detail-date-tile']}>
             <div className={styles['program-detail-date-tile-icon']}>
                 <Icon className={styles['program-detail-date-tile-icon-mui']}>
-                    calendar_today
+                    place
                 </Icon>
             </div>
             <div>
                 <h3 className='h3'>Venue</h3>
-                {
-                    (data.venue != '') ? <p>{data.venue}</p> : 'No venue available at this time'
-                }
-                {
-                    (data.venueDescription != '') ? <p>{data.venueDescription}</p> : 'No venue info available at this time'
-                }
-                <Button size='small' to={data.venueMapLink}>Get directions</Button>
+                {data.venue != '' ? (
+                    <>
+                        <p>
+                            <b>{data.venue}</b>
+                        </p>
+                        <p>{data.venueAddress}</p>
+                    </>
+                ) : (
+                    'No venue available at this time'
+                )}
+                {data.venueDescription != '' ? (
+                    <p>{data.venueDescription}</p>
+                ) : (
+                    'No venue info available at this time'
+                )}
+                <Button size='small' to={data.venueMapLink}>
+                    Get directions
+                </Button>
             </div>
-
 
             {props.children != null ? (
                 <h5 className={'h5 ' + styles['usp-block-content']}>

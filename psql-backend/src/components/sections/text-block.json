@@ -12,14 +12,7 @@
     },
     "headingType": {
       "type": "enumeration",
-      "enum": [
-        "h1",
-        "h2",
-        "h3",
-        "h4",
-        "h5",
-        "h6"
-      ]
+      "enum": ["h1", "h2", "h3", "h4", "h5", "h6"]
     },
     "description": {
       "type": "richtext"
@@ -27,6 +20,9 @@
     "isDarkBackground": {
       "type": "boolean",
       "default": false
+    },
+    "maxWidth": {
+      "type": "string"
     },
     "wrapperOptions": {
       "displayName": "Wrapper Options",
