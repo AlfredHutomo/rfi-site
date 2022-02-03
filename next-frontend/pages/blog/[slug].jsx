@@ -12,14 +12,14 @@ const BlogArticle = ({ blogData, layoutData }) => {
     );
 };
 
-export const getStaticPaths = async () => {
-    const paths = await getBlogPaths();
+// export const getStaticPaths = async () => {
+//     const paths = await getBlogPaths();
 
-    return {
-        paths,
-        fallback: false,
-    };
-};
+//     return {
+//         paths,
+//         fallback: false,
+//     };
+// };
 
 export const getServerSideProps = async (context) => {
     const blogData = await getBlogData({ slug: context.params.slug });
