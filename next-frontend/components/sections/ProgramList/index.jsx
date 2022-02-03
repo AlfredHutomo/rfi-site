@@ -17,8 +17,6 @@ const ProgramList = ({ sectionData }) => {
         return tags;
     };
 
-    console.log(programData);
-
     return (
         <SectionWrapper options={sectionData.wrapperOptions}>
             <div className={styles['program-list-wrapper']}>
@@ -40,11 +38,11 @@ const ProgramList = ({ sectionData }) => {
                 ) : (
                     ''
                 )}
-                <div className={styles['program-list-cta']}>
+                {/* <div className={styles['program-list-cta']}>
                     <Button variant='2' to='/programs'>
                         See all programs
                     </Button>
-                </div>
+                </div> */}
             </div>
         </SectionWrapper>
     );
