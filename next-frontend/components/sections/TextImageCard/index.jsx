@@ -76,11 +76,9 @@ const TextImageCard = ({ sectionData }) => {
                     ) : (
                         ''
                     )}
-                    {text != null ? <ReactMarkdown>{text}</ReactMarkdown> : ''}
-                    {button != null ? (
-                        <Button to={button.url}>{button.text}</Button>
-                    ) : (
-                        ''
+                    {text != null && <ReactMarkdown>{text}</ReactMarkdown>}
+                    {button != null && (
+                        <Button to={button.url}>{button.displayName}</Button>
                     )}
                 </div>
             </div>
