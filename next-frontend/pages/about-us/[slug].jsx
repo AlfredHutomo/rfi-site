@@ -20,11 +20,11 @@ const Pages = ({ pageData, layoutData, childPages }) => {
     );
 };
 
-export const getStaticPaths = async (context) => {
-    const pages = await getPagePaths({ childOf: 'about-us' });
+// export const getStaticPaths = async (context) => {
+//     const pages = await getPagePaths({ childOf: 'about-us' });
 
-    return { paths: pages, fallback: false };
-};
+//     return { paths: pages, fallback: false };
+// };
 
 export const getServerSideProps = async (context) => {
     const pageData = await getPageData({ slug: context.params.slug });
