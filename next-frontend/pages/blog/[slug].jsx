@@ -30,7 +30,6 @@ export const getServerSideProps = async (context) => {
             blogData,
             layoutData,
         },
-        revalidate: 1,
     };
 };
 

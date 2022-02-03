@@ -37,7 +37,6 @@ export const getServerSideProps = async (context) => {
             childPages,
             layoutData,
         },
-        revalidate: 1,
     };
 };
 

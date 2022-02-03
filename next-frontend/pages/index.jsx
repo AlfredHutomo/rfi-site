@@ -22,7 +22,6 @@ export const getServerSideProps = async (context) => {
             pageData,
             layoutData,
         },
-        revalidate: 1,
     };
 };
 
