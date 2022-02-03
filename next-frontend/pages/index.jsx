@@ -13,7 +13,7 @@ const Home = ({ pageData, layoutData }) => {
     );
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const pageData = await getPageData({ slug: 'home' });
     const layoutData = await getLayoutData();
 
@@ -22,7 +22,7 @@ export const getStaticProps = async (context) => {
             pageData,
             layoutData,
         },
-        revalidate: 60,
+        revalidate: 1,
     };
 };
 

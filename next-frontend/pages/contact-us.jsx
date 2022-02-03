@@ -12,7 +12,7 @@ const ContactUs = ({ pageData, layoutData }) => {
     );
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     let misc = [];
     const pageData = await getPageData({ slug: 'contact-us' });
     const specialLayout = await checkForLayoutComponent(

@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
     };
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const blogData = await getBlogData({ slug: context.params.slug });
     const layoutData = await getLayoutData();
 
@@ -30,6 +30,7 @@ export const getStaticProps = async (context) => {
             blogData,
             layoutData,
         },
+        revalidate: 1,
     };
 };
 

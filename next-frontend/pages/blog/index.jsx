@@ -17,7 +17,7 @@ const Blog = ({ pageData, layoutData }) => {
     );
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const pageData = await getPageData({ slug: 'blog' });
     const layoutData = await getLayoutData();
 
@@ -26,6 +26,7 @@ export const getStaticProps = async (context) => {
             pageData,
             layoutData,
         },
+        revalidate: 1,
     };
 };
 

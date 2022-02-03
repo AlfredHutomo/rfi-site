@@ -31,7 +31,7 @@ export async function checkForLayoutComponent(content) {
         });
     }
 
-    console.log(specialLayout);
+    // console.log(specialLayout);
 
     return {};
 }

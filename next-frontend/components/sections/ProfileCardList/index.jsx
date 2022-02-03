@@ -18,7 +18,7 @@ const ProfileCardList = ({ sectionData }) => {
         ctaButton,
     } = sectionData;
 
-    const slider = isMobileSlider != null ? styles['profile-list-slider'] : '';
+    const slider = isMobileSlider ? styles['profile-list-slider'] : '';
 
     return (
         <SectionWrapper options={wrapperOptions}>

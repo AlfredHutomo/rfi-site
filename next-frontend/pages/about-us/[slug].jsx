@@ -26,7 +26,7 @@ export const getStaticPaths = async (context) => {
     return { paths: pages, fallback: false };
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const pageData = await getPageData({ slug: context.params.slug });
     const layoutData = await getLayoutData();
     const childPages = await getChildPagesOf('about-us');
@@ -37,6 +37,7 @@ export const getStaticProps = async (context) => {
             childPages,
             layoutData,
         },
+        revalidate: 1,
     };
 };
 

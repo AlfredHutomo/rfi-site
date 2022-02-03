@@ -13,7 +13,7 @@ const Register = ({ pageData, layoutData }) => {
     );
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const pageData = await getPageData({ slug: 'register' });
     const layoutData = await getLayoutData();
 

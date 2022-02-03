@@ -33,7 +33,7 @@ export const getStaticPaths = async () => {
     };
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const programData = await getProgramsData({ slug: context.params.slug });
     const layoutData = await getLayoutData();
 
@@ -42,7 +42,7 @@ export const getStaticProps = async (context) => {
             programData,
             layoutData,
         },
-        revalidate: 60,
+        revalidate: 1,
     };
 };
 
