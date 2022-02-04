@@ -13,7 +13,7 @@ const LinkGroup = (props) => {
             <div className={styles['link-group-wrapper']}>
                 {props.heading != null ? (
                     <div className={styles['link-group-header']}>
-                        <h3 className='h3'>{props.heading}</h3>
+                        <h3 className={'h3 ' + styles['link-group-heading']}>{props.heading}</h3>
                     </div>
                 ) : (
                     ''
