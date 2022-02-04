@@ -9,9 +9,6 @@
         display: block;
         text-align: center;
 
-        @include bp-up($bp-md) {
-        }
-
         img {
             margin: 5px;
         }
@@ -49,6 +46,11 @@
 
     &-button {
         margin: 1rem;
+
+        @include bp-down($bp-sm) {
+            margin: 1rem 0;
+            width: 100%;
+        }
     }
 }
 

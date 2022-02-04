@@ -112,15 +112,18 @@
         color: $color-brand-01;
         z-index: inherit;
 
+        &:hover {
+            > a {
+                color: $color-brand-02;
+            }
+        }
+
         > a {
             display: block;
             padding: 2rem 2rem;
             color: inherit;
             transition: color 0.4s ease;
 
-            &:hover {
-                color: $color-brand-02;
-            }
 
             @include bp-down($bp-md) {
                 padding: 2rem $site-mobile-padding;
@@ -208,8 +211,9 @@
             }
         }
 
-        button {
+        a {
             @include bp-down($bp-md) {
+                padding: 1.5rem;
                 width: 100%;
             }
         }

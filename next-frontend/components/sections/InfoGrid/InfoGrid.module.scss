@@ -52,6 +52,12 @@
 
         &-cta {
             margin-top: 3rem;
+
+            &:hover {
+                color: $color-brand-01;
+                background-color: $color-gs-white;
+                border-color: $color-gs-white;
+            }
         }
     }
 
