@@ -136,7 +136,7 @@ const InfoGridItemContentType1 = (props) => {
             )}
 
             {buttonText != null ? (
-                <Button variant='2' to={buttonLink}>
+                <Button variant='2' to={buttonLink} className={styles['info-grid-item-cta']}>
                     {buttonText}
                 </Button>
             ) : (

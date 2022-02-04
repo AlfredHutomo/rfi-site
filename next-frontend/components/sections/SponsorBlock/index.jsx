@@ -20,7 +20,7 @@ const SponsorBlock = ({ sectionData }) => {
     return (
         <SectionWrapper options={wrapperOptions}>
             <div className={styles['sponsor-block-wrapper']}>
-                <div className={styles['sponsor-block-tier']}>
+                <div className={styles['sponsor-block-tier'] + ' ' + styles['sponsor-block-tier-gold']}>
                     {goldSponsors.data != null && goldSponsors.data.length != 0
                         ? goldSponsors.data.map((sponsor, i) =>
                               sponsor.attributes.logo.data ? (
@@ -60,7 +60,7 @@ const SponsorBlock = ({ sectionData }) => {
                           )
                         : ''}
                 </div>
-                <div className={styles['sponsor-block-tier']}>
+                <div className={styles['sponsor-block-tier'] + ' ' + styles['sponsor-block-tier-silver']}>
                     {silverSponsors.length != 0 || silverSponsors != null
                         ? silverSponsors.data.map((sponsor, i) =>
                               sponsor.attributes.logo.data ? (
@@ -100,7 +100,7 @@ const SponsorBlock = ({ sectionData }) => {
                           )
                         : ''}
                 </div>
-                <div className={styles['sponsor-block-tier']}>
+                <div className={styles['sponsor-block-tier'] + ' ' + styles['sponsor-block-tier-bronze']}>
                     {bronzeSponsors.length != 0 || bronzeSponsors != null
                         ? bronzeSponsors.data.map((sponsor, i) =>
                               sponsor.attributes.logo.data ? (

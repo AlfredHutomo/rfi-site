@@ -26,7 +26,7 @@ const TextImageCard = ({ sectionData }) => {
 
     const reverse = imageOnRight ? styles['text-image-card--reverse'] : '';
     const vcentre = verticalAlign ? styles['text-image-card--vcentre'] : '';
-
+    console.log(button);
     return (
         <SectionWrapper options={wrapperOptions}>
             <div

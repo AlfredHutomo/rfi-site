@@ -116,6 +116,11 @@
             display: block;
             padding: 2rem 2rem;
             color: inherit;
+            transition: color 0.4s ease;
+
+            &:hover {
+                color: $color-brand-02;
+            }
 
             @include bp-down($bp-md) {
                 padding: 2rem $site-mobile-padding;
@@ -130,7 +135,17 @@
                 }
             }
         }
+        &-dropdown {
+            > a::after {
+                margin-left: 5px;
+                font-size: 2rem;
+                font-family: 'Material Icons';
+                content: 'arrow_drop_down';
+                vertical-align: top;
+            }
+        }
     }
+
 
     &-subnav {
         display: none;
@@ -158,6 +173,11 @@
                 display: block;
                 padding: 1rem 2rem;
                 color: inherit;
+                transition: color 0.4s ease;
+
+                &:hover {
+                    color: $color-brand-02;
+                }
 
                 @include bp-down($bp-md) {
                     padding: 0.5rem $site-mobile-padding;

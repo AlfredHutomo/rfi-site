@@ -45,7 +45,7 @@ const LinkDropDown = ({ navData }) => {
     };
 
     return (
-        <li className={styles['page-navigation-item']}>
+        <li className={styles['page-navigation-item'] + ' ' + styles['page-navigation-item-dropdown']}>
             <Link href={primaryUrl}>
                 <a>{navData.displayName}</a>
             </Link>
@@ -77,7 +77,7 @@ const ProgramsDropdown = ({ navData }) => {
     };
 
     return (
-        <li className={styles['page-navigation-item']}>
+        <li className={styles['page-navigation-item'] + ' ' + styles['page-navigation-item-dropdown']}>
             <Link href={'/programs'}>
                 <a>{displayName}</a>
             </Link>

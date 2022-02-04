@@ -2,7 +2,6 @@
 @import "../../../styles/_utils";
 
 .sponsor-block {
-
     &-wrapper {
         margin: 0 auto;
         width: 100%;
@@ -21,12 +20,24 @@
     &-tier {
         display: flex;
         flex-wrap: wrap;
+        gap: 4rem;
         justify-content: center;
+
+        &-silver {
+            > div {
+                max-width: 25rem;
+            }
+        }
+        &-bronze {
+            > div {
+                max-width: 12rem;
+            }
+        }
     }
 
     &-image-wrapper {
         margin: 1rem;
-        width: 400px;
+        width: 300px;
         height: 150px;
         position: relative;
         z-index: $level-base;

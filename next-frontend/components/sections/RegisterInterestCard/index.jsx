@@ -51,7 +51,7 @@ const RegisterInterestCard = (props) => {
                         Register your interest
                     </Button>
                     <span className={styles['rinterest-card__caption']}>
-                        Please allow 24-48 hours for our tem to get back to you
+                        Please allow 24-48 hours for our team to get back to you
                     </span>
                 </CardContent>
             </Card>

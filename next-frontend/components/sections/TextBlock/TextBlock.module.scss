@@ -14,6 +14,7 @@
     &-heading {
         margin-bottom: 0;
         padding-bottom: 3rem;
+        color: $color-brand-01;
     }
     &-icon {
         color: $color-brand-03;
@@ -25,5 +26,9 @@
         font-size: 1.6rem;
         line-height: 2.4rem;
         color: inherit;
+
+        p {
+            margin: 1.5rem 0 0 0;
+        }
     }
 }
