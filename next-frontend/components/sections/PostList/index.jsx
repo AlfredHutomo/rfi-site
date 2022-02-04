@@ -66,13 +66,13 @@ const PostList = (props) => {
                                         //style={{ maxWidth: '40rem' }}
                                         data={{
                                             image: post.attributes.cover_Image
-                                                ?.data.attributes.url,
+                                                .data?.attributes.url,
                                             imageWidth:
-                                                post.attributes.cover_Image
-                                                    ?.data.attributes.width,
+                                                post.attributes.cover_Image.data
+                                                    ?.attributes.width,
                                             imageHeight:
-                                                post.attributes.cover_Image
-                                                    ?.data.attributes.height,
+                                                post.attributes.cover_Image.data
+                                                    ?.attributes.height,
                                             title: post.attributes.title,
                                             date: post.attributes.createdAt,
                                             author: post.attributes.author.data,
