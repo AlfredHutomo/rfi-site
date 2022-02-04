@@ -43,9 +43,18 @@
         font-family: $font-heading;
         font-weight: 400;
         font-size: 9.8rem;
-        flex-basis: 1;
+        flex-basis: 0;
         flex-grow: 1;
         color: $color-brand-02;
+
+        @include bp-down($bp-md) {
+            min-width: auto;
+            font-size: 5.8rem;
+        }
+
+        @include bp-down($bp-sm) {
+            font-size: 4.5rem;
+        }
 
         span {
             display: block;
