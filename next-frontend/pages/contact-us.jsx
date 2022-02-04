@@ -13,17 +13,15 @@ const ContactUs = ({ pageData, layoutData }) => {
 };
 
 export const getServerSideProps = async (context) => {
-    let misc = [];
-    const pageData = await getPageData({ slug: 'contact-us' });
-    const specialLayout = await checkForLayoutComponent(
-        pageData.attributes.content
-    );
-    const layoutData = await getLayoutData();
+    // let misc = [];
+    // const specialLayout = await checkForLayoutComponent(
+    //     pageData.attributes.content
+    // );
 
     return {
         props: {
-            pageData,
-            layoutData,
+            pageData: await getPageData({ slug: 'contact-us' }),
+            layoutData: await getLayoutData(),
         },
     };
 };
