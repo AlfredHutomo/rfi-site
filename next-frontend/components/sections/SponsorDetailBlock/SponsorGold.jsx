@@ -55,11 +55,11 @@ const SponsorGold = (props) => {
                 )}
                 {data.attributes.social != null &&
                 data.attributes.social.length != 0 ? (
-                    <>
+                    <div className={styles['sponsor-detail-block-gold-social']}>
                         {data.attributes.social.map((item, i) => (
                             <Icon key={i}>{item.platform}</Icon>
                         ))}
-                    </>
+                    </div>
                 ) : (
                     ''
                 )}
