@@ -1,4 +1,4 @@
-export default function (req, res) {
+export default function sendContactEmail(req, res) {
     const { fullName, email, typeOfEnquiry, enquiry } = req.body;
 
     /**
