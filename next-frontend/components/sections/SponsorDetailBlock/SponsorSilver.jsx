@@ -12,7 +12,7 @@ const SponsorSilver = (props) => {
         <div className={styles['sponsor-detail-block-silver']}>
             <div className={styles['sponsor-detail-block-silver-info']}>
                 {data.attributes.name != null ? (
-                    <h3 className='h3'>{data.attributes.name}</h3>
+                    <h4 className={'h4 ' + styles['sponsor-detail-block-heading']}>{data.attributes.name}</h4>
                 ) : (
                     ''
                 )}

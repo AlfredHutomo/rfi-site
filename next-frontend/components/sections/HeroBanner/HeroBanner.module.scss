@@ -50,6 +50,9 @@ $hero-breakpoint: calc(
 
     &-img {
         //height: 1000px;
+        margin: 0 auto;
+        max-width: 1900px;
+        overflow: hidden;
     }
 
     &-heading {

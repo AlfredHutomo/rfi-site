@@ -21,7 +21,7 @@ const SponsorBronze = ({ data }) => {
                 )}
             </div>
             <div className={styles['sponsor-detail-block-bronze-info']}>
-                {name != null ? <h6 className='h6'>{name}</h6> : ''}
+                {name != null ? <h6 className={'h6 ' + styles['sponsor-detail-block-heading']}>{name}</h6> : ''}
             </div>
         </div>
     );

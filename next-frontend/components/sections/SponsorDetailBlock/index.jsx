@@ -18,7 +18,7 @@ const SponsorDetailBlock = (props) => {
                 {goldSponsors?.data !== null &&
                     goldSponsors?.data.length !== 0 && (
                         <div className={styles['sponsor-detail-block-row']}>
-                            <h2 className='h2'>Our gold sponsors</h2>
+                            <h2 className={'h2 ' + styles['sponsor-detail-block-row-heading']}>Our gold sponsors</h2>
                             <div
                                 className={
                                     styles['sponsor-detail-block-row-content']
@@ -37,7 +37,7 @@ const SponsorDetailBlock = (props) => {
                 {silverSponsors?.data !== null &&
                     silverSponsors?.data.length !== 0 && (
                         <div className={styles['sponsor-detail-block-row']}>
-                            <h2 className='h2'>Our silver sponsors</h2>
+                            <h2 className={'h2 ' + styles['sponsor-detail-block-row-heading']}>Our silver sponsors</h2>
                             <div
                                 className={
                                     styles['sponsor-detail-block-row-content']
@@ -56,7 +56,7 @@ const SponsorDetailBlock = (props) => {
                 {bronzeSponsors?.data !== null &&
                     bronzeSponsors?.data.length !== 0 && (
                         <div className={styles['sponsor-detail-block-row']}>
-                            <h2 className='h2'>Our bronze sponsors</h2>
+                            <h2 className={'h2 ' + styles['sponsor-detail-block-row-heading']}>Our bronze sponsors</h2>
                             <div
                                 className={
                                     styles['sponsor-detail-block-row-content']
