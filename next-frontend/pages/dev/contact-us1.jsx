@@ -1,8 +1,8 @@
-import PageWrapper from '../components/global/PageWrapper';
-import Sections from '../components/sections';
+import PageWrapper from '../../components/global/PageWrapper';
+import Sections from '../../components/sections';
 
-import { getLayoutData, getPageData } from '../utils/api';
-import { checkForLayoutComponent } from '../utils/utils';
+import { getLayoutData, getPageData } from '../../utils/api';
+import { checkForLayoutComponent } from '../../utils/utils';
 
 const ContactUs = ({ pageData, layoutData }) => {
     return (

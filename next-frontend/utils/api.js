@@ -57,7 +57,7 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
     return data;
 }
 
-export async function getPageData({ slug }) {
+export async function getPageData({ slug, indexPage }) {
     const apolloClient = getApolloClient();
 
     const { data } = await apolloClient.query({
