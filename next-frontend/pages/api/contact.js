@@ -6,23 +6,34 @@ export default function sendContactEmail(req, res) {
      * env variables.
      */
 
-    let nodemailer = require('nodemailer');
+    const nodemailer = require('nodemailer');
+    const ReactDOMServer = require('react-dom/server');
+
     const transporter = nodemailer.createTransport({
-        port: 465,
+        name: 'gmail.com',
+        port: 587,
         host: 'smtp.gmail.com',
         auth: {
             user: process.env.GMAIL_EMAIL_AUTH,
             pass: process.env.GMAIL_PASSWORD_AUTH,
         },
-        secure: true,
     });
 
     const mailData = {
-        from: email,
-        to: 'RFI email here',
+        from: {
+            name: fullName,
+            address: email,
+        },
+        to: 'alfred@relab.com.au',
+        // cc: ['sam@relab.com.au', 'didi@relab.com.au'],
         subject: `Enquiry about ${typeOfEnquiry} From ${fullName}`,
         text: enquiry,
-        html: <div>{enquiry}</div>,
+        html: ReactDOMServer.renderToString(
+            <div>
+                <p>{enquiry}</p>
+                <small>Reply To: {email}</small>
+            </div>
+        ),
     };
 
     transporter.sendMail(mailData, (err, info) => {
@@ -30,5 +41,5 @@ export default function sendContactEmail(req, res) {
         else console.log(info);
     });
 
-    res.status(200);
+    res.status(200).send('Success');
 }
