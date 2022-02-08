@@ -123,7 +123,8 @@
             transform: rotate(180deg);
         }
 
-        &-icon {
+        &-icon,
+        span {
             font-size: 3rem;
             position: absolute;
             top: calc(50% - 1.5rem);
