@@ -17,6 +17,8 @@ const TextBlock = ({ sectionData }) => {
         wrapperOptions,
     } = sectionData;
 
+    const defaultWidth = '730px';
+
     const altStyle =
         isDarkBackground != null ? isDarkBackground && styles['darkBg'] : '';
 
@@ -58,7 +60,7 @@ const TextBlock = ({ sectionData }) => {
                 style={
                     maxWidth != null
                         ? { maxWidth: maxWidth + 'px' }
-                        : { maxWidth: maxWidth }
+                        : { maxWidth: defaultWidth }
                 }
             >
                 {heading != null ? headingCheck() : ''}
@@ -77,9 +79,6 @@ const TextBlock = ({ sectionData }) => {
 TextBlock.propTypes = {};
 
 TextBlock.defaultProps = {
-    sectionData: {
-        maxWidth: 730,
-    },
 };
 
 export default TextBlock;
