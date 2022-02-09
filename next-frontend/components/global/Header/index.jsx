@@ -14,7 +14,7 @@ import { checkValidURL } from '../../../utils/utils';
 const LinkOnly = ({ navData }) => {
     const to = navData.isExternalLink
         ? checkValidURL(navData.url)
-        : checkValidURL(navData.page.data.attributes.slug);
+        : checkValidURL(navData.page.data.attributes.url);
 
     return (
         <li className={styles['page-navigation-item']}>
@@ -28,12 +28,12 @@ const LinkOnly = ({ navData }) => {
 const LinkDropDown = ({ navData }) => {
     const primaryUrl = checkValidURL(navData.url);
 
-    const SubLinks = ({ data, parentUrl }) => {
+    const SubLinks = ({ data }) => {
         const { url, displayName, isExternalLink, page } = data;
 
         const secondaryUrl = isExternalLink
             ? checkValidURL(url)
-            : primaryUrl + checkValidURL(page.data.attributes.slug);
+            : checkValidURL(page.data.attributes.url);
 
         return (
             <li className={styles['page-navigation-subnav-item']}>
@@ -45,14 +45,20 @@ const LinkDropDown = ({ navData }) => {
     };
 
     return (
-        <li className={styles['page-navigation-item'] + ' ' + styles['page-navigation-item-dropdown']}>
+        <li
+            className={
+                styles['page-navigation-item'] +
+                ' ' +
+                styles['page-navigation-item-dropdown']
+            }
+        >
             <Link href={primaryUrl}>
                 <a>{navData.displayName}</a>
             </Link>
 
             <ul className={styles['page-navigation-subnav']}>
                 {navData.links.map((link, i) => (
-                    <SubLinks key={i} data={link} parentUrl={primaryUrl} />
+                    <SubLinks key={i} data={link} />
                 ))}
             </ul>
         </li>
@@ -77,7 +83,13 @@ const ProgramsDropdown = ({ navData }) => {
     };
 
     return (
-        <li className={styles['page-navigation-item'] + ' ' + styles['page-navigation-item-dropdown']}>
+        <li
+            className={
+                styles['page-navigation-item'] +
+                ' ' +
+                styles['page-navigation-item-dropdown']
+            }
+        >
             <Link href={'/programs'}>
                 <a>{displayName}</a>
             </Link>
