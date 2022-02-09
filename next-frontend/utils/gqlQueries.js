@@ -61,10 +61,26 @@ export const PAGE_DATA = gql`
                             }
                             button1 {
                                 displayName
+                                isExternalLink
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                                 url
                             }
                             button2 {
                                 displayName
+                                isExternalLink
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                                 url
                             }
                             isContentOnRight
@@ -645,6 +661,7 @@ export const LAYOUT_DATA = gql`
                                     data {
                                         attributes {
                                             shortName
+                                            url
                                             slug
                                         }
                                     }
@@ -671,6 +688,7 @@ export const LAYOUT_DATA = gql`
                                     attributes {
                                         shortName
                                         slug
+                                        url
                                     }
                                 }
                             }
@@ -725,6 +743,7 @@ export const LAYOUT_DATA = gql`
                                         attributes {
                                             shortName
                                             slug
+                                            url
                                         }
                                     }
                                 }
@@ -750,6 +769,7 @@ export const LAYOUT_DATA = gql`
                                     attributes {
                                         shortName
                                         slug
+                                        url
                                     }
                                 }
                             }
