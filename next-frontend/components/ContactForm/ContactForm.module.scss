@@ -1,8 +1,7 @@
-@import "../../styles/_base";
-@import "../../styles/_utils";
+@import '../../styles/_base';
+@import '../../styles/_utils';
 
 .contact-form {
-
     &-wrapper {
     }
 
@@ -24,8 +23,13 @@
         font-family: $font-body;
     }
 
-    input[type="text"],
-    input[type="email"],
+    &-error {
+        font-size: 1.2rem;
+        color: $color-status-alert;
+    }
+
+    input[type='text'],
+    input[type='email'],
     select,
     textarea {
         padding: 1.2rem 1rem;
@@ -40,8 +44,12 @@
             color: $color-gs-03;
         }
     }
+
+    &-input-error {
+        border: 1px solid $color-status-alert !important;
+    }
+
     textarea {
         min-height: 20rem;
     }
 }
-

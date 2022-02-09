@@ -5,8 +5,11 @@ import { useState } from 'react';
 import styles from './ContactForm.module.scss';
 import { useFormik } from 'formik';
 
+import * as Yup from 'yup';
+import { string } from 'prop-types';
+
 const ContactForm = (props) => {
-    const { heading } = props;
+    const { heading, onSubmitSuccess } = props;
 
     const formik = useFormik({
         initialValues: {
@@ -15,6 +18,16 @@ const ContactForm = (props) => {
             typeOfEnquiry: '',
             enquiry: '',
         },
+        validationSchema: Yup.object({
+            fullName: Yup.string().required('Please enter your full name.'),
+            email: Yup.string()
+                .email('A valid email is required.')
+                .required('Please add you email.'),
+            typeOfEnquiry: Yup.string().required(
+                'Please select type of enquiry.'
+            ),
+            enquiry: Yup.string().required('Enquiry cannot be empty.'),
+        }),
         onSubmit: (values) => {
             fetch('/api/contact', {
                 method: 'POST',
@@ -27,6 +40,7 @@ const ContactForm = (props) => {
                 console.log('Response received');
                 if (res.status === 200) {
                     console.log('Response succeeded!');
+                    onSubmitSuccess(true);
                 }
             });
         },
@@ -54,7 +68,18 @@ const ContactForm = (props) => {
                             type='text'
                             placeholder='Full Name'
                             {...formik.getFieldProps('fullName')}
+                            className={
+                                formik.touched.fullName &&
+                                formik.errors.fullName
+                                    ? styles['contact-form-input-error']
+                                    : null
+                            }
                         />
+                        {formik.touched.fullName && formik.errors.fullName ? (
+                            <p className={styles['contact-form-error']}>
+                                {formik.errors.fullName}
+                            </p>
+                        ) : null}
                     </div>
                     <div className={styles['contact-form-row']}>
                         <label
@@ -67,7 +92,17 @@ const ContactForm = (props) => {
                             type='email'
                             placeholder='Email'
                             {...formik.getFieldProps('email')}
+                            className={
+                                formik.touched.email && formik.errors.email
+                                    ? styles['contact-form-input-error']
+                                    : null
+                            }
                         />
+                        {formik.touched.email && formik.errors.email ? (
+                            <p className={styles['contact-form-error']}>
+                                {formik.errors.email}
+                            </p>
+                        ) : null}
                     </div>
                     <div className={styles['contact-form-row']}>
                         <label
@@ -76,13 +111,27 @@ const ContactForm = (props) => {
                         >
                             Type of enquiry
                         </label>
-                        <select {...formik.getFieldProps('typeOfEnquiry')}>
+                        <select
+                            {...formik.getFieldProps('typeOfEnquiry')}
+                            className={
+                                formik.touched.typeOfEnquiry &&
+                                formik.errors.typeOfEnquiry
+                                    ? styles['contact-form-input-error']
+                                    : null
+                            }
+                        >
                             <option value='' disabled>
                                 Select enquiry
                             </option>
                             <option value='programs'>programs</option>
                             <option value='sponsors'>sponsors</option>
                         </select>
+                        {formik.touched.typeOfEnquiry &&
+                        formik.errors.typeOfEnquiry ? (
+                            <p className={styles['contact-form-error']}>
+                                {formik.errors.typeOfEnquiry}
+                            </p>
+                        ) : null}
                     </div>
                     <div className={styles['contact-form-row']}>
                         <label
@@ -93,7 +142,18 @@ const ContactForm = (props) => {
                         </label>
                         <textarea
                             {...formik.getFieldProps('enquiry')}
+                            className={
+                                formik.touched.fullName &&
+                                formik.errors.fullName
+                                    ? styles['contact-form-input-error']
+                                    : null
+                            }
                         ></textarea>
+                        {formik.touched.enquiry && formik.errors.enquiry ? (
+                            <p className={styles['contact-form-error']}>
+                                {formik.errors.enquiry}
+                            </p>
+                        ) : null}
                     </div>
                     <div className={styles['contact-form-row']}>
                         <Button
