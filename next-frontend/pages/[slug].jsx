@@ -2,7 +2,6 @@ import PageWrapper from '../components/global/PageWrapper';
 import Sections from '../components/sections';
 
 import { getLayoutData, getPageData } from '../utils/api';
-import { checkForLayoutComponent } from '../utils/utils';
 
 const ContactUs = ({ pageData, layoutData }) => {
     return (
@@ -13,14 +12,9 @@ const ContactUs = ({ pageData, layoutData }) => {
 };
 
 export const getServerSideProps = async (context) => {
-    // let misc = [];
-    // const specialLayout = await checkForLayoutComponent(
-    //     pageData.attributes.content
-    // );
-
     return {
         props: {
-            pageData: await getPageData({ slug: 'contact-us' }),
+            pageData: await getPageData({ slug: context.params.slug }),
             layoutData: await getLayoutData(),
         },
     };

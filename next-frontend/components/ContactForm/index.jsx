@@ -16,7 +16,19 @@ const ContactForm = (props) => {
             enquiry: '',
         },
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values),
+            }).then((res) => {
+                console.log('Response received');
+                if (res.status === 200) {
+                    console.log('Response succeeded!');
+                }
+            });
         },
     });
 

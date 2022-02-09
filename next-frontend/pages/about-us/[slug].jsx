@@ -10,7 +10,7 @@ import {
     getChildPagesOf,
 } from '../../utils/api';
 
-const Pages = ({ pageData, layoutData, childPages }) => {
+const AboutChildrenPages = ({ pageData, layoutData, childPages }) => {
     return (
         <PageWrapper layoutData={layoutData}>
             <Sections sections={pageData.attributes.content} />
@@ -40,4 +40,4 @@ export const getServerSideProps = async (context) => {
     };
 };
 
-export default Pages;
+export default AboutChildrenPages;
