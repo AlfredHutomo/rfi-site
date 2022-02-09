@@ -13,7 +13,6 @@
     }
     &-heading {
         margin-bottom: 0;
-        padding-bottom: 3rem;
         color: $color-brand-01;
     }
     &-icon {
@@ -21,6 +20,7 @@
     }
 
     &-content {
+        margin-top: 2rem;
         font-family: $font-body;
         font-weight: 400;
         font-size: 1.6rem;
@@ -28,7 +28,11 @@
         color: inherit;
 
         p {
-            margin: 1.5rem 0 0 0;
+            margin: 0 0 1.5rem 0;
+
+            &:last-child {
+                margin: 0;
+            }
         }
     }
 }

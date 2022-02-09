@@ -7,19 +7,24 @@
         padding-bottom: 4rem;
         padding-left: $site-mobile-padding;
         padding-right: $site-mobile-padding;
-        //border: 1px dashed #888;
+        border: 1px dashed #888;
     }
 
     &-content {
         margin: 0 auto;
         width: 100%;
         max-width: $site-max-width;
-        //border: 1px dashed #444;
+        border: 1px dashed #444;
 
     }
     &-content-in-cols {
         display: flex;
         gap: 8rem;
+
+        @include bp-down($bp-md) {
+            flex-direction: column;
+            gap: 4rem;
+        }
     }
 }
 

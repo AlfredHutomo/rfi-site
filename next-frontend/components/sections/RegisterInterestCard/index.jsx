@@ -40,7 +40,7 @@ const RegisterInterestCard = (props) => {
                         ready!
                     </h4>
                     <p className={styles['rinterest-card__body']}>
-                        Lorem ipsum dolor sit amet, consectetur adipsicing elit.
+                        1111111 Lorem ipsum dolor sit amet, consectetur adipsicing elit.
                         Tincidunt diam tempus convalis eget, consectetur
                         adipsicing elit.
                     </p>

@@ -21,8 +21,7 @@ const QuoteBlock = (props) => {
             <div className={styles['quote-block-wrapper']}>
                 <div className={styles['quote-block']}>
                     {quote != null ? (
-                        <div className={styles['quote-block-content']}>
-                            {quote}
+                        <div className={styles['quote-block-content']} dangerouslySetInnerHTML={{__html:quote}}>
                         </div>
                     ) : (
                         ''
