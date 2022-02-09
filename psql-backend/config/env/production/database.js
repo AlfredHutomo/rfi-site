@@ -14,9 +14,10 @@ module.exports = ({ env }) => ({
         rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false), // For self-signed certificates
       },
     },
+    debug: true,
   },
   settings: {
-    forceMigration: false,
+    forceMigration: true,
   },
   // TOTALLY OUTDATED DOCUMENTATION
   // defaultConnection: "default",
