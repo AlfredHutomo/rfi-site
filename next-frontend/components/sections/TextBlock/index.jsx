@@ -26,26 +26,22 @@ const TextBlock = ({ sectionData }) => {
         switch (headingType) {
             case 'h1':
                 return (
-                    <h1 className={'h1 ' + styles['text-block-heading']}>
-                        {heading}
+                    <h1 className={'h1 ' + styles['text-block-heading']} dangerouslySetInnerHTML={{__html:heading}}>
                     </h1>
                 );
             case 'h2':
                 return (
-                    <h2 className={'h2 ' + styles['text-block-heading']}>
-                        {heading}
+                    <h2 className={'h2 ' + styles['text-block-heading']} dangerouslySetInnerHTML={{__html:heading}}>
                     </h2>
                 );
             case 'h3':
                 return (
-                    <h3 className={'h3 ' + styles['text-block-heading']}>
-                        {heading}
+                    <h3 className={'h3 ' + styles['text-block-heading']} dangerouslySetInnerHTML={{__html:heading}}>
                     </h3>
                 );
             case 'h4':
                 return (
-                    <h4 className={'h4 ' + styles['text-block-heading']}>
-                        {heading}
+                    <h4 className={'h4 ' + styles['text-block-heading']} dangerouslySetInnerHTML={{__html:heading}}>
                     </h4>
                 );
             default:
@@ -58,7 +54,7 @@ const TextBlock = ({ sectionData }) => {
             <div
                 className={styles['text-block-wrapper'] + ' ' + altStyle}
                 style={
-                    maxWidth != null
+                    maxWidth != ''
                         ? { maxWidth: maxWidth + 'px' }
                         : { maxWidth: defaultWidth }
                 }

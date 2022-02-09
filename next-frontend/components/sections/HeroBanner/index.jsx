@@ -11,6 +11,7 @@ import DefaultImg1 from './default-img-program.jpg';
 import DefaultImgMobile1 from './default-img-mobile-program.jpg';
 
 import Button from '../../global/Button';
+import { checkValidURL } from '../../../utils/utils';
 
 const HeroBanner = (props) => {
     const {
