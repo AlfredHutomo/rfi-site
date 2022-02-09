@@ -15,6 +15,9 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  settings: {
+    forceMigration: false,
+  },
   // TOTALLY OUTDATED DOCUMENTATION
   // defaultConnection: "default",
   // connections: {
