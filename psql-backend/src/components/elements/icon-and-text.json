@@ -2,7 +2,8 @@
   "collectionName": "components_elements_icon_and_texts",
   "info": {
     "displayName": "Icon And Text",
-    "icon": "icons"
+    "icon": "icons",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,9 @@
     },
     "description": {
       "type": "text"
+    },
+    "text": {
+      "type": "richtext"
     }
   }
 }
