@@ -12,6 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "url": {
+      "type": "string",
+      "configurable": false
+    },
     "shortName": {
       "type": "string"
     },
@@ -69,10 +73,6 @@
     "indexPage": {
       "type": "boolean",
       "default": false
-    },
-    "url": {
-      "type": "string",
-      "configurable": false
     }
   }
 }
