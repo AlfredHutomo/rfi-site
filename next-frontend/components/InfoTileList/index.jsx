@@ -10,7 +10,7 @@ import styles from './InfoTile.module.scss';
 
 const InfoTileList = ({ data }) => {
     const { contacts, socials } = data;
-
+    console.log(socials);
     return (
         <div className={styles['info-tile-list-wrapper']}>
             {contacts?.map((contact, i) => (
@@ -24,7 +24,7 @@ const InfoTileList = ({ data }) => {
             <InfoTile heading='Social Media'>
                 {socials?.map((social, i) => (
                     <Link key={i} href={social.linkTo}>
-                        <Icon>{social.platform}</Icon>
+                        <a><Icon>{social.platform}</Icon></a>
                     </Link>
                 ))}
             </InfoTile>
