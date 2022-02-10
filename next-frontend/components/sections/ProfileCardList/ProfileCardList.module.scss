@@ -11,7 +11,7 @@
     row-gap: 15px;
 
     @include bp-down($bp-sm) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     &-wrapper {

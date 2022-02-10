@@ -23,6 +23,9 @@
     &-item {
         min-height: 40rem;
         padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         font-size: 2rem;
         position: relative;
         background: #ddd;
@@ -33,6 +36,10 @@
 
         @include bp-down($bp-sm) {
             padding: 2rem;
+            min-height: 25rem;
+        }
+
+        &-top {
         }
 
         &-double {

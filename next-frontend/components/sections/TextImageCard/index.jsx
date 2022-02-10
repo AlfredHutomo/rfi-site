@@ -9,6 +9,7 @@ import DefaultCardImg from './default-card-img.jpg';
 
 import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
+import { checkValidURL } from '../../../utils/utils';
 
 import ReactMarkdown from 'react-markdown';
 
@@ -26,7 +27,7 @@ const TextImageCard = ({ sectionData }) => {
 
     const reverse = imageOnRight ? styles['text-image-card--reverse'] : '';
     const vcentre = verticalAlign ? styles['text-image-card--vcentre'] : '';
-    console.log(button);
+
     return (
         <SectionWrapper options={wrapperOptions}>
             <div
@@ -78,7 +79,14 @@ const TextImageCard = ({ sectionData }) => {
                     )}
                     {text != null && <ReactMarkdown>{text}</ReactMarkdown>}
                     {button != null && (
-                        <Button to={button.url}>{button.displayName}</Button>
+                        <Button to={
+                                button.isExternalLink
+                                   ? checkValidURL(button.url)
+                                   : checkValidURL(button.page.data.attributes.url)
+                            }
+                        >
+                            {button.displayName}
+                        </Button>
                     )}
                 </div>
             </div>

@@ -16,4 +16,10 @@
             padding: 2.5rem;
         }
     }
+    @include bp-down($bp-sm) {
+        padding: 1.5rem;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
 }

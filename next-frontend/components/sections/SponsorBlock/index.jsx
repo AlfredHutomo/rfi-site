@@ -6,6 +6,7 @@ import styles from './SponsorBlock.module.scss';
 
 import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
+import { checkValidURL } from '../../../utils/utils';
 
 const SponsorBlock = ({ sectionData }) => {
     const {
@@ -145,7 +146,11 @@ const SponsorBlock = ({ sectionData }) => {
                         <Button
                             variant='2'
                             className={styles['sponsor-block-button']}
-                            to={button1.url}
+                            to={
+                                button1.isExternalLink
+                                   ? checkValidURL(button1.url)
+                                   : checkValidURL(button1.page.data?.attributes.url)
+                            }
                         >
                             {button1.displayName}
                         </Button>
@@ -155,7 +160,11 @@ const SponsorBlock = ({ sectionData }) => {
                     {button2 != null ? (
                         <Button
                             className={styles['sponsor-block-button']}
-                            to={button2.url}
+                            to={
+                                button2.isExternalLink
+                                   ? checkValidURL(button2.url)
+                                   : checkValidURL(button2.page.data?.attributes.url)
+                            }
                         >
                             {button2.displayName}
                         </Button>

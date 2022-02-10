@@ -7,9 +7,15 @@
         width: 100%;
         max-width: $site-max-width;
         display: flex;
-        gap: 2rem;
+        gap: 3rem;
         flex-wrap: wrap;
         color: $color-brand-01;
+        justify-content: center;
+
+        @include bp-down($bp-sm) {
+            justify-content: flex-start;
+            text-align: center;
+        }
 
         &.alternative {
             .link-group-block-item-wrapper {
@@ -28,6 +34,12 @@
         flex-basis: 0;
         flex-grow: 1;
         color: inherit;
+        max-width: 30rem;
+
+        @include bp-down($bp-sm) {
+            flex-basis: auto;
+            max-width: 100%;
+        }
     }
 
     &-icon {
@@ -61,6 +73,10 @@
 
         p:last-child {
             margin-bottom: 0;
+        }
+
+        @include bp-down($bp-sm) {
+            max-width: 100%;
         }
     }
 

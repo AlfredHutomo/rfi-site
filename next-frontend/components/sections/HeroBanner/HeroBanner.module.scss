@@ -55,10 +55,10 @@ $hero-breakpoint: calc(
         overflow: hidden;
 
         @include bp-down($bp-xl) {
-            height: 70rem;
+            max-height: 70rem;
         }
         @include bp-up($bp-xl) {
-            //height: 100rem;
+            max-height: 100rem;
         }
     }
 
