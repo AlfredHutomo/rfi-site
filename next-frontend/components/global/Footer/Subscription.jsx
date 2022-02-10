@@ -24,7 +24,7 @@ const Subscription = () => {
 
             <div className={styles['page-footer-subscription-form']}>
                 {submitted ? (
-                    <h1>Sumbmitted</h1>
+                    <h1>Thanks for signing up. Stay tuned for the latest on Real Futbol Institute.</h1>
                 ) : (
                     <>
                         <div>

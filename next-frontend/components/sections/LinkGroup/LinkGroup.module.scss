@@ -45,6 +45,11 @@
             min-width: 20rem;
         }
 
+        &.active {
+            color: $color-gs-white;
+            background-color: $color-brand-02;
+        }
+
         &:hover {
             color: $color-gs-white;
             background-color: $color-brand-02;

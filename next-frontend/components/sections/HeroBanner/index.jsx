@@ -50,7 +50,11 @@ const HeroBanner = (props) => {
                             variant='4'
                             //size='large'
                             className={styles['hero-banner-button']}
-                            to={button1.url}
+                            to={
+                                button1.isExternalLink
+                                   ? checkValidURL(button1.url)
+                                   : checkValidURL(button1.page.data.attributes.url)
+                            }
                         >
                             {button1.displayName}
                         </Button>
@@ -62,7 +66,11 @@ const HeroBanner = (props) => {
                             variant='1'
                             //size='large'
                             className={styles['hero-banner-button']}
-                            to={button2.url}
+                            to={
+                                button2.isExternalLink
+                                   ? checkValidURL(button2.url)
+                                   : checkValidURL(button2.page.data.attributes.url)
+                            }
                         >
                             {button2.displayName}
                         </Button>

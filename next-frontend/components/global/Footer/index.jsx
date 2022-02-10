@@ -26,9 +26,11 @@ const LinkDropDown = ({ navData }) => {
     const primaryUrl = checkValidURL(navData.url);
 
     const SubLinks = ({ data }) => {
-        const { url, displayName } = data;
+        const { url, displayName, isExternalLink, page } = data;
 
-        const secondaryUrl = checkValidURL(url);
+        const secondaryUrl = isExternalLink
+            ? checkValidURL(url)
+            : checkValidURL(page.data.attributes.url);
 
         return (
             <li className={styles['page-footer-subnav-item']}>
@@ -131,12 +133,12 @@ const Footer = ({ footerData }) => {
                         </div>
 
                         <div className={styles['page-footer-social-media']}>
-                            <FacebookIcon sx={{ fontSize: 40 }} />
-                            <InstagramIcon sx={{ fontSize: 40 }} />
+                            <a href="https://www.facebook.com/RealFutbolInstitute/" target="_blank"><FacebookIcon sx={{ fontSize: 40 }} /></a>
+                            <a href="https://www.instagram.com/realfutbolinstitute" target="_blank"><InstagramIcon sx={{ fontSize: 40 }} /></a>
                         </div>
 
                         <div className={styles['page-footer-cta']}>
-                            <Button size='small' variant='1'>
+                            <Button className={styles['page-footer-cta-button']}  size='small' variant='1'>
                                 Register your interest
                             </Button>
                         </div>

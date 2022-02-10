@@ -9,9 +9,13 @@
         display: flex;
         gap: 2rem;
         flex-wrap: wrap;
+        color: $color-brand-01;
 
         &.alternative {
             .link-group-block-item-wrapper {
+                color: $color-gs-white;
+            }
+            .link-group-block-item-icon span {
                 color: $color-gs-white;
             }
         }
@@ -23,19 +27,21 @@
     &-wrapper {
         flex-basis: 0;
         flex-grow: 1;
-        color: $color-brand-01;
+        color: inherit;
     }
 
     &-icon {
         font-size: 1.6rem;
+        margin-bottom: 2rem;
 
         span {
+            color: $color-brand-02;
             font-size: 3.3rem;
         }
     }
 
     &-heading {
-        margin-top: 2rem;
+        margin-top: 0rem;
         margin-bottom: 0;
         color: inherit;
         font-family: $font-heading;
@@ -52,6 +58,10 @@
         font-size: 1.6rem;
         font-family: $font-body;
         line-height: 1.5em;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &-link {

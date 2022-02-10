@@ -2,13 +2,19 @@
 @import '../../../styles/_utils';
 
 .text-block {
+    $this: &;
     &-wrapper {
+
         margin: 0 auto;
         text-align: center;
         color: $color-gs-01;
 
         &.darkBg {
             color: $color-gs-white;
+
+            #{$this}-heading {
+                color: $color-gs-white;
+            }
         }
     }
     &-heading {

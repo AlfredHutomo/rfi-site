@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { useRouter } from 'next/router';
 import styles from './LinkGroup.module.scss';
 import Link from 'next/link';
 import { SectionWrapper } from '../../global';
 
 const LinkGroup = (props) => {
     const { heading, data } = props;
+    const { asPath } = useRouter();
 
     return (
         <SectionWrapper>
@@ -22,7 +23,7 @@ const LinkGroup = (props) => {
                     {props.data != null && props.data.length != 0
                         ? props.data.map((link, i) => (
                               <Link href={link.link} key={i}>
-                                  <a className={styles['link-block-wrapper']}>
+                                  <a className={`${styles['link-block-wrapper']} ${(asPath == link.link) ? styles['active'] : ''}`}>
                                       {link['text']}
                                   </a>
                               </Link>

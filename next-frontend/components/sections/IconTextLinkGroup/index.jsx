@@ -9,7 +9,7 @@ import SectionWrapper from '../../global/SectionWrapper';
 const IconTextLinkGroup = ({ sectionData }) => {
     const { isDarkBackground, items, wrapperOptions } = sectionData;
 
-    const alterstyle = isDarkBackground != null ? styles['alternative'] : '';
+    const alterstyle = isDarkBackground ? styles['alternative'] : '';
 
     return (
         <SectionWrapper options={wrapperOptions}>

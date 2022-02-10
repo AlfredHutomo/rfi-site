@@ -20,7 +20,7 @@ const TextBlock = ({ sectionData }) => {
     const defaultWidth = '730px';
 
     const altStyle =
-        isDarkBackground != null ? isDarkBackground && styles['darkBg'] : '';
+        isDarkBackground ? isDarkBackground && styles['darkBg'] : '';
 
     const headingCheck = () => {
         switch (headingType) {
@@ -54,7 +54,7 @@ const TextBlock = ({ sectionData }) => {
             <div
                 className={styles['text-block-wrapper'] + ' ' + altStyle}
                 style={
-                    maxWidth != ''
+                    maxWidth != null && maxWidth != ''
                         ? { maxWidth: maxWidth + 'px' }
                         : { maxWidth: defaultWidth }
                 }

@@ -71,6 +71,12 @@
     }
     &-cta {
         margin-top: 2rem;
+
+        &-button {
+            @include bp-down($bp-sm) {
+                width: 100%;
+            }
+        }
     }
 
     &-btm {
