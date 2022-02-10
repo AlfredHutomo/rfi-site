@@ -7,6 +7,7 @@ import ProfileCard from '../../ProfileCard';
 
 import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
+import { checkValidURL } from '../../../utils/utils';
 
 const ProfileCardList = ({ sectionData }) => {
     const {
@@ -50,7 +51,12 @@ const ProfileCardList = ({ sectionData }) => {
                 )}
                 {ctaButton && (
                     <div className={styles['profile-list-cta']}>
-                        <Button to='#'>See the whole team</Button>
+                        <Button to={
+                                ctaButton.isExternalLink
+                                   ? checkValidURL(ctaButton.url)
+                                   : checkValidURL(ctaButton.page.data.attributes.url)
+                            }
+                        >{ctaButton.displayName}</Button>
                     </div>
                 )}
             </div>

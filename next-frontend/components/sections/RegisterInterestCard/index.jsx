@@ -44,7 +44,7 @@ const RegisterInterestCard = (props) => {
                         Tincidunt diam tempus convalis eget, consectetur
                         adipsicing elit.
                     </p>
-                    <Button
+                    <Button to={'/register'}
                         className={styles['rinterest-card__cta']}
                         variant='1'
                     >

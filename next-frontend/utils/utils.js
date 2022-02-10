@@ -1,19 +1,25 @@
 import { getContactData } from './api';
 
 export function checkValidURL(url) {
-    if (
-        url !== null &&
-        !(url.startsWith('https://') || url.startsWith('http://'))
-    ) {
-        return url[0] === '/' ? url : '/' + url;
-    } else if (
-        url !== null &&
-        (url.startsWith('https://') || url.startsWith('http://'))
-    ) {
-        return url;
+    if(url === null || url === '' || url === undefined) {
+        return '';
     }
-    return '/';
+    else {
+        if (
+            url !== null &&
+            !(url.startsWith('https://') || url.startsWith('http://'))
+        ) {
+            return url[0] === '/' ? url : '/' + url;
+        } else if (
+            url !== null &&
+            (url.startsWith('https://') || url.startsWith('http://'))
+        ) {
+            return url;
+        }
+        return '/';
+    }
 }
+
 
 export async function checkForLayoutComponent(content) {
     const layoutComponent = content.filter((section) =>

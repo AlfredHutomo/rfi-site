@@ -81,7 +81,7 @@ const ProfileCard = (props) => {
                 </span>
                 <div className={styles['profile-card-detail']}>
                     <div className={styles['profile-card-detail-avatar']}>
-                        <div>
+                        <div className={styles['profile-card-detail-avatar-img']}>
                             {props.data.profile_picture.data != null ? (
                                 <Image
                                     src={

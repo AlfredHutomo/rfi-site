@@ -133,8 +133,12 @@ const Footer = ({ footerData }) => {
                         </div>
 
                         <div className={styles['page-footer-social-media']}>
-                            <a href="https://www.facebook.com/RealFutbolInstitute/" target="_blank"><FacebookIcon sx={{ fontSize: 40 }} /></a>
-                            <a href="https://www.instagram.com/realfutbolinstitute" target="_blank"><InstagramIcon sx={{ fontSize: 40 }} /></a>
+                            <Link href="https://www.facebook.com/RealFutbolInstitute/">
+                                <a><FacebookIcon sx={{ fontSize: 40 }} /></a>
+                            </Link>
+                            <Link href="https://www.instagram.com/realfutbolinstitute">
+                                <a><InstagramIcon sx={{ fontSize: 40 }} /></a>
+                            </Link>
                         </div>
 
                         <div className={styles['page-footer-cta']}>

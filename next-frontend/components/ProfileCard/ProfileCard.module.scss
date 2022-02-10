@@ -30,12 +30,21 @@
             );
             transition: all 1s ease;
         }
+
+        > span {
+            display: block !important; /* nextjs Image fix */
+        }
     }
+
 
     &-content {
         &__name {
             margin-top: 0;
             margin-bottom: 0.16em;
+
+            @include bp-down($bp-sm) {
+                font-size: 1.6rem;
+            }
         }
 
         &__title {
@@ -43,7 +52,7 @@
             color: $color-brand-03;
             font-size: 1.2rem;
             font-weight: 600;
-            line-height: 1.6;
+            line-height: 1.4em;
             letter-spacing: 0.01em;
         }
 
@@ -143,8 +152,8 @@
             max-width: 100%;
         }
 
-        > div {
-            height: 100%;
+        &-img {
+            //height: 100%;
             max-height: 40rem;
             position: relative;
             overflow: hidden;
@@ -163,6 +172,10 @@
                     rgba(103, 79, 255, 0.8) 0%,
                     rgba(103, 79, 255, 0) 80%
                 );
+            }
+
+            > span {
+                display: block !important; /* nextjs Image fix */
             }
         }
     }

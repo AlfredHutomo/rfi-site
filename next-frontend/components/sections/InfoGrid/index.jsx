@@ -119,26 +119,30 @@ const InfoGridItemContentType1 = (props) => {
             className={styles['info-grid-item'] + ' ' + double + ' ' + light}
             style={{ backgroundColor: backgroundColor }}
         >
-            {heading != null ? (
-                <h1 className={'h1 ' + styles['info-grid-item-heading']}>
-                    {heading}
-                </h1>
-            ) : (
-                ''
-            )}
+            <div className={styles['info-grid-item-top']}>
+                {heading != null ? (
+                    <h1 className={'h1 ' + styles['info-grid-item-heading']}>
+                        {heading}
+                    </h1>
+                ) : (
+                    ''
+                )}
 
-            {paragraph != null ? (
-                <div className={styles['info-grid-item-content']}>
-                    <ReactMarkdown>{paragraph}</ReactMarkdown>
-                </div>
-            ) : (
-                ''
-            )}
+                {paragraph != null ? (
+                    <div className={styles['info-grid-item-content']}>
+                        <ReactMarkdown>{paragraph}</ReactMarkdown>
+                    </div>
+                ) : (
+                    ''
+                )}
+            </div>
 
             {buttonText != null ? (
+            <div className={styles['info-grid-item-btm']}>
                 <Button variant='2' to={buttonLink} className={styles['info-grid-item-cta']}>
                     {buttonText}
                 </Button>
+            </div>
             ) : (
                 ''
             )}

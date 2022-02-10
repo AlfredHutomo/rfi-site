@@ -26,20 +26,22 @@ const ProgramCard = (props) => {
                 )}
             </div>
             <div className={styles['program-card-detail']}>
-                <h4 className={styles['program-card-name']}>{name}</h4>
-                {tags != null && tags.length != 0 ? (
-                    <ul className={styles['program-card-taglist']}>
-                        {tags.map((tag, i) => (
-                            <li key={i} className={styles['program-card-tag']}>
-                                {tag}
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    ''
-                )}
-                <div className={styles['program-card-description']}>
-                    {props.children}
+                <div className={styles['program-card-detail-top']}>
+                    <h4 className={styles['program-card-name']}>{name}</h4>
+                    {tags != null && tags.length != 0 ? (
+                        <ul className={styles['program-card-taglist']}>
+                            {tags.map((tag, i) => (
+                                <li key={i} className={styles['program-card-tag']}>
+                                    {tag}
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        ''
+                    )}
+                    <div className={styles['program-card-description']}>
+                        {props.children}
+                    </div>
                 </div>
                 <div className={styles['program-card-cta']}>
                     <Button to={`/programs/${slug}`}>Learn More</Button>

@@ -31,8 +31,8 @@ const TimelineCard = (props) => {
                     </div>
                 )}
                 <div className={styles['timeline-card-content']}>
-                    {props.heading != null ? <h2>{heading}</h2> : ''}
-                    {props.children != null ? <h4>{children}</h4> : ''}
+                    {props.heading != null ? <h2 className={styles['timeline-card-content-heading']}>{heading}</h2> : ''}
+                    {props.children != null ? <h4 className={styles['timeline-card-content-main']}>{children}</h4> : ''}
                 </div>
             </div>
         </div>
