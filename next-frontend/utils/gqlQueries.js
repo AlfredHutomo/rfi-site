@@ -337,10 +337,26 @@ export const PAGE_DATA = gql`
                             }
                             button1 {
                                 displayName
+                                isExternalLink
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                                 url
                             }
                             button2 {
                                 displayName
+                                isExternalLink
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                                 url
                             }
                             wrapperOptions {
@@ -474,7 +490,7 @@ export const PAGE_DATA = gql`
                                 page {
                                     data {
                                         attributes {
-                                            slug
+                                            url
                                         }
                                     }
                                 }
@@ -519,6 +535,14 @@ export const PAGE_DATA = gql`
                             }
                             button {
                                 displayName
+                                isExternalLink
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                                 url
                             }
                             imageOnRight
@@ -860,14 +884,7 @@ export const PROGRAMS_DATA = gql`
                         page {
                             data {
                                 attributes {
-                                    parent {
-                                        data {
-                                            attributes {
-                                                slug
-                                            }
-                                        }
-                                    }
-                                    slug
+                                    url
                                 }
                             }
                         }
@@ -1158,10 +1175,26 @@ export const PROGRAMS_DATA = gql`
                             }
                             button1 {
                                 displayName
+                                isExternalLink
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                                 url
                             }
                             button2 {
                                 displayName
+                                isExternalLink
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                                 url
                             }
                             wrapperOptions {
@@ -1295,7 +1328,7 @@ export const PROGRAMS_DATA = gql`
                                 page {
                                     data {
                                         attributes {
-                                            slug
+                                            url
                                         }
                                     }
                                 }
@@ -1340,6 +1373,14 @@ export const PROGRAMS_DATA = gql`
                             }
                             button {
                                 displayName
+                                isExternalLink
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
                                 url
                             }
                             imageOnRight
