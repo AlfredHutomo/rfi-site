@@ -3,17 +3,15 @@ module.exports = {
     const { data, where, select, populate } = event.params;
 
     if (!data.indexPage) {
-      const parentData = await strapi.entityService.findOne(
-        "api::page.page",
-        data.parent
-      );
+      const parentData =
+        data.parent !== undefined
+          ? await strapi.entityService.findOne("api::page.page", data.parent)
+          : null;
 
       const array = [`/${data.slug}`];
-
       if (parentData) {
         array.unshift(parentData.url);
       }
-
       data.url = array.join("");
     } else {
       data.url = "/";
@@ -23,21 +21,22 @@ module.exports = {
   async beforeUpdate(event) {
     const { data, where, select, populate } = event.params;
 
-    if (!data.indexPage) {
-      const parentData = await strapi.entityService.findOne(
-        "api::page.page",
-        data.parent
-      );
+    if (data.publishedAt === undefined) {
+      if (!data.indexPage) {
+        const parentData =
+          data.parent !== undefined
+            ? await strapi.entityService.findOne("api::page.page", data.parent)
+            : null;
 
-      const array = [`/${data.slug}`];
+        const array = [`/${data.slug}`];
 
-      if (parentData) {
-        array.unshift(parentData.url);
+        if (parentData) {
+          array.unshift(parentData.url);
+        }
+        data.url = array.join("");
+      } else {
+        data.url = "/";
       }
-
-      data.url = array.join("");
-    } else {
-      data.url = "/";
     }
   },
 };
