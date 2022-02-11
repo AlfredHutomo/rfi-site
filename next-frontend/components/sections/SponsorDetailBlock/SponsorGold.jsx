@@ -9,7 +9,7 @@ import { Icon } from '@mui/material';
 
 const SponsorGold = (props) => {
     const { data, logo, name, phone, email, social } = props;
-
+    //console.log(data.attributes.social);
     return (
         <div className={styles['sponsor-detail-block-gold']}>
             <div className={styles['sponsor-detail-block-gold-logo']}>
@@ -57,7 +57,9 @@ const SponsorGold = (props) => {
                 data.attributes.social.length != 0 ? (
                     <div className={styles['sponsor-detail-block-gold-social']}>
                         {data.attributes.social.map((item, i) => (
-                            <Icon key={i}>{item.platform}</Icon>
+                        <Link key={i} href={item.linkTo}>
+                            <a><Icon>{item.platform}</Icon></a>
+                        </Link>
                         ))}
                     </div>
                 ) : (
