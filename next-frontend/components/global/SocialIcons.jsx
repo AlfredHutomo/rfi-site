@@ -9,7 +9,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const icons = {
     facebook: FacebookIcon,
-    intagram: InstagramIcon,
+    instagram: InstagramIcon,
     linkedIn: LinkedInIcon,
     twitter: TwitterIcon,
     whatsapp: WhatsAppIcon,
