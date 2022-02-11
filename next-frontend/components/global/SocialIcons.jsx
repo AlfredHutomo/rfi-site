@@ -5,12 +5,14 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import LanguageIcon from '@mui/icons-material/Language';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const icons = {
     facebook: FacebookIcon,
     intagram: InstagramIcon,
     linkedIn: LinkedInIcon,
     twitter: TwitterIcon,
+    whatsapp: WhatsAppIcon,
     youtube: YouTubeIcon,
     pinterest: PinterestIcon,
     website: LanguageIcon,
