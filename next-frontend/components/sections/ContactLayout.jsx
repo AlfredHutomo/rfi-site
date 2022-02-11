@@ -15,7 +15,7 @@ const ContactLayout = (props) => {
     const [data, setData] = useState({});
     const [contactSubmitted, setContactSubmitted] = useState(false);
 
-    useEffect(async () => {
+    useEffect(() => {
         const fetchData = async () => {
             const contactData = await getContactData();
             setData(contactData.attributes);
@@ -34,7 +34,7 @@ const ContactLayout = (props) => {
                         margin: '120px 20px',
                     }}
                 >
-                    <Image src={MailBoxSVG} />
+                    <Image src={MailBoxSVG} alt='mailbox svg' />
                     <TextBlock
                         sectionData={{
                             isDarkBackground: false,
