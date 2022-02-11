@@ -46,9 +46,10 @@
         box-shadow: 0 0 8px $color-gs-04;
 
         @include bp-down($bp-sm) {
-            gap: 0rem;
+            gap: 2rem;
             flex-direction: column;
         }
+
 
         &-logo {
             width: 17rem;
@@ -57,7 +58,7 @@
             z-index: $level-base;
 
             @include bp-down($bp-sm) {
-                width: 100%;
+                margin: 0 auto;
             }
 
         }

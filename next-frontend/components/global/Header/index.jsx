@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import Button from '../Button';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -90,11 +91,16 @@ const ProgramsDropdown = ({ navData }) => {
                 styles['page-navigation-item-dropdown']
             }
         >
-            <Link href={'/programs'}>
+            <Link href={'#'}>
                 <a>{displayName}</a>
             </Link>
 
             <ul className={styles['page-navigation-subnav']}>
+                <li className={styles['page-navigation-subnav-item']}>
+                    <Link href={'/programs'}>
+                        <a>All Programs</a>
+                    </Link>
+                </li>
                 {programs.data.map((program, i) => (
                     <SubLinks key={i} data={program} />
                 ))}
@@ -148,6 +154,8 @@ const Header = ({ headerData }) => {
     // const links = ['About Us', 'Our programs', 'Blog', 'Contact'];
     const [mobileMenuActive, setMobileMenu] = useState(false); // note: same as var active = false in v js
     const { logo, navigation, announcement, buttons } = headerData;
+    const { asPath } = useRouter();
+    console.log(asPath);
 
     const toggleMobileMenu = () => {
         setMobileMenu((state) => !state); //reading for sam https://reactjs.org/docs/hooks-state.html
@@ -155,13 +163,13 @@ const Header = ({ headerData }) => {
 
     return (
         <div className={styles['page-header-wrapper']}>
-            {announcement !== null && (
+            {announcement !== null && asPath == '/' ? (
                 <div className={styles['page-header-banner']}>
                     <div className={styles['page-header-banner-content']}>
                         {announcement}
                     </div>
                 </div>
-            )}
+            ):''}
 
             <header className={styles['page-header-main']}>
                 <div className={styles['page-header']}>

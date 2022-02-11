@@ -128,6 +128,18 @@ export const PAGE_DATA = gql`
                             description
                             isDarkBackground
                             maxWidth
+                            button {
+                                displayName
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
+                                isExternalLink
+                                url
+                            }
                             wrapperOptions {
                                 bgcolor
                                 spaceTop
@@ -966,6 +978,18 @@ export const PROGRAMS_DATA = gql`
                             description
                             isDarkBackground
                             maxWidth
+                            button {
+                                displayName
+                                page {
+                                    data {
+                                        attributes {
+                                            url
+                                        }
+                                    }
+                                }
+                                isExternalLink
+                                url
+                            }
                             wrapperOptions {
                                 bgcolor
                                 spaceTop

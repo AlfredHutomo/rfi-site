@@ -4,8 +4,10 @@ import Image from 'next/image';
 
 import styles from './TextBlock.module.scss';
 
+import Button from '../../global/Button';
 import SectionWrapper from '../../global/SectionWrapper';
 import ReactMarkdown from 'react-markdown';
+import { checkValidURL } from '../../../utils/utils';
 
 const TextBlock = ({ sectionData }) => {
     const {
@@ -14,6 +16,7 @@ const TextBlock = ({ sectionData }) => {
         heading,
         headingType,
         description,
+        button,
         wrapperOptions,
     } = sectionData;
 
@@ -67,6 +70,19 @@ const TextBlock = ({ sectionData }) => {
                 ) : (
                     ''
                 )}
+                {button != null ? (
+                    <div className={styles['text-block-cta']}>
+                        <Button
+                            to={
+                                button.isExternalLink
+                                   ? checkValidURL(button.url)
+                                   : checkValidURL(button.page.data.attributes.url)
+                            }
+                        >
+                            {button.displayName}
+                        </Button>
+                    </div>
+                ): '' }
             </div>
         </SectionWrapper>
     );

@@ -142,7 +142,7 @@ const Footer = ({ footerData }) => {
                         </div>
 
                         <div className={styles['page-footer-cta']}>
-                            <Button className={styles['page-footer-cta-button']}  size='small' variant='1'>
+                            <Button to={'/register'} className={styles['page-footer-cta-button']}  size='small' variant='1'>
                                 Register your interest
                             </Button>
                         </div>
@@ -164,7 +164,7 @@ const Footer = ({ footerData }) => {
 
             <div className={styles['page-footer-btm']}>
                 <div className={styles['page-footer']}>
-                    <Link href='#'>Terms and Conditions</Link>
+                    <Link href='/terms-and-conditions'>Terms and Conditions</Link>
 
                     <div className={styles['page-footer-copyright-info']}>
                         {copyrightInfo}

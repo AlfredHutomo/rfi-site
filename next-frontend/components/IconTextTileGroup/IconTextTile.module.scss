@@ -48,6 +48,16 @@
         font-size: 1.6rem;
         font-family: $font-body;
         line-height: 1.5em;
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            margin: 0 0 0 1.9rem;
+            font-size: 1.6rem;
+            line-height: 1.5em;
+        }
     }
 }
 

@@ -9,10 +9,7 @@ const ProgramLayout = ({ programData, children }) => {
         bgImageDesktop: programData.attributes.bgDesktop,
         bgImageMobile: programData.attributes.bgMobile,
         heading: programData.attributes.name,
-        button2: {
-            displayName: 'Register Your Interest',
-            url: '#',
-        },
+        button2: programData.attributes.ctaButton,
         isContentOnRight: true,
     };
 

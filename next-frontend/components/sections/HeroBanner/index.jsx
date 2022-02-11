@@ -45,7 +45,7 @@ const HeroBanner = (props) => {
                     ) : (
                         ''
                     )}
-                    {button1?.displayName != null && button1?.url != null ? (
+                    {button1 != undefined && button1?.displayName != null ? (
                         <Button
                             variant='4'
                             //size='large'
@@ -61,7 +61,7 @@ const HeroBanner = (props) => {
                     ) : (
                         ''
                     )}
-                    {button2?.displayName != null && button2?.url != null ? (
+                    {button2 != undefined && button2?.displayName != null ? (
                         <Button
                             variant='1'
                             //size='large'
