@@ -6,6 +6,7 @@ import styles from './SponsorDetailBlock.module.scss';
 import Link from 'next/link';
 
 import { Icon } from '@mui/material';
+import SocialIcons from '../../global/SocialIcons';
 
 const SponsorGold = (props) => {
     const { data, logo, name, phone, email, social } = props;
@@ -32,7 +33,13 @@ const SponsorGold = (props) => {
 
             <div className={styles['sponsor-detail-block-gold-info']}>
                 {data.attributes.name != null ? (
-                    <h3 className={'h3 ' + styles['sponsor-detail-block-heading']}>{data.attributes.name} </h3>
+                    <h3
+                        className={
+                            'h3 ' + styles['sponsor-detail-block-heading']
+                        }
+                    >
+                        {data.attributes.name}{' '}
+                    </h3>
                 ) : (
                     ''
                 )}
@@ -57,10 +64,17 @@ const SponsorGold = (props) => {
                 data.attributes.social.length != 0 ? (
                     <div className={styles['sponsor-detail-block-gold-social']}>
                         {data.attributes.social.map((item, i) => (
-                        <Link key={i} href={item.linkTo}>
-                            <a><Icon>{item.platform}</Icon></a>
-                        </Link>
+                            <Link key={i} href={item.linkTo}>
+                                <a>
+                                    <SocialIcons>{item.platform}</SocialIcons>
+                                </a>
+                            </Link>
                         ))}
+                        <Link href={'google.com'}>
+                            <a>
+                                <SocialIcons>{'website'}</SocialIcons>
+                            </a>
+                        </Link>
                     </div>
                 ) : (
                     ''
