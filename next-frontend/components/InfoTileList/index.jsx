@@ -24,7 +24,9 @@ const InfoTileList = ({ data }) => {
             <InfoTile heading='Social Media'>
                 {socials?.map((social, i) => (
                     <Link key={i} href={social.linkTo}>
-                        <a><Icon>{social.platform}</Icon></a>
+                        <a>
+                            <Icon>{social.platform}</Icon>
+                        </a>
                     </Link>
                 ))}
             </InfoTile>

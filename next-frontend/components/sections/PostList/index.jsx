@@ -19,7 +19,7 @@ const PostList = (props) => {
 
     const [posts, setPosts] = useState([]);
 
-    useEffect(async () => {
+    useEffect(() => {
         const fetchData = async () => {
             const data = recommendation
                 ? await getThreeLatestBlogs()
@@ -28,7 +28,7 @@ const PostList = (props) => {
         };
 
         fetchData();
-    }, []);
+    }, [recommendation]);
 
     const slider = isMobileSlider != null ? styles['post-list-slider'] : '';
 
