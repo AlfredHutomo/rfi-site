@@ -20,12 +20,19 @@
         flex-wrap: wrap;
         gap: 4rem;
         justify-content: center;
+        @include bp-down($bp-sm) {
+            gap: 1rem;
+        }
 
         &:last-child {
             margin-bottom: 0;
         }
 
         &-silver {
+            @include bp-down($bp-sm) {
+                flex-wrap: nowrap;
+            }
+
             > div {
                 max-width: 25rem;
             }
@@ -33,12 +40,16 @@
         &-bronze {
             > div {
                 max-width: 12rem;
+                @include bp-down($bp-sm) {
+                    width: 50%;
+                    padding: 1rem;
+                }
             }
         }
     }
 
     &-image-wrapper {
-        margin: 0 1rem;
+        //padding: 0 1rem;
         width: 300px;
         height: 150px;
         position: relative;

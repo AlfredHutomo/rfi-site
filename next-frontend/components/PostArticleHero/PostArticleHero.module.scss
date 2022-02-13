@@ -8,9 +8,14 @@
     z-index: $level-base + 1;
 
     &-wrapper {
+        padding: 0 2rem;
         height: 60rem;
         position: relative;
         z-index: $level-base;
+
+        @include bp-down($bp-sm) {
+            height: 21.2rem;
+        }
     }
 
     &-icon {

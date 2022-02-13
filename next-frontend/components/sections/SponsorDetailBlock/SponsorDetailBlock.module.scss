@@ -64,6 +64,12 @@
         }
         &-social {
             margin-top: 1.5rem;
+
+            svg {
+                color: #323232;
+                margin-right: 1rem;
+                font-size: 3rem;
+            }
         }
         &-info {
             padding: 2rem 0rem;
@@ -89,6 +95,7 @@
     }
 
     &-silver {
+        max-width: 35rem;
         padding: 2rem;
         display: flex;
         gap: 2rem;
@@ -97,7 +104,7 @@
         box-shadow: 0 0 8px $color-gs-04;
 
         &-logo {
-            width: 13rem;
+            width: 17rem;
             height: 13rem;
             position: relative;
             z-index: $level-base;

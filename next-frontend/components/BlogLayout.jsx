@@ -4,6 +4,7 @@ import { getThreeLatestBlogs } from '../utils/api';
 import PostList from './sections/PostList';
 
 const BlogLayout = ({ data }) => {
+
     return (
         <>
             <PostArticleHero
@@ -16,13 +17,13 @@ const BlogLayout = ({ data }) => {
                     title: data.attributes.title,
                     date: data.attributes.createdAt,
                     author: data.attributes.author.data,
-                    link: 'http://www.google.com.au',
+                    //link: 'http://www.google.com.au',
                 }}
             >
                 {data.attributes.content}
             </PostArticle>
 
-            <PostList recommendation />
+            <PostList recommendation mobileSlider />
         </>
     );
 };

@@ -37,12 +37,6 @@
         min-width: 222px;
         flex-grow: 1;
 
-        @include bp-down($bp-md) {
-            position: relative;
-            z-index: $level-middle + 1;
-            flex-grow: 0;
-        }
-
         > span {
             cursor: pointer;
         }
@@ -65,7 +59,7 @@
 
     @include bp-down($bp-md) {
         display: block;
-        padding: 3rem 0 0 0;
+        //padding: 3rem 0 0 0;
     }
 
     &-wrapper {
@@ -75,17 +69,37 @@
 
         @include bp-down($bp-md) {
             display: none;
-            padding: 10rem 0 0 0;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
             background-color: $color-gs-white;
+            overflow-y:scroll;
+
+            &::-webkit-scrollbar{
+                display:none
+            }
 
             &.active {
                 display: block;
+                z-index: $level-top;
+                -webkit-overflow-scrolling:touch;
+
+                :root {
+                    border: 10px solid #f30;
+                    overflow: hidden;
+                }
             }
+        }
+    }
+
+    &-logo {
+        padding: 2rem;
+        display: none;
+
+        @include bp-down($bp-md) {
+            display: block;
         }
     }
 
@@ -93,7 +107,7 @@
         display: none;
         position: fixed;
         font-size: 1.6rem;
-        top: 5rem;
+        top: 2.5rem;
         right: 2rem;
         cursor: pointer;
         z-index: $level-middle + 2;

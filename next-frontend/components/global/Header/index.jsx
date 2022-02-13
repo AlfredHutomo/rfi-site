@@ -209,6 +209,30 @@ const Header = ({ headerData }) => {
                         >
                             <CloseIcon sx={{ fontSize: 40 }} />
                         </div>
+                        <div className={styles['page-navigation-logo']}>
+                            {logo != null ? (
+                                <Link href={'/'}>
+                                    <a>
+                                        <Image
+                                            src={logo.data.attributes.url}
+                                            width={logo.data.attributes.width}
+                                            height={logo.data.attributes.height}
+                                            alt=''
+                                        />
+                                    </a>
+                                </Link>
+                            ) : (
+                                <Link href={'/'}>
+                                    <a>
+                                        <Image
+                                            src={LogoImg}
+                                            layout='responsive'
+                                            alt=''
+                                        />
+                                    </a>
+                                </Link>
+                            )}
+                        </div>
                         <ul className={styles['page-navigation']}>
                             {navigation.map((navItem, i) => (
                                 <NavElement

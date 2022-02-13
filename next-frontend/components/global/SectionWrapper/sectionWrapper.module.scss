@@ -8,6 +8,11 @@
         padding-left: $site-mobile-padding;
         padding-right: $site-mobile-padding;
         //border: 1px dashed #888;
+
+        @include bp-down($bp-sm) {
+            padding-top: 4rem !important;
+            padding-bottom: 4rem !important;
+        }
     }
 
     &-content {

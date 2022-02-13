@@ -22,6 +22,10 @@
         gap: 2rem;
         flex-wrap: wrap;
         justify-content: center;
+
+        @include bp-down($bp-sm) {
+            gap: 1rem;
+        }
     }
 }
 

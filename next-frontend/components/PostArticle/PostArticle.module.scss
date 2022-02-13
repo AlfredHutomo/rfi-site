@@ -31,6 +31,14 @@
     &-wrapper {
         display: flex;
         gap: 3rem;
+
+        @include bp-down($bp-md) {
+            flex-direction: column;
+        }
+    }
+
+    &-main {
+        width: 100%;
     }
 
     &-sidebar {
@@ -71,6 +79,10 @@
         width: 95%;
         font-family: $font-heading;
         color: $color-brand-01;
+
+        @include bp-down($bp-sm) {
+            width: 100%;
+        }
     }
 
 }

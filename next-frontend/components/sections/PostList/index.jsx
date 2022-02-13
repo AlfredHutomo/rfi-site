@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const PostList = (props) => {
-    const { recommendation } = props;
+    const { recommendation, mobileSlider } = props;
     const { heading, data, isMobileSlider, wrapperOptions } = props.sectionData;
 
     const [posts, setPosts] = useState([]);
@@ -30,7 +30,9 @@ const PostList = (props) => {
         fetchData();
     }, [recommendation]);
 
+    const sliderM = mobileSlider != null ? styles['post-list-slider'] : '';
     const slider = isMobileSlider != null ? styles['post-list-slider'] : '';
+    const defaultlist = recommendation ? styles['post-list-default'] : '';
 
     return (
         <SectionWrapper options={wrapperOptions}>
@@ -54,7 +56,7 @@ const PostList = (props) => {
                 </div>
 
                 {posts != null && posts.length != 0 ? (
-                    <ul className={styles['post-list'] + ' ' + slider}>
+                    <ul className={styles['post-list'] + ' ' + slider + ' ' + defaultlist + ' ' + sliderM}>
                         {posts.map((post, i) => (
                             <li key={i} className={styles['post-list-item']}>
                                 <Link
@@ -76,7 +78,7 @@ const PostList = (props) => {
                                             title: post.attributes.title,
                                             date: post.attributes.createdAt,
                                             author: post.attributes.author.data,
-                                            description:
+                                            shortDescription:
                                                 post.attributes
                                                     .shortDescription,
                                             link: post.attributes.slug,

@@ -63,7 +63,7 @@ const TextBlock = ({ sectionData }) => {
                 }
             >
                 {heading != null ? headingCheck() : ''}
-                {description != null ? (
+                {description != null && description != '' ? (
                     <div className={styles['text-block-content']}>
                         <ReactMarkdown>{description}</ReactMarkdown>
                     </div>

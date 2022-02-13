@@ -24,6 +24,7 @@ const PostCard = (props) => {
         event.preventDefault();
         console.log('clicked');
     };
+    console.log(data);
 
     return (
         <div className={styles['post-card-wrapper']} onClick={handleClick}>
@@ -32,8 +33,8 @@ const PostCard = (props) => {
                     {props.data.image != null ? (
                         <Image
                             src={props.data.image}
-                            width={data.imageWidth}
-                            height={data.imageHeight}
+                            layout='fill'
+                            objectFit='cover'
                             alt={''}
                         />
                     ) : (
@@ -64,9 +65,9 @@ const PostCard = (props) => {
                     ) : (
                         ''
                     )}
-                    {data.description != null ? (
+                    {data.shortDescription != null ? (
                         <p className={styles['post-card-content__description']}>
-                            {data.description}
+                            {data.shortDescription}
                         </p>
                     ) : (
                         ''

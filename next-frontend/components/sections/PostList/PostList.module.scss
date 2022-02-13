@@ -53,6 +53,22 @@
             //display: block;
             > div > div {
                 display: flex;
+                @include bp-down($bp-sm) {
+                    display: block;
+                }
+            }
+            > div > div > figure {
+                max-width: 47rem;
+                height: 30rem;
+            }
+        }
+    }
+
+    &-default {
+        li:first-child {
+            grid-column: initial;
+            > div > div {
+                display: block;
             }
         }
     }
@@ -101,6 +117,10 @@
 
         @include bp-down($bp-md) {
             width: 20rem;
+        }
+
+        > div > div > figure {
+            height: 20rem !important;
         }
     }
 }
