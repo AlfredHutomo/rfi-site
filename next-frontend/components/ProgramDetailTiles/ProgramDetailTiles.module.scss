@@ -5,6 +5,17 @@
     display: flex;
     gap: 2rem;
 
+    @include bp-down($bp-md) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    &-heading {
+        @include bp-down($bp-sm) {
+            text-align: center;
+        }
+    }
+
     &-wrapper {
     }
 }
@@ -41,6 +52,11 @@
             &-group {
                 display: flex;
                 gap: 2rem;
+
+                @include bp-down($bp-sm) {
+                    flex-direction: column;
+                    gap: 0;
+                }
             }
 
             h5 {

@@ -66,6 +66,7 @@ const PostList = (props) => {
                                     {/* missing description styling */}
                                     <PostCard
                                         //style={{ maxWidth: '40rem' }}
+                                        index={i}
                                         data={{
                                             image: post.attributes.cover_Image
                                                 .data?.attributes.url,

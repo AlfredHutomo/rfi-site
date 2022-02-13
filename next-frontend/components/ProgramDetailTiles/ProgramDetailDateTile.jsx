@@ -10,8 +10,6 @@ import { Icon } from '@mui/material';
 const ProgramDetailDateTile = (props) => {
     const { data } = props;
 
-    console.log(data);
-
     return (
         <div className={styles['program-detail-date-tile']}>
             <div className={styles['program-detail-date-tile-icon']}>

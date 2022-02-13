@@ -14,7 +14,7 @@ const ProgramDetailTiles = (props) => {
         // TODO: Stylying for program details tiles
         <SectionWrapper>
             <div className={styles['program-detail-tiles-wrapper']}>
-                <h2 className={'h2 ' + styles['program-details-tiles-heading']}>
+                <h2 className={'h2 ' + styles['program-detail-tiles-heading']}>
                     Information & details
                 </h2>
 

@@ -12,10 +12,23 @@
     position: relative;
 }
 
+.post-card-tag {
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    display: inline-block;
+    color: $color-brand-03;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border: 2px solid $color-brand-03;
+    border-radius: 2.5rem;
+}
+
 .post-card-content {
+    width: 100%;
 
     &__heading {
         margin: 0;
+        display: block;
         color: $color-brand-01;
         font-family: $font-heading;
     }

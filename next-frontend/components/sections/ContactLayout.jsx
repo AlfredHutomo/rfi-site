@@ -66,7 +66,7 @@ const ContactLayout = (props) => {
                             preheading='Location'
                             heading={'Gladstone Park Reserve'}
                             buttonText='Get directions'
-                            buttonLink='#'
+                            buttonLink='https://www.google.com.au/maps/place/Gladstone+Park+Reserve/@-37.6879089,144.8852434,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad65a30e3983503:0xf04567605316830!8m2!3d-37.6879132!4d144.8874321'
                         >
                             {data.addressLocationDescription}
                         </LocationBlock>

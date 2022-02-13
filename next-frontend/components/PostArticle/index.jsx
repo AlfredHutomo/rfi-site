@@ -23,11 +23,13 @@ const PostArticle = (props) => {
             <div className={styles['post-article-wrapper']}>
                 <div className={styles['post-article-main']}>
                     <div className={styles['post-article-header']}>
+                        {/*
                         <div>
                             <div className={styles['post-article-tag']}>
                                 Latest Post
                             </div>
                         </div>
+                        */}
                         <h2 className={'h2 ' + styles['post-article-heading']}>
                             {data.title && data.title}
                         </h2>

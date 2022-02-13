@@ -19,9 +19,9 @@ const InfoTile = (props) => {
             ) : (
                 ''
             )}
-            <div>
+            <div className={styles['info-tile-content']}>
                 {props.phone != null ? (
-                    <span className={styles['info-tile-content']}>
+                    <span>
                         <Link href={'tel:' + props.phone}>{props.phone}</Link>
                     </span>
                 ) : (
@@ -33,7 +33,7 @@ const InfoTile = (props) => {
                     ''
                 )}
                 {props.email != null ? (
-                    <span className={styles['info-tile-content']}>
+                    <span>
                         <Link href={'mailto:' + props.email}>
                             {props.email}
                         </Link>
