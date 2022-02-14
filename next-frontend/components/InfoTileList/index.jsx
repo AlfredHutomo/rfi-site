@@ -25,7 +25,7 @@ const InfoTileList = ({ data }) => {
             <InfoTile heading='Social Media'>
                 <div className={styles['info-tile-list-social']}>
                     {socials?.map((social, i) => (
-                        <a key={i} href={social.linkTo} target="_blank">
+                        <a key={i} href={social.linkTo} target="_blank" rel="noreferrer">
                             <SocialIcons>{social.platform}</SocialIcons>
                         </a>
                     ))}
