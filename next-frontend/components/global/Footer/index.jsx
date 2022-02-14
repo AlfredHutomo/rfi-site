@@ -80,6 +80,11 @@ const ProgramsDropdown = ({ navData }) => {
             </Link>
 
             <ul className={styles['page-footer-subnav']}>
+                <li className={styles['page-footer-subnav-item']}>
+                    <Link href={'/programs'}>
+                        <a>All Programs</a>
+                    </Link>
+                </li>
                 {programs.data.map((program, i) => (
                     <SubLinks key={i} data={program} />
                 ))}

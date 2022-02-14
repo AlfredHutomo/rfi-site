@@ -26,8 +26,6 @@
         }
     }
 
-
-
     &-wrapper {
         display: flex;
         gap: 3rem;
@@ -49,6 +47,18 @@
     &-share {
         padding: 2rem;
         background-color: $color-gs-white;
+
+        &-heading {
+            color: $color-brand-01;
+            margin: 0 0 1rem 0;
+        }
+        button {
+            margin-right: 1rem;
+            svg {
+                font-size: 2rem;
+                color: $color-brand-02;
+            }
+        }
     }
 
     &-tag {

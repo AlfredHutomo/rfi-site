@@ -8,6 +8,21 @@ import styles from './PostArticle.module.scss';
 import DefaultCardImg from './default-post-article-img.jpg';
 import SectionWrapper from '../global/SectionWrapper';
 import ReactMarkdown from 'react-markdown';
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  LineShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
+
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LanguageIcon from '@mui/icons-material/Language';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import EmailIcon from '@mui/icons-material/Email';
+
+import {useRouter} from 'next/router';
 
 /**
  * BlogCard
@@ -17,6 +32,10 @@ import ReactMarkdown from 'react-markdown';
  */
 const PostArticle = (props) => {
     const { data } = props;
+    const router = useRouter();
+
+    const shareUrl = router.asPath
+
 
     return (
         <SectionWrapper>
@@ -64,7 +83,23 @@ const PostArticle = (props) => {
                 </div>
 
                 <div className={styles['post-article-sidebar']}>
-                    <div className={styles['post-article-share']}>share</div>
+                    <div className={styles['post-article-share']}>
+                        <h5 className={'h5 ' + styles['post-article-share-heading']}>Share</h5>
+                        <div className={styles['post-article-social-list']}>
+                            <TwitterShareButton url={shareUrl}>
+                                <TwitterIcon />
+                            </TwitterShareButton>
+                            <FacebookShareButton url={shareUrl}>
+                                <FacebookIcon />
+                            </FacebookShareButton>
+                            <WhatsappShareButton url={shareUrl}>
+                                <WhatsAppIcon />
+                            </WhatsappShareButton>
+                            <EmailShareButton url={shareUrl}>
+                                <EmailIcon />
+                            </EmailShareButton>
+                        </div>
+                    </div>
                 </div>
             </div>
         </SectionWrapper>
