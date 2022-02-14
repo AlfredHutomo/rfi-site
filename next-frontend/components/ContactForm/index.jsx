@@ -62,7 +62,7 @@ const ContactForm = (props) => {
                             htmlFor=''
                             className={styles['contact-form-label']}
                         >
-                            Full Name
+                            Full Name *
                         </label>
                         <input
                             type='text'
@@ -86,7 +86,7 @@ const ContactForm = (props) => {
                             htmlFor=''
                             className={styles['contact-form-label']}
                         >
-                            Email
+                            Email *
                         </label>
                         <input
                             type='email'
@@ -109,7 +109,7 @@ const ContactForm = (props) => {
                             htmlFor=''
                             className={styles['contact-form-label']}
                         >
-                            Type of enquiry
+                            Type of enquiry *
                         </label>
                         <select
                             {...formik.getFieldProps('typeOfEnquiry')}

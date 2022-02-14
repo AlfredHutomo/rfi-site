@@ -38,6 +38,13 @@
         flex-direction: column;
         gap: 2rem;
     }
+    &-social {
+        svg {
+            color: $color-brand-02;
+            margin-right: 0.5rem;
+            font-size: 3rem;
+        }
+    }
 }
 
 

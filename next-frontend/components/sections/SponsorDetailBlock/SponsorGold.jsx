@@ -64,17 +64,10 @@ const SponsorGold = (props) => {
                 data.attributes.social.length != 0 ? (
                     <div className={styles['sponsor-detail-block-gold-social']}>
                         {data.attributes.social.map((item, i) => (
-                            <Link key={i} href={item.linkTo}>
-                                <a>
-                                    <SocialIcons>{item.platform}</SocialIcons>
-                                </a>
-                            </Link>
-                        ))}
-                        <Link href={'google.com'}>
-                            <a>
-                                <SocialIcons>{'website'}</SocialIcons>
+                            <a key={i} href={item.linkTo} target="_blank">
+                                <SocialIcons>{item.platform}</SocialIcons>
                             </a>
-                        </Link>
+                        ))}
                     </div>
                 ) : (
                     ''

@@ -7,6 +7,7 @@ import { Icon } from '@mui/material';
 
 import InfoTile from './infoTile';
 import styles from './InfoTile.module.scss';
+import SocialIcons from '../global/SocialIcons';
 
 const InfoTileList = ({ data }) => {
     const { contacts, socials } = data;
@@ -22,13 +23,13 @@ const InfoTileList = ({ data }) => {
                 />
             ))}
             <InfoTile heading='Social Media'>
-                {socials?.map((social, i) => (
-                    <Link key={i} href={social.linkTo}>
-                        <a>
-                            <Icon>{social.platform}</Icon>
+                <div className={styles['info-tile-list-social']}>
+                    {socials?.map((social, i) => (
+                        <a key={i} href={social.linkTo} target="_blank">
+                            <SocialIcons>{social.platform}</SocialIcons>
                         </a>
-                    </Link>
-                ))}
+                    ))}
+                </div>
             </InfoTile>
         </div>
     );

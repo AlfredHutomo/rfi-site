@@ -91,7 +91,7 @@ const ProgramsDropdown = ({ navData }) => {
                 styles['page-navigation-item-dropdown']
             }
         >
-            <Link href={'#'}>
+            <Link href={'/programs'}>
                 <a>{displayName}</a>
             </Link>
 

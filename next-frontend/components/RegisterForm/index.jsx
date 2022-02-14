@@ -26,6 +26,50 @@ import {
 
 import styles from "./RegisterForm.module.scss";
 
+const customTheme = createTheme({
+  typography: {
+    fontFamily:"'Inter', sans-serif"
+  },
+  props: {
+    MuiRadio: {
+      disableRipple: true
+    },
+    MuiCheckbox: {
+      disableRipple: true
+    },
+  },
+  overrides: {
+    MuiFormLabel: {
+      root: {
+        fontSize: "1.4rem"
+      }
+    },
+    MuiInputBase: {
+      root: {
+        fontSize: "1.4rem"
+      }
+    },
+    MuiTypography: {
+      body1: {
+        fontSize: "1.4rem",
+        lineHeight: "1.2"
+      }
+    },
+    MuiSelect: {
+      root: {
+        paddingTop: "0.5rem",
+        paddingBottom: "0.5rem"
+
+      }
+    },
+    MuiMenuItem: {
+      root: {
+        fontSize: "1.4rem",
+      }
+    }
+
+  }
+});
 
 const CustomForm = (props) => {
     const { status, message, onValidated} = props;
@@ -99,6 +143,7 @@ const CustomForm = (props) => {
     }
 
     return (
+    <ThemeProvider theme={customTheme}>
       <div className={styles["form-wrapper"]}>
         <h1 className={'h1' + ' ' + styles['contact-form-heading']}>
             Register today and get <span>world cup</span> ready!
@@ -402,6 +447,8 @@ const CustomForm = (props) => {
             </div>
         </form>
       </div>
+    </ThemeProvider>
+
     );
 
 };
