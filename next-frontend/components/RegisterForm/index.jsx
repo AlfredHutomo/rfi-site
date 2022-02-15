@@ -1,7 +1,8 @@
 import {format} from 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import React, {useState, useEffect} from 'react';
-import MailchimpSubscribe from "react-mailchimp-subscribe"
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+import SuccessImg from "./success.svg";
 import Link from 'next/link';
 import Button from '../global/Button';
 import {

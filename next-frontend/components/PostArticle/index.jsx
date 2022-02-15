@@ -34,7 +34,7 @@ const PostArticle = (props) => {
     const { data } = props;
     const router = useRouter();
 
-    const shareUrl = router.asPath
+    const shareUrl = 'https://rfi-site.vercel.app'+router.asPath;
 
 
     return (

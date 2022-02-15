@@ -37,6 +37,9 @@ $hero-breakpoint: calc(
     &-content {
         width: 100%;
         max-width: 60rem;
+        @include bp-down($bp-lg) {
+            max-width: 50rem;
+        }
     }
     &-button {
         width: 100%;

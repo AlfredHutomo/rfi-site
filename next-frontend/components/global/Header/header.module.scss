@@ -57,7 +57,7 @@
     justify-content: left;
     flex-grow: 1;
 
-    @include bp-down($bp-md) {
+    @include bp-down($bp-lg) {
         display: block;
         //padding: 3rem 0 0 0;
     }
@@ -67,7 +67,7 @@
         flex-grow: 1;
         align-items: center;
 
-        @include bp-down($bp-md) {
+        @include bp-down($bp-lg) {
             display: none;
             position: fixed;
             top: 0;
@@ -98,7 +98,7 @@
         padding: 2rem;
         display: none;
 
-        @include bp-down($bp-md) {
+        @include bp-down($bp-lg) {
             display: block;
         }
     }
@@ -112,7 +112,7 @@
         cursor: pointer;
         z-index: $level-middle + 2;
 
-        @include bp-down($bp-md) {
+        @include bp-down($bp-lg) {
             display: block;
         }
     }
@@ -125,6 +125,10 @@
         line-height: 2.2rem;
         color: $color-brand-01;
         z-index: inherit;
+
+        @include bp-down($bp-lg) {
+            font-size: 1.6rem;
+        }
 
         &:hover {
             > a {
@@ -139,7 +143,7 @@
             transition: color 0.4s ease;
 
 
-            @include bp-down($bp-md) {
+            @include bp-down($bp-lg) {
                 padding: 2rem $site-mobile-padding;
                 border-bottom: 1px solid $color-gs-05;
             }
@@ -147,7 +151,7 @@
 
         &:first-child {
             > a {
-                @include bp-down($bp-md) {
+                @include bp-down($bp-lg) {
                     border-top: 1px solid $color-gs-05;
                 }
             }
@@ -176,7 +180,7 @@
         background-color: $color-gs-white;
         //box-shadow: 0px 0px 2px 0px $color-gs-04;
 
-        @include bp-down($bp-md) {
+        @include bp-down($bp-lg) {
             padding: 1rem 0;
             position: static;
             box-shadow: none;
@@ -196,8 +200,8 @@
                     color: $color-brand-02;
                 }
 
-                @include bp-down($bp-md) {
-                    padding: 0.5rem $site-mobile-padding;
+                @include bp-down($bp-lg) {
+                    padding: 1rem $site-mobile-padding;
                 }
             }
         }
@@ -212,7 +216,7 @@
         justify-content: right;
         //flex-grow: 1;
 
-        @include bp-down($bp-md) {
+        @include bp-down($bp-lg) {
             padding: 5rem $site-mobile-padding 2rem $site-mobile-padding;
             display: block;
         }
@@ -220,13 +224,13 @@
         :first-child {
             margin-right: 1.6rem;
 
-            @include bp-down($bp-md) {
+            @include bp-down($bp-lg) {
                 margin: 0 0 1.6rem 0;
             }
         }
 
         a {
-            @include bp-down($bp-md) {
+            @include bp-down($bp-lg) {
                 padding: 1.5rem;
                 width: 100%;
             }
@@ -236,7 +240,7 @@
     &-icon {
         display: none;
 
-        @include bp-down($bp-md) {
+        @include bp-down($bp-lg) {
             display: block;
             cursor: pointer;
         }
