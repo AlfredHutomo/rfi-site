@@ -28,6 +28,7 @@ const LinkOnly = ({ navData }) => {
 
 const LinkDropDown = ({ navData }) => {
     const primaryUrl = checkValidURL(navData.url);
+    console.log(primaryUrl);
 
     const SubLinks = ({ data }) => {
         const { url, displayName, isExternalLink, page } = data;
@@ -53,9 +54,13 @@ const LinkDropDown = ({ navData }) => {
                 styles['page-navigation-item-dropdown']
             }
         >
-            <Link href={primaryUrl}>
+            {primaryUrl !== '' ? (
+                <Link href={primaryUrl}>
+                    <a>{navData.displayName}</a>
+                </Link>
+            ) : (
                 <a>{navData.displayName}</a>
-            </Link>
+            )}
 
             <ul className={styles['page-navigation-subnav']}>
                 {navData.links.map((link, i) => (
@@ -91,9 +96,7 @@ const ProgramsDropdown = ({ navData }) => {
                 styles['page-navigation-item-dropdown']
             }
         >
-            <Link href={'/programs'}>
-                <a>{displayName}</a>
-            </Link>
+            <a>{displayName}</a>
 
             <ul className={styles['page-navigation-subnav']}>
                 <li className={styles['page-navigation-subnav-item']}>
@@ -169,7 +172,9 @@ const Header = ({ headerData }) => {
                         {announcement}
                     </div>
                 </div>
-            ):''}
+            ) : (
+                ''
+            )}
 
             <header className={styles['page-header-main']}>
                 <div className={styles['page-header']}>
