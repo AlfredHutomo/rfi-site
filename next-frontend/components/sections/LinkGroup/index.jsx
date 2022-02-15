@@ -24,7 +24,7 @@ const LinkGroup = (props) => {
                         ? props.data.map((link, i) => (
                               <Link href={link.link} key={i}>
                                   <a className={`${styles['link-block-wrapper']} ${(asPath == link.link) ? styles['active'] : ''}`}>
-                                      {link['text']}
+                                      {link['text'] === 'Team' ? 'The Team' : link['text']}
                                   </a>
                               </Link>
                           ))

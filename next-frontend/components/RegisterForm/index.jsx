@@ -137,6 +137,7 @@ const CustomForm = (props) => {
     return (
     <ThemeProvider theme={customTheme}>
       <div className={styles["form-wrapper"]}>
+
         <h1 className={'h1' + ' ' + styles['contact-form-heading']}>
             Register today and get <span>world cup</span> ready!
         </h1>
