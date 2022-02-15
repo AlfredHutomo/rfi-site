@@ -28,7 +28,8 @@ import styles from "./RegisterForm.module.scss";
 
 const customTheme = createTheme({
   typography: {
-    fontFamily:"'Inter', sans-serif"
+    fontFamily:"'Inter', sans-serif",
+    htmlFontSize: 10
   },
   props: {
     MuiRadio: {
@@ -39,16 +40,6 @@ const customTheme = createTheme({
     },
   },
   overrides: {
-    MuiFormLabel: {
-      root: {
-        fontSize: "1.4rem"
-      }
-    },
-    MuiInputBase: {
-      root: {
-        fontSize: "1.4rem"
-      }
-    },
     MuiTypography: {
       body1: {
         fontSize: "1.4rem",
@@ -151,9 +142,7 @@ const CustomForm = (props) => {
 
         <div className={styles['contact-form-misc']}>
             Already a member?{' '}
-            <Link href='#' passHref={true}>
-                Login here.
-            </Link>
+            <a href="https://rfi.teamapp.com/" rel="noreferrer" target="_blank">Login here</a>.
         </div>
 
         <div className={`${styles["form-msg"]} ${ status === "success"? styles["is-success"] : ''}`}>
@@ -297,12 +286,12 @@ const CustomForm = (props) => {
                             <FormControlLabel
                                 value="initiation"
                                 control={<Radio color="primary" style={{display: 'none'}}/>}
-                                label={<div className={`${styles['form-radio-program']} ${program == 'initiation' ? 'is-checked' : ''}`}>Initiation</div>}
+                                label={<div className={`${styles['form-radio-program']} ${program == 'initiation' ? styles['is-checked'] : ''}`}>Initiation</div>}
                             />
                             <FormControlLabel
                                 value="development"
                                 control={<Radio color="primary" style={{display: 'none'}}/>}
-                                label={<div className={`${styles['form-radio-program']} ${program == 'development' ? 'is-checked' : ''}`}>Development</div>}
+                                label={<div className={`${styles['form-radio-program']} ${program == 'development' ? styles['is-checked'] : ''}`}>Development</div>}
                             />
                         </RadioGroup>
                     </div>
@@ -415,7 +404,7 @@ const CustomForm = (props) => {
                         <TextField
                           id="comment"
                           name="comment"
-                          label="Any other relevant information"
+                          //label="Any other relevant information"
                           value={comment}
                           onChange={(e) => {setComment(e.target.value)}}
                           multiline

@@ -100,6 +100,9 @@
             font-size: 1.6rem !important;
         }
     }
+    &-input-text::before {
+        border: none !important;
+    }
     &-radio-label {
     }
     &-radio-program {
@@ -126,6 +129,11 @@
         flex-wrap: nowrap !important;
         flex-direction: row;
         gap: 3rem;
+
+        @include bp-down($bp-sm) {
+            gap: 1rem;
+            flex-direction: column !important;
+        }
 
         > label {
             width: 100%;
