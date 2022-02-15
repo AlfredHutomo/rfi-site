@@ -11,6 +11,10 @@
     column-gap: 15px;
     row-gap: 15px;
 
+    @include bp-down($bp-lg) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     @include bp-down($bp-md) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }

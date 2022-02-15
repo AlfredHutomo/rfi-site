@@ -122,7 +122,7 @@ const CustomForm = (props) => {
             MERGE0: email,
             MERGE1: pFName,
             MERGE2: pLName,
-            MERGE13: format(pDOB, 'dd/MM/yyyy'),
+            MERGE13: format(pDOB, 'yyyy-MM-dd'),
             MERGE7: gPhone,
             MERGE12: pClub,
             MERGE3: pGender,
