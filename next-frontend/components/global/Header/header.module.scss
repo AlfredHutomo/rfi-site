@@ -192,7 +192,9 @@
 
         &-item {
             white-space: nowrap;
-            font-weight: 500;
+            @include bp-down($bp-lg) {
+                font-weight: 500;
+            }
 
             > a {
                 display: block;
