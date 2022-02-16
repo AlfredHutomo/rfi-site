@@ -158,7 +158,6 @@ const Header = ({ headerData }) => {
     const [mobileMenuActive, setMobileMenu] = useState(false); // note: same as var active = false in v js
     const { logo, navigation, announcement, buttons } = headerData;
     const { asPath } = useRouter();
-    console.log(asPath);
 
     const toggleMobileMenu = () => {
         setMobileMenu((state) => !state); //reading for sam https://reactjs.org/docs/hooks-state.html
