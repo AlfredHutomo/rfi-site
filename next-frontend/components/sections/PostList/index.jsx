@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const PostList = (props) => {
-    const { recommendation, mobileSlider } = props;
+    const { recommendation, mobileSlider, currentUrl } = props;
     const { heading, data, isMobileSlider, wrapperOptions } = props.sectionData;
 
     const [posts, setPosts] = useState([]);
@@ -58,6 +58,7 @@ const PostList = (props) => {
                 {posts != null && posts.length != 0 ? (
                     <ul className={styles['post-list'] + ' ' + slider + ' ' + defaultlist + ' ' + sliderM}>
                         {posts.map((post, i) => (
+                            currentUrl != '/blog/'+post.attributes.slug ?
                             <li key={i} className={styles['post-list-item']}>
                                 <Link
                                     href={`/blog/${post.attributes.slug}`}
@@ -86,7 +87,8 @@ const PostList = (props) => {
                                         }}
                                     />
                                 </Link>
-                            </li>
+
+                            </li> : ''
                         ))}
                     </ul>
                 ) : (

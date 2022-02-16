@@ -10,11 +10,13 @@ import {
     getChildPagesOf,
 } from '../../utils/api';
 
+
 const AboutChildrenPages = ({ pageData, layoutData, childPages }) => {
+
     return (
         <PageWrapper layoutData={layoutData}>
             <Sections sections={pageData.attributes.content} />
-            <LinkGroup heading='Learn more about RFI' data={childPages} />
+            <LinkGroup heading='Learn more about RFI' data={layoutData.header.data.attributes.navigation[0].links} />
             <RegisterInterestCard />
         </PageWrapper>
     );

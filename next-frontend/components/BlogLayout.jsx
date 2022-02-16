@@ -2,8 +2,12 @@ import PostArticleHero from './PostArticleHero';
 import PostArticle from './PostArticle';
 import { getThreeLatestBlogs } from '../utils/api';
 import PostList from './sections/PostList';
+import {useRouter} from 'next/router';
 
 const BlogLayout = ({ data }) => {
+
+    const router = useRouter();
+    const currentUrl = router.asPath;
 
     return (
         <>
@@ -23,7 +27,7 @@ const BlogLayout = ({ data }) => {
                 {data.attributes.content}
             </PostArticle>
 
-            <PostList recommendation mobileSlider />
+            <PostList recommendation mobileSlider currentUrl={currentUrl} />
         </>
     );
 };

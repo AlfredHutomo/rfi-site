@@ -9,9 +9,6 @@ const LinkGroup = (props) => {
     const { heading, data } = props;
     const { asPath } = useRouter();
 
-    console.log(data);
-
-
     return (
         <SectionWrapper>
             <div className={styles['link-group-wrapper']}>
@@ -25,11 +22,12 @@ const LinkGroup = (props) => {
                 <div className={styles['link-group-main']}>
                     {props.data != null && props.data.length != 0
                         ? props.data.map((link, i) => (
-                              <Link href={link.link} key={i}>
-                                  <a className={`${styles['link-block-wrapper']} ${(asPath == link.link) ? styles['active'] : ''}`}>
-                                      {link['text'] === 'Team' ? 'The Team' : link['text']}
+                            link.displayName != 'Overview' ?
+                              <Link href={link.page.data.attributes.url} key={i}>
+                                  <a className={`${styles['link-block-wrapper']} ${(asPath == link.page.data.attributes.url) ? styles['active'] : ''}`}>
+                                      {link.displayName}
                                   </a>
-                              </Link>
+                              </Link> : ''
                           ))
                         : ''}
                 </div>
