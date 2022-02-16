@@ -16,6 +16,7 @@ $hero-breakpoint: calc(
     left: 50%;
     transform: translateX(-50%);
     z-index: $level-base + 10;
+    border: 1px solid #f30;
 
     @include bp-up($hero-breakpoint) {
         padding: 0;
@@ -37,6 +38,7 @@ $hero-breakpoint: calc(
     &-content {
         width: 100%;
         max-width: 60rem;
+        border: 2px dashed #fff;
         @include bp-down($bp-lg) {
             max-width: 50rem;
         }
