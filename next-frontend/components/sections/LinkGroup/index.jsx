@@ -9,6 +9,9 @@ const LinkGroup = (props) => {
     const { heading, data } = props;
     const { asPath } = useRouter();
 
+    console.log(data);
+
+
     return (
         <SectionWrapper>
             <div className={styles['link-group-wrapper']}>

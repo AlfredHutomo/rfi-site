@@ -161,4 +161,20 @@
     }
 }
 
+.form-success-page {
+    padding: 15rem 0;
+    margin: 0 auto;
+    max-width: 60rem;
+    text-align: center;
+    p {
+        margin-bottom: 5rem;
+        font-size: 1.6rem;
+    }
+}
+.form-success-heading {
+    color: $color-brand-01;
+}
 
+.form-hide {
+    display: none;
+}

@@ -111,6 +111,9 @@
         right: 2rem;
         cursor: pointer;
         z-index: $level-middle + 2;
+        svg {
+            font-size: 3.6rem;
+        }
 
         @include bp-down($bp-lg) {
             display: block;
@@ -189,6 +192,7 @@
 
         &-item {
             white-space: nowrap;
+            font-weight: 500;
 
             > a {
                 display: block;
@@ -239,6 +243,9 @@
 
     &-icon {
         display: none;
+        svg {
+            font-size: 3.6rem;
+        }
 
         @include bp-down($bp-lg) {
             display: block;
