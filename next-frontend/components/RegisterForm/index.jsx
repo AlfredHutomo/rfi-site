@@ -447,8 +447,8 @@ const CustomForm = (props) => {
             {status ==="success" ? (
                 <div className={styles['form-success-page']}>
                     <Image src={SuccessImg} alt={''} />
-                    <h1 className={'h1 ' + styles['form-success-heading']}>We're on it.</h1>
-                    <p>We've received your expression of interest and will be in touch within 48 hours with your next steps.</p>
+                    <h1 className={'h1 ' + styles['form-success-heading']}>We&lsquo;re on it.</h1>
+                    <p>We&lsquo;ve received your expression of interest and will be in touch within 48 hours with your next steps.</p>
                     <Button to="/">Back to homepage</Button>
                 </div>
             ): ''}
