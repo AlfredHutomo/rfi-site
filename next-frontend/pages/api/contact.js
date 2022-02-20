@@ -24,8 +24,8 @@ export default function sendContactEmail(req, res) {
             name: fullName,
             address: email,
         },
-        to: 'alfred@relab.com.au',
-        // cc: ['sam@relab.com.au', 'didi@relab.com.au'],
+        to: 'football@realfutbolinstitute.com',
+        bcc: ['sam@relab.com.au', 'didi@relab.com.au'],
         subject: `Enquiry about ${typeOfEnquiry} From ${fullName}`,
         text: enquiry,
         html: ReactDOMServer.renderToString(

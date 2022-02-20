@@ -27,7 +27,7 @@ const InfoTile = (props) => {
                 ) : (
                     ''
                 )}
-                {props.phone != null && props.email ? (
+                {props.phone != '' && props.email ? (
                     <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                 ) : (
                     ''
