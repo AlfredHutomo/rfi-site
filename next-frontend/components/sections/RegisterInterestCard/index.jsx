@@ -35,9 +35,9 @@ const RegisterInterestCard = (props) => {
                 </CardMedia>
                 <CardContent className={styles['rinterest-card__content']}>
                     <h4 className={'h2 ' + styles['rinterest-card__heading']}>
-                        Register today and get{' '}
-                        <span style={{ color: '#674fff' }}>world cup</span>{' '}
-                        ready!
+                        Register today to start {' '}
+                        <span style={{ color: '#674fff' }}>your football journey</span>{' '}
+                        with RFI!
                     </h4>
                     <p className={styles['rinterest-card__body']}>
                         If your interested in speaking to one of our coaches about RFI and the various programs on offer, registrar your interest and we will get in touch with you.
