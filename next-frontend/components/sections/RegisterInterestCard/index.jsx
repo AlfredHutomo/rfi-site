@@ -40,9 +40,7 @@ const RegisterInterestCard = (props) => {
                         ready!
                     </h4>
                     <p className={styles['rinterest-card__body']}>
-                        Lorem ipsum dolor sit amet, consectetur adipsicing elit.
-                        Tincidunt diam tempus convalis eget, consectetur
-                        adipsicing elit.
+                        If your interested in speaking to one of our coaches about RFI and the various programs on offer, registrar your interest and we will get in touch with you.
                     </p>
                     <Button to={'/register'}
                         className={styles['rinterest-card__cta']}
