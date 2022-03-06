@@ -2,10 +2,9 @@ import PostArticleHero from './PostArticleHero';
 import PostArticle from './PostArticle';
 import { getThreeLatestBlogs } from '../utils/api';
 import PostList from './sections/PostList';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 const BlogLayout = ({ data }) => {
-
     const router = useRouter();
     const currentUrl = router.asPath;
 
@@ -21,6 +20,7 @@ const BlogLayout = ({ data }) => {
                     title: data.attributes.title,
                     date: data.attributes.createdAt,
                     author: data.attributes.author.data,
+                    content: data.attributes.content,
                     //link: 'http://www.google.com.au',
                 }}
             >
