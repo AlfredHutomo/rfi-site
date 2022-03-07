@@ -24,6 +24,8 @@ import EmailIcon from '@mui/icons-material/Email';
 
 import { useRouter } from 'next/router';
 
+import rehypeRaw from 'rehype-raw';
+
 /**
  * BlogCard
  * component to represent a blog article
@@ -79,11 +81,12 @@ const PostArticle = (props) => {
                         </div>
                     </div>
 
-                    {props.data.content != null ? (
-                        <div
-                            className={styles['post-article']}
-                            dangerouslySetInnerHTML={createMarkup()}
-                        ></div>
+                    {props.children != null ? (
+                        <div className={styles['post-article']}>
+                            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                {props.children}
+                            </ReactMarkdown>
+                        </div>
                     ) : (
                         ''
                     )}
