@@ -1,4 +1,3 @@
-import qs from 'qs';
 import {
     LAYOUT_DATA,
     PAGE_DATA,
@@ -10,10 +9,9 @@ import {
     THREE_LATEST_BLOGS,
     CONTACT_INFORMATION,
     PAGE_PATHS,
-    CHILD_PAGES,
 } from './gqlQueries';
 
-import { getApolloClient } from './apollo-client';
+import { client, getApolloClient } from './apollo-client';
 
 export function getStrapiURL(path) {
     return `${
@@ -21,47 +19,17 @@ export function getStrapiURL(path) {
     }${path}`;
 }
 
-/**
- * Helper to make GET requests to Strapi API endpoints
- * @param {string} path Path of the API route
- * @param {Object} urlParamsObject URL params object, will be stringified
- * @param {RequestInit} options Options passed to fetch
- * @returns Parsed API call response
- */
-export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
-    // Merge default and user options
-    const mergedOptions = {
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        ...options,
-    };
-
-    // Build request URL
-    const queryString = qs.stringify(urlParamsObject, {
-        encodeValuesOnly: true,
-    });
-    const requestUrl = `${getStrapiURL(
-        `/api${path}${queryString ? `?${queryString}` : ''}`
-    )}`;
-
-    // Trigger API call
-    const response = await fetch(requestUrl, mergedOptions);
-
-    // Handle response
-    if (!response.ok) {
-        console.error(response.statusText);
-        throw new Error(`An error occured please try again`);
-    }
-    const data = await response.json();
-    return data;
-}
-
-export async function getPageData({ slug, indexPage }) {
+export async function getPageData({ slug, type = 'pages' }) {
     const apolloClient = getApolloClient();
 
+    const query = {
+        pages: PAGE_DATA,
+        blogs: ONE_BLOG_DATA,
+        programs: PROGRAMS_DATA,
+    };
+
     const { data } = await apolloClient.query({
-        query: PAGE_DATA,
+        query: query[type],
         variables: {
             slug,
         },
@@ -71,74 +39,51 @@ export async function getPageData({ slug, indexPage }) {
         return {};
     }
 
-    return data.pages.data[0];
+    return data[type].data[0];
 }
 
-export async function getPagePaths({ childOf = null }) {
+export async function getPagePaths(childOf = null) {
     const apolloClient = getApolloClient();
+
+    const ignorePath = {
+        '': true,
+        programs: true,
+        'about-us': true,
+        blog: true,
+    };
 
     const { data } = await apolloClient.query({
         query: PAGE_PATHS,
     });
 
+    /* Mapping the data from the query to an object with the `params` property set to the `slug` of the
+   page. */
     let paths = data.pages.data.map((page) => {
-        if (childOf === null) {
-            if (page.attributes.parent.data === null) {
-                return { params: { slug: page.attributes.slug } };
-            }
+        let slug = page.attributes.url.split('/');
+        slug.shift();
 
+        if (childOf === null && slug.length === 1) {
             return {
                 params: {
-                    slug: [
-                        page.attributes.parent.data.attributes.slug,
-                        page.attributes.slug,
-                    ],
+                    slug,
                 },
             };
         } else {
-            if (
-                page.attributes.parent.data !== null &&
-                page.attributes.parent.data.attributes.slug === childOf
-            ) {
-                return { params: { slug: page.attributes.slug } };
-            }
+            return (
+                slug[0] === childOf &&
+                slug.length !== 1 && { params: { slug: [slug[1]] } }
+            );
         }
     });
 
-    if (childOf !== null) {
-        paths = paths.filter((item) => {
-            return typeof item === 'object';
-        });
-    }
-
-    return paths;
-}
-
-/**
- * It takes a slug and returns a list of child pages
- * @param slug - The slug of the parent page.
- * @returns An array of objects with the text and link properties.
- */
-export async function getChildPagesOf(slug) {
-    const apolloClient = getApolloClient();
-
-    const { data } = await apolloClient.query({
-        query: CHILD_PAGES,
-        variables: { slug },
+    /* It filters out the paths that are not objects. */
+    paths = paths.filter((item) => {
+        return typeof item === 'object' && !ignorePath[item.params.slug[0]];
     });
 
-    const parent = data.pages.data[0];
+    paths.forEach((path) => console.log(path));
 
-    if (parent.attributes.children.data.length === 0) {
-        return [];
-    }
-
-    const childPages = parent.attributes.children.data.map((page) => ({
-        text: page.attributes.shortName,
-        link: `/${parent.attributes.slug}/${page.attributes.slug}`,
-    }));
-
-    return childPages;
+    return paths;
 }
 
 /**
@@ -174,21 +119,6 @@ export async function getProgramsPaths() {
 }
 
 /**
- * It takes a program slug and returns the program data
- * @returns The query returns a program object.
- */
-export async function getProgramsData({ slug }) {
-    const apolloClient = getApolloClient();
-
-    const { data } = await apolloClient.query({
-        query: PROGRAMS_DATA,
-        variables: { slug },
-    });
-
-    return data.programs.data[0];
-}
-
-/**
  * It queries the GraphQL server for the blogs data.
  * @returns The query returns a list of blogs.
  */
@@ -216,20 +146,6 @@ export async function getBlogPaths() {
     }));
 
     return paths || [];
-}
-
-/**
- * It queries the GraphQL API for the blog data
- * @returns The data for the blog post.
- */
-export async function getBlogData({ slug }) {
-    const apolloClient = getApolloClient();
-    const { data } = await apolloClient.query({
-        query: ONE_BLOG_DATA,
-        variables: { slug },
-    });
-
-    return data.blogs.data[0];
 }
 
 /**

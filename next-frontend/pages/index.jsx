@@ -1,5 +1,5 @@
 import PageWrapper from '../components/global/PageWrapper';
-import { getLayoutData, getPageData } from '../utils/api';
+import { getLayoutData, getPageData, getPagePaths } from '../utils/api';
 
 import Sections from '../components/sections';
 
@@ -13,7 +13,7 @@ const Home = ({ pageData, layoutData }) => {
     );
 };
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
     const pageData = await getPageData({ slug: 'home' });
     const layoutData = await getLayoutData();
 

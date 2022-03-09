@@ -5,21 +5,8 @@ export const PAGE_PATHS = gql`
         pages(pagination: { pageSize: 30 }) {
             data {
                 attributes {
-                    slug
-                    parent {
-                        data {
-                            attributes {
-                                slug
-                            }
-                        }
-                    }
-                    children {
-                        data {
-                            attributes {
-                                slug
-                            }
-                        }
-                    }
+                    shortName
+                    url
                 }
             }
         }
@@ -642,27 +629,6 @@ export const PAGE_DATA = gql`
                         }
                         ... on ComponentSectionsBlogLists {
                             heading
-                        }
-                    }
-                }
-            }
-        }
-    }
-`;
-
-export const CHILD_PAGES = gql`
-    query childrenPage($slug: String!) {
-        pages(filters: { slug: { eq: $slug } }) {
-            data {
-                attributes {
-                    shortName
-                    slug
-                    children {
-                        data {
-                            attributes {
-                                shortName
-                                slug
-                            }
                         }
                     }
                 }

@@ -7,6 +7,7 @@ import RegisterInterestCard from '../../components/sections/RegisterInterestCard
 
 import {
     getLayoutData,
+    getPageData,
     getProgramsData,
     getProgramsPaths,
 } from '../../utils/api';
@@ -24,17 +25,20 @@ const ProgramDetails = ({ programData, layoutData }) => {
     );
 };
 
-// export const getStaticPaths = async () => {
-//     const paths = await getProgramsPaths();
+export const getStaticPaths = async () => {
+    const paths = await getProgramsPaths();
 
-//     return {
-//         paths,
-//         fallback: false,
-//     };
-// };
+    return {
+        paths,
+        fallback: false,
+    };
+};
 
-export const getServerSideProps = async (context) => {
-    const programData = await getProgramsData({ slug: context.params.slug });
+export const getStaticProps = async (context) => {
+    const programData = await getPageData({
+        slug: context.params.slug,
+        type: 'programs',
+    });
     const layoutData = await getLayoutData();
 
     return {
