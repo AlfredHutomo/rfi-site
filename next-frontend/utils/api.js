@@ -11,7 +11,7 @@ import {
     PAGE_PATHS,
 } from './gqlQueries';
 
-import { client, getApolloClient } from './apollo-client';
+import { client } from './apollo-client';
 
 export function getStrapiURL(path) {
     return `${
@@ -20,15 +20,13 @@ export function getStrapiURL(path) {
 }
 
 export async function getPageData({ slug, type = 'pages' }) {
-    const apolloClient = getApolloClient();
-
     const query = {
         pages: PAGE_DATA,
         blogs: ONE_BLOG_DATA,
         programs: PROGRAMS_DATA,
     };
 
-    const { data } = await apolloClient.query({
+    const { data } = await client.query({
         query: query[type],
         variables: {
             slug,
@@ -43,8 +41,6 @@ export async function getPageData({ slug, type = 'pages' }) {
 }
 
 export async function getPagePaths(childOf = null) {
-    const apolloClient = getApolloClient();
-
     const ignorePath = {
         '': true,
         programs: true,
@@ -52,7 +48,7 @@ export async function getPagePaths(childOf = null) {
         blog: true,
     };
 
-    const { data } = await apolloClient.query({
+    const { data } = await client.query({
         query: PAGE_PATHS,
     });
 
@@ -91,9 +87,7 @@ export async function getPagePaths(childOf = null) {
  * @returns The query returns a `data` object with a `layout` property.
  */
 export async function getLayoutData() {
-    const apolloClient = getApolloClient();
-
-    const { data } = await apolloClient.query({
+    const { data } = await client.query({
         query: LAYOUT_DATA,
     });
 
@@ -105,13 +99,11 @@ export async function getLayoutData() {
  * @returns An array of objects with the following shape:
  */
 export async function getProgramsPaths() {
-    const apolloClient = getApolloClient();
-
-    const { data } = await apolloClient.query({
+    const { data } = await client.query({
         query: PROGRAMS_PATHS,
     });
 
-    const paths = data.programs.data.map((program, i) => ({
+    const paths = data.programs.data.map((program) => ({
         params: { slug: program.attributes.slug },
     }));
 
@@ -123,8 +115,7 @@ export async function getProgramsPaths() {
  * @returns The query returns a list of blogs.
  */
 export async function getPostList() {
-    const apolloClient = getApolloClient();
-    const { data } = await apolloClient.query({
+    const { data } = await client.query({
         query: BLOGS_DATA,
     });
 
@@ -136,12 +127,11 @@ export async function getPostList() {
  * @returns An array of objects with the `params` property set to the `slug` of the blog.
  */
 export async function getBlogPaths() {
-    const apolloClient = getApolloClient();
-    const { data } = await apolloClient.query({
+    const { data } = await client.query({
         query: BLOGS_PATHS,
     });
 
-    const paths = data.blogs.data.map((blog, i) => ({
+    const paths = data.blogs.data.map((blog) => ({
         params: { slug: blog.attributes.slug },
     }));
 
@@ -153,8 +143,7 @@ export async function getBlogPaths() {
  * @returns The query returns a list of blogs.
  */
 export async function getThreeLatestBlogs() {
-    const apolloClient = getApolloClient();
-    const { data } = await apolloClient.query({
+    const { data } = await client.query({
         query: THREE_LATEST_BLOGS,
     });
 
@@ -166,8 +155,7 @@ export async function getThreeLatestBlogs() {
  * @returns The data from the contactInformation query.
  */
 export async function getContactData() {
-    const apolloClient = getApolloClient();
-    const { data } = await apolloClient.query({
+    const { data } = await client.query({
         query: CONTACT_INFORMATION,
     });
 
