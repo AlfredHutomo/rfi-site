@@ -10,7 +10,7 @@ import SocialIcons from '../../global/SocialIcons';
 
 const SponsorGold = (props) => {
     const { data, logo, name, phone, email, social } = props;
-    //console.log(data.attributes.social);
+
     return (
         <div className={styles['sponsor-detail-block-gold']}>
             <div className={styles['sponsor-detail-block-gold-logo']}>
@@ -64,7 +64,12 @@ const SponsorGold = (props) => {
                 data.attributes.social.length != 0 ? (
                     <div className={styles['sponsor-detail-block-gold-social']}>
                         {data.attributes.social.map((item, i) => (
-                            <a key={i} href={item.linkTo} target="_blank" rel="noreferrer">
+                            <a
+                                key={i}
+                                href={item.linkTo}
+                                target='_blank'
+                                rel='noreferrer'
+                            >
                                 <SocialIcons>{item.platform}</SocialIcons>
                             </a>
                         ))}

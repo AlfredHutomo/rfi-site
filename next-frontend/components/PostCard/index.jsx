@@ -22,7 +22,6 @@ const PostCard = (props) => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        console.log('clicked');
     };
 
     return (
@@ -41,9 +40,13 @@ const PostCard = (props) => {
                     )}
                 </CardMedia>
                 <CardContent className={styles['post-card-content']} compact>
-                    {
-                        index == 0 ? (<div className={styles['post-card-tag']}>Latest Post</div>) : ''
-                    }
+                    {index == 0 ? (
+                        <div className={styles['post-card-tag']}>
+                            Latest Post
+                        </div>
+                    ) : (
+                        ''
+                    )}
                     <h4
                         className={'h4 ' + styles['post-card-content__heading']}
                     >

@@ -77,8 +77,6 @@ export async function getPagePaths(childOf = null) {
         return typeof item === 'object' && !ignorePath[item.params.slug[0]];
     });
 
-    paths.forEach((path) => console.log(path));
-
     return paths;
 }
 
