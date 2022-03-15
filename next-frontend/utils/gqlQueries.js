@@ -334,6 +334,23 @@ export const PAGE_DATA = gql`
                                     }
                                 }
                             }
+                            digitalSponsors: sponsors(
+                                filters: { level: { eq: "digital" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             button1 {
                                 displayName
                                 isExternalLink
@@ -411,6 +428,23 @@ export const PAGE_DATA = gql`
                             }
                             bronzeSponsors: sponsors(
                                 filters: { level: { eq: "bronze" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            digitalSponsors: sponsors(
+                                filters: { level: { eq: "digital" } }
                             ) {
                                 data {
                                     attributes {
@@ -1163,6 +1197,23 @@ export const PROGRAMS_DATA = gql`
                                     }
                                 }
                             }
+                            digitalSponsors: sponsors(
+                                filters: { level: { eq: "digital" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             button1 {
                                 displayName
                                 isExternalLink
@@ -1240,6 +1291,23 @@ export const PROGRAMS_DATA = gql`
                             }
                             bronzeSponsors: sponsors(
                                 filters: { level: { eq: "bronze" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            digitalSponsors: sponsors(
+                                filters: { level: { eq: "digital" } }
                             ) {
                                 data {
                                     attributes {
