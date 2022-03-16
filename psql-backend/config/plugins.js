@@ -15,7 +15,8 @@ module.exports = ({ env }) => ({
   "website-builder": {
     enabled: true,
     config: {
-      url: "https://api.vercel.com/v1/integrations/deploy/prj_tTSSXbwDKQHVK8YPVVwhjBqIiq1R/96cl12i8hS",
+    //url: "https://api.vercel.com/v1/integrations/deploy/prj_tTSSXbwDKQHVK8YPVVwhjBqIiq1R/96cl12i8hS",
+      url: "https://api.vercel.com/v1/integrations/deploy/prj_tTSSXbwDKQHVK8YPVVwhjBqIiq1R/az0MhzdAQW",
       trigger: {
         type: "manual",
       },
