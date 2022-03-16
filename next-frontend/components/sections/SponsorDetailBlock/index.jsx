@@ -6,10 +6,11 @@ import styles from './SponsorDetailBlock.module.scss';
 import SponsorGold from './SponsorGold';
 import SponsorSilver from './SponsorSilver';
 import SponsorBronze from './SponsorBronze';
+import SponsorDigital from './SponsorBronze';
 import { SectionWrapper } from '../../global';
 
 const SponsorDetailBlock = (props) => {
-    const { goldSponsors, silverSponsors, bronzeSponsors, wrapperOptions } =
+    const { goldSponsors, silverSponsors, bronzeSponsors, digitalSponsors, wrapperOptions } =
         props.sectionData;
 
     return (
@@ -64,6 +65,25 @@ const SponsorDetailBlock = (props) => {
                             >
                                 {bronzeSponsors.data.map((sponsor, i) => (
                                     <SponsorBronze
+                                        key={`${sponsor.name}-${i}`}
+                                        data={sponsor}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                {digitalSponsors?.data !== null &&
+                    digitalSponsors?.data.length !== 0 && (
+                        <div className={styles['sponsor-detail-block-row']}>
+                            <h2 className={'h2 ' + styles['sponsor-detail-block-row-heading']}>Our digital sponsors</h2>
+                            <div
+                                className={
+                                    styles['sponsor-detail-block-row-content']
+                                }
+                            >
+                                {digitalSponsors.data.map((sponsor, i) => (
+                                    <SponsorDigital
                                         key={`${sponsor.name}-${i}`}
                                         data={sponsor}
                                     />
