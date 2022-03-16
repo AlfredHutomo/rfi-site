@@ -35,14 +35,20 @@ const RegisterInterestCard = (props) => {
                 </CardMedia>
                 <CardContent className={styles['rinterest-card__content']}>
                     <h4 className={'h2 ' + styles['rinterest-card__heading']}>
-                        Register today to start {' '}
-                        <span style={{ color: '#674fff' }}>your football journey</span>{' '}
+                        Register today to start{' '}
+                        <span style={{ color: '#674fff' }}>
+                            your football journey
+                        </span>{' '}
                         with RFI!
                     </h4>
                     <p className={styles['rinterest-card__body']}>
-                        If your interested in speaking to one of our coaches about RFI and the various programs on offer, registrar your interest and we will get in touch with you.
+                        If you are interested in speaking to one of our coaches
+                        about RFI and the various programs on offer, please
+                        register your interest and we will get in touch with
+                        you.
                     </p>
-                    <Button to={'/register'}
+                    <Button
+                        to={'/register'}
                         className={styles['rinterest-card__cta']}
                         variant='1'
                     >

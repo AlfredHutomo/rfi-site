@@ -9,12 +9,12 @@ import DefaultCardImg from './default-post-article-img.jpg';
 import SectionWrapper from '../global/SectionWrapper';
 import ReactMarkdown from 'react-markdown';
 import {
-  EmailShareButton,
-  FacebookShareButton,
-  LineShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-} from "react-share";
+    EmailShareButton,
+    FacebookShareButton,
+    LineShareButton,
+    TwitterShareButton,
+    WhatsappShareButton,
+} from 'react-share';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -22,7 +22,9 @@ import LanguageIcon from '@mui/icons-material/Language';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
+
+import rehypeRaw from 'rehype-raw';
 
 /**
  * BlogCard
@@ -34,8 +36,14 @@ const PostArticle = (props) => {
     const { data } = props;
     const router = useRouter();
 
-    const shareUrl = 'https://rfi-site.vercel.app'+router.asPath;
+    const shareUrl = 'https://rfi-site.vercel.app' + router.asPath;
 
+    /**
+     * It takes in a string of HTML and returns a React object that has the same HTML
+     */
+    const createMarkup = () => ({
+        __html: props.data.content,
+    });
 
     return (
         <SectionWrapper>
@@ -75,7 +83,9 @@ const PostArticle = (props) => {
 
                     {props.children != null ? (
                         <div className={styles['post-article']}>
-                            <ReactMarkdown>{props.children}</ReactMarkdown>
+                            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                {props.children}
+                            </ReactMarkdown>
                         </div>
                     ) : (
                         ''
@@ -84,7 +94,13 @@ const PostArticle = (props) => {
 
                 <div className={styles['post-article-sidebar']}>
                     <div className={styles['post-article-share']}>
-                        <h5 className={'h5 ' + styles['post-article-share-heading']}>Share</h5>
+                        <h5
+                            className={
+                                'h5 ' + styles['post-article-share-heading']
+                            }
+                        >
+                            Share
+                        </h5>
                         <div className={styles['post-article-social-list']}>
                             <TwitterShareButton url={shareUrl}>
                                 <TwitterIcon />

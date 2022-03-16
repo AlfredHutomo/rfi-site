@@ -13,7 +13,7 @@ const AboutUs = ({ pageData, layoutData }) => {
     );
 };
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
     const pageData = await getPageData({ slug: 'about-us' });
     const layoutData = await getLayoutData();
 

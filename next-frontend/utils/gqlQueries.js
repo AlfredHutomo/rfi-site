@@ -5,21 +5,8 @@ export const PAGE_PATHS = gql`
         pages(pagination: { pageSize: 30 }) {
             data {
                 attributes {
-                    slug
-                    parent {
-                        data {
-                            attributes {
-                                slug
-                            }
-                        }
-                    }
-                    children {
-                        data {
-                            attributes {
-                                slug
-                            }
-                        }
-                    }
+                    shortName
+                    url
                 }
             }
         }
@@ -347,6 +334,23 @@ export const PAGE_DATA = gql`
                                     }
                                 }
                             }
+                            digitalSponsors: sponsors(
+                                filters: { level: { eq: "digital" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             button1 {
                                 displayName
                                 isExternalLink
@@ -424,6 +428,23 @@ export const PAGE_DATA = gql`
                             }
                             bronzeSponsors: sponsors(
                                 filters: { level: { eq: "bronze" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            digitalSponsors: sponsors(
+                                filters: { level: { eq: "digital" } }
                             ) {
                                 data {
                                     attributes {
@@ -642,27 +663,6 @@ export const PAGE_DATA = gql`
                         }
                         ... on ComponentSectionsBlogLists {
                             heading
-                        }
-                    }
-                }
-            }
-        }
-    }
-`;
-
-export const CHILD_PAGES = gql`
-    query childrenPage($slug: String!) {
-        pages(filters: { slug: { eq: $slug } }) {
-            data {
-                attributes {
-                    shortName
-                    slug
-                    children {
-                        data {
-                            attributes {
-                                shortName
-                                slug
-                            }
                         }
                     }
                 }
@@ -1197,6 +1197,23 @@ export const PROGRAMS_DATA = gql`
                                     }
                                 }
                             }
+                            digitalSponsors: sponsors(
+                                filters: { level: { eq: "digital" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             button1 {
                                 displayName
                                 isExternalLink
@@ -1274,6 +1291,23 @@ export const PROGRAMS_DATA = gql`
                             }
                             bronzeSponsors: sponsors(
                                 filters: { level: { eq: "bronze" } }
+                            ) {
+                                data {
+                                    attributes {
+                                        name
+                                        website
+                                        logo {
+                                            data {
+                                                attributes {
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            digitalSponsors: sponsors(
+                                filters: { level: { eq: "digital" } }
                             ) {
                                 data {
                                     attributes {

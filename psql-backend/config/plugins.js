@@ -12,4 +12,30 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  "website-builder": {
+    enabled: true,
+    config: {
+      url: "https://api.vercel.com/v1/integrations/deploy/prj_tTSSXbwDKQHVK8YPVVwhjBqIiq1R/96cl12i8hS",
+      trigger: {
+        type: "manual",
+      },
+      // trigger: {
+      //   type: "event",
+      //   events: [
+      //     {
+      //       model: "page",
+      //       types: ["create", "update", "delete"],
+      //     },
+      //     {
+      //       model: "program",
+      //       types: ["create", "update", "delete"],
+      //     },
+      //     {
+      //       model: "blog",
+      //       types: ["create", "update", "delete"],
+      //     },
+      //   ],
+      // },
+    },
+  },
 });
