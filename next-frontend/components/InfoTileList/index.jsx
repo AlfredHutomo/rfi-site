@@ -11,7 +11,7 @@ import SocialIcons from '../global/SocialIcons';
 
 const InfoTileList = ({ data }) => {
     const { contacts, socials } = data;
-    console.log(socials);
+
     return (
         <div className={styles['info-tile-list-wrapper']}>
             {contacts?.map((contact, i) => (
@@ -25,7 +25,12 @@ const InfoTileList = ({ data }) => {
             <InfoTile heading='Social Media'>
                 <div className={styles['info-tile-list-social']}>
                     {socials?.map((social, i) => (
-                        <a key={i} href={social.linkTo} target="_blank" rel="noreferrer">
+                        <a
+                            key={i}
+                            href={social.linkTo}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
                             <SocialIcons>{social.platform}</SocialIcons>
                         </a>
                     ))}

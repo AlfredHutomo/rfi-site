@@ -11,13 +11,12 @@ const Blog = ({ pageData, layoutData }) => {
     return (
         <PageWrapper layoutData={layoutData}>
             <Sections sections={content} />
-
             <RegisterInterestCard />
         </PageWrapper>
     );
 };
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
     const pageData = await getPageData({ slug: 'blog' });
     const layoutData = await getLayoutData();
 

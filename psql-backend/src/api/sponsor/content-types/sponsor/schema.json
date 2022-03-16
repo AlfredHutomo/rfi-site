@@ -36,7 +36,8 @@
       "enum": [
         "gold",
         "silver",
-        "bronze"
+        "bronze",
+        "digital"
       ]
     },
     "email": {

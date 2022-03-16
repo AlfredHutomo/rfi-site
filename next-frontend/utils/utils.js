@@ -1,10 +1,9 @@
 import { getContactData } from './api';
 
 export function checkValidURL(url) {
-    if(url === null || url === '' || url === undefined) {
+    if (url === null || url === '' || url === undefined) {
         return '';
-    }
-    else {
+    } else {
         if (
             url !== null &&
             !(url.startsWith('https://') || url.startsWith('http://'))
@@ -19,7 +18,6 @@ export function checkValidURL(url) {
         return '/';
     }
 }
-
 
 export async function checkForLayoutComponent(content) {
     const layoutComponent = content.filter((section) =>
@@ -36,8 +34,6 @@ export async function checkForLayoutComponent(content) {
             }
         });
     }
-
-    // console.log(specialLayout);
 
     return {};
 }

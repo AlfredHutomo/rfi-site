@@ -28,7 +28,6 @@ const LinkOnly = ({ navData }) => {
 
 const LinkDropDown = ({ navData }) => {
     const primaryUrl = checkValidURL(navData.url);
-    console.log(primaryUrl);
 
     const SubLinks = ({ data }) => {
         const { url, displayName, isExternalLink, page } = data;

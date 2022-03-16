@@ -2,7 +2,7 @@ import PageWrapper from '../../components/global/PageWrapper';
 
 import BlogLayout from '../../components/BlogLayout';
 
-import { getLayoutData, getBlogPaths, getBlogData } from '../../utils/api';
+import { getLayoutData, getBlogPaths, getPageData } from '../../utils/api';
 
 const BlogArticle = ({ blogData, layoutData }) => {
     return (
@@ -12,17 +12,20 @@ const BlogArticle = ({ blogData, layoutData }) => {
     );
 };
 
-// export const getStaticPaths = async () => {
-//     const paths = await getBlogPaths();
+export const getStaticPaths = async () => {
+    const paths = await getBlogPaths();
 
-//     return {
-//         paths,
-//         fallback: false,
-//     };
-// };
+    return {
+        paths,
+        fallback: false,
+    };
+};
 
-export const getServerSideProps = async (context) => {
-    const blogData = await getBlogData({ slug: context.params.slug });
+export const getStaticProps = async (context) => {
+    const blogData = await getPageData({
+        slug: context.params.slug,
+        type: 'blogs',
+    });
     const layoutData = await getLayoutData();
 
     return {

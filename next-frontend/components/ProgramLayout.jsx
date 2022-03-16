@@ -32,7 +32,10 @@ const ProgramLayout = ({ programData, children }) => {
             {children}
             <ProgramDetailTiles data={details} />
             {/* Only render if coach is set to program */}
-            <ProfileCardList sectionData={coachData} />
+            {programData.attributes.coaches.data?.length > 0 && (
+                <ProfileCardList sectionData={coachData} />
+            )}
+
             <RegisterInterestCard />
             {programData.attributes.faq && (
                 <FAQAccordion sectionData={programData.attributes.faq} />

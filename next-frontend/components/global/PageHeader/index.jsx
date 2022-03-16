@@ -45,8 +45,6 @@ const PageHeader = (props) => {
       `;
     }
 
-    console.log(extraStyling);
-
     // TODO: by default it should just take bgDesktop but if bgMobile is present then add a media query to change the backgroundImage to bgMobile
 
     return (
