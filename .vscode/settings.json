@@ -1,3 +1,3 @@
 {
-    "eslint.workingDirectories": ["./next-frontend"]
+    "eslint.workingDirectories": ["./next-frontend", "./psql-backend"]
 }
