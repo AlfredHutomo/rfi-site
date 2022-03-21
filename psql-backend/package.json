@@ -1,8 +1,8 @@
 {
-  "name": "psql",
+  "name": "rfi-strapi",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "A Strapi application for realfutbolinstitue",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -21,7 +21,7 @@
     "strapi-plugin-website-builder": "^2.1.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Relab Studios Developer"
   },
   "strapi": {
     "uuid": "56603013-bfb5-4f9e-a4d3-ecf3930ad1c2"
