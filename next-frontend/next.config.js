@@ -9,7 +9,7 @@ module.exports = {
     images: {
         domains: [
             'source.unsplash.com',
-            'rfi-site.s3.ap-southeast-2.amazonaws.com',
+            'rfi-strapi.s3.ap-southeast-2.amazonaws.com',
         ],
         //loader: "imgix",
         //path: "http://",
